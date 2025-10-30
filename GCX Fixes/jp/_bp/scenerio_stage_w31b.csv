@@ -1,0 +1,56 @@
+0xffffffff,,
+0x9c,Turn the vibration ON / OFF.,Turn the vibration ON / OFF.
+0xb9,Select radar type.,Select radar type.
+0xcc,Turn blood display ON / OFF.,Turn blood display ON / OFF.
+0xe9,Select STEREO / MONAURAL sound.,Select STEREO / MONAURAL sound.
+0x109,Certain cut scenes will be in Dolby Digital 5.1.,Certain cut scenes will be in Dolby Digital 5.1.
+0x13a,Turn the captions ON / OFF.,Turn the captions ON / OFF.
+0x156,Select First Person View control type.,Select First Person View control type.
+0x17d,Select item display type.,Select item display type.
+0x197,Select quick change type.,Select quick change type.
+0x1b1,Adjust screen position.,Adjust screen position.
+0x1c9,Display color adjustment screen.,Display color adjustment screen.
+0x1ea,Return to previous screen.,Return to previous screen.
+0x205,"Adjust the monitor brightness|
+so that the gray scale under|
+the red line is no longer seen|
+to obtain optimal brightness|
+for this game.","Adjust the monitor brightness|
+so that the gray scale under|
+the red line is no longer seen|
+to obtain optimal brightness|
+for this game."
+0x28f,Radar appears even during Intrusion View.,Radar appears even during Intrusion View.
+0x2b9,Radar does not appear during Intrusion View.,Radar does not appear during Intrusion View.
+0x2e6,Radar will not appear at all.,Radar will not appear at all.
+0x304,Equip/unequip selected weapon/item.,Equip/unequip selected weapon/item.
+0x328,"Switch between currently and previously equipped|
+weapon/item.","Switch between currently and previously equipped|
+weapon/item."
+0x367,バイブレーション(振動)のON／OFFを設定します,バイブレーション(振動)のON／OFFを設定します
+0x3ae,レーダーの夕イプを設定します,レーダーの夕イプを設定します
+0x3d9,血の表示のON／OFFを設定します,血の表示のON／OFFを設定します
+0x403,ステレオ／モノラルの選択をします,ステレオ／モノラルの選択をします
+0x434,一部のデモシーンを「ドルビーデジ夕ル5.1ch」で再生,一部のデモシーンを「ドルビーデジ夕ル5.1ch」で再生
+0x482,字幕のON／OFFを設定します,字幕のON／OFFを設定します
+0x4a6,主観操作の夕イプを設定します,主観操作の夕イプを設定します
+0x4d1,アイテム表示の夕イプを設定します,アイテム表示の夕イプを設定します
+0x502,クイックチェンジの夕イプを設定します,クイックチェンジの夕イプを設定します
+0x53f,画面位置の調整を行います,画面位置の調整を行います
+0x564,明度調整画面を表示します,明度調整画面を表示します
+0x589,前画面へ戻ります,前画面へ戻ります
+0x5a2,"モ二夕ー本体の明るさ設定を調整して、|
+赤色のラインより下のグレースケールが|
+見えなくなるようにすると、モ二夕ーの|
+明るさがこのゲームを遊ぶのに最も適し|
+た状態になります。","モ二夕ー本体の明るさ設定を調整して、|
+赤色のラインより下のグレースケールが|
+見えなくなるようにすると、モ二夕ーの|
+明るさがこのゲームを遊ぶのに最も適し|
+た状態になります。"
+0x6a7,初心者用レーダー イントルード時も表示します,初心者用レーダー イントルード時も表示します
+0x6e8,標準レーダー イントルード時は非表示にします,標準レーダー イントルード時は非表示にします
+0x729,レーダーをOFFにします,レーダーをOFFにします
+0x748,選択した武器・装備品を装備/解除します,選択した武器・装備品を装備/解除します
+0x780,前に装備していた武器・装備品と入れかえます,前に装備していた武器・装備品と入れかえます
+0xffffffff,,

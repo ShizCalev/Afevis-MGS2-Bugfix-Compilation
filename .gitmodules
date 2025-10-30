@@ -1,0 +1,6 @@
+[submodule "external/MGS2-PS2-Textures"]
+	path = external/MGS2-PS2-Textures
+	url = https://github.com/dotlessone/MGS2-PS2-Textures
+[submodule "external/mgs_gcx_editor"]
+	path = external/mgs_gcx_editor
+	url = https://github.com/Giza/mgs_gcx_editor

@@ -1,0 +1,5 @@
+w11a2_closed_shatter.bmp - flipped texture since ps2. bp remade it and didn't notice it was flipped either lol
+w01a0_fl00_bld080_ovl.bmp - SHOULD be transparent. bp fuck-up
+w01a0_fl02_bld080_ovl.bmp - SHOULD be transparent. bp fuck-up
+w01b_wlp03_bld075_ovl.bmp - SHOULD be transparent. bp fuck-up
+w43a_wall_right_08_alp_ovl.bmp - SHOULD be transparent. bp fuck-up
