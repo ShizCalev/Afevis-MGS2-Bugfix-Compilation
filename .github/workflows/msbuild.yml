@@ -1,4 +1,4 @@
-name: MGSHDFix CI Builds
+name: CI Builds
 
 env:
   CI: true
@@ -28,44 +28,14 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.1
 
-    # wxWidgets cache setup
-    - name: Get wxWidgets submodule hash
-      id: wxhash
-      run: |
-        cd external/wxWidgets
-        $hash = git rev-parse HEAD
-        "hash=$hash" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
-
-    - name: Cache wxWidgets
-      uses: actions/cache@v4
-      with:
-        path: external/wxWidgets/lib/vc_x64_lib
-        key: wxwidgets-${{ runner.os }}-${{ steps.wxhash.outputs.hash }}
-
-    # Zydis cache setup
-    - name: Get Zydis submodule hash
-      id: zydishash
-      run: |
-        cd external/zydis
-        $hash = git rev-parse HEAD
-        "hash=$hash" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
-
-    - name: Cache Zydis
-      uses: actions/cache@v4
-      with:
-        path: |
-          external/zydis/msvc/bin/ReleaseX64
-          external/zydis/msvc/bin/ReleaseX86
-        key: zydis-${{ runner.os }}-${{ steps.zydishash.outputs.hash }}
-        
     # -------------------------
-    # GCX Zips (MGS2 + MGS3)
+    # GCX Zips (MGS2)
     # -------------------------
     - name: Compute GCX cache key
       id: gcxhash
       run: |
         # Bump this string when GCX zips change
-        $hash = "gcx-v6"
+        $hash = "gcx-v1"
         "hash=$hash" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
 
     - name: Cache GCX zip files
@@ -102,63 +72,39 @@ jobs:
       if: steps.gcx-zip-cache.outputs.cache-hit != 'true'
       run: |
         mkdir external -Force
-        mega-get "https://mega.nz/file/LogUGBzB#NcofiyjsbFF_khRe61KdgL6HWLNfiHiSFI9QEsuElS8" "external/mgs2-gcx.zip"
-        mega-get "https://mega.nz/file/XxpDzAYB#H49lYsNhUmH4bdALLYUr_Nl0LjqDMpa-FSQh6jUXdOc" "external/mgs3-gcx.zip"
+        mega-get "https://mega.nz/file/usYShZQb#q8ckz4h_SdJr14JD5RPesZpCJtP1b5l4rYB3jSigKZs" "external/mgs2-gcx.zip"
 
     # -------------------------
     - name: Extract GCX zips
       run: |
-        $destMgs2 = "GCX Fixes/mgs2"
-        $destMgs3 = "GCX Fixes/mgs3"
+        $destMgs2 = "GCX Fixes"
 
         New-Item -ItemType Directory -Force -Path $destMgs2 | Out-Null
-        New-Item -ItemType Directory -Force -Path $destMgs3 | Out-Null
 
         Expand-Archive external/mgs2-gcx.zip -DestinationPath $destMgs2 -Force
-        Expand-Archive external/mgs3-gcx.zip -DestinationPath $destMgs3 -Force
 
         Write-Host "Final GCX files in ${destMgs2}:"
         Get-ChildItem $destMgs2 -Recurse | ForEach-Object { Write-Host $_.FullName }
-
-        Write-Host "Final GCX files in ${destMgs3}:"
-        Get-ChildItem $destMgs3 -Recurse | ForEach-Object { Write-Host $_.FullName }
 
     # -------------------------
     # Prepare output structure
     # -------------------------
     - run: mkdir dist
     - run: mkdir dist/plugins
-    - run: mkdir dist/logs
 
-    - name: Run MGS2 GCX import-gcx.ps1
+    - name: Run MGS2 GCX import-gcx.py
       run: |
         $RepoRootDir = "${{ github.workspace }}"
-        $importScript = Join-Path $RepoRootDir "GCX Fixes\mgs2\import-gcx.ps1"
+        $importScript = Join-Path $RepoRootDir "GCX Fixes\import-gcx.py"
 
         if (-not (Test-Path $importScript)) {
-          Write-Error "import-gcx.ps1 not found at $importScript"
+          Write-Error "import-gcx.py not found at $importScript"
           exit 1
         }
 
         Write-Host "Invoking $importScript..."
-        pwsh -File $importScript
+        py $importScript
 
-    - name: Run MGS3 GCX import-gcx.ps1 (en/fr, gr, it, sp)
-      run: |
-        $RepoRootDir = "${{ github.workspace }}"
-        $langs = @("fr","gr","it","sp")
-
-        foreach ($lang in $langs) {
-          $importScript = Join-Path $RepoRootDir "GCX Fixes\mgs3\$lang\import-gcx.ps1"
-
-          if (-not (Test-Path $importScript)) {
-            Write-Warning "import-gcx.ps1 not found for $lang at $importScript"
-            continue
-          }
-
-          Write-Host "Invoking $importScript for $lang..."
-          pwsh -File $importScript
-        }
 
     # -------------------------
     # Build
@@ -170,27 +116,7 @@ jobs:
     - run: Copy-Item "x64\Release\${{ github.event.repository.name }}.asi" "dist/plugins/${{ github.event.repository.name }}.asi"
     - run: Copy-Item "x64\Release\${{ github.event.repository.name }} Config Tool.exe" "dist/plugins/${{ github.event.repository.name }} Config Tool.exe"
 
-    # Download Ultimate ASI Loader
-    - uses: robinraju/release-downloader@v1.8
-      with:
-        repository: "ThirteenAG/Ultimate-ASI-Loader"
-        latest: true
-        fileName: "Ultimate-ASI-Loader_x64.zip"
-
-    - name: Extract Loader
-      run: Expand-Archive Ultimate-ASI-Loader_x64.zip -DestinationPath dist
-
-    - name: Add Loader License
-      run: Invoke-WebRequest https://raw.githubusercontent.com/ThirteenAG/Ultimate-ASI-Loader/master/license -OutFile dist/UltimateASILoader_LICENSE.md
-
-    - name: Stage Loader DLLs
-      run: |
-        Copy-Item dist/dinput8.dll dist/wininet.dll
-        Move-Item dist/dinput8.dll dist/winhttp.dll
-
     # Logs & metadata
-    - run: Copy-Item README.md "dist/logs/${{ github.event.repository.name }}_Game.log"
-    - run: Copy-Item README.md "dist/logs/${{ github.event.repository.name }}_Launcher.log"
     - run: Copy-Item README.md "dist/plugins/${{ github.event.repository.name }}_README.md"
     - run: Copy-Item LICENSE.md "dist/plugins/${{ github.event.repository.name }}_LICENSE.md"
 
