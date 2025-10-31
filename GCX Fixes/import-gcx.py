@@ -10,11 +10,12 @@ from threading import Lock
 # ==========================================================
 # CONFIGURATION
 # ==========================================================
-HASH_FILE = "original-sha1-hashes.txt"
-OUTPUT_LOG = "hash_differences.txt"
-IMPORT_SCRIPT_REL = os.path.join("external", "mgs_gcx_editor", "_gcx_import_mgs2.py")
-THREADS = 8  # Adjust for CPU cores
-DIST_DIR_REL = os.path.join("_dist", "assets", "gcx")
+SCRIPT_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
+
+HASH_FILE = SCRIPT_DIR / "original-sha1-hashes.txt"
+IMPORT_SCRIPT_REL = Path("external/mgs_gcx_editor/_gcx_import_mgs2.py")
+DIST_DIR_REL = Path("_dist/assets/gcx")
+THREADS = max(os.cpu_count() or 1, 1)  # Auto-detect CPU threads
 
 # ==========================================================
 # HELPERS
@@ -29,12 +30,11 @@ def calc_sha1(path: Path) -> str:
             h.update(chunk)
     return h.hexdigest()
 
-
 def load_hash_list(file_path: Path) -> list[tuple[str, str]]:
     """Load list of (relative_path, sha1) from text file."""
-    entries = []
     if not file_path.exists():
-        raise FileNotFoundError(f"Hash list not found: {file_path}")
+        sys.exit(f"Error: Hash list not found: {file_path}")
+    entries = []
     with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
@@ -44,16 +44,13 @@ def load_hash_list(file_path: Path) -> list[tuple[str, str]]:
             entries.append((rel_path.strip(), sha1.strip().lower()))
     return entries
 
-
 def get_python_cmd() -> str:
     """Return 'py' or 'python' depending on availability."""
     if shutil.which("py"):
         return "py"
-    elif shutil.which("python"):
+    if shutil.which("python"):
         return "python"
-    else:
-        sys.exit("Error: Python launcher not found. Ensure 'py' or 'python' is on PATH.")
-
+    sys.exit("Error: Python launcher not found. Ensure 'py' or 'python' is on PATH.")
 
 def import_and_copy_gcx(python_cmd: str, repo_root: Path, script_path: Path, gcx_path: Path, rel_csv_path: str, dist_root: Path) -> tuple[str, int]:
     """Run GCX import and copy the result into _dist/assets/gcx preserving structure relative to the CSV path."""
@@ -61,7 +58,6 @@ def import_and_copy_gcx(python_cmd: str, repo_root: Path, script_path: Path, gcx
     code = result.returncode
 
     if code == 0:
-        # Compute the relative path from CSV entry, not from repo
         rel_gcx_path = Path(rel_csv_path).with_suffix(".gcx")
         dest_path = dist_root / rel_gcx_path
         dest_path.parent.mkdir(parents=True, exist_ok=True)
@@ -76,19 +72,16 @@ def import_and_copy_gcx(python_cmd: str, repo_root: Path, script_path: Path, gcx
 
     return (rel_csv_path, code)
 
-
 # ==========================================================
 # MAIN
 # ==========================================================
 def main():
-    cwd = Path.cwd()
-
-    # Try to find repo root via git
+    # Resolve repo root
     try:
         result = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True, check=True)
         repo_root = Path(result.stdout.strip())
     except subprocess.CalledProcessError:
-        repo_root = cwd
+        repo_root = SCRIPT_DIR.parent  # fallback = one level up from script
 
     script_path = repo_root / IMPORT_SCRIPT_REL
     dist_root = repo_root / DIST_DIR_REL
@@ -96,19 +89,18 @@ def main():
     if not script_path.exists():
         sys.exit(f"Error: Import script not found at {script_path}")
 
-    hash_file = cwd / HASH_FILE
-    output_log = cwd / OUTPUT_LOG
-    entries = load_hash_list(hash_file)
-
+    entries = load_hash_list(HASH_FILE)
     python_cmd = get_python_cmd()
     differences = []
     import_targets = []
+    import_failed = False
 
+    print(f"Detected {THREADS} CPU thread(s).")
     print(f"Verifying {len(entries)} CSV hashes...\n")
 
     # Step 1: Check hashes and queue changed CSVs
     for rel_path, old_sha1 in entries:
-        csv_path = cwd / rel_path
+        csv_path = SCRIPT_DIR / rel_path
         if not csv_path.exists():
             with print_lock:
                 print(f"[MISSING] {rel_path}")
@@ -140,28 +132,30 @@ def main():
                 rel_path = futures[future]
                 try:
                     rel, code = future.result()
+                    if code != 0:
+                        import_failed = True
                     color = "\033[92m" if code == 0 else "\033[91m"
                     reset = "\033[0m"
                     with print_lock:
                         print(f"[{i}/{len(import_targets)}] {rel} -> {color}{'OK' if code == 0 else f'FAILED ({code})'}{reset}")
                 except Exception as e:
+                    import_failed = True
                     with print_lock:
                         print(f"[{i}/{len(import_targets)}] {rel_path} -> \033[91mERROR: {e}\033[0m")
 
-    # Step 3: Write log
-    with open(output_log, "w", encoding="utf-8") as f:
-        if differences:
-            f.write("=== Files with Different SHA1 Hashes ===\n\n")
-            for rel_path, old, new in differences:
-                f.write(f"{rel_path}\n    OLD: {old}\n    NEW: {new}\n\n")
-        else:
-            f.write("All hashes match. No differences found.\n")
+    # Step 3: Summary + exit code
+    if import_failed:
+        print("\nOne or more GCX imports failed.")
+        sys.exit(2)
 
     if differences:
-        print(f"\n{len(differences)} file(s) changed. Logged to: {output_log}")
+        print(f"\n{len(differences)} file(s) changed:")
+        for rel_path, old, new in differences:
+            print(f"  {rel_path}\n    OLD: {old}\n    NEW: {new}")
+        sys.exit(1)
     else:
-        print("\nAll hashes match.")
-
+        print("\nAll hashes match. No differences found.")
+        sys.exit(0)
 
 if __name__ == "__main__":
     main()
