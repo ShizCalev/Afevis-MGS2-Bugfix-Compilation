@@ -938,6 +938,7 @@ C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\w45a_efct_disp_04_noiz_alp_add_ovl.bmp.png
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\w45a_efct_disp_04_scr_alp_add_ovl.bmp.png
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\w45a_efct_disp_05_alp_add_ovl.bmp.png
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\w45a_efct_disp_05_noiz_alp_add_ovl.bmp.png
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\w45a_efct_disp_05_scr_alp_add_ovl.bmp.png
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\w45a_efct_disp_06_alp_add_ovl.bmp.png
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\w45a_efct_disp_06_noiz_alp_add_ovl.bmp.png

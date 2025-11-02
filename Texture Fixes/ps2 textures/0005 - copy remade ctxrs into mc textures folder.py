@@ -19,7 +19,10 @@ ROGUE_DIR = os.path.join(REPO_ROOT, "Texture Fixes", "mc textures", "opaque", "R
 
 THREADS = 12
 LOG_PATH = os.path.join(SCRIPT_DIR, "missing_ctxr_log.txt")
-NEXT_SCRIPT = os.path.join(SCRIPT_DIR, "0006 - strip alpha from opaque mc pngs.py")
+
+# Next stage scripts
+NEXT_SCRIPT_1 = os.path.join(SCRIPT_DIR, "0006 - strip alpha from opaque mc pngs.py")
+NEXT_SCRIPT_2 = os.path.join(SCRIPT_DIR, "0009 - find incorrect ps2 to mc alpha levels.py")
 
 # ==========================================================
 # UTILITIES
@@ -116,6 +119,23 @@ def find_rogue_pngs():
 
 
 # ==========================================================
+# STAGE RUNNER
+# ==========================================================
+def run_next_stage(script_path):
+    """Run the next Python script, handling output and errors cleanly."""
+    print(f"\n[+] Launching next stage: {os.path.basename(script_path)}")
+    try:
+        subprocess.run(["python", script_path], check=True)
+        print(f"[✓] Stage completed successfully: {os.path.basename(script_path)}")
+    except subprocess.CalledProcessError as e:
+        print(f"[!] Stage failed with non-zero exit code ({e.returncode}): {script_path}")
+    except FileNotFoundError:
+        print(f"[!] Stage script not found: {script_path}")
+    except Exception as e:
+        print(f"[!] Failed to launch next stage ({script_path}): {e}")
+
+
+# ==========================================================
 # MAIN
 # ==========================================================
 def main():
@@ -159,12 +179,9 @@ def main():
     rogue_count = find_rogue_pngs()
     print(f"[+] Rogue verification complete. Total rogue PNGs moved: {rogue_count}")
 
-    # --- Launch next script ---
-    print(f"\n[+] Launching next stage: {NEXT_SCRIPT}")
-    try:
-        subprocess.run(["python", NEXT_SCRIPT], check=True)
-    except Exception as e:
-        print(f"[!] Failed to launch next script: {e}")
+    # --- Launch subsequent stages ---
+    #run_next_stage(NEXT_SCRIPT_1)
+    run_next_stage(NEXT_SCRIPT_2)
 
 
 if __name__ == "__main__":
