@@ -109,7 +109,7 @@ def main():
     print("\n[+] Done.")
     print(f"[+] Non-matching PNGs logged to: {LOG_PATH}")
 
-    # --- Run the next script automatically ---
+    # --- Run the next script ---
     print("\n[+] Launching next stage: 0002 - sort alpha.py")
     if os.path.exists(NEXT_SCRIPT):
         try:
@@ -122,7 +122,7 @@ def main():
     else:
         print(f"[!] Next script not found: {NEXT_SCRIPT}")
 
-    print("\n✅ File verification complete, and alpha sorting has been triggered.\n")
+    print("\nFile verification complete, and alpha sorting has been triggered.\n")
 
 
 if __name__ == "__main__":
