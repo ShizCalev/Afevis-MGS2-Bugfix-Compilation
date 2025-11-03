@@ -1,5 +1,14 @@
-w11a2_closed_shatter.bmp - flipped texture since ps2. bp remade it and didn't notice it was flipped either lol
-w01a0_fl00_bld080_ovl.bmp - SHOULD be transparent. bp fuck-up
-w01a0_fl02_bld080_ovl.bmp - SHOULD be transparent. bp fuck-up
-w01b_wlp03_bld075_ovl.bmp - SHOULD be transparent. bp fuck-up
-w43a_wall_right_08_alp_ovl.bmp - SHOULD be transparent. bp fuck-up
+w11a2_closed_shatter.bmp - flipped texture since ps2. bp remade [2001 SOL]
+w01b_wlp03_bld075_ovl.bmp - should be transparent [HDC]
+w01a0_fl00_bld080_ovl.bmp - should be transparent [HDC]
+w01a0_fl02_bld080_ovl.bmp - should be transparent [HDC]
+w43a_wall_right_08_alp_ovl.bmp - should be transparent [HDC]
+w01c_flp00_bld095_ovl.bmp - should be transparent [HDC]
+
+crd_pp05.bmp - Had varying levels of corruption on the right edge of the texture, making it partially invisible. [2001 SOL]
+crd_pp05.bmp_68d8cf100718b565e0eecf3ff7585eb5 - Had varying levels of corruption on the right edge of the texture, making it partially invisible. [2001 SOL]
+crd_pp05.bmp_276e6284cf2e0055cf730766f998bbac - Had varying levels of corruption on the right edge of the texture, making it partially invisible. [2001 SOL]
+crd_pp05.bmp_c9e026756e1ac92120d9d6d7dc7f56f1 - Had varying levels of corruption on the right edge of the texture, making it partially invisible. [2001 SOL]
+w16a1_obj04.bmp - Had varying levels of corruption on the right edge of the texture, making it partially invisible. [2001 SOL]
+iro_boots.bmp - Fixed Pliskin's boot sole being an inconsistent color from the normal Seal boots. [2001 SOL]
+sel_boots.bmp - Fixed seal boots being lower quality / more.... lazily remade... than Pliskin's boot [2011 HDC]
