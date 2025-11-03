@@ -12,3 +12,9 @@ crd_pp05.bmp_c9e026756e1ac92120d9d6d7dc7f56f1 - Had varying levels of corruption
 w16a1_obj04.bmp - Had varying levels of corruption on the right edge of the texture, making it partially invisible. [2001 SOL]
 iro_boots.bmp - Fixed Pliskin's boot sole being an inconsistent color from the normal Seal boots. [2001 SOL]
 sel_boots.bmp - Fixed seal boots being lower quality / more.... lazily remade... than Pliskin's boot [2011 HDC]
+
+w03a_pp02.bmp - wrong texture [HDC]
+w32a_asi00.bmp - wrong texture [HDC]
+
+ligbodyu_add_ovl.bmp - Had holes in the middle of the texture. [2001 SOL]
+ligBodyU2_add_ovl.bmp - Had a hole in the middle of the texture. [2001 SOL]

@@ -146,13 +146,13 @@ def main():
     # Step 3: Summary + exit code
     if import_failed:
         print("\nOne or more GCX imports failed.")
-        sys.exit(2)
+        sys.exit(1)
 
     if differences:
         print(f"\n{len(differences)} file(s) changed:")
         for rel_path, old, new in differences:
             print(f"  {rel_path}\n    OLD: {old}\n    NEW: {new}")
-        sys.exit(1)
+        sys.exit(0)
     else:
         print("\nAll hashes match. No differences found.")
         sys.exit(0)
