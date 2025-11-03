@@ -4,3 +4,6 @@
 [submodule "external/mgs_gcx_editor"]
 	path = external/mgs_gcx_editor
 	url = https://github.com/Giza/mgs_gcx_editor
+[submodule "external/spdlog"]
+	path = external/spdlog
+	url = https://github.com/gabime/spdlog

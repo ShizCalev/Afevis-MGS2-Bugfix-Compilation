@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"*.txt": "lua",
+		"xstring": "cpp"
+	},
+	"cmake.sourceDirectory": "C:/Development/Git/MGSHDFix/external/inipp"
+}
