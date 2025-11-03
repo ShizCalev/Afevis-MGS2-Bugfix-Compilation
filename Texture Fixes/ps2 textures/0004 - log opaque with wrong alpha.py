@@ -5,15 +5,14 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from PIL import Image
+from collections import defaultdict
 
 # ==========================================================
 # CONFIGURATION
 # ==========================================================
-# Resolve repo root dynamically from this script’s location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 
-# Relative paths
 ROOT_DIR = os.path.join(REPO_ROOT, "Texture Fixes", "ps2 textures")
 OPAQUE_DIR = os.path.join(ROOT_DIR, "OPAQUE")
 HAS_ALPHA_DIR = os.path.join(ROOT_DIR, "HAS ALPHA")
@@ -28,6 +27,7 @@ NEXT_SCRIPT = os.path.join(SCRIPT_DIR, "0005 - copy remade ctxrs into mc texture
 # UTILITIES
 # ==========================================================
 print_lock = Lock()
+
 
 def read_csv_alpha_levels(path):
     """Load CSV into dict {texture_name: mc_alpha_levels_string}"""
@@ -50,6 +50,22 @@ def get_all_textures(folder):
     return paths
 
 
+def make_relative_parts(path):
+    """Return (relative folder path, filename_without_ext) relative to script dir."""
+    rel_path = os.path.relpath(path, SCRIPT_DIR)
+    folder = os.path.dirname(rel_path)
+    name = os.path.splitext(os.path.basename(path))[0]
+    return folder, name
+
+
+def group_by_folder(entries):
+    """Group entries into {folder: [filenames]}"""
+    grouped = defaultdict(list)
+    for folder, name in entries:
+        grouped[folder].append(name)
+    return grouped
+
+
 # ==========================================================
 # PASS 1: OPAQUE
 # ==========================================================
@@ -58,7 +74,8 @@ def check_opaque_alpha(path, csv_data):
     name_no_ext = os.path.splitext(os.path.basename(path))[0].lower()
     alpha = csv_data.get(name_no_ext)
     if alpha and alpha != "[128]":
-        return path
+        folder, name = make_relative_parts(path)
+        return (folder, name)
     return None
 
 
@@ -93,8 +110,30 @@ def check_transparent_alpha(path, csv_data):
 
     img_levels = calc_image_alpha_levels(path)
     if not img_levels or set(img_levels) != set(csv_alpha_levels):
-        return path
+        folder, name = make_relative_parts(path)
+        return (folder, name)
     return None
+
+
+# ==========================================================
+# LOG WRITING
+# ==========================================================
+def write_grouped_log(grouped, log_path, label):
+    """Write grouped log with clear headers and tabs."""
+    with open(log_path, "w", encoding="utf-8") as f:
+        f.write("========================================\n")
+        f.write(f"{label}\n")
+        f.write("========================================\n\n")
+
+        if not grouped:
+            f.write("\tAll textures matched expected alpha levels.\n")
+            return
+
+        for folder in sorted(grouped.keys(), key=lambda x: x.lower()):
+            f.write(f"---------- {folder} ----------\n")
+            for name in sorted(grouped[folder], key=str.lower):
+                f.write(f"\t{name}\n")
+            f.write("\n")
 
 
 # ==========================================================
@@ -109,23 +148,20 @@ def run_pass(label, folder, func, csv_data, log_path):
     files = get_all_textures(folder)
     print(f"[+] {label}: Found {len(files)} texture files")
 
-    mismatches = []
+    entries = []
     with ThreadPoolExecutor(max_workers=THREADS) as exe:
         futures = [exe.submit(func, f, csv_data) for f in files]
         for fut in as_completed(futures):
             res = fut.result()
             if res:
-                mismatches.append(res)
+                entries.append(res)
 
-    mismatches = sorted(set(mismatches), key=lambda x: (os.path.dirname(x).lower(), os.path.basename(x).lower()))
-    print(f"[+] {label}: Found {len(mismatches)} mismatches")
+    print(f"[+] {label}: Found {len(entries)} mismatches")
 
-    if mismatches:
-        with open(log_path, "w", encoding="utf-8") as f:
-            f.write("\n".join(mismatches))
-        print(f"[+] {label}: Log written to {log_path}")
-    else:
-        print(f"[+] {label}: All textures matched expected alpha levels.")
+    grouped = group_by_folder(entries)
+    write_grouped_log(grouped, log_path, label)
+
+    print(f"[+] {label}: Log written to {log_path}")
 
 
 # ==========================================================
@@ -137,8 +173,8 @@ def main():
     csv_data = read_csv_alpha_levels(CSV_PATH)
     print(f"[+] Loaded {len(csv_data)} CSV entries")
 
-    run_pass("OPAQUE PASS", OPAQUE_DIR, check_opaque_alpha, csv_data, LOG_OPAQUE)
-    run_pass("TRANSPARENT PASS", HAS_ALPHA_DIR, check_transparent_alpha, csv_data, LOG_TRANSP)
+    run_pass("OPAQUE", OPAQUE_DIR, check_opaque_alpha, csv_data, LOG_OPAQUE)
+    run_pass("HAS ALPHA", HAS_ALPHA_DIR, check_transparent_alpha, csv_data, LOG_TRANSP)
 
     print("[+] Completed both passes.")
     print(f"[+] Launching next stage: {NEXT_SCRIPT}")

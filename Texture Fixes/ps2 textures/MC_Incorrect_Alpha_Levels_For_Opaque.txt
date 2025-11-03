@@ -1,277 +1,287 @@
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\w11a2_drwall_panel.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\0wall1_60s.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\0wall1mi.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\0wall1mi2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\1wallu3.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\1wallup.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\aks_selecter.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\bood.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\bood2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\box_s_02_side02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\box_s_02_top.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\cfr_trp_f2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\chr1_01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\chr1_02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\chr1_02a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\chr1_03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\chr1_03a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\chr1_04.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\clnd00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\clnd01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\clnd_cap00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\clnd_cap01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\crd_pp09.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\dinyukafuta.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\door_b00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\door_bfl00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\door_c0017.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\elvt_nwall3.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\for_hi_face_ss.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\gbs_bp2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\gbs_leg_ss.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\h6h_tailwing_s1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\irs_box_back.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\irs_box_break.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\jim_rusty_win_01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\kck_ckpt_chair_back.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\kck_ckpt_door.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\kckis_door_walls1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\kitabup2a.bmp_02cd1af7fc3c2bc6ac541d04e3c1fc94.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\loc_01_soto.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\m92_bul3.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\m92_jyuukou.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\m92_laserpoint_f1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\m92_laserpointer.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\m92_magazine.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\pdray_face_s2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\pl_box_d.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\ray_arm_t1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\ray_chin1_u.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\ray_chin2_u.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\scm_sb_temp.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\sel_bag4.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\sna_foot01dt.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\so_bean_lig.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\sofa00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\sofa01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\sol_leg_dt01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\usa_ude_all.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00a_frt1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00a_rtn0.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00ak_ue1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00b_fannel1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00b_irs_wood1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00b_mushroom.bmp_5e3a7780abfc18549f6a4b034fef18bc.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00b_raderdome.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00b_step2wing_t2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00b_wingtower_fs.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w00m_winch_top2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_box00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_box00a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_box00c.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_box01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_box01a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_box02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_box06.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_box07.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_cfl06d.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_cfl06e.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_dr00a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_ent01a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_fl03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_fl04a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_fl05c.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_fl05d.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_fl06f.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_fl06h.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_pp00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_pp00a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_ppb00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_rf00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_rf02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w01a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w04.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w04a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w07.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w08.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w10ad.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w10bd.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w10dd.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w10f.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w14a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w15.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_w16.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_wh00b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a0_wh01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a1_tb00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a1_tb01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a1_wb03b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a1_wlp00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a1_wlu00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a_barc_02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01a_chrb01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_flc00b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_wc05a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_wc05b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_wc07.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_wc11a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_wc11b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_wc12a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_wc12b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01b_wc13a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01c_ent01d.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01c_wa04.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01c_wb03e.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01c_wlp01a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_com02_t.bmp_8ba0dcecf451a0857ea0e90f903b3946.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_com03_s.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_comp3_blkplate.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_comp3_f.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_comp3_s.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_panel02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_tsr00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_tsr01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01e_wndflame01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01f_bk07.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w01f_menu.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_kaidan_hashira.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_box.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_box_com.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_box_side.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_code_top.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_contena1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_contena2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_contena3.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_contena4.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_door_parts0.bmp_cb699f431ffc5acaf47f2e26b678eccd.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_door_parts1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_door_rail.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_fire.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_kabe.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_panel2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_pnl_b1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_yuka.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w02_sr_yuka7.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03_cat_pipe.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03a2_flb00b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03a_fl00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03a_fl01d.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03a_w01c.bmp_66800e791c274078bbd7078d4207524e.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03a_w01d.bmp_9d316246ca7cc692494bbcf73b78f12f.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03a_w04a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03b_fl02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03b_fl03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03b_fl03.bmp_8e8030f332ab93b222ccbdff4920382f.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03b_fl03a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03b_fl05.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03b_fl06.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03b_rfb00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03b_w04a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w03c_flb03c.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w04a3_tanmatu_tower_face.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w04a3_tanmatu_tower_side.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w10c_ent01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w10c_sk00c.bmp_4081fb1cac8896c709c768596117ba88.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11_drum_t1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11_explode_drum_t1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11_sdr_f1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11_woodbox_all.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a0_duct1_enter.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a0_gas_cap00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a0_poolwall1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a0_poolwall2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a0_poor_tsr1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a0_poor_tsr2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a0_tank1_asi1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a0_temptex1_pipe.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a1_flr2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a2_cable1_st.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a2_ceil1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a2_elvgate_pillar.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a2_flr1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a2_pillar1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11a2_wall1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w11b2_ironbox_sf.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w12a_fl01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a0_fl_b01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a0_fl_b02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a0_fl_b04.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a0_fl_p02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a0_fl_r01_6.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a0_fl_r02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a0_pipe_p01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a0_wall_a03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a_fl_f01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a_fl_f02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a_fl_f03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a_roof_c01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a_step_a02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a_step_a03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w14a_step_b02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w16a0_ref_all.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w16a0_wa05.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w16an_ki08.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w16an_ki08a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w16an_ki08b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w16an_ki18a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w16an_kita01a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w18a_enta00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w18a_enta01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w18a_saku1_ft.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w18a_saku2_ft.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w18a_tankwall1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w18a_tankwall1_header.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w18a_tsr_bar1.bmp_1c58084ea3dd78ff8ba4a3fac8949888.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w18a_wall1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w19a_fl00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w19a_fl00b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w19a_fl02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w20a0_gate_head.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w20a_step_mk.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w20b_door_afl00c.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w24a0_we00a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w24a0_wi01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w24b0_box02.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w24b0_wb01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w24b0_we00a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w24b2_fl01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w25a_fl00a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w25a_fl00c.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w25a_h00.bmp_c0f8a236f0a27f1b708076773161c3d1.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w25a_h01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w25a_w00.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w25a_w00a.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w25b_fl04b.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w28a_ana_wall_01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31a_cir_panel_033.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31a_cir_panel_04.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31a_cir_panel_brk_01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31a_denki_03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31a_floor_08.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31a_mecha_03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31a_wall_05.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31a_wall_06.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31b_roof_04.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31b_wall_03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31c_locker_01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w31c_wall_08.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w41a_go_03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w42a_1f_box_01.bmp_7be7c191af3966ebc5cbc6b019aac0b5.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w42a_2f_floor_back_03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w42a_bridge_side_01.bmp_489fc0f70f9ed7725e5293ec1ab58638.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w42a_fence_board_01.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\w42a_fence_under_03.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\wc1.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\wc1top.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\yu_ne.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\yu_ne2.bmp.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\no_mip_fixes\00696652.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\no_mip_fixes\006b325b.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\no_mip_fixes\006b5ae3.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\no_mip_fixes\009f0995.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\no_mip_fixes\00a225a6.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\no_mip_fixes\00a325a6.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\no_mip_fixes\00c5a254.tga
-C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\bp_remade\no_mip_fixes\fiction_e_alp_ovl.bmp.tga
+========================================
+OPAQUE
+========================================
+
+---------- OPAQUE ----------
+	w11a2_drwall_panel.bmp
+
+---------- OPAQUE\bp_remade ----------
+	0wall1_60s.bmp
+	0wall1mi.bmp
+	0wall1mi2.bmp
+	1wallu3.bmp
+	1wallup.bmp
+	aks_selecter.bmp
+	bood.bmp
+	bood2.bmp
+	box_s_02_side02.bmp
+	box_s_02_top.bmp
+	cfr_trp_f2.bmp
+	chr1_01.bmp
+	chr1_02.bmp
+	chr1_02a.bmp
+	chr1_03.bmp
+	chr1_03a.bmp
+	chr1_04.bmp
+	clnd00.bmp
+	clnd01.bmp
+	clnd_cap00.bmp
+	clnd_cap01.bmp
+	crd_pp09.bmp
+	dinyukafuta.bmp
+	door_b00.bmp
+	door_bfl00.bmp
+	door_c0017.bmp
+	elvt_nwall3.bmp
+	for_hi_face_ss.bmp
+	gbs_bp2.bmp
+	gbs_leg_ss.bmp
+	h6h_tailwing_s1.bmp
+	irs_box_back.bmp
+	irs_box_break.bmp
+	jim_rusty_win_01.bmp
+	kck_ckpt_chair_back.bmp
+	kck_ckpt_door.bmp
+	kckis_door_walls1.bmp
+	kitabup2a.bmp_02cd1af7fc3c2bc6ac541d04e3c1fc94
+	loc_01_soto.bmp
+	m92_bul3.bmp
+	m92_jyuukou.bmp
+	m92_laserpoint_f1.bmp
+	m92_laserpointer.bmp
+	m92_magazine.bmp
+	pdray_face_s2.bmp
+	pl_box_d.bmp
+	ray_arm_t1.bmp
+	ray_chin1_u.bmp
+	ray_chin2_u.bmp
+	scm_sb_temp.bmp
+	sel_bag4.bmp
+	sna_foot01dt.bmp
+	so_bean_lig.bmp
+	sofa00.bmp
+	sofa01.bmp
+	sol_leg_dt01.bmp
+	usa_ude_all.bmp
+	w00a_frt1.bmp
+	w00a_rtn0.bmp
+	w00ak_ue1.bmp
+	w00b_fannel1.bmp
+	w00b_irs_wood1.bmp
+	w00b_mushroom.bmp_5e3a7780abfc18549f6a4b034fef18bc
+	w00b_raderdome.bmp
+	w00b_step2wing_t2.bmp
+	w00b_wingtower_fs.bmp
+	w00m_winch_top2.bmp
+	w01a0_box00.bmp
+	w01a0_box00a.bmp
+	w01a0_box00c.bmp
+	w01a0_box01.bmp
+	w01a0_box01a.bmp
+	w01a0_box02.bmp
+	w01a0_box06.bmp
+	w01a0_box07.bmp
+	w01a0_cfl06d.bmp
+	w01a0_cfl06e.bmp
+	w01a0_dr00a.bmp
+	w01a0_ent01a.bmp
+	w01a0_fl03.bmp
+	w01a0_fl04a.bmp
+	w01a0_fl05c.bmp
+	w01a0_fl05d.bmp
+	w01a0_fl06f.bmp
+	w01a0_fl06h.bmp
+	w01a0_pp00.bmp
+	w01a0_pp00a.bmp
+	w01a0_ppb00.bmp
+	w01a0_rf00.bmp
+	w01a0_rf02.bmp
+	w01a0_w00.bmp
+	w01a0_w01.bmp
+	w01a0_w01a.bmp
+	w01a0_w04.bmp
+	w01a0_w04a.bmp
+	w01a0_w07.bmp
+	w01a0_w08.bmp
+	w01a0_w10ad.bmp
+	w01a0_w10bd.bmp
+	w01a0_w10dd.bmp
+	w01a0_w10f.bmp
+	w01a0_w14a.bmp
+	w01a0_w15.bmp
+	w01a0_w16.bmp
+	w01a0_wh00b.bmp
+	w01a0_wh01.bmp
+	w01a1_tb00.bmp
+	w01a1_tb01.bmp
+	w01a1_wb03b.bmp
+	w01a1_wlp00.bmp
+	w01a1_wlu00.bmp
+	w01a_barc_02.bmp
+	w01a_chrb01.bmp
+	w01b_flc00b.bmp
+	w01b_wc05a.bmp
+	w01b_wc05b.bmp
+	w01b_wc07.bmp
+	w01b_wc11a.bmp
+	w01b_wc11b.bmp
+	w01b_wc12a.bmp
+	w01b_wc12b.bmp
+	w01b_wc13a.bmp
+	w01c_ent01d.bmp
+	w01c_wa04.bmp
+	w01c_wb03e.bmp
+	w01c_wlp01a.bmp
+	w01e_com02_t.bmp_8ba0dcecf451a0857ea0e90f903b3946
+	w01e_com03_s.bmp
+	w01e_comp3_blkplate.bmp
+	w01e_comp3_f.bmp
+	w01e_comp3_s.bmp
+	w01e_panel02.bmp
+	w01e_tsr00.bmp
+	w01e_tsr01.bmp
+	w01e_wndflame01.bmp
+	w01f_bk07.bmp
+	w01f_menu.bmp
+	w02_kaidan_hashira.bmp
+	w02_sr_box.bmp
+	w02_sr_box_com.bmp
+	w02_sr_box_side.bmp
+	w02_sr_code_top.bmp
+	w02_sr_contena1.bmp
+	w02_sr_contena2.bmp
+	w02_sr_contena3.bmp
+	w02_sr_contena4.bmp
+	w02_sr_door_parts0.bmp_cb699f431ffc5acaf47f2e26b678eccd
+	w02_sr_door_parts1.bmp
+	w02_sr_door_rail.bmp
+	w02_sr_fire.bmp
+	w02_sr_kabe.bmp
+	w02_sr_panel2.bmp
+	w02_sr_pnl_b1.bmp
+	w02_sr_yuka.bmp
+	w02_sr_yuka7.bmp
+	w03_cat_pipe.bmp
+	w03a2_flb00b.bmp
+	w03a_fl00.bmp
+	w03a_fl01d.bmp
+	w03a_w01c.bmp_66800e791c274078bbd7078d4207524e
+	w03a_w01d.bmp_9d316246ca7cc692494bbcf73b78f12f
+	w03a_w04a.bmp
+	w03b_fl02.bmp
+	w03b_fl03.bmp
+	w03b_fl03.bmp_8e8030f332ab93b222ccbdff4920382f
+	w03b_fl03a.bmp
+	w03b_fl05.bmp
+	w03b_fl06.bmp
+	w03b_rfb00.bmp
+	w03b_w04a.bmp
+	w03c_flb03c.bmp
+	w04a3_tanmatu_tower_face.bmp
+	w04a3_tanmatu_tower_side.bmp
+	w10c_ent01.bmp
+	w10c_sk00c.bmp_4081fb1cac8896c709c768596117ba88
+	w11_drum_t1.bmp
+	w11_explode_drum_t1.bmp
+	w11_sdr_f1.bmp
+	w11_woodbox_all.bmp
+	w11a0_duct1_enter.bmp
+	w11a0_gas_cap00.bmp
+	w11a0_poolwall1.bmp
+	w11a0_poolwall2.bmp
+	w11a0_poor_tsr1.bmp
+	w11a0_poor_tsr2.bmp
+	w11a0_tank1_asi1.bmp
+	w11a0_temptex1_pipe.bmp
+	w11a1_flr2.bmp
+	w11a2_cable1_st.bmp
+	w11a2_ceil1.bmp
+	w11a2_elvgate_pillar.bmp
+	w11a2_flr1.bmp
+	w11a2_pillar1.bmp
+	w11a2_wall1.bmp
+	w11b2_ironbox_sf.bmp
+	w12a_fl01.bmp
+	w14a0_fl_b01.bmp
+	w14a0_fl_b02.bmp
+	w14a0_fl_b04.bmp
+	w14a0_fl_p02.bmp
+	w14a0_fl_r01_6.bmp
+	w14a0_fl_r02.bmp
+	w14a0_pipe_p01.bmp
+	w14a0_wall_a03.bmp
+	w14a_fl_f01.bmp
+	w14a_fl_f02.bmp
+	w14a_fl_f03.bmp
+	w14a_roof_c01.bmp
+	w14a_step_a02.bmp
+	w14a_step_a03.bmp
+	w14a_step_b02.bmp
+	w16a0_ref_all.bmp
+	w16a0_wa05.bmp
+	w16an_ki08.bmp
+	w16an_ki08a.bmp
+	w16an_ki08b.bmp
+	w16an_ki18a.bmp
+	w16an_kita01a.bmp
+	w18a_enta00.bmp
+	w18a_enta01.bmp
+	w18a_saku1_ft.bmp
+	w18a_saku2_ft.bmp
+	w18a_tankwall1.bmp
+	w18a_tankwall1_header.bmp
+	w18a_tsr_bar1.bmp_1c58084ea3dd78ff8ba4a3fac8949888
+	w18a_wall1.bmp
+	w19a_fl00.bmp
+	w19a_fl00b.bmp
+	w19a_fl02.bmp
+	w20a0_gate_head.bmp
+	w20a_step_mk.bmp
+	w20b_door_afl00c.bmp
+	w24a0_we00a.bmp
+	w24a0_wi01.bmp
+	w24b0_box02.bmp
+	w24b0_wb01.bmp
+	w24b0_we00a.bmp
+	w24b2_fl01.bmp
+	w25a_fl00a.bmp
+	w25a_fl00c.bmp
+	w25a_h00.bmp_c0f8a236f0a27f1b708076773161c3d1
+	w25a_h01.bmp
+	w25a_w00.bmp
+	w25a_w00a.bmp
+	w25b_fl04b.bmp
+	w28a_ana_wall_01.bmp
+	w31a_cir_panel_033.bmp
+	w31a_cir_panel_04.bmp
+	w31a_cir_panel_brk_01.bmp
+	w31a_denki_03.bmp
+	w31a_floor_08.bmp
+	w31a_mecha_03.bmp
+	w31a_wall_05.bmp
+	w31a_wall_06.bmp
+	w31b_roof_04.bmp
+	w31b_wall_03.bmp
+	w31c_locker_01.bmp
+	w31c_wall_08.bmp
+	w41a_go_03.bmp
+	w42a_1f_box_01.bmp_7be7c191af3966ebc5cbc6b019aac0b5
+	w42a_2f_floor_back_03.bmp
+	w42a_bridge_side_01.bmp_489fc0f70f9ed7725e5293ec1ab58638
+	w42a_fence_board_01.bmp
+	w42a_fence_under_03.bmp
+	wc1.bmp
+	wc1top.bmp
+	yu_ne.bmp
+	yu_ne2.bmp
+
+---------- OPAQUE\bp_remade\no_mip_fixes ----------
+	00696652
+	006b325b
+	006b5ae3
+	009f0995
+	00a225a6
+	00a325a6
+	00c5a254
+	fiction_e_alp_ovl.bmp
+

@@ -90,7 +90,7 @@ def main():
     tri_csv = base_dir / "mgs2_ps2_dimensions.csv"
     opaque_dir = repo_root / "Texture Fixes" / "ps2 textures" / "OPAQUE"
     no_mip_regex_path = repo_root / "Texture Fixes" / "no_mip_regex.txt"
-    log_path = script_dir / "alpha_level_mismatches.txt"
+    log_path = script_dir / "MC - Incorrect Alpha Report (Verbose).txt"
 
     ps2_data = load_csv_to_dict(ps2_csv)
     mc_data = load_csv_to_dict(mc_csv)
