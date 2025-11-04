@@ -804,7 +804,7 @@ feel like explaining that.
 ""Where is the President?"" he said, 
 getting to the point.
 Ames looked away.
-""I...don't know.""
+""I... don't know.""
 ""What about the other hostages?""
 ""...I'm not sure.""
 ""Are you telling me you don't know 
@@ -846,7 +846,7 @@ Ames turned around toward Snake.
 ""Snake, rescue the President. I know 
 Fatman was at the heliport. He's 
 probably still giving orders there now.""
-""The heliport...On the roof of Strut E, 
+""The heliport... On the roof of Strut E, 
 right?""
 As Snake nodded and got up to leave, 
 Ames stopped him.
@@ -919,7 +919,7 @@ feel like explaining that.
 ""Where is the President?"" he said, 
 getting to the point.
 Ames looked away.
-""I...don't know.""
+""I... don't know.""
 ""What about the other hostages?""
 ""...I'm not sure.""
 ""Are you telling me you don't know 
@@ -961,7 +961,7 @@ Ames turned around toward Snake.
 ""Snake, rescue the President. I know 
 Fatman was at the heliport. He's 
 probably still giving orders there now.""
-""The heliport...On the roof of Strut E, 
+""The heliport... On the roof of Strut E, 
 right?""
 As Snake nodded and got up to leave, 
 Ames stopped him.
@@ -1883,7 +1883,7 @@ her cell phone to send us e-mail. If you
 hear the sound of someone punching 
 keys on a cell phone, turn towards the 
 nearest hostage and press the Action 
-Button to talk to that person.If it really 
+Button to talk to that person. If it really 
 is Jennifer, she should give you some 
 sort of response.""
 ""What if I'm wrong?""
@@ -1897,7 +1897,7 @@ her cell phone to send us e-mail. If you
 hear the sound of someone punching 
 keys on a cell phone, turn towards the 
 nearest hostage and press the Action 
-Button to talk to that person.If it really 
+Button to talk to that person. If it really 
 is Jennifer, she should give you some 
 sort of response.""
 ""What if I'm wrong?""
@@ -3830,7 +3830,7 @@ eyes.
 the password that Emma had given him. 
 After a moment, the monitor displayed 
 a message saying that the lock on the 
-door to the Shell 1 - 2 connecting bridge 
+door to the Shell 1-2 connecting bridge 
 had been released. Snake turned to 
 head back to Strut C, he heard a voice 
 emanating from an unseen speaker. It 
@@ -3903,7 +3903,7 @@ before?""
 her, right? Security cards in Big Shell 
 work on an RFID system -- that's radio 
 frequency identification. Each RFID 
-card is imbedded with an IC chip that 
+card is embedded with an IC chip that 
 sends data via a radio signal. The card 
 readers can use these signals to detect 
 any IDs within range. All data in Big 
@@ -3925,7 +3925,7 @@ you've got to hurry!""#C0
 the password that Emma had given him. 
 After a moment, the monitor displayed 
 a message saying that the lock on the 
-door to the Shell 1 - 2 connecting bridge 
+door to the Shell 1-2 connecting bridge 
 had been released. Snake turned to 
 head back to Strut C, he heard a voice 
 emanating from an unseen speaker. It 
@@ -3998,7 +3998,7 @@ before?""
 her, right? Security cards in Big Shell 
 work on an RFID system -- that's radio 
 frequency identification. Each RFID 
-card is imbedded with an IC chip that 
+card is embedded with an IC chip that 
 sends data via a radio signal. The card 
 readers can use these signals to detect 
 any IDs within range. All data in Big 
@@ -4174,7 +4174,7 @@ to return the favor if I can. I know
 I'll come in handy somehow.... Please!""
 Snake gave in at last. To get to the 
 Shell 1 Core, he'd have to cross the 
-Shell 1 - 2 connecting bridge from 
+Shell 1-2 connecting bridge from 
 Strut D. The two set out for Strut D.#C0
 ","Snake had found Emma.
 ""Emma!""
@@ -4299,7 +4299,7 @@ to return the favor if I can. I know
 I'll come in handy somehow.... Please!""
 Snake gave in at last. To get to the 
 Shell 1 Core, he'd have to cross the 
-Shell 1 - 2 connecting bridge from 
+Shell 1-2 connecting bridge from 
 Strut D. The two set out for Strut D.#C0
 "
 0x1e1e2,"As Snake emerged onto the Shell 1 - 2 
@@ -7828,7 +7828,7 @@ for Strut D first.#C0
 arrived at Strut D. He had apparently 
 managed to get a hold of O'Brien. 
 O'Brien had sealed off the door to the 
-Shell 1 - 2 connecting bridge from 
+Shell 1-2 connecting bridge from 
 Strut D to prevent Vamp from getting 
 through. He'd also reorganized the 
 surviving SEALs to defend Strut G. 
@@ -7838,7 +7838,7 @@ enemy. Those men might be SEALs,
 but I doubt they can stop him on their 
 own."" 
 ""But how can I get to Shell 2? The 
-Shell 1 - 2 connecting bridge is closed 
+Shell 1-2 connecting bridge is closed 
 off.""
 ""There is another way. Go across the 
 oil fence in the lower part of Big Shell. 
@@ -7852,7 +7852,7 @@ Shell 2. I needed to hurry.#C0
 arrived at Strut D. He had apparently 
 managed to get a hold of O'Brien. 
 O'Brien had sealed off the door to the 
-Shell 1 - 2 connecting bridge from 
+Shell 1-2 connecting bridge from 
 Strut D to prevent Vamp from getting 
 through. He'd also reorganized the 
 surviving SEALs to defend Strut G. 
@@ -7862,7 +7862,7 @@ enemy. Those men might be SEALs,
 but I doubt they can stop him on their 
 own."" 
 ""But how can I get to Shell 2? The 
-Shell 1 - 2 connecting bridge is closed 
+Shell 1-2 connecting bridge is closed 
 off.""
 ""There is another way. Go across the 
 oil fence in the lower part of Big Shell. 
@@ -12787,42 +12787,42 @@ brought with her.#C0
 0x542e5,Sì,Sì
 0x542e9,No,No
 0x542ec,Aft deck,Aft deck
-0x542f5,"Deck-A, crew's quarters","Deck-A, crew's quarters"
-0x5430d,"Deck-A, crew's lounge","Deck-A, crew's lounge"
-0x54323,"Deck-B, crew's quarters","Deck-B, crew's quarters"
-0x5433b,"Deck-C, crew's quarters","Deck-C, crew's quarters"
-0x54353,"Deck-D, crew's quarters","Deck-D, crew's quarters"
-0x5436b,"Deck-E, the bridge","Deck-E, the bridge"
-0x5437e,"Navigational deck,wing","Navigational deck,wing"
-0x54395,Engine room,Engine room
-0x543a1,"Deck-2, starboard","Deck-2, starboard"
-0x543b3,"Deck-2, port","Deck-2, port"
+0x542f5,"Deck-A, Crew's Quarters","Deck-A, Crew's Quarters"
+0x5430d,"Deck-A, Crew's Lounge","Deck-A, Crew's Lounge"
+0x54323,"Deck-B, Crew's Quarters","Deck-B, Crew's Quarters"
+0x5433b,"Deck-C, Crew's Quarters","Deck-C, Crew's Quarters"
+0x54353,"Deck-D, Crew's Quarters","Deck-D, Crew's Quarters"
+0x5436b,"Deck-E, The Bridge","Deck-E, The Bridge"
+0x5437e,"Navigational Deck, Wing","Navigational Deck, Wing"
+0x54395,Engine Room,Engine Room
+0x543a1,"Deck-2, Starboard","Deck-2, Starboard"
+0x543b3,"Deck-2, Port","Deck-2, Port"
 0x543c0,Hold No.1,Hold No.1
 0x543ca,Hold No.2,Hold No.2
 0x543d4,Hold No.3,Hold No.3
 0x543de,Strut A Deep Sea Dock,Strut A Deep Sea Dock
-0x543f4,Strut A roof,Strut A roof
+0x543f4,Strut A Roof,Strut A Roof
 0x54401,Strut A Pump Room,Strut A Pump Room
-0x54413,AB connecting bridge,AB connecting bridge
+0x54413,AB Connecting Bridge,AB Connecting Bridge
 0x54428,Strut B Transformer Room,Strut B Transformer Room
-0x54441,BC connecting bridge,BC connecting bridge
+0x54441,BC Connecting Bridge,BC Connecting Bridge
 0x54456,Strut C Dining Hall,Strut C Dining Hall
-0x5446a,CD connecting bridge,CD connecting bridge
+0x5446a,CD Connecting Bridge,CD Connecting Bridge
 0x5447f,Strut D Sediment Pool,Strut D Sediment Pool
-0x54495,DE connecting bridge,DE connecting bridge
+0x54495,DE Connecting Bridge,DE Connecting Bridge
 0x544aa,Strut E Parcel Room,Strut E Parcel Room
-0x544be,Strut E heliport,Strut E heliport
-0x544cf,EF connecting bridge,EF connecting bridge
-0x544e4,Strut F warehouse ,Strut F warehouse 
-0x544f7,FA connecting bridge,FA connecting bridge
+0x544be,Strut E Heliport,Strut E Heliport
+0x544cf,EF Connecting Bridge,EF Connecting Bridge
+0x544e4,Strut F Warehouse,Strut F Warehouse 
+0x544f7,FA Connecting Bridge,FA Connecting Bridge
 0x5450c,"Shell 1 Core, 1F","Shell 1 Core, 1F"
 0x5451d,"Shell 1 Core, B1","Shell 1 Core, B1"
 0x5452e,"Shell 1 Core, B1 Hall","Shell 1 Core, B1 Hall"
 0x54544,"Shell 1 Core, B2 Computer Room","Shell 1 Core, B2 Computer Room"
-0x54563,Shell 1-2 connecting bridge,Shell 1-2 connecting bridge
-0x5457f,Shell 1-2 connecting bridge - LG connecting bridge,Shell 1-2 connecting bridge - LG connecting bridge
-0x545b2,Strut L perimeter - KL connecting bridge,Strut L perimeter - KL connecting bridge
-0x545db,KL connecting bridge,KL connecting bridge
+0x54563,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
+0x5457f,Shell 1-2 Connecting Bridge - LG Connecting Bridge,Shell 1-2 Connecting Bridge - LG Connecting Bridge
+0x545b2,Strut L Perimeter - KL Connecting Bridge,Strut L Perimeter - KL Connecting Bridge
+0x545db,KL Connecting Bridge,KL Connecting Bridge
 0x545f0,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
 0x54612,"Shell 2 Core, 1F Air Purification Room","Shell 2 Core, 1F Air Purification Room"
 0x54639,"Shell 2 Core, B1 Filtration Chamber No.1","Shell 2 Core, B1 Filtration Chamber No.1"
@@ -12843,10 +12843,10 @@ brought with her.#C0
 0x5478c,Snake Tales C Cleared,Snake Tales C Cleared
 0x547a2,Snake Tales D Cleared,Snake Tales D Cleared
 0x547b8,Snake Tales E Cleared,Snake Tales E Cleared
-0x547ce,Philanthropy's hideout,Philanthropy's hideout
-0x547e5,Gap between parallel universes,Gap between parallel universes
+0x547ce,Philanthropy's Hideout,Philanthropy's Hideout
+0x547e5,Gap Between Parallel Universes,Gap Between Parallel Universes
 0x54804,Raiden Tales,Raiden Tales
-0x54811,The singularity,The singularity
+0x54811,The Singularity,The Singularity
 0x54821,-,-
 0x54823,船尾甲板,船尾甲板
 0x54830,船橋一階居住区,船橋一階居住区
@@ -12901,31 +12901,31 @@ brought with her.#C0
 0x54bef,青山ニ丁目,青山ニ丁目
 0x54bff,二ューヨーク52番街,二ューヨーク52番街
 0x54c1d,Strut A Pump Facility,Strut A Pump Facility
-0x54c33,AB connecting bridge,AB connecting bridge
+0x54c33,AB Connecting Bridge,AB Connecting Bridge
 0x54c48,Strut B Transformer Room,Strut B Transformer Room
-0x54c61,BC connecting bridge,BC connecting bridge
+0x54c61,BC Connecting Bridge,BC Connecting Bridge
 0x54c76,Strut C Dining Hall,Strut C Dining Hall
-0x54c8a,CD connecting bridge,CD connecting bridge
+0x54c8a,CD Connecting Bridge,CD Connecting Bridge
 0x54c9f,Strut D Sediment Pool,Strut D Sediment Pool
-0x54cb5,DE connecting bridge,DE connecting bridge
+0x54cb5,DE Connecting Bridge,DE Connecting Bridge
 0x54cca,Strut E Material Distribution Facility,Strut E Material Distribution Facility
-0x54cf1,EF connecting bridge,EF connecting bridge
-0x54d06,Strut F warehouse,Strut F warehouse
-0x54d18,FA connecting bridge,FA connecting bridge
+0x54cf1,EF Connecting Bridge,EF Connecting Bridge
+0x54d06,Strut F Warehouse,Strut F Warehouse
+0x54d18,FA Connecting Bridge,FA Connecting Bridge
 0x54d2d,Shell 1 Core,Shell 1 Core
-0x54d3a,Shell 1 - 2 connecting bridge,Shell 1 - 2 connecting bridge
+0x54d3a,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
 0x54d58,Strut G Oil Processing Facility,Strut G Oil Processing Facility
-0x54d78,GH connecting bridge,GH connecting bridge
+0x54d78,GH Connecting Bridge,GH Connecting Bridge
 0x54d8d,Strut H Warehouse,Strut H Warehouse
-0x54d9f,HI connecting bridge,HI connecting bridge
+0x54d9f,HI Connecting Bridge,HI Connecting Bridge
 0x54db4,Strut I Assembly Facility,Strut I Assembly Facility
-0x54dce,IJ connecting bridge,IJ connecting bridge
+0x54dce,IJ Connecting Bridge,IJ Connecting Bridge
 0x54de3,Strut J Power Plant,Strut J Power Plant
-0x54df7,JK connecting bridge,JK connecting bridge
+0x54df7,JK Connecting Bridge,JK Connecting Bridge
 0x54e0c,Strut K Biochem Lab,Strut K Biochem Lab
-0x54e20,KL connecting bridge,KL connecting bridge
+0x54e20,KL Connecting Bridge,KL Connecting Bridge
 0x54e35,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
-0x54e57,LG connecting bridge,LG connecting bridge
+0x54e57,LG Connecting Bridge,LG Connecting Bridge
 0x54e6c,Shell 2 Core,Shell 2 Core
 0x54e79,Strut L Oil Fence,Strut L Oil Fence
 0x54e8b,Strut H Oil Fence,Strut H Oil Fence

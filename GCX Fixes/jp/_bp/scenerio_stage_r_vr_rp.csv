@@ -639,42 +639,42 @@ Formater et sauvegarder?"
 0x2edc,Oui,Oui
 0x2ee0,Non,Non
 0x2ee4,Aft deck,Aft deck
-0x2eed,"Deck-A, crew's quarters","Deck-A, crew's quarters"
-0x2f05,"Deck-A, crew's lounge","Deck-A, crew's lounge"
-0x2f1b,"Deck-B, crew's quarters","Deck-B, crew's quarters"
-0x2f33,"Deck-C, crew's quarters","Deck-C, crew's quarters"
-0x2f4b,"Deck-D, crew's quarters","Deck-D, crew's quarters"
-0x2f63,"Deck-E, the bridge","Deck-E, the bridge"
-0x2f76,"Navigational deck,wing","Navigational deck,wing"
-0x2f8d,Engine room,Engine room
-0x2f99,"Deck-2, starboard","Deck-2, starboard"
-0x2fab,"Deck-2, port","Deck-2, port"
+0x2eed,"Deck-A, Crew's Quarters","Deck-A, Crew's Quarters"
+0x2f05,"Deck-A, Crew's Lounge","Deck-A, Crew's Lounge"
+0x2f1b,"Deck-B, Crew's Quarters","Deck-B, Crew's Quarters"
+0x2f33,"Deck-C, Crew's Quarters","Deck-C, Crew's Quarters"
+0x2f4b,"Deck-D, Crew's Quarters","Deck-D, Crew's Quarters"
+0x2f63,"Deck-E, The Bridge","Deck-E, The Bridge"
+0x2f76,"Navigational Deck, Wing","Navigational Deck, Wing"
+0x2f8d,Engine Room,Engine Room
+0x2f99,"Deck-2, Starboard","Deck-2, Starboard"
+0x2fab,"Deck-2, Port","Deck-2, Port"
 0x2fb8,Hold No.1,Hold No.1
 0x2fc2,Hold No.2,Hold No.2
 0x2fcc,Hold No.3,Hold No.3
 0x2fd6,Strut A Deep Sea Dock,Strut A Deep Sea Dock
-0x2fec,Strut A roof,Strut A roof
+0x2fec,Strut A Roof,Strut A Roof
 0x2ff9,Strut A Pump Room,Strut A Pump Room
-0x300b,AB connecting bridge,AB connecting bridge
+0x300b,AB Connecting Bridge,AB Connecting Bridge
 0x3020,Strut B Transformer Room,Strut B Transformer Room
-0x3039,BC connecting bridge,BC connecting bridge
+0x3039,BC Connecting Bridge,BC Connecting Bridge
 0x304e,Strut C Dining Hall,Strut C Dining Hall
-0x3062,CD connecting bridge,CD connecting bridge
+0x3062,CD Connecting Bridge,CD Connecting Bridge
 0x3077,Strut D Sediment Pool,Strut D Sediment Pool
-0x308d,DE connecting bridge,DE connecting bridge
+0x308d,DE Connecting Bridge,DE Connecting Bridge
 0x30a2,Strut E Parcel Room,Strut E Parcel Room
-0x30b6,Strut E heliport,Strut E heliport
-0x30c7,EF connecting bridge,EF connecting bridge
-0x30dc,Strut F warehouse ,Strut F warehouse 
-0x30ef,FA connecting bridge,FA connecting bridge
+0x30b6,Strut E Heliport,Strut E Heliport
+0x30c7,EF Connecting Bridge,EF Connecting Bridge
+0x30dc,Strut F Warehouse,Strut F Warehouse
+0x30ef,FA Connecting Bridge,FA Connecting Bridge
 0x3104,"Shell 1 Core, 1F","Shell 1 Core, 1F"
 0x3115,"Shell 1 Core, B1","Shell 1 Core, B1"
 0x3126,"Shell 1 Core, B1 Hall","Shell 1 Core, B1 Hall"
 0x313c,"Shell 1 Core, B2 Computer Room","Shell 1 Core, B2 Computer Room"
-0x315b,Shell 1-2 connecting bridge,Shell 1-2 connecting bridge
-0x3177,Shell 1-2 connecting bridge - LG connecting bridge,Shell 1-2 connecting bridge - LG connecting bridge
-0x31aa,Strut L perimeter - KL connecting bridge,Strut L perimeter - KL connecting bridge
-0x31d3,KL connecting bridge,KL connecting bridge
+0x315b,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
+0x3177,Shell 1-2 Connecting Bridge - LG Connecting Bridge,Shell 1-2 Connecting Bridge - LG Connecting Bridge
+0x31aa,Strut L Perimeter - KL Connecting Bridge,Strut L Perimeter - KL Connecting Bridge
+0x31d3,KL Connecting Bridge,KL Connecting Bridge
 0x31e8,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
 0x320a,"Shell 2 Core, 1F Air Purification Room","Shell 2 Core, 1F Air Purification Room"
 0x3231,"Shell 2 Core, B1 Filtration Chamber No.1","Shell 2 Core, B1 Filtration Chamber No.1"
@@ -695,10 +695,10 @@ Formater et sauvegarder?"
 0x3384,Snake Tales C Cleared,Snake Tales C Cleared
 0x339a,Snake Tales D Cleared,Snake Tales D Cleared
 0x33b0,Snake Tales E Cleared,Snake Tales E Cleared
-0x33c6,Philanthropy's hideout,Philanthropy's hideout
-0x33dd,Gap between parallel universes,Gap between parallel universes
+0x33c6,Philanthropy's Hideout,Philanthropy's Hideout
+0x33dd,Gap Between Parallel Universes,Gap Between Parallel Universes
 0x33fc,Raiden Tales,Raiden Tales
-0x3409,The singularity,The singularity
+0x3409,The Singularity,The Singularity
 0x3419,-,-
 0x341b,船尾甲板,船尾甲板
 0x3428,船橋一階居住区,船橋一階居住区
@@ -753,31 +753,31 @@ Formater et sauvegarder?"
 0x37e7,青山ニ丁目,青山ニ丁目
 0x37f7,二ューヨーク52番街,二ューヨーク52番街
 0x3815,Strut A Pump Facility,Strut A Pump Facility
-0x382b,AB connecting bridge,AB connecting bridge
+0x382b,AB Connecting Bridge,AB Connecting Bridge
 0x3840,Strut B Transformer Room,Strut B Transformer Room
-0x3859,BC connecting bridge,BC connecting bridge
+0x3859,BC Connecting Bridge,BC Connecting Bridge
 0x386e,Strut C Dining Hall,Strut C Dining Hall
-0x3882,CD connecting bridge,CD connecting bridge
+0x3882,CD Connecting Bridge,CD Connecting Bridge
 0x3897,Strut D Sediment Pool,Strut D Sediment Pool
-0x38ad,DE connecting bridge,DE connecting bridge
+0x38ad,DE Connecting Bridge,DE Connecting Bridge
 0x38c2,Strut E Material Distribution Facility,Strut E Material Distribution Facility
-0x38e9,EF connecting bridge,EF connecting bridge
-0x38fe,Strut F warehouse,Strut F warehouse
-0x3910,FA connecting bridge,FA connecting bridge
+0x38e9,EF Connecting Bridge,EF Connecting Bridge
+0x38fe,Strut F Warehouse,Strut F Warehouse
+0x3910,FA Connecting Bridge,FA Connecting Bridge
 0x3925,Shell 1 Core,Shell 1 Core
-0x3932,Shell 1 - 2 connecting bridge,Shell 1 - 2 connecting bridge
+0x3932,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
 0x3950,Strut G Oil Processing Facility,Strut G Oil Processing Facility
-0x3970,GH connecting bridge,GH connecting bridge
+0x3970,GH Connecting Bridge,GH Connecting Bridge
 0x3985,Strut H Warehouse,Strut H Warehouse
-0x3997,HI connecting bridge,HI connecting bridge
+0x3997,HI Connecting Bridge,HI Connecting Bridge
 0x39ac,Strut I Assembly Facility,Strut I Assembly Facility
-0x39c6,IJ connecting bridge,IJ connecting bridge
+0x39c6,IJ Connecting Bridge,IJ Connecting Bridge
 0x39db,Strut J Power Plant,Strut J Power Plant
-0x39ef,JK connecting bridge,JK connecting bridge
+0x39ef,JK Connecting Bridge,JK Connecting Bridge
 0x3a04,Strut K Biochem Lab,Strut K Biochem Lab
-0x3a18,KL connecting bridge,KL connecting bridge
+0x3a18,KL Connecting Bridge,KL Connecting Bridge
 0x3a2d,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
-0x3a4f,LG connecting bridge,LG connecting bridge
+0x3a4f,LG Connecting Bridge,LG Connecting Bridge
 0x3a64,Shell 2 Core,Shell 2 Core
 0x3a71,Strut L Oil Fence,Strut L Oil Fence
 0x3a83,Strut H Oil Fence,Strut H Oil Fence
@@ -792,16 +792,16 @@ Formater et sauvegarder?"
 0x3b39,Aoyama Ni-Chome,Aoyama Ni-Chome
 0x3b49,New York 52nd Street,New York 52nd Street
 0x3b5e,Aft deck,Aft deck
-0x3b67,"Deck-A, crew's quarters","Deck-A, crew's quarters"
-0x3b7f,"Deck-A, crew's lounge","Deck-A, crew's lounge"
-0x3b95,"Deck-B, crew's quarters","Deck-B, crew's quarters"
-0x3bad,"Deck-C, crew's quarters","Deck-C, crew's quarters"
-0x3bc5,"Deck-D, crew's quarters","Deck-D, crew's quarters"
-0x3bdd,"Deck-E, the bridge","Deck-E, the bridge"
-0x3bf0,"Navigational deck,wing","Navigational deck,wing"
-0x3c07,Engine room,Engine room
-0x3c13,"Deck-2, starboard","Deck-2, starboard"
-0x3c25,"Deck-2, port","Deck-2, port"
+0x3b67,"Deck-A, Crew's Quarters","Deck-A, Crew's Quarters"
+0x3b7f,"Deck-A, Crew's Lounge","Deck-A, Crew's Lounge"
+0x3b95,"Deck-B, Crew's Quarters","Deck-B, Crew's Quarters"
+0x3bad,"Deck-C, Crew's Quarters","Deck-C, Crew's Quarters"
+0x3bc5,"Deck-D, Crew's Quarters","Deck-D, Crew's Quarters"
+0x3bdd,"Deck-E, The Bridge","Deck-E, The Bridge"
+0x3bf0,"Navigational Deck, Wing","Navigational Deck, Wing"
+0x3c07,Engine Room,Engine Room
+0x3c13,"Deck-2, Starboard","Deck-2, Starboard"
+0x3c25,"Deck-2, Port","Deck-2, Port"
 0x3c32,Hold No.1,Hold No.1
 0x3c3c,Hold No.2,Hold No.2
 0x3c46,Hold No.3,Hold No.3
@@ -3451,31 +3451,31 @@ START ボ夕ンを押して続けてください"
 0xd80f,青山ニ丁目,青山ニ丁目
 0xd81f,二ューヨーク52番街,二ューヨーク52番街
 0xd83d,Strut A Pump Facility,Strut A Pump Facility
-0xd853,AB connecting bridge,AB connecting bridge
+0xd853,AB Connecting Bridge,AB Connecting Bridge
 0xd868,Strut B Transformer Room,Strut B Transformer Room
-0xd881,BC connecting bridge,BC connecting bridge
+0xd881,BC Connecting Bridge,BC Connecting Bridge
 0xd896,Strut C Dining Hall,Strut C Dining Hall
-0xd8aa,CD connecting bridge,CD connecting bridge
+0xd8aa,CD Connecting Bridge,CD Connecting Bridge
 0xd8bf,Strut D Sediment Pool,Strut D Sediment Pool
-0xd8d5,DE connecting bridge,DE connecting bridge
+0xd8d5,DE Connecting Bridge,DE Connecting Bridge
 0xd8ea,Strut E Material Distribution Facility,Strut E Material Distribution Facility
-0xd911,EF connecting bridge,EF connecting bridge
-0xd926,Strut F warehouse,Strut F warehouse
-0xd938,FA connecting bridge,FA connecting bridge
-0xd94d,Shell 1 core,Shell 1 core
-0xd95a,Shell 1 - 2 connecting bridge,Shell 1 - 2 connecting bridge
+0xd911,EF Connecting Bridge,EF Connecting Bridge
+0xd926,Strut F Warehouse,Strut F Warehouse
+0xd938,FA Connecting Bridge,FA Connecting Bridge
+0xd94d,Shell 1 Core,Shell 1 Core
+0xd95a,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
 0xd978,Strut G Oil Processing Facility,Strut G Oil Processing Facility
-0xd998,GH connecting bridge,GH connecting bridge
+0xd998,GH Connecting Bridge,GH Connecting Bridge
 0xd9ad,Strut H Warehouse,Strut H Warehouse
-0xd9bf,HI connecting bridge,HI connecting bridge
+0xd9bf,HI Connecting Bridge,HI Connecting Bridge
 0xd9d4,Strut I Assembly Facility,Strut I Assembly Facility
-0xd9ee,IJ connecting bridge,IJ connecting bridge
+0xd9ee,IJ Connecting Bridge,IJ Connecting Bridge
 0xda03,Strut J Power Plant,Strut J Power Plant
-0xda17,JK connecting bridge,JK connecting bridge
+0xda17,JK Connecting Bridge,JK Connecting Bridge
 0xda2c,Strut K Biochem Lab,Strut K Biochem Lab
-0xda40,KL connecting bridge,KL connecting bridge
+0xda40,KL Connecting Bridge,KL Connecting Bridge
 0xda55,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
-0xda77,LG connecting bridge,LG connecting bridge
+0xda77,LG Connecting Bridge,LG Connecting Bridge
 0xda8c,Shell 2 Core,Shell 2 Core
 0xda99,Strut L Oil Fence,Strut L Oil Fence
 0xdaab,Strut H Oil Fence,Strut H Oil Fence
@@ -3490,14 +3490,14 @@ START ボ夕ンを押して続けてください"
 0xdb61,Aoyama Ni-Chome,Aoyama Ni-Chome
 0xdb71,New York 52nd Street,New York 52nd Street
 0xdb86,Aft deck,Aft deck
-0xdb8f,"Deck-A, crew's quarters","Deck-A, crew's quarters"
-0xdba7,"Deck-A, crew's lounge","Deck-A, crew's lounge"
-0xdbbd,"Deck-B, crew's quarters","Deck-B, crew's quarters"
-0xdbd5,"Deck-C, crew's quarters","Deck-C, crew's quarters"
-0xdbed,"Deck-D, crew's quarters","Deck-D, crew's quarters"
-0xdc05,"Deck-E, the bridge","Deck-E, the bridge"
-0xdc18,"Navigational deck,wing","Navigational deck,wing"
-0xdc2f,Engine room,Engine room
+0xdb8f,"Deck-A, Crew's Quarters","Deck-A, Crew's Quarters"
+0xdba7,"Deck-A, Crew's Lounge","Deck-A, Crew's Lounge"
+0xdbbd,"Deck-B, Crew's Quarters","Deck-B, Crew's Quarters"
+0xdbd5,"Deck-C, Crew's Quarters","Deck-C, Crew's Quarters"
+0xdbed,"Deck-D, Crew's Quarters","Deck-D, Crew's Quarters"
+0xdc05,"Deck-E, The Bridge","Deck-E, The Bridge"
+0xdc18,"Navigational Deck, Wing","Navigational Deck, Wing"
+0xdc2f,Engine Room,Engine Room
 0xdc3b,"Deck 2, starboard","Deck 2, starboard"
 0xdc4d,"Deck 2, port","Deck 2, port"
 0xdc5a,Hold No.1,Hold No.1
@@ -4010,11 +4010,11 @@ Solid Snake's bandana.
 ∞ (infinity) symbol is
 sewn in.
 "
-0xf36c,"Dog tags
+0xf36c,"Dog Tags
 Select SPECIAL on title
 screen and enter Dog tag
 Viewer mode to look at
-obtained dog tags.","Dog tags
+obtained dog tags.","Dog Tags
 Select SPECIAL on title
 screen and enter Dog tag
 Viewer mode to look at

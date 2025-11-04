@@ -292,42 +292,42 @@ Vuoi formattare e salvare?"
 0x5385,Sì,Sì
 0x5389,No,No
 0x538c,Aft deck,Aft deck
-0x5395,"Deck-A, crew's quarters","Deck-A, crew's quarters"
-0x53ad,"Deck-A, crew's lounge","Deck-A, crew's lounge"
-0x53c3,"Deck-B, crew's quarters","Deck-B, crew's quarters"
-0x53db,"Deck-C, crew's quarters","Deck-C, crew's quarters"
-0x53f3,"Deck-D, crew's quarters","Deck-D, crew's quarters"
-0x540b,"Deck-E, the bridge","Deck-E, the bridge"
-0x541e,"Navigational deck,wing","Navigational deck,wing"
-0x5435,Engine room,Engine room
-0x5441,"Deck-2, starboard","Deck-2, starboard"
-0x5453,"Deck-2, port","Deck-2, port"
+0x5395,"Deck-A, Crew's Quarters","Deck-A, Crew's Quarters"
+0x53ad,"Deck-A, Crew's Lounge","Deck-A, Crew's Lounge"
+0x53c3,"Deck-B, Crew's Quarters","Deck-B, Crew's Quarters"
+0x53db,"Deck-C, Crew's Quarters","Deck-C, Crew's Quarters"
+0x53f3,"Deck-D, Crew's Quarters","Deck-D, Crew's Quarters"
+0x540b,"Deck-E, The Bridge","Deck-E, The Bridge"
+0x541e,"Navigational Deck, Wing","Navigational Deck, Wing"
+0x5435,Engine Room,Engine Room
+0x5441,"Deck-2, Starboard","Deck-2, Starboard"
+0x5453,"Deck-2, Port","Deck-2, Port"
 0x5460,Hold No.1,Hold No.1
 0x546a,Hold No.2,Hold No.2
 0x5474,Hold No.3,Hold No.3
 0x547e,Strut A Deep Sea Dock,Strut A Deep Sea Dock
-0x5494,Strut A roof,Strut A roof
+0x5494,Strut A Roof,Strut A Roof
 0x54a1,Strut A Pump Room,Strut A Pump Room
-0x54b3,AB connecting bridge,AB connecting bridge
+0x54b3,AB Connecting Bridge,AB Connecting Bridge
 0x54c8,Strut B Transformer Room,Strut B Transformer Room
-0x54e1,BC connecting bridge,BC connecting bridge
+0x54e1,BC Connecting Bridge,BC Connecting Bridge
 0x54f6,Strut C Dining Hall,Strut C Dining Hall
-0x550a,CD connecting bridge,CD connecting bridge
+0x550a,CD Connecting Bridge,CD Connecting Bridge
 0x551f,Strut D Sediment Pool,Strut D Sediment Pool
-0x5535,DE connecting bridge,DE connecting bridge
+0x5535,DE Connecting Bridge,DE Connecting Bridge
 0x554a,Strut E Parcel Room,Strut E Parcel Room
-0x555e,Strut E heliport,Strut E heliport
-0x556f,EF connecting bridge,EF connecting bridge
-0x5584,Strut F warehouse ,Strut F warehouse 
-0x5597,FA connecting bridge,FA connecting bridge
+0x555e,Strut E Heliport,Strut E Heliport
+0x556f,EF Connecting Bridge,EF Connecting Bridge
+0x5584,Strut F Warehouse,Strut F Warehouse
+0x5597,FA Connecting Bridge,FA Connecting Bridge
 0x55ac,"Shell 1 Core, 1F","Shell 1 Core, 1F"
 0x55bd,"Shell 1 Core, B1","Shell 1 Core, B1"
 0x55ce,"Shell 1 Core, B1 Hall","Shell 1 Core, B1 Hall"
 0x55e4,"Shell 1 Core, B2 Computer Room","Shell 1 Core, B2 Computer Room"
-0x5603,Shell 1-2 connecting bridge,Shell 1-2 connecting bridge
-0x561f,Shell 1-2 connecting bridge - LG connecting bridge,Shell 1-2 connecting bridge - LG connecting bridge
-0x5652,Strut L perimeter - KL connecting bridge,Strut L perimeter - KL connecting bridge
-0x567b,KL connecting bridge,KL connecting bridge
+0x5603,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
+0x561f,Shell 1-2 Connecting Bridge - LG Connecting Bridge,Shell 1-2 Connecting Bridge - LG Connecting Bridge
+0x5652,Strut L Perimeter - KL Connecting Bridge,Strut L Perimeter - KL Connecting Bridge
+0x567b,KL Connecting Bridge,KL Connecting Bridge
 0x5690,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
 0x56b2,"Shell 2 Core, 1F Air Purification Room","Shell 2 Core, 1F Air Purification Room"
 0x56d9,"Shell 2 Core, B1 Filtration Chamber No.1","Shell 2 Core, B1 Filtration Chamber No.1"
@@ -348,10 +348,10 @@ Vuoi formattare e salvare?"
 0x582c,Snake Tales C Cleared,Snake Tales C Cleared
 0x5842,Snake Tales D Cleared,Snake Tales D Cleared
 0x5858,Snake Tales E Cleared,Snake Tales E Cleared
-0x586e,Philanthropy's hideout,Philanthropy's hideout
-0x5885,Gap between parallel universes,Gap between parallel universes
+0x586e,Philanthropy's Hideout,Philanthropy's Hideout
+0x5885,Gap Between Parallel Universes,Gap Between Parallel Universes
 0x58a4,Raiden Tales,Raiden Tales
-0x58b1,The singularity,The singularity
+0x58b1,The Singularity,The Singularity
 0x58c1,-,-
 0x58c3,船尾甲板,船尾甲板
 0x58d0,船橋一階居住区,船橋一階居住区
@@ -406,31 +406,31 @@ Vuoi formattare e salvare?"
 0x5c8f,青山ニ丁目,青山ニ丁目
 0x5c9f,二ューヨーク52番街,二ューヨーク52番街
 0x5cbd,Strut A Pump Facility,Strut A Pump Facility
-0x5cd3,AB connecting bridge,AB connecting bridge
+0x5cd3,AB Connecting Bridge,AB Connecting Bridge
 0x5ce8,Strut B Transformer Room,Strut B Transformer Room
-0x5d01,BC connecting bridge,BC connecting bridge
+0x5d01,BC Connecting Bridge,BC Connecting Bridge
 0x5d16,Strut C Dining Hall,Strut C Dining Hall
-0x5d2a,CD connecting bridge,CD connecting bridge
+0x5d2a,CD Connecting Bridge,CD Connecting Bridge
 0x5d3f,Strut D Sediment Pool,Strut D Sediment Pool
-0x5d55,DE connecting bridge,DE connecting bridge
+0x5d55,DE Connecting Bridge,DE Connecting Bridge
 0x5d6a,Strut E Material Distribution Facility,Strut E Material Distribution Facility
-0x5d91,EF connecting bridge,EF connecting bridge
-0x5da6,Strut F warehouse,Strut F warehouse
-0x5db8,FA connecting bridge,FA connecting bridge
+0x5d91,EF Connecting Bridge,EF Connecting Bridge
+0x5da6,Strut F Warehouse,Strut F Warehouse
+0x5db8,FA Connecting Bridge,FA Connecting Bridge
 0x5dcd,Shell 1 Core,Shell 1 Core
-0x5dda,Shell 1 - 2 connecting bridge,Shell 1 - 2 connecting bridge
+0x5dda,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
 0x5df8,Strut G Oil Processing Facility,Strut G Oil Processing Facility
-0x5e18,GH connecting bridge,GH connecting bridge
+0x5e18,GH Connecting Bridge,GH Connecting Bridge
 0x5e2d,Strut H Warehouse,Strut H Warehouse
-0x5e3f,HI connecting bridge,HI connecting bridge
+0x5e3f,HI Connecting Bridge,HI Connecting Bridge
 0x5e54,Strut I Assembly Facility,Strut I Assembly Facility
-0x5e6e,IJ connecting bridge,IJ connecting bridge
+0x5e6e,IJ Connecting Bridge,IJ Connecting Bridge
 0x5e83,Strut J Power Plant,Strut J Power Plant
-0x5e97,JK connecting bridge,JK connecting bridge
+0x5e97,JK Connecting Bridge,JK Connecting Bridge
 0x5eac,Strut K Biochem Lab,Strut K Biochem Lab
-0x5ec0,KL connecting bridge,KL connecting bridge
+0x5ec0,KL Connecting Bridge,KL Connecting Bridge
 0x5ed5,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
-0x5ef7,LG connecting bridge,LG connecting bridge
+0x5ef7,LG Connecting Bridge,LG Connecting Bridge
 0x5f0c,Shell 2 Core,Shell 2 Core
 0x5f19,Strut L Oil Fence,Strut L Oil Fence
 0x5f2b,Strut H Oil Fence,Strut H Oil Fence
@@ -559,31 +559,31 @@ Vuoi formattare e salvare?"
 0x698e,青山ニ丁目,青山ニ丁目
 0x699e,二ューヨーク52番街,二ューヨーク52番街
 0x69bc,Strut A Pump Facility,Strut A Pump Facility
-0x69d2,AB connecting bridge,AB connecting bridge
+0x69d2,AB Connecting Bridge,AB Connecting Bridge
 0x69e7,Strut B Transformer Room,Strut B Transformer Room
-0x6a00,BC connecting bridge,BC connecting bridge
+0x6a00,BC Connecting Bridge,BC Connecting Bridge
 0x6a15,Strut C Dining Hall,Strut C Dining Hall
-0x6a29,CD connecting bridge,CD connecting bridge
+0x6a29,CD Connecting Bridge,CD Connecting Bridge
 0x6a3e,Strut D Sediment Pool,Strut D Sediment Pool
-0x6a54,DE connecting bridge,DE connecting bridge
+0x6a54,DE Connecting Bridge,DE Connecting Bridge
 0x6a69,Strut E Material Distribution Facility,Strut E Material Distribution Facility
-0x6a90,EF connecting bridge,EF connecting bridge
-0x6aa5,Strut F warehouse,Strut F warehouse
-0x6ab7,FA connecting bridge,FA connecting bridge
-0x6acc,Shell 1 core,Shell 1 core
-0x6ad9,Shell 1 - 2 connecting bridge,Shell 1 - 2 connecting bridge
+0x6a90,EF Connecting Bridge,EF Connecting Bridge
+0x6aa5,Strut F Warehouse,Strut F Warehouse
+0x6ab7,FA Connecting Bridge,FA Connecting Bridge
+0x6acc,Shell 1 Core,Shell 1 Core
+0x6ad9,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
 0x6af7,Strut G Oil Processing Facility,Strut G Oil Processing Facility
-0x6b17,GH connecting bridge,GH connecting bridge
+0x6b17,GH Connecting Bridge,GH Connecting Bridge
 0x6b2c,Strut H Warehouse,Strut H Warehouse
-0x6b3e,HI connecting bridge,HI connecting bridge
+0x6b3e,HI Connecting Bridge,HI Connecting Bridge
 0x6b53,Strut I Assembly Facility,Strut I Assembly Facility
-0x6b6d,IJ connecting bridge,IJ connecting bridge
+0x6b6d,IJ Connecting Bridge,IJ Connecting Bridge
 0x6b82,Strut J Power Plant,Strut J Power Plant
-0x6b96,JK connecting bridge,JK connecting bridge
+0x6b96,JK Connecting Bridge,JK Connecting Bridge
 0x6bab,Strut K Biochem Lab,Strut K Biochem Lab
-0x6bbf,KL connecting bridge,KL connecting bridge
+0x6bbf,KL Connecting Bridge,KL Connecting Bridge
 0x6bd4,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
-0x6bf6,LG connecting bridge,LG connecting bridge
+0x6bf6,LG Connecting Bridge,LG Connecting Bridge
 0x6c0b,Shell 2 Core,Shell 2 Core
 0x6c18,Strut L Oil Fence,Strut L Oil Fence
 0x6c2a,Strut H Oil Fence,Strut H Oil Fence
@@ -997,10 +997,10 @@ during Intrusion View."
 0x8f86,"Radar in ""Sons of Liberty"" does not appear|
 during Intrusion View.","Radar in ""Sons of Liberty"" does not appear|
 during Intrusion View."
-0x8fc9,"Radar in ""Sons of Liberty"" will not apear at all.","Radar in ""Sons of Liberty"" will not apear at all."
+0x8fc9,"Radar in ""Sons of Liberty"" will not appear at all.","Radar in ""Sons of Liberty"" will not appear at all."
 0x8ffb,Radar appears even during Intrusion View.,Radar appears even during Intrusion View.
 0x9025,Radar does not appear during Intrusion View.,Radar does not appear during Intrusion View.
-0x9052,Radar will not apear at all.,Radar will not apear at all.
+0x9052,Radar will not appear at all.,Radar will not appear at all.
 0x906f,"Dans « Sons of Liberty », le radar apparaît
 même en Point de vue d'intrusion.","Dans « Sons of Liberty », le radar apparaît
 même en Point de vue d'intrusion."
@@ -12625,7 +12625,7 @@ as girders crashed to the ground. In the midst
 of the collapse, Snake confronted what we
 could only guess was the fourth life sign.
 　 ""Who are you?""
-　 ""I'm like you...I have no name.""
+　 ""I'm like you... I have no name.""
 　 It was not human, but an artificial machine
 voice that answered. In spite of the metallic
 tones, there seemed to be in that voice an
@@ -12635,7 +12635,7 @@ as girders crashed to the ground. In the midst
 of the collapse, Snake confronted what we
 could only guess was the fourth life sign.
 　 ""Who are you?""
-　 ""I'm like you...I have no name.""
+　 ""I'm like you... I have no name.""
 　 It was not human, but an artificial machine
 voice that answered. In spite of the metallic
 tones, there seemed to be in that voice an
@@ -30806,7 +30806,7 @@ sulla testa.
 　""Bene, bene, questo lo vedremo...""
 　Sono seguite lunghe ore di tedio e di
 sofferenze, niente di particolarmente
-importante,finché qualcuno ha pronunciato
+importante, finché qualcuno ha pronunciato
 ","è impossessato.
 　""Cos'è questo?"" ha chiesto.
 　""Qualunque cosa sia, vale più di te,"" ho
@@ -30816,7 +30816,7 @@ sulla testa.
 　""Bene, bene, questo lo vedremo...""
 　Sono seguite lunghe ore di tedio e di
 sofferenze, niente di particolarmente
-importante,finché qualcuno ha pronunciato
+importante, finché qualcuno ha pronunciato
 "
 0xa9c11,"quella frase rivelatrice: ""Ci siamo ripresi il
 disco.""
@@ -55054,7 +55054,7 @@ tercera es la fase de medio camino, en la cual el
 vehículo se separa y comienza una bajada
 controlada hacia la atmósfera. En la cuarta y
 última fase, la cabeza nuclear vuelve a entrar en
-la atmósfera y llega a su objetivo.El actual
+la atmósfera y llega a su objetivo. El actual
 ","misil es lanzado hasta el punto en el que
 abandona la atmósfera y quema el combustible
 del cohete. Tras quemarse, el cohete pasa a la
@@ -55064,7 +55064,7 @@ tercera es la fase de medio camino, en la cual el
 vehículo se separa y comienza una bajada
 controlada hacia la atmósfera. En la cuarta y
 última fase, la cabeza nuclear vuelve a entrar en
-la atmósfera y llega a su objetivo.El actual
+la atmósfera y llega a su objetivo. El actual
 "
 0x11b0d6,"sistema de defensa de misiles detecta los misiles
 balísticos al escanear la atmósfera en busca de
@@ -58630,12 +58630,12 @@ crawling at the end of the roll.
 "
 0x12ba5a,Dragging Enemies,Dragging Enemies
 0x12ba6b,"With no weapon equipped, press the Weapon
-button near an unconscios/dead enemy to
+button near an unconscious/dead enemy to
 grab his body. Hold down the Weapon button
 to drag him.
 
 ","With no weapon equipped, press the Weapon
-button near an unconscios/dead enemy to
+button near an unconscious/dead enemy to
 grab his body. Hold down the Weapon button
 to drag him.
 
@@ -58655,7 +58655,7 @@ over handrail and hang to avoid enemy.
 You can move sideways and also enter
 First Person View.
 "
-0x12bbc1,Open / Close Locker ,Open / Close Locker 
+0x12bbc1,Open / Close Locker,Open / Close Locker
 0x12bbd6,"Stand in front of locker & press Action button
 to open locker. Press Action button again in
 front of open locker to close it. You can open
@@ -58953,7 +58953,7 @@ vous débusquera.
 ","le chemin de l'ennemi, ce dernier
 vous débusquera.
 "
-0x12cf7f,Etranglement,Etranglement
+0x12cf7f,Étranglement,Étranglement
 0x12cf8c,"Approchez-vous par derrière, sans arme,
 et actionnez la touche Arme (sans toucher
 le joystick analogique gauche) pour étrangler

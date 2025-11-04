@@ -50,42 +50,42 @@
 0xa30,Sì,Sì
 0xa34,No,No
 0xa37,Aft deck,Aft deck
-0xa40,"Deck-A, crew's quarters","Deck-A, crew's quarters"
-0xa58,"Deck-A, crew's lounge","Deck-A, crew's lounge"
-0xa6e,"Deck-B, crew's quarters","Deck-B, crew's quarters"
-0xa86,"Deck-C, crew's quarters","Deck-C, crew's quarters"
-0xa9e,"Deck-D, crew's quarters","Deck-D, crew's quarters"
-0xab6,"Deck-E, the bridge","Deck-E, the bridge"
-0xac9,"Navigational deck,wing","Navigational deck,wing"
-0xae0,Engine room,Engine room
-0xaec,"Deck-2, starboard","Deck-2, starboard"
-0xafe,"Deck-2, port","Deck-2, port"
+0xa40,"Deck-A, Crew's Quarters","Deck-A, Crew's Quarters"
+0xa58,"Deck-A, Crew's Lounge","Deck-A, Crew's Lounge"
+0xa6e,"Deck-B, Crew's Quarters","Deck-B, Crew's Quarters"
+0xa86,"Deck-C, Crew's Quarters","Deck-C, Crew's Quarters"
+0xa9e,"Deck-D, Crew's Quarters","Deck-D, Crew's Quarters"
+0xab6,"Deck-E, The Bridge","Deck-E, The Bridge"
+0xac9,"Navigational Deck, Wing","Navigational Deck, Wing"
+0xae0,Engine Room,Engine Room
+0xaec,"Deck-2, Starboard","Deck-2, Starboard"
+0xafe,"Deck-2, Port","Deck-2, Port"
 0xb0b,Hold No.1,Hold No.1
 0xb15,Hold No.2,Hold No.2
 0xb1f,Hold No.3,Hold No.3
 0xb29,Strut A Deep Sea Dock,Strut A Deep Sea Dock
-0xb3f,Strut A roof,Strut A roof
+0xb3f,Strut A Roof,Strut A Roof
 0xb4c,Strut A Pump Room,Strut A Pump Room
-0xb5e,AB connecting bridge,AB connecting bridge
+0xb5e,AB Connecting Bridge,AB Connecting Bridge
 0xb73,Strut B Transformer Room,Strut B Transformer Room
-0xb8c,BC connecting bridge,BC connecting bridge
+0xb8c,BC Connecting Bridge,BC Connecting Bridge
 0xba1,Strut C Dining Hall,Strut C Dining Hall
-0xbb5,CD connecting bridge,CD connecting bridge
+0xbb5,CD Connecting Bridge,CD Connecting Bridge
 0xbca,Strut D Sediment Pool,Strut D Sediment Pool
-0xbe0,DE connecting bridge,DE connecting bridge
+0xbe0,DE Connecting Bridge,DE Connecting Bridge
 0xbf5,Strut E Parcel Room,Strut E Parcel Room
-0xc09,Strut E heliport,Strut E heliport
-0xc1a,EF connecting bridge,EF connecting bridge
-0xc2f,Strut F warehouse ,Strut F warehouse 
-0xc42,FA connecting bridge,FA connecting bridge
+0xc09,Strut E Heliport,Strut E Heliport
+0xc1a,EF Connecting Bridge,EF Connecting Bridge
+0xc2f,Strut F Warehouse,Strut F Warehouse
+0xc42,FA Connecting Bridge,FA Connecting Bridge
 0xc57,"Shell 1 Core, 1F","Shell 1 Core, 1F"
 0xc68,"Shell 1 Core, B1","Shell 1 Core, B1"
 0xc79,"Shell 1 Core, B1 Hall","Shell 1 Core, B1 Hall"
 0xc8f,"Shell 1 Core, B2 Computer Room","Shell 1 Core, B2 Computer Room"
-0xcae,Shell 1-2 connecting bridge,Shell 1-2 connecting bridge
-0xcca,Shell 1-2 connecting bridge - LG connecting bridge,Shell 1-2 connecting bridge - LG connecting bridge
-0xcfd,Strut L perimeter - KL connecting bridge,Strut L perimeter - KL connecting bridge
-0xd26,KL connecting bridge,KL connecting bridge
+0xcae,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
+0xcca,Shell 1-2 Connecting Bridge - LG Connecting Bridge,Shell 1-2 Connecting Bridge - LG Connecting Bridge
+0xcfd,Strut L Perimeter - KL Connecting Bridge,Strut L Perimeter - KL Connecting Bridge
+0xd26,KL Connecting Bridge,KL Connecting Bridge
 0xd3b,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
 0xd5d,"Shell 2 Core, 1F Air Purification Room","Shell 2 Core, 1F Air Purification Room"
 0xd84,"Shell 2 Core, B1 Filtration Chamber No.1","Shell 2 Core, B1 Filtration Chamber No.1"
@@ -106,10 +106,10 @@
 0xed7,Snake Tales C Cleared,Snake Tales C Cleared
 0xeed,Snake Tales D Cleared,Snake Tales D Cleared
 0xf03,Snake Tales E Cleared,Snake Tales E Cleared
-0xf19,Philanthropy's hideout,Philanthropy's hideout
-0xf30,Gap between parallel universes,Gap between parallel universes
+0xf19,Philanthropy's Hideout,Philanthropy's Hideout
+0xf30,Gap Between Parallel Universes,Gap Between Parallel Universes
 0xf4f,Raiden Tales,Raiden Tales
-0xf5c,The singularity,The singularity
+0xf5c,The Singularity,The Singularity
 0xf6c,-,-
 0xf6e,船尾甲板,船尾甲板
 0xf7b,船橋一階居住区,船橋一階居住区
@@ -164,31 +164,31 @@
 0x133a,青山ニ丁目,青山ニ丁目
 0x134a,二ューヨーク52番街,二ューヨーク52番街
 0x1368,Strut A Pump Facility,Strut A Pump Facility
-0x137e,AB connecting bridge,AB connecting bridge
+0x137e,AB Connecting Bridge,AB Connecting Bridge
 0x1393,Strut B Transformer Room,Strut B Transformer Room
-0x13ac,BC connecting bridge,BC connecting bridge
+0x13ac,BC Connecting Bridge,BC Connecting Bridge
 0x13c1,Strut C Dining Hall,Strut C Dining Hall
-0x13d5,CD connecting bridge,CD connecting bridge
+0x13d5,CD Connecting Bridge,CD Connecting Bridge
 0x13ea,Strut D Sediment Pool,Strut D Sediment Pool
-0x1400,DE connecting bridge,DE connecting bridge
+0x1400,DE Connecting Bridge,DE Connecting Bridge
 0x1415,Strut E Material Distribution Facility,Strut E Material Distribution Facility
-0x143c,EF connecting bridge,EF connecting bridge
-0x1451,Strut F warehouse,Strut F warehouse
-0x1463,FA connecting bridge,FA connecting bridge
+0x143c,EF Connecting Bridge,EF Connecting Bridge
+0x1451,Strut F Warehouse,Strut F Warehouse
+0x1463,FA Connecting Bridge,FA Connecting Bridge
 0x1478,Shell 1 Core,Shell 1 Core
-0x1485,Shell 1 - 2 connecting bridge,Shell 1 - 2 connecting bridge
+0x1485,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
 0x14a3,Strut G Oil Processing Facility,Strut G Oil Processing Facility
-0x14c3,GH connecting bridge,GH connecting bridge
+0x14c3,GH Connecting Bridge,GH Connecting Bridge
 0x14d8,Strut H Warehouse,Strut H Warehouse
-0x14ea,HI connecting bridge,HI connecting bridge
+0x14ea,HI Connecting Bridge,HI Connecting Bridge
 0x14ff,Strut I Assembly Facility,Strut I Assembly Facility
-0x1519,IJ connecting bridge,IJ connecting bridge
+0x1519,IJ Connecting Bridge,IJ Connecting Bridge
 0x152e,Strut J Power Plant,Strut J Power Plant
-0x1542,JK connecting bridge,JK connecting bridge
+0x1542,JK Connecting Bridge,JK Connecting Bridge
 0x1557,Strut K Biochem Lab,Strut K Biochem Lab
-0x156b,KL connecting bridge,KL connecting bridge
+0x156b,KL Connecting Bridge,KL Connecting Bridge
 0x1580,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
-0x15a2,LG connecting bridge,LG connecting bridge
+0x15a2,LG Connecting Bridge,LG Connecting Bridge
 0x15b7,Shell 2 Core,Shell 2 Core
 0x15c4,Strut L Oil Fence,Strut L Oil Fence
 0x15d6,Strut H Oil Fence,Strut H Oil Fence
@@ -317,31 +317,31 @@
 0x2039,青山ニ丁目,青山ニ丁目
 0x2049,二ューヨーク52番街,二ューヨーク52番街
 0x2067,Strut A Pump Facility,Strut A Pump Facility
-0x207d,AB connecting bridge,AB connecting bridge
+0x207d,AB Connecting Bridge,AB Connecting Bridge
 0x2092,Strut B Transformer Room,Strut B Transformer Room
-0x20ab,BC connecting bridge,BC connecting bridge
+0x20ab,BC Connecting Bridge,BC Connecting Bridge
 0x20c0,Strut C Dining Hall,Strut C Dining Hall
-0x20d4,CD connecting bridge,CD connecting bridge
+0x20d4,CD Connecting Bridge,CD Connecting Bridge
 0x20e9,Strut D Sediment Pool,Strut D Sediment Pool
-0x20ff,DE connecting bridge,DE connecting bridge
+0x20ff,DE Connecting Bridge,DE Connecting Bridge
 0x2114,Strut E Material Distribution Facility,Strut E Material Distribution Facility
-0x213b,EF connecting bridge,EF connecting bridge
-0x2150,Strut F warehouse,Strut F warehouse
-0x2162,FA connecting bridge,FA connecting bridge
-0x2177,Shell 1 core,Shell 1 core
-0x2184,Shell 1 - 2 connecting bridge,Shell 1 - 2 connecting bridge
+0x213b,EF Connecting Bridge,EF Connecting Bridge
+0x2150,Strut F Warehouse,Strut F Warehouse
+0x2162,FA Connecting Bridge,FA Connecting Bridge
+0x2177,Shell 1 Core,Shell 1 Core
+0x2184,Shell 1-2 Connecting Bridge,Shell 1-2 Connecting Bridge
 0x21a2,Strut G Oil Processing Facility,Strut G Oil Processing Facility
-0x21c2,GH connecting bridge,GH connecting bridge
+0x21c2,GH Connecting Bridge,GH Connecting Bridge
 0x21d7,Strut H Warehouse,Strut H Warehouse
-0x21e9,HI connecting bridge,HI connecting bridge
+0x21e9,HI Connecting Bridge,HI Connecting Bridge
 0x21fe,Strut I Assembly Facility,Strut I Assembly Facility
-0x2218,IJ connecting bridge,IJ connecting bridge
+0x2218,IJ Connecting Bridge,IJ Connecting Bridge
 0x222d,Strut J Power Plant,Strut J Power Plant
-0x2241,JK connecting bridge,JK connecting bridge
+0x2241,JK Connecting Bridge,JK Connecting Bridge
 0x2256,Strut K Biochem Lab,Strut K Biochem Lab
-0x226a,KL connecting bridge,KL connecting bridge
+0x226a,KL Connecting Bridge,KL Connecting Bridge
 0x227f,Strut L Sewage Treatment Facility,Strut L Sewage Treatment Facility
-0x22a1,LG connecting bridge,LG connecting bridge
+0x22a1,LG Connecting Bridge,LG Connecting Bridge
 0x22b6,Shell 2 Core,Shell 2 Core
 0x22c3,Strut L Oil Fence,Strut L Oil Fence
 0x22d5,Strut H Oil Fence,Strut H Oil Fence

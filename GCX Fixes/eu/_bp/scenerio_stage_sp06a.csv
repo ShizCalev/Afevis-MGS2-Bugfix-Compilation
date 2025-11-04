@@ -540,11 +540,11 @@ en el helipuerto.
 0x2c97,"I have defused the explosives. The 
 hostages are all safe now. The other 
 half of the mission is suppressing the 
-terrorist.Fatman must be on the heliport.
+terrorist. Fatman must be on the heliport.
 ","I have defused the explosives. The 
 hostages are all safe now. The other 
 half of the mission is suppressing the 
-terrorist.Fatman must be on the heliport.
+terrorist. Fatman must be on the heliport.
 "
 0x2d34,"人質を爆殺したファットマンは、次の標的を
 俺に定めた。迫り来るファットマンの巨体。
@@ -593,11 +593,11 @@ prossimo bersaglio. Quella palla di lardo
 "
 0x3065,"Tras matar a los rehenes con su bomba,
 Fatman me ha elegido como su próximo 
-objetivo. Su cuerpo es enorme...no tengo
+objetivo. Su cuerpo es enorme... no tengo
 más remedio que acabar con él.
 ","Tras matar a los rehenes con su bomba,
 Fatman me ha elegido como su próximo 
-objetivo. Su cuerpo es enorme...no tengo
+objetivo. Su cuerpo es enorme... no tengo
 más remedio que acabar con él.
 "
 0x30fe,"After killing the hostages with his bomb, 
@@ -877,11 +877,11 @@ B脚のノードにアクセスすればいいらしい。
 B脚のノードにアクセスすればいいらしい。
 "
 0x4424,"Emma told me that I must open the door to 
-the Shell 1 - 2 connecting bridge to go to 
+the Shell 1-2 connecting bridge to go to 
 Shell 2, where the hostages are kept. 
 I must access the node in Strut B to do so.
 ","Emma told me that I must open the door to 
-the Shell 1 - 2 connecting bridge to go to 
+the Shell 1-2 connecting bridge to go to 
 Shell 2, where the hostages are kept. 
 I must access the node in Strut B to do so.
 "
@@ -930,12 +930,12 @@ entre el Shell 1 y el Shell 2. Para ello,
 tengo  que acceder al nodo del Soporte B.
 "
 0x47d4,"Emma told me that I must open the door to 
-the Shell 1-Shell 2 connecting bridge to go to 
-Shell 2 where the hostages are kept.I must 
+the Shell 1-2 connecting bridge to go to 
+Shell 2 where the hostages are kept. I must 
 access the node in Strut B to do so.
 ","Emma told me that I must open the door to 
-the Shell 1-Shell 2 connecting bridge to go to 
-Shell 2 where the hostages are kept.I must 
+the Shell 1-2 connecting bridge to go to 
+Shell 2 where the hostages are kept. I must 
 access the node in Strut B to do so.
 "
 0x4881,"エマはこのF脚のどこかにいるはずだ。だが
@@ -1568,12 +1568,12 @@ persiguen. Antes de nada tengo que salir
 a la Cubierta 2. Igual hay una salida en
 la sala de motores.
 "
-0x7590,"Meryl and Gurlukovich were a team.Sure I was
+0x7590,"Meryl and Gurlukovich were a team. Sure I was
 shocked, but I managed to escape the holds. 
 The enemies are right behind me. I must first 
 get out of Deck 2 here. Maybe if I go back to 
 the engine room there is a way out.
-","Meryl and Gurlukovich were a team.Sure I was
+","Meryl and Gurlukovich were a team. Sure I was
 shocked, but I managed to escape the holds. 
 The enemies are right behind me. I must first 
 get out of Deck 2 here. Maybe if I go back to 
