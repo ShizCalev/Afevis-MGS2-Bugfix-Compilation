@@ -1,0 +1,44 @@
+Start Time,End Time,Lang ID,Text
+431,1768,[FRE],L'incident de Shadow Moses nous a servi|d'exemple pour élaborer cet exercice.
+2048,2967,[FRE],Je me demande si tu n'aurais pas |préféré un contexte imaginaire ?
+3956,4861,[FRE],Nous avons choisi cette toile de fond |par les circonstances extrêmes
+4862,5126,[FRE],qu'elle impliquait.
+5126,5920,[FRE],Ce scénario permettait|de mettre à l'épreuve
+5921,6325,[FRE],l'aptitude du S3 à gérer les crises.
+6339,7286,[FRE],"Si le modèle était capable|de provoquer, de contrôler"
+7300,7940,[FRE],"et de résoudre ce genre de situation,|il était prêt à tout."
+8038,8832,[FRE],"Et à présent, nous en avons la preuve..."
+487,1657,[JPN],我々は演習のモデルに|シャドーモセスを採用した
+2048,3037,[JPN],ひょっとしたら あなたには|ファン夕ジーの方が良かったかしら？
+3984,5112,[JPN],…あの事件を選んだ理由は それが|1つの極限状態だったからだ
+501,1657,[ENG],We used Shadow Moses as|a paradigm for the exercise.
+2048,2967,[ENG],I wonder if you would have|preferred a fantasy setting?
+4012,5098,[ENG],We chose that backdrop because|of its extreme circumstances.
+5140,6268,[ENG],It was an optimal test for S3's|crisis management capacity.
+6325,7258,[ENG],"If the model could trigger,|control and solve this,"
+7300,7940,[ENG],it would be ready for any contingency.
+8038,8832,[ENG],"And now, we have our proof."
+501,1657,[GER],Wir haben Shadow Moses als Muster|für die Übung benutzt.
+2048,3078,[GER],"Ich frage mich, ob Dir eine|Phantasieumgebung berorzugt hättest?"
+4012,5098,[GER],"Wir haben diesen Hintergrund gewählt,|weil die Umstände so extrem sind."
+5140,6268,[GER],Damit wurde das S3-Krisenmanagement |ausgezeichnet auf die Probe gestellt.
+6325,7258,[GER],"Wenn das Modell das hier auslösen,|kontrollieren und lösen könnte,"
+7300,7940,[GER],wäre es für jeden Eventualfall|gewappnet.
+8038,8832,[GER],Und jetzt haben wir den Beweis.
+501,1657,[ITA],Abbiamo usato Shadow Moses come|un paradigma pratico.
+2048,2967,[ITA],Magari tu avresti preferito una situazione|irreale?
+4012,5098,[ITA],Abbiamo scelto quello sfondo per via|delle sue circostanze estreme.
+5140,6268,[ITA],Era un test ottimale per la capacità|di S3 di gestire le crisi.
+6325,7258,[ITA],"Se il modello è in grado di scatenare,|controllare e risolvere quella situazione,"
+7300,7940,[ITA],lo sarà anche per qualunque evenienza.
+8038,8832,[ITA],E ora ne abbiamo le prove.
+501,1657,[SPA],Utilizamos Shadow Moses como|un paradigma para el ejercicio.
+2048,2967,[SPA],¿Me pregunto si hubieras preferido|un entorno irreal?
+4012,5098,[SPA],Escogimos ese telón de fondo por|sus circunstancias extremas.
+5140,6268,[SPA],Era una prueba óptima para probar|la capacidad de gestión del S3.
+6325,7258,[SPA],"Si el sistema es capaz de causar,|controlar y resolver esto,"
+7300,7940,[SPA],es que ya está preparado para|cualquier situación.
+8038,8832,[SPA],"Y ahora, ya tenemos la prueba."
+5126,6282,[JPN],S3の限界性能試験
+6311,7996,[JPN],これを発生・制御・収束できれば|他のいかなる事象へも応用が可能だ
+8024,8845,[JPN],そしてそれは実証された

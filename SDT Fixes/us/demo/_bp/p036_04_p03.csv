@@ -1,0 +1,100 @@
+Start Time,End Time,Lang ID,Text
+905,2033,[FRE],Les otages sont retenus dans la salle|de conférences au niveau B1 du centre
+2034,2298,[FRE],de la Shell 1.
+2312,2702,[FRE],Ames est là-bas.
+2911,3203,[FRE],A quoi est-ce qu'il ressemble ?
+3218,3970,[FRE],On ignore si cette personne est|un homme. Je ne l'ai jamais rencontré
+3970,4374,[FRE],moi non plus.
+4388,5209,[FRE],Comment veux-tu que je trouve|une personne dont je ne sais rien ?
+5294,5572,[FRE],Sers-toi de tes oreilles !
+5572,6003,[FRE],Que veux-tu dire par là ?
+6032,6491,[FRE],Ames porte un pacemaker.
+6534,7411,[FRE],Tu percevras les sons produits par son |dispositif à chaque battement de cœur.
+7453,8010,[FRE],Tu veux que je m'approche|de tous les otages
+8010,8525,[FRE],"pour écouter leurs battements |cardiaques, hein ?"
+8526,9278,[FRE],Il te faut un amplificateur|pour capter ce son.
+9278,9654,[FRE],Tu te ferais prendre sur le champ.
+9654,10127,[FRE],"Comment dois-je m'y prendre, alors ?"
+10170,10699,[FRE],Sers-toi du microphone directionnel.
+10727,11214,[FRE],Il y en a un dans le noyau.
+905,2284,[JPN],人質は全てシェル1の中央棟…|B1の#{集会場、ホール}#に集められている
+2298,2702,[JPN],エイムズもそこだ
+2897,3189,[JPN],その男の特徴は？
+3218,4346,[JPN],男とは限らない 女かも知れない|俺も会ったことはない
+919,1880,[ITA],Gli ostaggi soho all'interno|della sala convegni sul piano B1
+1880,2297,[ITA],al centro di Shell 1.
+2312,2702,[ITA],È là che troverai Ames.
+2911,3203,[ITA],Che aspetto ha?
+3218,3844,[ITA],"Non sappiamo se sia un uomo|o una donna,"
+3859,4374,[ITA],Neppure io l'ho mai visto di persona.
+4388,5209,[ITA],E come faccio a cercare qualcuno senza|avere neppure una descrizione!?
+5294,5572,[ITA],Usa le orecchie.
+5572,6003,[ITA],Cosa diavolo vuoi dire?
+6032,6491,[ITA],Ames ha un pacemaker.
+6534,7411,[ITA],Sentirai il suono dell'apparecchio del|suo battito cardiaco.
+7453,8010,[ITA],"No, dico, ti aspetti che io vada da|ognuno degli ostaggi"
+8010,8497,[ITA],e mi metta ad ascoltare|il battito di ognuno?
+8540,9208,[ITA],"Quel suono è troppo debole,|dovrai amplificarlo."
+9209,9654,[ITA],Ti catturerebbero subito.
+9654,10127,[ITA],Allora cosa dovrei fare?
+10170,10699,[ITA],Usa il microfono direzionale.
+10727,11214,[ITA],Ce n'è uno lí da qualche parte.
+933,1838,[GER],Die Geiseln befinden sich im|Konferenzsaal auf Etage B1
+1852,2297,[GER],im Kern von Shell 1.
+2312,2702,[GER],Dort findest Du Ames.
+2911,3203,[GER],Wie sieht er aus?
+3232,3845,[GER],"Wir wissen nicht, ob es überhaupt|ein Mann ist."
+3859,4360,[GER],Ich kenne ihn auch nicht.
+4388,5265,[GER],"Wie soll ich denn jemanden finden, ohne|zu wissen, wie er oder sie aussieht?"
+5294,5572,[GER],Benutze Deine Ohren!
+5572,6003,[GER],Was soll das denn heißen?
+6032,6491,[GER],Ames trägt einen Herzschrittmacher.
+6534,7411,[GER],"Du wirst erkennen, daß er |keinen natürlichen Herzschlag hat."
+7453,8010,[GER],Ich soll also an diesen|Geiseln entlanggehen
+8010,8497,[GER],und bei jeder auf den |Herzschlag lauschen?
+8540,9208,[GER],"Das Geräusch ist sehr leise,|einen Verstärker"
+9209,9654,[GER],Du würdest sofort entdeckt werden.
+9654,10155,[GER],Was soll ich denn dann machen?
+10170,10699,[GER],Benutze das Richtmikrofon.
+10727,11326,[GER],Irgendwo im Kern findest Du eins.
+961,2284,[ENG],The hostages are being held in the B1 |conference hall in the Shell 1 core.
+2312,2702,[ENG],You'll find Ames there.
+2911,3203,[ENG],What does he look like?
+3232,4346,[ENG],"We don't know if it is indeed a ""he."" |I've never met this person either."
+4388,5209,[ENG],How am I supposed to look for someone|without even a description?
+5294,5572,[ENG],Use your ears.
+5572,6003,[ENG],What's that supposed to mean?
+6032,6491,[ENG],Ames has a pacemaker.
+6534,7411,[ENG],You'll be able to hear the machine|sound in the heartbeat.
+7453,8010,[ENG],You expect me to walk up|to these hostages...
+8010,8497,[ENG],and listen to every one|of their heartbeats?
+8540,9208,[ENG],The sound is too minute|to detect unamplified.
+9209,9654,[ENG],You'd be captured immediately.
+9654,10127,[ENG],So what am I supposed to do?
+10170,10699,[ENG],Use the directional microphone.
+10727,11214,[ENG],There's one somewhere in the core.
+961,2284,[SPA],"Los rehenes están retenidos en la sala|de conferencias B1, núcleo del Shell 1."
+2312,2702,[SPA],Encontrarás a Ames allí.
+2911,3203,[SPA],¿Cómo es él?
+3232,4346,[SPA],"¿Y por qué crees que es un ""él""?|Yo tampoco le he visto nunca."
+4388,5209,[SPA],¿Y cómo voy a buscar a alguien de|quien no sé absolutamente nada?
+5294,5572,[SPA],Utiliza tus orejas.
+5572,6003,[SPA],¿Qué quieres decir con eso?
+6032,6491,[SPA],Ames tiene un marcapasos.
+6534,7411,[SPA],Podrás escuchar el ruido que produce |esa máquina.
+7453,8010,[SPA],¿Y quieres que vaya andando al lado|de todos los rehenes.
+8010,8497,[SPA],escuchando los latidos de|sus corazones?
+8540,9208,[SPA],El sonido es demasiado bajo como|para detectarlo solo con el oído.
+9209,9654,[SPA],Te capturarían en poco tiempo.
+9654,10127,[SPA],¿Y qué se supone que tengo que|hacer entonces?
+10170,10699,[SPA],Utiliza el micrófono direccional.
+10727,11214,[SPA],Encontrarás uno en algún lugar|del núcleo.
+4374,5265,[JPN],それでどうやって探せと言うんだ？
+5294,5614,[JPN],聞こえるはずだ
+5614,6004,[JPN],聞こえる？
+6018,6491,[JPN],エイムズは心臓にペースメイカーを|埋め込んでいる
+6520,7397,[JPN],鼓動音にペースメイカーの音が混じるはずだ
+7439,8483,[JPN],ひとりひとりの胸に耳を当てろと？
+8526,9640,[JPN],いや それでは聞こえない|見張りにも見つかるだろう
+9654,10141,[JPN],…どうしろと言うんだ？
+10156,11242,[JPN],指向性マイクを使え|中央棟のどこかにあるはずだ

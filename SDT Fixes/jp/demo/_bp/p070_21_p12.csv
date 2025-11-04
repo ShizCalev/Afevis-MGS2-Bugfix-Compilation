@@ -1,0 +1,53 @@
+Start Time,End Time,Lang ID,Text
+626,1656,[JPN],この先に格納庫への通路がある|そこで待っているはず
+1755,2507,[JPN],格納庫へのカードキーも彼に渡してある
+2828,3580,[JPN],スネークはアーセナルギアを|破壊するつもりなのか？
+3636,4597,[JPN],いいえ 完全に破壊することは|いくらスネークでも無理
+640,1670,[ENG],The passageway ahead leads to|a hangar.  He'll be waiting there.
+1713,2339,[ENG],I gave him a card key for the hangar.
+2800,3566,[ENG],Does Snake plan to destroy|Arsenal Gear?
+3622,4722,[ENG],"No. Even for Snake, it's impossible|to completely destroy this thing."
+4764,5558,[ENG],The only option is to stop|Solidus and his men.
+5656,6046,[ENG],What're you going to do?
+6074,6366,[ENG],Stay concealed.
+6506,6770,[ENG],That's my role.
+6938,7578,[ENG],I still can't afford to be discovered...
+640,1670,[GER],Etwas weiter findest Du einen Korridor.|Er führt zu einem Hangar.
+1713,2339,[GER],Dort erwartet Dich Snake.|Er hat die Zugangskarte.
+2800,3566,[GER],Will Snake Arsenal Gear zerstören?
+3622,4722,[GER],Nein. Selbst Snake kann dieses Ding|nicht vollständig zerstören.
+4764,5558,[GER],"Die einzige Chance ist, Solidus und seine|Männer aufzuhalten."
+5656,6046,[GER],Was wirst Du tun?
+6074,6366,[GER],Mich bedeckt halten.
+6506,6770,[GER],Das ist meine Aufgabe.
+6938,7578,[GER],"Ich kann es mir immer noch nicht leisten,|entdeckt zu werden."
+640,1670,[FRE],Le passage qui se trouve plus loin mène |à un hangar. Il t'y attendra.
+1713,2339,[FRE],Je lui ai donné une carte d'accès |au hangar.
+2800,3566,[FRE],Snake a-t-il l'intention de détruire |l'Arsenal Gear ?
+3622,4722,[FRE],Non. Snake lui-même ne pourrait pas |détruire cet engin.
+4764,5558,[FRE],Il faut arrêter Solidus et ses hommes. |C'est la seule solution.
+5656,6046,[FRE],"Et toi, que vas-tu faire ?"
+6074,6366,[FRE],"Il faut que je reste dans l'ombre,"
+6506,6770,[FRE],c'est mon rôle.
+6938,7578,[FRE],Je ne peux pas me permettre|de me faire repérer...
+640,1670,[ITA],Il passaggio qui avanti porta ad|un hangar. Lui ti aspetta lì.
+1713,2339,[ITA],Gli ho dato la tessera di |accesso per l'hangar.
+2800,3566,[ITA],Snake ha un piano per distruggere|l'Arsenal Gear?
+3622,4722,[ITA],No. Anche Snake non può distruggere|completamente questo coso.
+4764,5613,[ITA],L'unica cosa da fare è fermare|Solidus e i suoi uomini.
+5656,6046,[ITA],E tu cosa farai?
+6074,6408,[ITA],Me ne starò nascosta.
+6506,6812,[ITA],Il mio ruolo è quello.
+6938,7648,[ITA],Non posso ancora permettere che mi |scoprano...
+640,1670,[SPA],El pasillo que hay allí delante lleva hacia|un hangar. Te está esperando allí.
+1713,2339,[SPA],Le ha dado la llave del hangar.
+2800,3566,[SPA],¿Y Snake planea destruir|el Arsenal Gear?
+3622,4722,[SPA],No. Ni siquiera Snake lo puede destruir.|La única opción es...
+4764,5558,[SPA],destruir a Solidus y a sus hombres.
+5656,6046,[SPA],¿Qué vas a hacer?
+6074,6770,[SPA],Permanecer escondida. Ése es mi papel.
+6938,7676,[SPA],Todavía no puedo permitir que |me descubran...
+4695,5544,[JPN],だからソリダス達を倒すしかない
+5698,5934,[JPN],君はどうする？ 
+6074,6798,[JPN],私は潜伏する それが#{役割、ロール}#
+6952,7648,[JPN],まだ奴等に気づかれるわけにはいかない…

@@ -1,0 +1,92 @@
+Start Time,End Time,Lang ID,Text
+12120,12301,[JPN],大佐#－
+12315,12983,[JPN],今 船尾側のハッチを閉鎖しました
+13026,13304,[JPN],わかった…
+13416,13973,[JPN],昇降機も我々が抑えました
+12148,12816,[ENG],"Colonel, we have sealed|the stern hatch."
+13054,13290,[ENG],All right.
+13402,14070,[ENG],The lift is also under our control.
+14196,15157,[ENG],We're on the foredeck. |About to descend to the holds.
+15227,16132,[ENG],"Sir, the Marine commander has started |his speech already."
+16300,17247,[ENG],We will complete the preparations |before the end of the speech.
+17289,17985,[ENG],All communications to the holds |have been severed.
+18014,18599,[ENG],No one is aware of our presence.
+19031,19839,[ENG],Let no one down into the holds|until we are out.
+19992,21120,[ENG],"Yes sir! We will secure your exit,|with our lives if necessary."
+21288,21650,[ENG],There is one more thing...
+22026,22234,[ENG],Yes sir?
+23252,23878,[ENG],My daughter -- keep her safe.
+24102,24324,[ENG],Yes sir!
+29577,29883,[ENG],Who goes there?
+12148,12816,[GER],"Oberst, wir haben die Heckluke|versiegelt."
+13054,13290,[GER],In Ordnung.
+13402,14070,[GER],Der Aufzug ist auch unter|unserer Kontrolle.
+14168,15198,[GER],Sind auf dem Vorderdeck. Geh'n gleich|zu den Frachträumen runter.
+15227,16132,[GER],"Sir, der Marinekommandant hat schon|mit seiner Rede begonnen."
+16300,17247,[GER],Wir werden die Vorbereitungen vor Ende|der Rede abgeschlossen haben.
+17289,17985,[GER],Alle Kommunikationswege zu den|Frachträumen wurde unterbrochen.
+18014,18599,[GER],Niemand weiß von unserer Anwesenheit.
+19031,19839,[GER],"Laßt keinen in die Frachträume,|bis wir weg sind."
+19992,21120,[GER],"Ja, Sir! Wir werden Deinen Abgang|sichern, wenn nötig, mit unserem Leben."
+21288,21650,[GER],Da ist noch etwas.
+22026,22234,[GER],"Ja, Sir?"
+23252,23878,[GER],Meine Tochter bringt sie in Sicherheit.
+24102,24324,[GER],"Ja, Sir!"
+29577,29883,[GER],Wer ist da?
+12148,12816,[FRE],"Colonel, nous avons bouclé |l'écoutille arrière."
+13054,13290,[FRE],Très bien.
+13402,14070,[FRE],Nous avons également mis l'ascenseur |sous contrôle.
+14196,15157,[FRE],Nous sommes sur le pont avant|et allons descendre dans les cales.
+15227,16132,[FRE],"Chef, le Commandant des marines|a déjà commencé son discours."
+16300,17247,[FRE],Nous allons terminer les préparatifs |avant la fin du discours.
+17289,17985,[FRE],Toutes les communications|avec les cales ont été interrompues.
+18014,18599,[FRE],Personne ne sait que nous sommes ici.
+19031,19839,[FRE],"Tant qu'on sera ici, ne laissez personne |entrer dans les cales !"
+19992,21120,[FRE],A vos ordres ! Nous couvrirons votre |départ au péril de notre vie s'il le faut.
+21288,21650,[FRE],Autre chose...
+22026,22234,[FRE],"Oui, Chef ?"
+23252,23878,[FRE],Ma fille... protégez-la.
+24102,24324,[FRE],A vos ordres !
+29577,29883,[FRE],Qui va là ?
+12148,12816,[ITA],"Colonnello, abbiamo bloccato il|boccaporto di poppa."
+13054,13290,[ITA],Bene.
+13402,14070,[ITA],Anche l'ascensore è sotto controllo.
+14196,15157,[ITA],Siamo sul ponte di prua.|Ora scendiamo nella stiva.
+15227,16132,[ITA],"Colonnello, il comandante dei Marines ha|già cominciato il discorso."
+16300,17247,[ITA],Completeremo tutti i preparativi prima|che finisca.
+17289,17985,[ITA],Tutte le comunicazioni con la stiva sono|state interrotte.
+18014,18599,[ITA],Nessuno sa della nostra presenza.
+19031,19839,[ITA],Non lasciate che nessuno scenda nella|stiva fino a quando non saremo usciti.
+19992,21120,[ITA],"Sissignore! Proteggeremo la vostra|uscita, con la vita se necessario."
+21288,21650,[ITA],C'è un'ultima cosa...
+22026,22234,[ITA],"Sì, Colonnello?"
+23252,23878,[ITA],Mia figlia... prendetevi cura di lei.
+24102,24324,[ITA],Sissignore!
+29577,29883,[ITA],Chi va là!
+12148,12816,[SPA],"Coronel, hemos cerrado la escotilla|de popa."
+13054,13290,[SPA],Vale.
+13402,14070,[SPA],El ascensor también está bajo control.
+14196,15157,[SPA],Estamos en la cubierta de proa.|Vamos a descender a las bodegas.
+15227,16132,[SPA],"Señor, el Comandante de los Marine|ya ha empezado su discurso."
+16300,17247,[SPA],Terminaremos los preparativos antes de|que acabe con el discurso.
+17289,17985,[SPA],Se han cortado todas las comunicaciones|con las bodegas.
+18014,18599,[SPA],Nadie se ha percatado de nuestra|presencia.
+19031,19839,[SPA],No dejes que baje nadie a las bodegas|hasta que estemos fuera.
+19992,21120,[SPA],"¡Sí, señor! Protegeremos su salida,|con nuestras vidas si hiciera falta."
+21288,21650,[SPA],Hay algo más...
+22026,22234,[SPA],"¿Sí, señor?"
+23252,23878,[SPA],Mi hija... cuida de ella.
+24102,24324,[SPA],"¡Sí, señor!"
+29577,29883,[SPA],¡Quién es!
+14154,15003,[JPN],#{船首甲板、フォアデッキ}#に到着した|これから降下する…
+15185,16188,[JPN],下では既に海兵隊司令官の|演説が始まっています
+16342,17066,[JPN],演説が終わるまでに準備を終える
+17261,17887,[JPN],上との連絡手段を遮断しました
+17944,18821,[JPN],下の連中で我々の侵入に気づく者はいません
+19058,19796,[JPN],我々が脱出するまで 誰も入れるな！
+20020,20995,[JPN],了解…大佐達の脱出路です|死守します
+21288,21803,[JPN],…それと 頼みがある
+22082,22597,[JPN],はい 何でしょう 大佐？
+23336,23670,[JPN],#{娘、オルガ}#を頼む
+24144,24366,[JPN],…わかりました
+29647,29897,[JPN],誰だ！

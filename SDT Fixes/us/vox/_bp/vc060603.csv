@@ -1,0 +1,13 @@
+Start Time,End Time,Lang ID,Text
+13,430,[ENG],Here's the|digital camera.
+459,1044,[ENG],Works almost the same|way as your old one.
+13,430,[GER],Hier ist die|Digitalkamera.
+459,1044,[GER],Funktioniert fast|wie Deine alte.
+13,430,[FRE],Voici l'appareil|photo numérique. 
+459,1044,[FRE],Il fonctionne presque|comme ton ancien appareil.
+13,430,[ITA],Ecco la telecamera digitale.
+459,1044,[ITA],Funziona quasi come la tua |vecchia macchina.
+13,430,[SPA],Aquí está la cámara digital. 
+459,1044,[SPA],Funciona prácticamente igual |que la otra que tenías. 
+13,430,[JPN],これがデジ夕ルカメラ
+459,1113,[JPN],使い方は#{前回、これまで}と|ほとんど同じだ

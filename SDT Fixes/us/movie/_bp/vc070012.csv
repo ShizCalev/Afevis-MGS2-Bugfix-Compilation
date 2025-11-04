@@ -1,0 +1,37 @@
+Start Time,End Time,Lang ID,Text
+111,528,[ENG],I have a daughter#－
+724,1434,[ENG],"and it is my greatest wish|never to have her,"
+1434,1838,[ENG],"or her children,"
+1894,2757,[ENG],experience the horror|of nuclear war. 
+2842,3482,[ENG],"As a father, I want to|leave a better world"
+3482,3969,[ENG],for the future generation. 
+4082,4458,[ENG],"As a soldier, "
+4458,5001,[ENG],I know that is my duty.
+111,528,[GER],"Ich habe eine Tochter,"
+738,1852,[GER],"und es ist mein größter Wunsch,|daß weder sie, noch ihre Kinder"
+1880,2827,[GER],jemals den Horror eines Atomkrieges|erleben müssen.
+2842,3482,[GER],Als Vater möchte|ich eine bessere Welt
+3482,4067,[GER],für kommende Generationen|hinterlassen.
+4082,5085,[GER],"Als Soldat weiß ich, daß|dies meine Pflicht ist."
+111,528,[FRE],J'ai une fille
+724,1824,[FRE],et je souhaite de tout cœur|lui éviter
+1894,2757,[FRE],de connaître l'horreur|de la guerre nucléaire.
+2772,3524,[FRE],"En tant que père, je souhaite|léguer un monde meilleur"
+3524,4067,[FRE],aux générations futures.
+4082,4458,[FRE],"En tant que soldat,|"
+4458,5001,[FRE],je sais qu'il est de mon devoir |de suivre cet objectif.
+111,528,[ITA],Io ho una figlia
+724,1824,[ITA],e il mio desiderio più grande|è che né lei né i suoi
+1894,2757,[ITA],figli debbano vivere l'orrore di |una guerra nucleare.
+2842,3956,[ITA],Come padre voglio lasciare un mondo |migliore alle generazioni del futuro.
+4082,4987,[ITA],E come soldato so che è |mio dovere farlo.
+111,528,[SPA],"Tengo una hija, "
+724,1434,[SPA],"y es mi gran deseo que |ni ella ni sus hijos,"
+1434,1838,[SPA],vivan el horror de una guerra nuclear. 
+1894,2757,[SPA],"Como padre de familia, "
+2842,3886,[SPA],quiero que el mundo sea un lugar |mejor para las futuras generaciones.
+4068,5043,[SPA],"Como soldado, ésa es mi obligación. "
+111,612,[JPN],私にも娘がいる
+738,2772,[JPN],娘 そしてその子供達には|核の恐怖を味わわせたくはない
+2842,4040,[JPN],父親として 次の世代に|より良い世界を残したいのだ
+4082,5015,[JPN],それは軍人としての義務でもある

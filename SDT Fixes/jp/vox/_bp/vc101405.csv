@@ -1,0 +1,102 @@
+Start Time,End Time,Lang ID,Text
+0,557,[SPA],... ya está. Es fácil ¿verdad?
+613,1337,[SPA],El espray congela|el detonador inmediatamente.
+1407,1922,[SPA],¿Y cuánto tiempo|dura el efecto? 
+1978,2758,[SPA],La bomba no podrá |detonar en este estado. 
+2772,3120,[SPA],"Sin hacer nada más, "
+3120,3830,[SPA],su efecto se retardará |al menos 24 horas. 
+3873,4207,[SPA],Tiempo de sobra. 
+4277,5224,[SPA],"Si tuviéramos gente calificada,|lo mejor sería desactivarlas. "
+5224,5683,[SPA],"Pero dadas las circunstancias,|tendremos que hacerlo así.  "
+5684,6533,[SPA],Puedes echar el espray |desde unos metros. 
+6561,7243,[SPA],"Busca en el suelo,|en el techo, en las paredes, "
+7244,7773,[SPA],debajo de las mesas ...|por todos los sitios. 
+7787,8622,[SPA],Intenta imaginarte dónde|habrá puesto las bombas.
+8651,9570,[SPA],No va a ser fácil. No|sabemos nada sobre Fatman.
+9571,10337,[SPA],¿Hay alguna forma de saber|dónde pueden estar las bombas?
+10351,10894,[SPA],"Toma, lleva esto."
+13,542,[ENG],"...there we go. Simple, huh?"
+640,1322,[ENG],The spray freezes the |detonator instantly.
+1407,1922,[ENG],How long does the effect last?
+1978,2758,[ENG],There's no way the thing can |detonate in this condition.
+2772,3120,[ENG],"Even if you leave it alone,"
+3120,3830,[ENG],it'll stay out of commission |for at least 24 hours.
+3873,4207,[ENG],That's enough time.
+4277,5252,[ENG],"If we had the manpower, I'd |recommend complete disposal."
+5266,5656,[ENG],But this will have to do.
+5684,6533,[ENG],The spray can be used from |several yards away.
+6603,7759,[ENG],"Now, check the floor, ceiling, walls, |under a table -- everywhere."
+7787,8622,[ENG],Try to imagine the locations|the bomber would choose.
+8651,9570,[ENG],That won't be easy. We don't|know a thing about Fatman.
+9599,10309,[ENG],Is there anything that'll help |us locate the bombs?
+10351,10894,[ENG],"Here, take this with you."
+13,430,[JPN],どうだ？|簡単だろう？
+571,1685,[JPN],とにかく このスプレーで|起爆部分を瞬時に冷却する
+1741,2200,[JPN],どれくらいこの状態が|持つんだ
+13,542,[GER],"Das war's schon!|Einfach, nicht wahr?"
+640,1322,[GER],Das Spray friert den |Zünder sofort ein.
+1407,1922,[GER],Wie lange hält|der Effekt an?
+1978,2758,[GER],"In diesem Zustand geht das|Ding garantiert nicht hoch,"
+2772,3830,[GER],in jedem Fall ist es mindestens|24 Stunden nicht zu gebrauchen.
+3873,4207,[GER],Genug Zeit.
+4235,4680,[GER],"Wenn wir mehr|Männer hätten,"
+4681,5266,[GER],würde ich eine totale|Räumung empfehlen.
+5266,5656,[GER],Aber das muß erst|mal genügen.
+5656,6199,[GER],Das Spray kann aus|einigen Metern
+6199,6561,[GER],Entfernung eingesetzt|werden.
+6561,7480,[GER],"Kontrolliere Böden, Decken,|Wände, unter Tischen "
+7481,7759,[GER],- überall.
+7787,8622,[GER],"Überlege, welche Verstecke|ein Bombenleger wählen würde."
+8623,9027,[GER],Das wird nicht einfach.
+9027,9598,[GER],Wir wissen doch gar|nichts über Fatman.
+9599,10309,[GER],"Gibt es etwas, das uns helfen|kann, die Bomben zu finden?"
+10351,10894,[GER],"Hier, nehmt das mit."
+13,570,[FRE],Et voilà.|C'est simple !
+571,1365,[FRE],Ce pulvérisateur bloque|instantanément le détonateur.
+1407,1922,[FRE],Pour combien de temps ?
+1978,2758,[FRE],"Cette bombe ne peut|pas exploser, à présent !"
+2772,3120,[FRE],"Même laissée en l'état,"
+3120,3830,[FRE],elle restera hors course|au moins 24 heures !
+3873,4207,[FRE],C'est largement suffisant !
+4277,5252,[FRE],"Si on avait eu le renfort adéquat,|j'aurais préféré la désamorcer."
+5266,5656,[FRE],Mais ça ira.
+5684,6533,[FRE],On peut pulvériser ce produit|à quelques mètres de distance.
+6603,7745,[FRE],"Vérifie sols, plafonds, murs,|et dessous de table -- tout !"
+7746,8623,[FRE],L'important est d'imaginer où|les bombes ont pu été posées !
+8651,9570,[FRE],Ça ne va pas être de la tarte !|On ne sait rien de Fatman.
+9599,10309,[FRE],Y'a-t-il un moyen de faciliter|le repérage des bombes ?
+10351,10894,[FRE],"Tiens, prenez ça !"
+13,542,[ITA],"... ecco fatto. Semplice, no?"
+640,1322,[ITA],Lo spray blocca|istantaneamente il detonatore.
+1407,1922,[ITA],Per quanto dura|il suo effetto?
+1978,2758,[ITA],In questo stato non potrebbe |mai esplodere.
+2772,3120,[ITA],"Anche se non la tocchi,"
+3120,3830,[ITA],rimarrà fuori uso|per almeno 24 ore.
+3873,4207,[ITA],Questo basta e avanza.
+4221,4792,[ITA],Se avessimo più uomini|consiglierei
+4792,5265,[ITA],"di disinnescarla|completamente,"
+5266,5656,[ITA],ma dobbiamo|essere realistici.
+5684,6533,[ITA],Lo spray può essere usato a|una distanza di diversi metri.
+6561,7313,[ITA],"Controllate ovunque:|pavimento, soffitto, pareti,"
+7314,7745,[ITA],sotto i tavoli #_ dappertutto.
+7746,8219,[ITA],Cercate di indovinare|dove i terroristi
+8219,8636,[ITA],avrebbero potuto lasciare|gli ordigni.
+8637,8999,[ITA],Non sarà facile.
+9000,9585,[ITA],Di Fatman non sappiamo|assolutamente nulla.
+9599,10351,[ITA],C'è qualcosa che potrebbe|aiutarci a localizzare le bombe?
+10351,10894,[ITA],"Ecco, prendete questo."
+2243,2911,[JPN],この状態で|爆発することはありえん
+2995,3914,[JPN],このまま放置しても|24時間は大丈夫だ
+3914,4025,[JPN],
+4026,4527,[JPN],それだけ持てば|ことは足りる
+4583,5544,[JPN],人手があればちゃんと|解体したいが 仕方あるまい
+5698,6311,[JPN],スプレーの飛距離は|数メートルだ
+6380,7090,[JPN],床や壁 天井 机の下…
+7119,7495,[JPN],あらゆるところを|探すんだ
+7495,7717,[JPN],
+7718,8651,[JPN],爆弾をセットした人間の|思考を思い描け
+8651,8776,[JPN],
+8777,8874,[JPN],
+8874,9612,[JPN],悪いがファットマンは|俺の教え子じゃない
+9724,10378,[JPN],何か爆弾の位置が|わかるものはないのか？
+10560,10852,[JPN],これを持っていけ

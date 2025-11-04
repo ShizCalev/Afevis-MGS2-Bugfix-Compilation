@@ -1,0 +1,12 @@
+Start Time,End Time,Lang ID,Text
+0,668,[FRE],"Il y a un problème dans le noyau|de la Shell 1, au hall du niveau B1. "
+668,960,[FRE],Allez y tout de suite ! 
+13,584,[ENG],"Trouble in Shell 1|Core, B1 Hall."
+585,891,[ENG],Check it immediately.
+13,960,[GER],"Probleme im Kern von Shell 1, Halle|auf Etage B1. Sofort überprüfen."
+13,584,[ITA],"C'è un problema nel centro di Shell 1, |Sala al piano B1."
+585,891,[ITA],Controllate immediatamente.
+13,584,[SPA],Hay problemas en el Vestíbulo del |Sótano B1 del Núcleo del Shell 1. 
+585,891,[SPA],Dirigíos allí inmediatamente.
+27,779,[JPN],シェル1中央棟|B1#{集会場、ホール}で異状発生
+808,1184,[JPN],至急確認に向かえ

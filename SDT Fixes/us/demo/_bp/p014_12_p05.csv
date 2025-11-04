@@ -1,0 +1,63 @@
+Start Time,End Time,Lang ID,Text
+431,1406,[FRE],Le système de sécurité de la Big Shell|obéit à différents niveaux
+1407,1685,[FRE],d'autorisation.
+1769,2493,[FRE],Le niveau d'autorisation est indiqué|par le numéro mentionné sur
+2493,2883,[FRE],les différentes portes.
+2925,4109,[FRE],"Raiden, ta carte d'accès permet d'ouvrir|les portes de niveau d'autorisation 1."
+4249,5126,[FRE],"Pliskin, ta carte te permet d'entrer|dans les zones de niveau 3."
+5182,5795,[FRE],Tu en auras besoin pour pénétrer |dans la Shell 2.
+6394,6714,[FRE],Comment te l'es-tu procurée ?
+6715,7328,[FRE],C'est l'ingénieur dont je t'ai parlé |qui me l'a donnée.
+7425,8260,[FRE],Il était censé programmer un jeu|de cartes permettant d'accéder
+8261,8720,[FRE],à toutes les zones dès notre arrivée |sur le site.
+8735,9445,[FRE],"Malheureusement, cette carte|ne vous permettra pas de pénétrer"
+9445,9974,[FRE],dans toutes les zones de la structure.
+431,1071,[ITA],Il piano di sicurezza|della Big Shell include
+1072,1643,[ITA],vari livelli di autorizzazione|per l'accesso.
+1783,2730,[ITA],Il livello di autorizzazione è indicato dal|numero riportato su queste porte.
+2925,4109,[ITA],"Raiden, la tua tessera può aprire|le porte con livello di accesso 1."
+4249,5126,[ITA],"Pliskin, la tua invece ti può far accedere|alle aree di livello 3."
+5182,5795,[ITA],Ti servirà per andare su Shell 2.
+6422,6700,[ITA],Come te li sei procurati?
+6715,7328,[ITA],Me li ha dati quel tecnico di|cui ti parlavo.
+7397,8274,[ITA],Aurebbe dovuto programmare un set di|tessere che ci avrebbe dato l'accesso
+8275,8609,[ITA],"a tutti i livelli,"
+8735,9765,[ITA],"Purtroppo, questa tessera non ti darà|accesso a tutte le aree del sistema."
+445,1573,[GER],Die Sicherheitsvorkehrungen der Big Shell|umfassen verschiedene Sicherheitsstufen.
+1769,2813,[GER],"Die Sicherheitsstufe ist an der Zahl|erkennbar, die auf diesen Türen steht."
+2925,4109,[GER],"Raiden, Dein Kartenschlüssel kann|Türen mit Sicherheitsstufe 1 öffnen."
+4235,5154,[GER],"Pliskin, mit Deiner Karte kommst Du|in Bereiche der Sicherheitsstufe 3."
+5182,5795,[GER],"Die brauchst Du, um zu Shell 2|rüberzukommen."
+6422,6700,[GER],Wie bist Du daran gekommen?
+6715,7397,[GER],"Der Techniker, von dem ich Euch|erzählt habe, hat sie mir gegeben."
+7495,8609,[GER],Er sollte uns einen Satz|Zugangskarten programmieren.
+8735,9821,[GER],Leider kommt Ihr mit dieser Karte nicht|in jeden Bereich der Anlage.
+445,1573,[JPN],『ビッグ・シェル』はレベル別の|セキュリティ・システムが敷かれている
+1783,2772,[JPN],それぞれ 扉にかかれた|カード・ナンバーに対応している
+2897,3133,[JPN],雷電#－
+3148,4137,[JPN],君のカードはセキュリティ・レベル1の|扉を開けることができる
+4221,5126,[JPN],プリスキン 君はセキュリティ・レベル3だ
+5154,5906,[JPN],隣のシェル2へ行くにはレベル3の|カードが必要だからな
+459,1503,[ENG],The Big Shell's security layout includes |varying levels of clearance.
+1783,2730,[ENG],The clearance level is identified by|the number printed on these doors.
+2925,4109,[ENG],"Raiden, your card key can open doors|with security clearance level 1."
+4249,5126,[ENG],"Pliskin, your card can get|you into level 3 areas."
+5182,5795,[ENG],You'll need it to get|next door to Shell 2.
+6422,6700,[ENG],How did you get this?
+6715,7328,[ENG],That engineer I told you|about gave it to me.
+7495,8609,[ENG],He was supposed to program a set of |all-access cards once we were on-site.
+8735,9765,[ENG],"Unfortunately, this card won't get you|into every area of this structure."
+459,1503,[SPA],El sistema de acceso al Big Shell se|divide en diferentes niveles de seguridad.
+1783,2786,[SPA],El nivel de cada zona se identifica|por el número impreso en cada puerta.
+2925,4109,[SPA],"Raiden, tu tarjeta de seguridad abre|las puertas con nivel de seguridad 1."
+4249,5126,[SPA],"Pliskin, tu tarjeta podrá abrirlas puertas|con nivel de seguridad 3."
+5182,5795,[SPA],La necesitas para poder acceder|al Shell 2.
+6422,6700,[SPA],¿Y cómo las has conseguido?
+6715,7328,[SPA],Me las dio ese ingeniero del que|te he hablado.
+7495,8609,[SPA],Debió de haber programado tarjetas|todos los niveles de seguridad.
+8735,9765,[SPA],"Pero desgraciadamente, esta tarjeta no|puede acceder a todos los niveles."
+6422,6700,[JPN],どうしてこれを？
+6715,7411,[JPN],一緒に来た男から預かった
+7439,8038,[JPN],本来なら 彼がここでさらに高度な#－
+8038,8999,[JPN],セキュリティ・レベルに侵入できる|カードを#{偽造、プログラム}#するはずだった…従って#ー
+9000,9891,[JPN],すべてのエリアに|入れるわけではない

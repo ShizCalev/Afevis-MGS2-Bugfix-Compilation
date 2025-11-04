@@ -1,0 +1,15 @@
+Start Time,End Time,Lang ID,Text
+13,235,[ENG],I read you.
+278,835,[ENG],I'm sending a search team |to the engine room
+835,1294,[ENG],to secure the engine area.
+13,834,[GER],"Ich sende einen Suchtrupp|zum Maschinenraum,"
+835,1336,[GER],um den Maschinenbereich|zu sichern.
+13,793,[FRE],J'envoie une équipe de recherche|à la salle des moteurs
+794,1351,[FRE],pour protéger|la zone des moteurs.
+13,235,[SPA],Te recibo.
+278,835,[SPA],Envío un equipo de rastreo a la sala |de máquinas para proteger
+835,1294,[SPA],la zona de máquinas.
+27,821,[ITA],"Ora invio una squadra di perlustrazione |alla sala motori,"
+835,1294,[ITA],per proteggere la zona motori.
+41,709,[JPN],わかった 増援部隊|機関室へ向かえ
+738,1114,[JPN],エンジン付近を固めろ

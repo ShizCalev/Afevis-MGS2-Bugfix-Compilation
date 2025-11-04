@@ -1,0 +1,64 @@
+Start Time,End Time,Lang ID,Text
+376,1574,[JPN],前世紀末にコンピュー夕業界を襲った|あの大騒ぎを憶えてない？
+1852,2172,[JPN],#{Y2K、ワイツーケー}#問題か？
+2243,2410,[JPN],そう
+2619,4026,[JPN],まず政府が中心となって対策プログラムを|全世界に提供 配布した
+390,780,[GER],"Erinnerst Du Dich noch an die Panik,"
+780,1601,[GER],die sich in der Computerbranche vor der|Jahrtausendwende ausbreitete?
+1741,2228,[GER],Du meinst das Jahr-2000-Problem?
+2312,2534,[GER],Ja.
+2702,2980,[GER],Weißt Du noch.
+3009,4081,[GER],Unsere Regierung stellte der ganzen Welt|ein Abhilfeprogramm zur Verfügung.
+4179,4861,[GER],und dabei die Kapazität |des Internet voll ausnutzte.
+4959,5920,[GER],Das Programm wurde weltweit an alle |staatlichen Organisationen.
+5921,6687,[GER],"Alle wichtigen Einrichtungen, verteilt."
+6826,8024,[GER],Außerdem wurde dieses Programm in|ein Betriebssystem integriert
+8024,8581,[GER],und öffentlich zugänglich gemacht.
+417,1127,[ENG],Do you remember the panic|that gripped the computer industry
+1128,1532,[ENG],prior to the end of the century?
+1741,2228,[ENG],You mean the Y2K problem?
+2312,2534,[ENG],That's right.
+2702,2980,[ENG],"If you recall, "
+3009,4026,[ENG],our government supplied the world |with a countermeasure program --
+4179,4861,[ENG],using the internet at full capacity.
+4959,5920,[ENG],The program was distributed to every |governmental organization...
+5921,6687,[ENG],every key facility...|throughout the world.
+6826,8024,[ENG],"In addition, the same program was |included in an OS application"
+8024,8581,[ENG],for distribution among the public.
+417,1127,[FRE],"Tu te souviens du vent de panique|qui a soufflé sur l'industrie informatique,"
+1128,1532,[FRE],a la fin du siècle ?
+1741,2228,[FRE],Tu parles du bogue de l'an 2000 ?
+2312,2534,[FRE],Oui !
+2633,2897,[FRE],"Si tu te souviens,"
+2897,3858,[FRE],notre gouvernement avait fourni|au monde entier
+3859,4430,[FRE],un programme anti-bogue --
+4430,5196,[FRE],en faisant tourner l'internet|à plein régime.
+5196,6087,[FRE],Ce programme a été distribué|à toutes les organisations
+6088,6812,[FRE],gouvernementaux et à tous|les organismes importants de la planète.
+6826,8024,[FRE],Et il a été placé sur un système |d'exploitation
+8024,8581,[FRE],distribué au public...
+417,1127,[ITA],Ti ricordi l'ondata di panico che investì|l'industria dei computer
+1128,1532,[ITA],prima della fine del secolo?
+1741,2228,[ITA],"Il problema dell'anno duemila, vuoi dire?"
+2312,2534,[ITA],Sì.
+2702,2980,[ITA],"Se ti ricordi,"
+3009,4026,[ITA],il nostro governo fornì al mondo intero|un programma di contromisura #_
+4179,4861,[ITA],usando l'Internet a piena capacità.
+4959,5920,[ITA],Il programma venne distribuito a |tutte le organizzazioni governative...
+5921,6687,[ITA],a tutti i centri più importanti...|in tutto il mondo.
+6826,8024,[ITA],"Inoltre, lo stesso programma venne anche|incluso in un'applicazione"
+8024,8664,[ITA],di un sistema operativo distribuito|al pubblico.
+417,1127,[SPA],¿Te acuerdas del pánico que cundió|en la industria
+1128,1532,[SPA],informática a finales del|siglo pasado?
+1741,2228,[SPA],¿Te refieres al problema del Año 2000?
+2312,2534,[SPA],Eso es.
+2702,4053,[SPA],"Nuestro gobierno distribuyó por todo|el mundo un sistema de prevención,"
+4179,4861,[SPA],utilizando Internet.
+4959,5920,[SPA],El programa fue distribuido a todas|las organizaciones gubernamentales...
+5921,6687,[SPA],a las empresas... de todo el mundo.
+6826,8024,[SPA],"Además, el programa estaba incluido|en los sistemas operativos informáticos "
+8024,8581,[SPA],para que fuera distribuido|al público.
+4221,4834,[JPN],イン夕ーネットを最大限につかってね
+5043,6826,[JPN],合衆国政府はもとより 世界各国の国家機関|主要施設全てにこの対策が施された
+6938,8066,[JPN],個人端末に関しても 対応として配布された|#{OS、オーエス}#のアプリケーションに
+8066,8665,[JPN],同じプログラムが混入されていた

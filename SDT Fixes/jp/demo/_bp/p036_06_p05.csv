@@ -1,0 +1,98 @@
+Start Time,End Time,Lang ID,Text
+404,821,[SPA],No podrás entrar al ascensor
+821,1768,[SPA],y pasar por la cámara de seguridad|sin el uniforme adecuado.
+1852,2423,[SPA],¿Quieres que me disfrace?
+2521,2897,[SPA],Los hombres que están en el núcleo
+2897,3830,[SPA],"y en sus alrededores, están vestidos|con uniformes de diferentes colores."
+3845,4736,[SPA],"Con tu nuevo uniforme sólo podrás|infiltrarte en ciertas zonas, no en todas."
+4973,5808,[SPA],Y además tampoco podrás engañarlos|tan sólo con el uniforme.
+5837,6268,[SPA],Quieres decir que necesito armas.
+6311,6770,[SPA],Exacto. Necesitas un AK.
+6812,7550,[SPA],Pero he visto que ellos llevaban AN-94.
+7690,8665,[SPA],Todos los hombres que trabajan en la|sección del núcleo llevan un AK.
+8916,10030,[SPA],"Así que si no tengo un AK-74u,|me descubrirán rápidamente..."
+10058,10726,[SPA],Preocúpate tú mismo del tema|de las armas.
+10769,11145,[SPA],"Ah, y otra cosa..."
+11187,11465,[SPA],¿Todavía más?
+11577,12245,[SPA],Para llegar a la sala de conferencias
+12246,12956,[SPA],debes de pasar por un escáner|de la retina.
+431,848,[GER],Ohne die richtige Uniform
+849,1754,[GER],läßt die Überwachungskamera|Dich nicht in den Lift.
+1852,2423,[GER],Ich soll mich also verkleiden?
+2521,3802,[GER],Die Männer im Kern tragen andere|Farben als die übrigen Wachen.
+3845,4736,[GER],Deine neue Uniform hilft Dir|nur in einigen Bereichen.
+4973,5808,[GER],Die Uniform allein täuscht|sie auch nicht.
+5837,6268,[GER],Du meinst die Waffen.
+6311,6770,[GER],Richtig. Du brauchst eine AK.
+6812,7550,[GER],Aber ich habe sie mit einer|AN-94 gesehen.
+7690,8595,[GER],Alle Männer im Kernabschnitt|sind mit AKs bewaffnet.
+8916,10030,[GER],Ohne AK-74u werde ich also|schnell enttarnt.
+10058,10726,[GER],Um die Waffe kannst Du Dich|selbst kümmern.
+10769,11145,[GER],Und noch etwas -
+11187,11465,[GER],Noch was?
+11577,12761,[GER],"Du mußt durch einen Augenscan, bevor|Du Zugang zum Konferenzsaal bekommst."
+445,821,[ENG],The surveillance camera
+821,1768,[ENG],won't let you on the elevator|without the right uniform.
+1852,2423,[ENG],You want me to disguise myself?
+2521,2897,[ENG],Men assigned to the core
+2897,3830,[ENG],and those on perimeter duty are|given different colors to wear.
+3845,4736,[ENG],Your new outfit will work in|some areas not others.
+4973,5808,[ENG],The uniform alone won't|fool them either.
+5837,6268,[ENG],You're talking about weapons.
+6311,6770,[ENG],Right. You need an AK.
+6812,7550,[ENG],But I saw them carrying an AN-94.
+7690,8595,[ENG],All men assigned to the|core section carry AK's.
+8916,10030,[ENG],"So without an AK-74u, someone|will see through me really quick..."
+10058,10726,[ENG],You can take care of the weapon|issue yourself.
+10769,11145,[ENG],One other thing --
+11187,11465,[ENG],There's more?
+11577,12761,[ENG],You'll also have to pass a retinal scan|to get into the conference hall.
+445,821,[FRE],La caméra de surveillance
+821,1824,[FRE],"ne te laissera pas accéder|à l'ascenseur, sans le bon uniforme !"
+1852,2423,[FRE],Tu veux que je me déguise ?
+2521,2897,[FRE],Les employés travaillant dans le noyau
+2897,3830,[FRE],et ceux faisant la ronde portent|des tenues de couleurs différentes.
+3845,4541,[FRE],"Ton nouvel uniforme sera accepté |dans certaines zones, et refusé"
+4541,4847,[FRE],dans d'autres.
+4973,5808,[FRE],Et l'uniforme seul ne suffira pas|à les berner.
+5837,6268,[FRE],"Il me faut une arme, tu veux dire ?"
+6311,6770,[FRE],Il te faut un AK.
+6812,7550,[FRE],Mais je les ai vus porter des AN-94 !
+7690,8595,[FRE],Tous les hommes assignés à la section |du noyau portent un AK.
+8916,10030,[FRE],"A moins d'avoir un AK-74u,|je serai repéré en deux minutes..."
+10058,10726,[FRE],Règle ce problème|d'arme comme tu l'entends.
+10769,11145,[FRE],Ah ! Autre chose --
+11187,11465,[FRE],Encore ?
+11549,12607,[FRE],Tu devras également subir une|scanographie rétinienne pour accéder
+12608,13123,[FRE],à la salle de conférences.
+445,821,[ITA],La telecamera di sorveglianza
+821,1768,[ITA],non ti lascerà salire in ascensore se non|hai addosso l'uniforme giusta.
+1852,2423,[ITA],Vuoi che mi camuffi?
+2521,2897,[ITA],Gli uomini assegnati al centro
+2897,3830,[ITA],hanno uniformi di colore diverso dagli |uomini sul perimetro della struttura.
+3845,4736,[ITA],"Questa ti servirà solo in alcune aree, |non in altre."
+4973,5808,[ITA],Ma anche l'uniforme non basterà|ad ingannarli.
+5837,6268,[ITA],"Le armi, vuoi dire."
+6311,6770,[ITA],Esatto. Ti serve un AK.
+6812,7550,[ITA],Ma ho visto che portavano un AN-94.
+7690,8595,[ITA],Tutti gli uomini assegnati al centro della|Big Shell hanno degli AK.
+8916,10030,[ITA],Quindi senza un AK-74u verrei|individuato subito...
+10058,10726,[ITA],"Delle armi, te ne puoi occupare tu."
+10769,11145,[ITA],Un'altra cosa #_
+11187,11465,[ITA],"Ah, c'è dell'altro!?"
+11577,12761,[ITA],Poi devi passace il controllo per|la sala convegni.
+501,1350,[JPN],エレベー夕ーに乗る際には |カメラによるチェックがある
+1532,2047,[JPN],これを着ていないとまず通れない
+2131,2437,[JPN],変装しろと？
+2535,3677,[JPN],中央棟と外周部に詰めている|兵士は兵装を区別している
+3873,4625,[JPN],その格好で騙せるエリアは限定される
+4862,5851,[JPN],さらに 服装だけでは|奴等の目を誤魔化せない
+6046,6254,[JPN],武器のことか？
+6325,6659,[JPN],AKが必要だ
+6840,7494,[JPN],奴等はAN94を持っていたが？
+7704,8748,[JPN],中央棟に配備されている|兵士はAKを装備している
+8916,10044,[JPN],AK74-Uを手にしていないと|正体がバレるということか…
+10072,10657,[JPN],#{武器、AK}#の方は自分で調達しろ
+10755,11019,[JPN],それと…
+11131,11479,[JPN],まだあるのか？
+11619,12580,[JPN],#{集会場、ホール}#に入るには網膜パ夕ーンの|チェックがある

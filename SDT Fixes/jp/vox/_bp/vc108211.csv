@@ -1,0 +1,101 @@
+Start Time,End Time,Lang ID,Text
+27,765,[ENG],"Snake, you there? It's me."
+835,1350,[ENG],I've finished going over that disc.
+1560,2089,[ENG],Did you find the Patriots' list?
+2215,2451,[ENG],Of course.
+2521,3301,[ENG],It contains the personal data |of twelve people.
+3482,3816,[ENG],There was a name on it --
+3873,4653,[ENG],"Snake, it was one of our biggest |contributors."
+4806,5265,[ENG],What's going on around here?
+5308,5586,[ENG],I don't know...
+5642,6185,[ENG],"...Anyway, where are they?"
+6241,6979,[ENG],"Well, we were right about them |being on Manhattan, but..."
+7063,7258,[ENG],But what?
+7370,8164,[ENG],They're already dead. |All twelve of them.
+8205,8525,[ENG],When did it happen?
+8623,8985,[ENG],"Well, ah..."
+9055,9612,[ENG],...about a hundred years ago.
+10212,10602,[ENG],What the hell...
+27,612,[JPN],スネーク 聞こえる？ 僕だよ
+696,1295,[JPN],例のディスクの解析が終了した
+1379,1936,[JPN],で 『愛国者達』のリストは？
+1978,2368,[JPN],勿論 見つけたよ
+27,765,[GER],"Snake, bist Du da? Ich bin's."
+835,1489,[GER],Ich bin mit dieser Diskette fertig.
+1560,2173,[GER],Hast Du die Liste der Patriots|gefunden?
+2215,2451,[GER],Natürlich.
+2521,3412,[GER],Sie enthielt die persönlichen|Daten von 12 Personen.
+3482,3816,[GER],Ein Name darauf --
+3873,4653,[GER],"Snake, war der eines unseres|wichtigsten Förderer."
+4806,5265,[GER],Was geht hier vor?
+5308,5586,[GER],Ich weiß nicht.
+5642,6185,[GER],"Übrigens, wo sind sie?"
+6241,7021,[GER],"Nun, wir hatten recht, sie waren|in Manhattan, aber --"
+7063,7313,[GER],Aber was?
+7370,8164,[GER],Sie sind schon tot. Alle zwölf.
+8205,8595,[GER],Wann sind sie gestorben?
+8623,8985,[GER],Tja
+9055,9709,[GER],vor etwa hundert Jahren.
+10212,10657,[GER],Was zum Teufel.
+27,793,[FRE],"Snake, tu m'entends ? C'est moi !"
+849,1378,[FRE],J'ai fini d'examiner la disquette !
+1574,2117,[FRE],Est-ce que tu as trouvé|la liste des Patriotes ?
+2243,2507,[FRE],Evidemment !
+2549,3357,[FRE],Elle détaillait les coordonnées|personnelles de 12 personnes...
+3455,3789,[FRE],"Parmi les noms cités,"
+3845,4625,[FRE],il y avait celui d'un de nos plus |gros donateurs...
+4792,5251,[FRE],Qu'est-ce que ça veut dire ?
+5294,5572,[FRE],Je n'en sais rien...
+5628,6171,[FRE],Qui sont ces douze personnes ?
+6199,7034,[FRE],"Nous avions vu juste en pensant|qu'elles venaient de Manhattan, mais..."
+7049,7244,[FRE],Mais quoi ?
+7356,8164,[FRE],Ces personnes sont mortes...|Toutes les douze ! 
+8192,8512,[FRE],Quand ?
+8568,9585,[FRE],Il y a environ|une centaine d'années !
+10184,10574,[FRE],Qu'est-ce que ?
+27,765,[ITA],"Snake, mi senti? Sono io."
+835,1350,[ITA],Ho finito di studiare quel disco.
+1560,2089,[ITA],Hai trovato la lista dei Patriots?
+2215,2451,[ITA],Certo.
+2521,3301,[ITA],Conteneva i dati personali di 12 individui.
+3482,3816,[ITA],C'era anche un nome.
+3873,4653,[ITA],"Snake, era uno dei nostri massimi |sostenitori."
+4806,5265,[ITA],Ma cosa sta succedendo qui?
+5308,5586,[ITA],Non lo so...
+5642,6185,[ITA],"Comunque, dove sono?"
+6213,7034,[ITA],"Beh, avevamo ragione a pensare|che fossero a Manhattan, ma..."
+7063,7258,[ITA],Ma cosa?
+7370,8164,[ITA],Sono già morti.|Tutti e dodici.
+8205,8525,[ITA],Quando è successo?
+8623,8985,[ITA],"Beh, ecco,"
+9055,9612,[ITA],circa cento anni fa.
+10212,10602,[ITA],Ma cosa diavolo...
+27,765,[SPA],"Snake, ¿eres tú? Soy yo."
+835,1350,[SPA],He terminado de revisar el disco.
+1560,2089,[SPA],¿Y has encontrado el listado de |los componentes de Los Patriots? 
+2215,2451,[SPA],Por supuesto. 
+2521,3301,[SPA],Contiene archivos sobre 12 personas. 
+3482,4652,[SPA],"Snake, aparece un nombre que |destaca de entre todos ellos. "
+4806,5265,[SPA],¿Qué está ocurriendo ahí? 
+5308,5586,[SPA],No lo sé... 
+5642,6185,[SPA],"... bueno, ¿y dónde están? "
+6241,6979,[SPA],"Teníamos razón, están |en Manhattan, pero... "
+7063,7258,[SPA],¿Pero qué?
+7370,8164,[SPA],Pero están muertos. |Los doce están muertos.
+8205,8525,[SPA],¿Cuándo murieron?
+8623,9640,[SPA],Hace más o menos 100 años. 
+10212,10602,[SPA],Cómo es posible que... 
+2493,3342,[JPN],12人の特定人物のコードが内装されていた
+3510,3760,[JPN],その中には…
+3789,4527,[JPN],『フィランソロピー』の出資者の名前も|あった…
+4917,5237,[JPN],どういうことだ？
+5349,5530,[JPN],わからない…
+5656,5948,[JPN],…奴等はどこに？
+6004,6157,[JPN],それが
+6255,7146,[JPN],やはり#{丘の島、マンハッ夕ン}#にいたことは|確かなんだが…
+7314,7453,[JPN],どうした？
+7551,8414,[JPN],12人とも既に死亡している…
+8582,8804,[JPN],いつ？
+8916,9152,[JPN],それが…
+9195,9599,[JPN],100年前なんだ
+10142,10727,[JPN],奴等は一体…？

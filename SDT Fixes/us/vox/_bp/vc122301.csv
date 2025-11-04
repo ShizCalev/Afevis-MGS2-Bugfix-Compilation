@@ -1,0 +1,14 @@
+Start Time,End Time,Lang ID,Text
+13,1099,[ENG],"Move the right analog stick up and|down to make a vertical slice, "
+1114,1949,[ENG],and left and right to slice|parallel to the ground.
+13,1099,[GER],"Bewege den Rechter Analog-Stick nach|oben und unten für senkrechte,"
+1114,1949,[GER],nach links und rechts für parallele|Schnitte zum Boden.
+13,500,[FRE],"Pour effectuer une coupe verticale,"
+501,1100,[FRE],actionne le joystick analogique|droit à laverticale
+1114,1991,[FRE],"et pour une coupe parallèle au sol,|actionne-le à l'horizontale. "
+13,1099,[ITA],"Sposta la levetta analogica destra in su|e in giù per un fendente in verticale,"
+1114,1949,[ITA],oppure a sinistra e a destra per un |fendente parallelo al terreno.
+13,1099,[SPA],Mueve el joystick analógico derecho|hacia arriba y abajo para cortar 
+1114,1949,[SPA],verticalmente y hacia la izquierda y |derecha para cortar horizontalmente.
+13,1113,[JPN],右スティックを上下に振れば|上下に斬り
+1128,1949,[JPN],左右に動かせば|水平になぎ払う

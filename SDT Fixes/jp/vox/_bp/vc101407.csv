@@ -1,0 +1,46 @@
+Start Time,End Time,Lang ID,Text
+13,263,[GER],Das was?
+292,1448,[GER],Mit anderen Worten: Das|kleine Gerät riecht die C4s.
+1504,2632,[GER],"Genau. Ich habe einen Link zu|Deinem Radarnetz hergestellt,"
+2661,3496,[GER],um jeden festgestellten|Geruch visuell darzustellen.
+3552,4499,[GER],Aktiviere den Sensor und laß'|die Augen auf dem Radar.
+4555,5446,[GER],"Was ist, wenn er eine andere|geruchlose Substanz verwendet?"
+13,166,[JPN],…何だって？
+167,264,[JPN],
+264,918,[JPN],…つまり 人間には|感知できない#－
+933,1810,[JPN],C4の匂いを嗅ぎ付ける|ということだな
+1852,2855,[JPN],そうだ 君達のレーダーに|リンクするように調整した
+2925,3579,[JPN],C4が発する匂いが|視覚化されて
+27,235,[ENG],...the what?
+292,1434,[ENG],"In other words, that little gadget |sniffs out C4's scent."
+1504,2632,[ENG],"That's right. I've established a |linkup with your radar network,"
+2661,3496,[ENG],so any scent detected will |be represented visually.
+3552,4499,[ENG],Have the sensor activated and|keep your eye on the radar.
+4555,5418,[ENG],"What if he's using some other, |odorless substance?"
+27,235,[FRE],...le quoi ?
+278,584,[FRE],"En d'autres termes,"
+585,1462,[FRE],ce petit gadget renifle les|odeurs produites par les C4.
+1504,1866,[FRE],Exactement !
+1866,2632,[FRE],J'ai établi une liaison|avec votre réseau radar
+2633,3482,[FRE],pour que toute odeur détectée|soit visuellement représentée.
+3552,4499,[FRE],Activez votre capteur|et surveillez donc le radar.
+4555,5418,[FRE],Et s'il utilise une autre|substance inodore ?
+27,235,[ITA],... il che?
+264,584,[ITA],"In altre parole,"
+585,1476,[ITA],questo aggeggio annusa e|riconosce il profumo delle C4.
+1476,2172,[ITA],Esatto. Ho stabilito|un collegamento
+2173,2646,[ITA],"con la vostra rete radar,"
+2647,3524,[ITA],quindi il gas rilevato sarà |rappresentato visivamente.
+3552,4499,[ITA],Attivate il sensore e tenete |d'occhio il radar.
+4555,5460,[ITA],E se invece avesse usato |una sostanza inodore?
+27,235,[SPA],¿ ... el qué? 
+292,1434,[SPA],Quiere decir que este aparato|puede oler a las C4.
+1504,1880,[SPA],Así es.
+1880,2604,[SPA],He establecido una conexión|con vuestros radares.
+2605,3231,[SPA],"Así que cuando este aparato|detecte una bomba,"
+3232,3580,[SPA],aparecerá|en vuestro radar. 
+3580,4499,[SPA],Tened los sensores activados|y no le quitéis ojo al radar. 
+4555,5418,[SPA],¿Y si el C4 emite|otro tipo de olor?
+3580,3956,[JPN],レーダーに表示される
+4040,4848,[JPN],これを常に装備して|レーダーに注意するんだ
+5015,5544,[JPN],…匂いがない|C4があったら？

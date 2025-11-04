@@ -1,0 +1,11 @@
+Start Time,End Time,Lang ID,Text
+0,1017,[GER],Angriffstrupp sofort zurückkommen.|Wachtrupp: bleibt wachsam.
+0,501,[FRE],"Equipe d'attaque, |revenez immédiatement ! "
+501,1002,[FRE],"Equipe de gardes, |restez en alerte ! "
+0,487,[ITA],"Squadra d'attacco,|tornate subito indietro. "
+487,988,[ITA],"Squadra di guardia,|state all'erta."
+0,989,[SPA],"Equipo de ataque volved inmediatamente.|Equipo de defensa, estad alerta."
+13,486,[ENG],"Attack team, come|back at once. "
+501,974,[ENG],"Guard team, stay alert."
+13,472,[JPN],攻撃チーム帰投せよ
+487,974,[JPN],警戒チームは|そのまま警戒に当たれ

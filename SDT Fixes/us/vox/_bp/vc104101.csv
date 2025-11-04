@@ -1,0 +1,46 @@
+Start Time,End Time,Lang ID,Text
+13,514,[FRE],Nous avons repéré|un intrus dans la Shell 1 ! 
+543,1197,[FRE],L'ensemble du personnel|en alerte rouge !
+1267,1768,[FRE],Initiez le protocole|du Mode de recherche.
+1769,2382,[FRE],Fouillez chacune des sections |de la structure !
+2438,3176,[FRE],Il se peut que l'intrus ait revêtu|l'un de nos uniformes.
+3190,3956,[FRE],Vérifiez le visage de tout le|monde sur votre passage !
+4054,4346,[FRE],Je répète --
+4388,4931,[FRE],Nous avons repéré|un intrus dans la Shell 1 !
+27,542,[ENG],We have an intruder|in Shell 1!
+585,1225,[ENG],"All personnel, we|are on red alert!"
+1295,1796,[ENG],Begin Caution Mode|protocol.
+1797,2410,[ENG],Search every section |of the structure!
+2465,3203,[ENG],The intruder may be|dressed in our own colors.
+3260,3970,[ENG],Face check all personnel |encountered!
+4054,4346,[ENG],I repeat...
+4402,4917,[ENG],We have an intruder|in Shell 1!
+27,542,[GER],Eindringling in Shell 1!
+585,1225,[GER],"Alle Mann, Alarmstufe Rot!"
+1281,2423,[GER],Vorsichtsmodusverfahren starten.|Jeden Abschnitt der Anlage absuchen!
+2465,3203,[GER],Der Eindringling könnte|unsere Uniform tragen.
+3260,3970,[GER],Gesichtskontrolle bei allen|angetroffenen Soldaten!
+4054,4346,[GER],Ich wiederhole.
+4402,4917,[GER],Eindringling in Shell 1!
+27,542,[SPA],¡Hay un intruso en el Shell 1!
+585,1225,[SPA],"¡A todo el personal, estado de alerta! "
+1295,1796,[SPA],Comienzo de la Modalidad de Alerta. 
+1797,2410,[SPA],¡Rastread cada sección |de la estructura! 
+2465,3203,[SPA],El intruso puede estar vestido |con nuestro propio uniforme. 
+3260,3970,[SPA],¡Mirad la cara de todo el personal |con el que os encontréis!
+4054,4346,[SPA],Repito...
+4402,4917,[SPA],¡Hay un intruso en el Shell 1!
+27,1239,[JPN],侵入者をシェル1で発見！|警戒レベルを強化！
+1281,2409,[JPN],警戒モードに入れ！|徹底的に探すんだ
+2452,3218,[JPN],我々の服装をしている|かも知れない
+41,514,[ITA],Intruso in Shell 1!
+585,1225,[ITA],"Tutto il personale, allarme rosso!"
+1295,1796,[ITA],Iniziate protocollo di |Modalità Cautelativa.
+1797,2410,[ITA],Perlustrate tutte le sezioni |della struttura!
+2465,3203,[ITA],L'intruso potrebbe avere |la nostra uniforme.
+3232,3956,[ITA],Controllate tutto il personale |a viso scoperto!
+4068,4318,[ITA],Ripeto #_
+4402,4917,[ITA],Intruso in Shell 1!
+3246,3956,[JPN],顔をチェックしろ
+4068,4332,[JPN],繰り返す！
+4402,4917,[JPN],侵入者をシェル1で発見！

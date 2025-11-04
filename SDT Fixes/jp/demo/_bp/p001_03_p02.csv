@@ -1,0 +1,75 @@
+Start Time,End Time,Lang ID,Text
+111,682,[ENG],The texture isn't far|removed from rubber
+696,1782,[ENG],but the material protects against|a wide range of toxic substances.
+1811,2688,[ENG],The suit itself has a wide|array of built-in sensors.
+2702,3565,[ENG],"It is referred to as ""Smart Skin""|in military R&D."
+3636,4708,[ENG],"Data about damage to different regions|of the body, including blood loss,"
+4722,5641,[ENG],is exchanged between the suit |and the intravenous nanomachines
+5642,6171,[ENG],to create a feedback system.
+6199,6812,[ENG],There's a lot of pressure on my torso.
+6826,7829,[ENG],Relax. The suit applies varying pressure|to major internal organs
+7829,8664,[ENG],to maximize performance and|safeguard their functions.
+8679,9375,[ENG],"They call this the ""Skull Suit""|in FOXHOUND."
+9418,10309,[ENG],Skull suit -- seems|appropriate somehow.
+111,682,[GER],"Die Struktur ist fast wie Gummi,"
+696,1782,[GER],das Material schützt aber vor einer |Vielzahl von giftigen Substanzen.
+1811,2688,[GER],Der Anzug selbst ist mit Sensoren |versehen.
+2702,3565,[GER],"Im Militärjargon heißt es ""Smart Skin"",|intelligente Haut."
+3608,4346,[GER],"Meldungen über Schäden an|verschiedenen Körperteilen, "
+4346,5000,[GER],"inklusive Blutverlust, werden|zwischen Anzug"
+5001,5641,[GER],und intravenösen|Nanomaschinen ausgetauscht.
+5642,6171,[GER],Es ist also ein Feedback-System.
+6199,6812,[GER],Dieser Anzug drückt sehr|auf meinen Körper.
+6826,7829,[GER],Der Anzug übt unterschiedlich starken|Druck auf die wichtigsten Organe aus.
+7829,8664,[GER],Zur maximalen Leistungsfähigkeit|und dem Schutz ihrer Funktionen.
+8679,9459,[GER],"Bei FOXHOUND nennt man diesen Anzug|""Skull Suit"", Totenkopfanzug."
+9459,10294,[GER],Totenkopfanzug - paßt irgendwie.
+111,682,[FRE],"La texture est semblable|à celle du caoutchouc,"
+696,1782,[FRE],mais ce matériau te protège contre|une vaste gamme de substances toxiques.
+1811,2688,[FRE],La combinaison elle-même|est équipée de capteurs.
+2702,3412,[FRE],"En recherche et développement militaire,|on l'appelle"
+3413,3608,[FRE],"""Peau intelligente""."
+3636,4708,[FRE],"Les dommages causés aux différentes |zones corporelles, dont la perte sanguine,"
+4722,5641,[FRE],engendrent un échange de données |entre la combinaison et les nanomachines
+5642,6171,[FRE],intraveineuses et déterminent ainsi |un système de retour d'informations.
+6199,6812,[FRE],Je sens une forte pression sur mon torse.
+6826,7829,[FRE],T'inquiète ! La combinaison exerce |des pressions sur les principaux 
+7829,8469,[FRE],organes internes afin d'optimiser|leurs performances et de préserver
+8470,8665,[FRE],leurs fonctions.
+8679,9375,[FRE],"A FOXHOUND, on appelle ça ""Skull Suit""."
+9418,10309,[FRE],"""Skull Suit"" -- c'est bien trouvé,|comme nom !"
+111,682,[ITA],"Come consistenza è simile alla gomma,"
+696,1782,[ITA],ma questo materiale ti protegge da varie|sostanze tossiche.
+1811,2688,[ITA],In più l'uniforme ha sensori incorporati.
+2702,3565,[ITA],"I reparti di Ricerca & Sviluppo militari lo|chiamano 'Smart Skin', pelle intelligente."
+3636,4708,[ITA],"L'uniforme scambia dati su varie parti del|tuo corpo,"
+4722,5641,[ITA],"compresa la perdita di sangue, con|alcune nanomacchine endovenose, "
+5642,6171,[ITA],creando un sistema di feedback.
+6199,6812,[ITA],Sento molta pressione sul torace.
+6826,7829,[ITA],"Rilassati. L'uniforme applica una|pressione diversa sui principali organi,"
+7829,8664,[ITA],per massimizzarne le prestazioni e|proteggere le loro funzioni.
+8679,9375,[ITA],"A FOXHOUND quest'uniforme la chiamano|""Skull Suit"", abito-teschio."
+9418,10309,[ITA],Skull Suit! In effetti è molto appropriato.
+111,682,[SPA],"La textura es similar a la goma,"
+696,1782,[SPA],pero este material te protege contra un |gran número de sustancias tóxicas.
+1811,2688,[SPA],Además el uniforme viene con |sensores incorporados.
+2702,3565,[SPA],"Habrás oído hablar de él como|""La Piel Inteligente""."
+3580,4457,[SPA],"Los informes de los daños en diferentes|Partes del cuerpo, "
+4458,5642,[SPA],incluso pérdidas de sangre es intercam-|biado por un sistema entre el uniforme
+5642,6171,[SPA],y las nanomáquinas intravenosas.
+6199,6812,[SPA],El uniforme me aprieta mucho en|la espalda.
+6826,7829,[SPA],No te preocupes. El uniforme estimula|diferentes partes del cuerpo
+7829,8664,[SPA],para mejorar su rendimiento|y protección.
+8679,9375,[SPA],"En FOXHOUND a este uniforme le|llaman ""Skull Suit""."
+9418,10309,[SPA],"""Skull Suit"", la verdad es que|el nombre le va muy bien."
+362,1852,[JPN],質感はゴムに近いが 様々な有毒化学物質を|遮断する素材で造られている
+2061,2980,[JPN],そしてスーツ内には各種センサーも|埋め込まれている
+3092,3816,[JPN],軍で研究中のスマートスキンだ
+3900,5334,[JPN],各部位のダメージや出血量が血中の|ナノマシンと相互に情報交換され#－
+5377,5878,[JPN],フィードバックされる仕組みになっている
+5990,6491,[JPN],内臓が圧迫されているが？
+6534,6798,[JPN],心配するな
+6854,8093,[JPN],体内の各臓器を圧縮して機能促進と|保護を図っているのだ
+8289,9069,[JPN],#{FOXHOUND、フォックスハウンド}#部隊では|スカルスーツと呼んでいる
+9236,9472,[JPN],スカルスーツ？
+9738,10016,[JPN],…#{髑髏、ドクロ}#スーツか

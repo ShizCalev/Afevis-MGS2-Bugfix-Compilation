@@ -1,0 +1,18 @@
+Start Time,End Time,Lang ID,Text
+0,376,[FRE],Je vais aller inspecter le toit. 
+376,1016,[FRE],"Tu te charges du premier|étage, Okay ?"
+1044,1280,[FRE],D'accord.
+13,458,[GER],Ich werde das Dach|überprüfen.
+459,1016,[GER],"Du übernimmst die erste|Etage, in Ordnung?"
+1044,1308,[GER],Verstanden.
+13,361,[ITA],Ora vado a controllare|il tetto. 
+362,1002,[ITA],"A te lascio il primo piano,|d'accordo?"
+1044,1280,[ITA],Intesi.
+27,347,[JPN],屋上の方を見てくる
+529,821,[JPN],1Fは任せたぞ
+1044,1239,[JPN],了解
+41,361,[ENG],I'll go check the roof.
+362,947,[ENG],"I'll leave the first|floor to you, OK?"
+1044,1280,[ENG],Understood.
+41,946,[SPA],"Voy a mirar en el tejado. |Tú ocúpate del primer piso,"
+1044,1280,[SPA],Entendido.

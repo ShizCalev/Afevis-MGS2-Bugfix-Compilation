@@ -1,0 +1,113 @@
+Start Time,End Time,Lang ID,Text
+27,570,[ENG],You see the green stuff |on the radar?
+640,1420,[ENG],That's a visual represen-|tation of the C4 scent 
+1421,1838,[ENG],detected by the sensor.
+1894,2367,[ENG],"It's a pretty big|area, isn't it?"
+2410,3078,[ENG],Don't complain. It's |better than nothing.
+3218,3663,[ENG],Just activate|the sensors
+3664,4123,[ENG],"and search|the area, okay?"
+4207,4402,[ENG],All right.
+4458,5098,[ENG],Don't forget that|you need the radar
+5099,5447,[ENG],to use this system.
+5503,6032,[ENG],Log into the node|at every strut
+6032,6463,[ENG],and turn|the radar on.
+6520,7216,[ENG],We have to keep out of |the enemy's sight too.
+7272,7885,[ENG],Because the radar|gets knocked offline 
+7885,8177,[ENG],when we're spotted?
+8233,8581,[ENG],Exactly.
+8721,9431,[ENG],Fatman would have|allotted some C4's
+9431,9890,[ENG],here in Strut C|as well.
+9947,10114,[ENG],Here?
+27,570,[GER],Seht Ihr die grünen|Flecken auf dem Radar?
+599,1393,[GER],"Das ist eine Darstellung|des C4-Geruchs,"
+1393,1894,[GER],den der Sensor|festgestellt hat.
+1894,2367,[GER],"Ein ziemlich großer|Bereich, oder?"
+2410,3078,[GER],Beschwer Dich nicht.|Besser als nichts.
+3092,3927,[GER],"Aktiviert einfach die Sensoren|und sucht das Gebiet ab,"
+3928,4206,[GER],in Ordnung?
+4207,4402,[GER],In Ordnung.
+4416,4694,[GER],"Vergeßt nicht,"
+4695,5447,[GER],daß Ihr für dieses|System den Radar benötigt.
+5447,6046,[GER],Meldet Euch an jeder|Strebe im Node an
+6046,6477,[GER],und schaltet den Radar ein.
+6520,7216,[GER],Und wir dürfen nicht vom|Feind entdeckt werden.
+7272,8191,[GER],"Weil der Radar ausfällt,|sobald wir aufgespürt sind?"
+8233,8581,[GER],Genau.
+8721,9919,[GER],Fatman hätte hier in Strebe C|auch ein paar C4s gelegt.
+9947,10114,[GER],Hier?
+27,570,[FRE],Tu vois le truc vert|sur le radar ?
+599,1198,[FRE],C'est une représentation|visuelle de l'odeur
+1198,1838,[FRE],des bombes C4 détectées |par le capteur.
+1894,2367,[FRE],"Ça couvre une zone|importante, pas vrai ?"
+2410,3078,[FRE],Ne te plains pas !|C'est mieux que rien.
+3092,3677,[FRE],Contentez-vous d'activer|les capteurs
+3678,4193,[FRE],"et d'inspecter cette zone,|d'accord ?"
+4207,4402,[FRE],Entendu !
+4430,5098,[FRE],N'oubliez pas que le radar|est indispensable
+5099,5461,[FRE],pour utiliser ce système.
+5475,6032,[FRE],Connectez-vous au nœud|de chaque étai
+6032,6491,[FRE],et mettez le radar|sous tension.
+6520,7216,[FRE],Il faut aussi éviter de se|faire repérer par l'ennemi.
+7272,8177,[FRE],"Parce que si on se fait repérer,|le radar sera désactivé ?"
+8233,8581,[FRE],Exactement !
+8721,9891,[FRE],"Fatman a sûrement placé|des C4 ici, dans l'Etai C."
+9947,10114,[FRE],Ici ?
+27,570,[ITA],o vedi quell'alone|verde sul radar?
+640,1810,[ITA],Rappresenta visivamente l'odore|delle C4 rilevato dal sensore.
+1894,2367,[ITA],Però l'area è|piuttosto grande...
+2410,3078,[ITA],"Non lamentarti,|è meglio di niente."
+3092,3997,[ITA],"Beh, voi pensate ad attivare i|sensori e a perlustrare l'area,"
+3998,4193,[ITA],okay?
+4207,4402,[ITA],Va bene.
+4472,5419,[ITA],Non dimenticatevi che vi serve|il radar per questo sistema.
+5475,5962,[ITA],Collegatevi al nodo|ad ognuno
+5962,6505,[ITA],dei supporti e accendete|il radar.
+6520,7216,[ITA],E senza neppure farci |scoprire dal nemico.
+7272,8163,[ITA],"Perché, il radar si|scollega se ci avvistano?"
+8233,8581,[ITA],Esatlo.
+8665,9514,[ITA],"Fatman avrà senz'altro|lasciato alcune C4 anche qui,"
+9515,9905,[ITA],nel Supporto C.
+9947,10114,[ITA],Qui!?
+27,570,[SPA],¿Ves eso verde|que hay en el radar? 
+585,1267,[SPA],Es una representación|visual del aroma
+1267,1893,[SPA],de las C4 que el sensor|ha detectado.
+1894,2367,[SPA],"Marca una zona|bastante amplia, ¿no? "
+2410,3078,[SPA],"No te quejes,|es mejor que nada."
+3204,3900,[SPA],"Activad los sensores y|rastread la zona,"
+3900,4164,[SPA],¿de acuerdo?
+4207,4402,[SPA],De acuerdo.
+4458,5433,[SPA],Y no olvidéis que para utilizar|este sistema necesitáis el radar.
+5489,6450,[SPA],Conectaos al nodo de cada |soporte y enceded el radar.
+6506,7244,[SPA],Y recuerda que no podemos ser |descubiertos por el enemigo. 
+7272,8177,[SPA],¿Si nos descubren el |radar se desconecta?
+8233,8581,[SPA],Exacto. 
+8665,9542,[SPA],"Seguro que Fatman ha|colocado algunas C4 aquí,"
+9543,9905,[SPA],en el Soporte C.
+9947,10114,[SPA],¿Aquí?
+27,570,[JPN],レーダーに映っているだろう 
+571,640,[JPN],
+640,1824,[JPN],これがC4から発せられる|爆弾の臭いを視覚化したものだ
+1825,1908,[JPN],
+1908,2367,[JPN],かなり広域だな？
+2368,2409,[JPN],
+2410,3092,[JPN],文句を言うな|ないよりましだ
+3092,3119,[JPN],
+3120,4109,[JPN],…センサーを起動して|そのエリアを探してくれ
+4109,4206,[JPN],
+4207,4402,[JPN],わかった
+4402,4471,[JPN],
+4472,5447,[JPN],だが忘れるな このセンサーを|使うにはレーダーが必要だ
+5447,5488,[JPN],
+5489,6478,[JPN],必ず各脚のノードにアクセスし|レーダーをONにするんだ
+6478,6519,[JPN],
+6520,7216,[JPN],あと 敵には|見つからないことだな
+7216,7271,[JPN],
+7272,8191,[JPN],敵に発見されると|レーダーは効かなくなる？
+8192,8233,[JPN],
+8233,8567,[JPN],そういうことだ
+8568,8707,[JPN],
+8707,9250,[JPN],我々がいるこのC脚にも
+9250,9263,[JPN],
+9264,9918,[JPN],ファットマンは|C4を仕掛けているはず…
+9919,9932,[JPN],
+9933,10183,[JPN],この近くに？

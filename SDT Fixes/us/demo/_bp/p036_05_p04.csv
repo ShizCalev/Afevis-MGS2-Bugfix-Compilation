@@ -1,0 +1,60 @@
+Start Time,End Time,Lang ID,Text
+459,723,[ENG],Take this.
+1184,2145,[ENG],"This security card will unlock|all level 2 security doors, "
+2145,2660,[ENG],including the one into the core.
+3051,3496,[ENG],It's called a PAN card. 
+3538,4304,[ENG],It works together with your|body's own electronic field.
+4374,4694,[ENG],And watch yourself.
+4792,5809,[ENG],The core is more heavily guarded than |any other section of the Big Shell.
+5990,6519,[ENG],You'll get nowhere dressed like that.
+6826,7174,[ENG],Try this instead.
+7690,8121,[ENG],One of the terrorists'?
+459,723,[GER],"Hier, nimm."
+1184,2145,[GER],"Diese Sicherheitskarte öffnet|alle Sicherheitstüren der Stufe 2,"
+2145,2660,[GER],auch die zum Kern.
+3051,3496,[GER],Es ist eine PAN-Karte.
+3538,4304,[GER],Sie funktioniert im Zusammenhang mit|dem elektronischen Feld Ihres Körpers!
+4374,4694,[GER],Und paß auf.
+4792,5809,[GER],Der Kern wird stärker bewacht als alle|anderen Abschnitte der Big Shell.
+5990,6519,[GER],Mit der Kleidung kommst Du nicht weit.
+6826,7174,[GER],Probier mal das hier.
+7690,8121,[GER],Einer der Terroristen?
+459,723,[FRE],Prends ceci !
+1156,2159,[FRE],Cette carte de sécurité permet d'ouvrir|toutes les portes de sécurité
+2159,2785,[FRE],"de niveau 2, dont celle menant au noyau."
+3051,3496,[FRE],"C'est une carte RPA,"
+3538,4304,[FRE],qui marche en synergie|avec le champ électronique corporel.
+4374,4694,[FRE],Et fais attention !
+4792,5809,[FRE],Aucune section de la Big Shell|n'est mieux gardée que le noyau.
+5990,6519,[FRE],Tu n'arriveras a rien|habillé comme tu l'es !
+6826,7174,[FRE],Essaie plutôt ceci !
+7690,8121,[FRE],C'est ce que portent les terroristes ?
+459,723,[ITA],Prendi questa.
+1184,2145,[ITA],"Questa tessera di sicurezza apre tutte|le porte di livello 2,"
+2145,2660,[ITA],compresa quella che porta al centro.
+3051,3496,[ITA],È una tessera NAP:
+3538,4304,[ITA],funziona congiuntamente al campo |elettronico creato dal tuo corpo.
+4374,4694,[ITA],E guardati le spalle.
+4792,5809,[ITA],Nel centro ci sono più guardie che|sull'intera Big Shell.
+5990,6519,[ITA],Non andrai lontano vestito così.
+6826,7174,[ITA],"Prova questa, invece."
+7690,8121,[ITA],Un'uniforme dei terroristi?
+459,723,[SPA],Toma esto.
+1184,2145,[SPA],"La tarjeta de seguridad abrirá todas|las puertas de seguridad del nivel 2,"
+2145,2660,[SPA],incluyendo la del núcleo en el que|están los rehenes.
+3051,3496,[SPA],Es una tarjeta RAP.
+3538,4304,[SPA],Funciona junto al campo electrónico de |su propio cuerpo.
+4374,4694,[SPA],Y ten cuidado.
+4792,5809,[SPA],El núcleo está más protegido que|cualquiera de las zonas del Big Shell.
+5990,6519,[SPA],No vas a poder llegar hasta allí vestido |así.
+6826,7174,[SPA],Será mejor que te pongas esto.
+7690,8121,[SPA],¿Un uniforme de los terroristas?
+459,723,[JPN],これを使え！
+1170,1657,[JPN],セキュリティ・カードだ
+1657,2743,[JPN],セキュリティ・レベル2の|扉が開く 中央棟にも入れる
+3037,4346,[JPN],このカードは#{PAN、パン}#という|人体通電技術を使っている
+4374,4736,[JPN],それと注意しろ
+4778,5934,[JPN],シェル1中央棟は『ビッグ・シェル』の|中で最も警戒が重要だ
+6004,6547,[JPN],その格好では近づけない
+6826,7230,[JPN],これを着るんだ
+7676,8107,[JPN],テロリストの服装？

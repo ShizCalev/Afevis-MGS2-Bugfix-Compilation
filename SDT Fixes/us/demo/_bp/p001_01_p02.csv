@@ -1,0 +1,59 @@
+Start Time,End Time,Lang ID,Text
+431,1071,[JPN],君に依頼する任務は2つ
+1086,3106,[JPN],海上除染施設『ビッグ・シェル』に|単身潜入し大統領と人質を救出すること
+501,1086,[ENG],You have two mission objectives.
+1114,2312,[ENG],"One: infiltrate the offshore |decontamination facility ""Big Shell"""
+2354,3106,[ENG],and safeguard the President|and other hostages;
+3162,4346,[ENG],and two: disarm the terrorists|by any means necessary.
+7188,7424,[ENG],You should know...
+7481,8484,[ENG],that SEAL Team 10 is also|conducting a rescue operation.
+9863,10253,[ENG],Is this a joint effort?
+10267,10406,[ENG],No. 
+10518,11144,[ENG],FOXHOUND remains a covert body.
+11187,12106,[ENG],Don't alert them to your presence --|that is an order.
+501,1086,[GER],Du hast zwei Aufträge:
+1114,2312,[GER],1) Dringe in die Offshore-|Dekontaminationsanlage 'Big Shell' ein
+2354,3106,[GER],und rette den Präsidenten |und die anderen Geiseln
+3162,4346,[GER],und 2) die entwaffne Terroristen -|alle Mittel sind erlaubt.
+7188,7424,[GER],"Du solltest wissen,"
+7481,8484,[GER],daß SEAL-Trupp 10 ebenfalls einen |Rettungsversuch unternimmt.
+9863,10253,[GER],Ist dies eine gemeinsame Operation?
+10267,10406,[GER],Nein.
+10518,11144,[GER],FOXHOUND operiert weiter verdeckt.
+11187,12106,[GER],Gib Dich nicht zu erkennen -|das ist ein Befehl.
+501,1086,[FRE],Tu as deux objectifs à remplir|dans le cadre de cette mission :
+1114,1991,[FRE],1) T'infiltrer dans le dispositif|de décontamination offshore
+1992,2326,[FRE],"de la ""Big Shell"""
+2354,3106,[FRE],"et sauver le président et les autres |otages,"
+3162,4346,[FRE],2) Désarmer les terroristes |par tous les moyens.
+7188,7424,[FRE],Sache
+7481,8484,[FRE],que l'équipe SEAL 10 mène également|sa propre opération de sauvetage.
+9863,10253,[FRE],On travaille ensemble ?
+10267,10406,[FRE],Non.
+10518,11144,[FRE],FOXHOUND continue de travailler |dans l'ombre.
+11187,12106,[FRE],Fais en sorte de ne pas te faire repérer |par SEAL -- c'est un ordre !
+501,1086,[ITA],Hai due obiettivi per la missione:
+1114,2312,[ITA],"1) Infiltrarti nella piattaforma offshore|di decontaminazione ""Big Shell"""
+2354,3106,[ITA],"e proteggere il Presidente e gli altri|ostaggi,"
+3162,4346,[ITA],"quindi 2) Disarmare i terroristi,|a qualunque costo."
+7188,7424,[ITA],"Fra parentesi,"
+7481,8484,[ITA],anche la Squadra 10 della Marina è|impegnata in un'operazione di soccorso.
+9863,10253,[ITA],Allora si collabora con loro?
+10267,10406,[ITA],No. 
+10518,11144,[ITA],FOXHOUND resta una forza segreta.
+11187,12106,[ITA],Non farti scoprire da loro #_ |questo è un ordine.
+501,1086,[SPA],Tu misión consta de dos objetivos.
+1114,2312,[SPA],1) Infiltrarte en la plataforma del |Big Shell
+2354,3106,[SPA],y proteger al Presidente|y a los otros rehenes.
+3162,4346,[SPA],"2) Desarmar a los terroristas,|cueste lo que cueste."
+7188,7424,[SPA],Debes de saber que
+7481,8484,[SPA],el Equipo 10 de SEAL también está|realizando una operación de rescate.
+9863,10253,[SPA],¿Se trata de una misión conjunta?
+10267,10406,[SPA],No. 
+10518,11144,[SPA],FOXHOUND opera en secreto.
+11187,12106,[SPA],"No dejes que te descubran, es una orden."
+3134,4415,[JPN],テロリスト達を武装解除することだ|そのためにはあらゆる手段を用いて構わない
+7133,8498,[JPN],また 我々と同時に#{SEAL、シール}の|チーム10が作戦行動を行っている
+9877,10253,[JPN],合同作戦？
+10267,11715,[JPN],いや 我々#{FOXHOUND、フォックスハウンド}は隠密部隊だ |彼等に我々の存在を知られてはならない
+11730,12036,[JPN],いいな

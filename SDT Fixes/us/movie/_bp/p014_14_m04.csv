@@ -1,0 +1,45 @@
+Start Time,End Time,Lang ID,Text
+195,905,[SPA],"Normalmente, los líderes de escuadrón|permanecen en sus Puestos de Mando"
+905,1476,[SPA],y dan órdenes desde estos auriculares.
+1797,2744,[SPA],"Por lo que yo sé, SEAL no manda|sus oficiales al campo de batalla."
+3482,4526,[SPA],"Y ""Quien arriesga, gana"" es una frase|del Servicio Aéreo Especial Británico."
+6199,6686,[SPA],¿Crees que es uno de los terroristas?
+6701,7216,[SPA],"No, no creo que lo sea."
+7272,8219,[SPA],"De sospechar de alguien, sería de ti."
+306,1434,[JPN],通常 ヘッドフォンで指示を|与える隊長は#{ヘリ、CP}#にいる
+1783,2786,[JPN],#{SEALS、シールズ}#では士官が現場に|出張ることもまれだ
+320,905,[ENG],"Normally, team leaders stay in |the CP (Command Post) "
+905,1392,[ENG],and give orders with|those headphones.
+1797,2744,[ENG],"And as far as I know, SEALs keep |their officers away from the field."
+3482,4526,[ENG],"And -- ""Who Dares, Wins"" is a motto|of the British Special Air Service."
+6199,6686,[ENG],Is he one of the terrorists then?
+6701,7216,[ENG],"No, somehow I don't think so."
+7272,8219,[ENG],"If there's someone to suspect, |I'd put my money on you."
+320,905,[GER],Normalerweise bleiben Einsatzleiter|im Gefechtsstand
+905,1392,[GER],und erteilen Befehle über Kopfhörer.
+1783,2131,[GER],"Und soweit ich weiß, "
+2131,2827,[GER],halten die SEALs ihre Offiziere|meist fern vom eigentlichen Einsatzort.
+3482,4526,[GER],"Und - ""Wer wagt, gewinnt"" ist ein Motto|der britischen SAS."
+6199,6686,[GER],"Heißt das, er gehört zu den Terroristen?"
+6701,7216,[GER],"Nein, irgendwie habe ich nicht|den Eindruck."
+7272,8219,[GER],"Wenn es hier einen Verdächtigen gibt,|dann bist das eher Du."
+320,905,[FRE],"Normalement, les chefs d'équipe|restent au poste de commande "
+905,1392,[FRE],et donnent des ordres avec|ce casque.
+1755,2590,[FRE],"A ma connaissance, les SEAL n'envoient |que rarement leurs officiers"
+2591,2883,[FRE],sur le terrain !
+3427,4597,[FRE],"Et ""Qui n'ose rien, n'a rien"" est la devise|du Service aérien spécial britannique."
+6199,6686,[FRE],Il fait partie des terroristes ?
+6701,7216,[FRE],Je n'en ai pas l'impression.
+7272,8219,[FRE],"Si je devais soupçonner quelqu'un, |ce serait plutôt toi, en fait !"
+320,905,[ITA],Normalmente i capisquadra rimangono|alle CP (Postazioni di comando)
+905,1392,[ITA],e danno ordini usando quegli auricolari.
+1797,2744,[ITA],Poi per quanto ne so io la Marina |non manda gli ufficiali in campo.
+3469,3873,[ITA],"E poi ""Chi la dura la vince"""
+3873,4555,[ITA],è il motto delle forze aeronautiche|speciali della Gran Bretagna.
+6199,6686,[ITA],Allora è uno dei terroristi?
+6701,7216,[ITA],"No, non so perché ma direi di no."
+7272,8219,[ITA],"Se dovessi sospettare di qualcuno,|quello saresti tu."
+3455,4541,[JPN],さらに『危険を冒す者が勝利する』は|#{イギリス陸軍特殊部隊、SAS}#の言葉…
+6199,6672,[JPN],彼もテロリスト？
+6687,7244,[JPN],いや そうは見えん
+7272,8247,[JPN],どちらかといえば…あんたの方が怪しい

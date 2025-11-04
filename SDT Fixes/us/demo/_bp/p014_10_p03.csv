@@ -1,0 +1,101 @@
+Start Time,End Time,Lang ID,Text
+445,1044,[SPA],Conozco muy bien la estructura|de este lugar.
+1058,1893,[SPA],Y sé dónde Fatman colocaría|las bombas para destruirla.
+2201,2507,[SPA],¿Estás seguro?
+2521,2743,[SPA],Totalmente.
+3037,3608,[SPA],Yo le enseñé las técnicas|que él utiliza.
+3831,4527,[SPA],Sus ideas están basadas en|mis teorías.
+4639,5140,[SPA],"La demolición es un tipo de ideología,"
+5154,5767,[SPA],independientemente del lugar|o del tiempo.
+6157,7215,[SPA],"El Big Shell está formado por 2|hexágonos unidos uno al otro,"
+7230,7550,[SPA],norte a sur.
+7843,8776,[SPA],"Seguro que hay paquetes de bombas|C4 en cada vértice,"
+8791,9222,[SPA],o soporte en este caso.
+9418,9822,[SPA],"Para hacer volar todo el edificio,"
+9822,10421,[SPA],se necesita al menos una bomba|en cada soporte.
+10936,12482,[SPA],"Seis en Shell 1 y otras seis en Shell 2,|¿un total de al menos 12 bombas?"
+12622,13639,[SPA],"Tras estudiar la Shell desde un punto de|vista arquitectónico y estructural,"
+13639,14015,[SPA],ésa es mi conclusión.
+14043,14781,[SPA],Y seguro que ésa ha sido también|su conclusión.
+473,1044,[JPN],ここの構造はわかっている
+1058,2061,[JPN],奴がこのプラント 『ビッグ・シェル』を|破壊しようとした場合…
+2187,2535,[JPN],わかるのか？
+2535,2785,[JPN],勿論だ
+3023,3649,[JPN],奴に技術を教えたのは私だ
+501,1044,[ENG],I know the structure of this facility.
+1058,1893,[ENG],"And, if he wants to take out the plant,|where he would target..."
+2201,2507,[ENG],You know this for sure?
+2521,2743,[ENG],Of course.
+3037,3608,[ENG],I taught him the techniques he uses.
+3831,4527,[ENG],His ideas are based on my theories.
+4639,5140,[ENG],Demolition is a kind of ideology;
+5154,5767,[ENG],it makes no exceptions|for time or place.
+6157,7536,[ENG],"Big Shell consists of two hexagons|joined end-on-end, north to south."
+7843,8776,[ENG],"There should be packets of C4's|on each of the vertices,"
+8791,9222,[ENG],or the struts in this case.
+9487,10392,[ENG],You need at least that to take|a building of this integrity out.
+10936,12482,[ENG],"Six on Shell 1, another six on Shell 2|...a total of twelve bombs, at least?"
+12622,13318,[ENG],Considering the Shell's architecture|and composition
+13318,14000,[ENG],from an engineering standpoint|-- that's my conclusion.
+14043,14725,[ENG],And it's exactly what he would|have decided as well.
+501,1044,[GER],Ich kenne den Aufbau dieser Anlage.
+1058,1893,[GER],"Und wenn er die Anlage zerstören will,|visiert er."
+2201,2507,[GER],Bist Du sicher?
+2521,2743,[GER],Natürlich.
+3037,3608,[GER],Seine Technik hat er von mir gelernt.
+3831,4527,[GER],Seine Ideen basieren auf|meinen Theorien.
+4639,5140,[GER],Auch Zerstörung ist eine Art|von Ideologie;
+5154,5767,[GER],Zeit oder Ort spielen da keine Rolle.
+6157,6811,[GER],"Big Shell besteht aus 2 Sechsecken, "
+6812,7564,[GER],deren Nord-/Südseiten|aneinandergrenzen.
+7843,8776,[GER],"Vermutlich sind C4-Bomben an|jeder Spitze, bzw."
+8791,9222,[GER],hier an den Streben angebracht.
+9487,10392,[GER],So viele braucht man mindestens |für ein so großes Gebäude.
+10936,11897,[GER],"Sechs auf Shell 1, weitere sechs|auf Shell 2 -"
+11911,12510,[GER],heißt das insgesamt|mindestens 12 Bomben?
+12622,13318,[GER],Ich habe die Bauweise und|Zusammensetzung der Shell aus 
+13318,14000,[GER],technischer Sicht betrachtet -|mit dieser Schlußfolgerung.
+14043,14725,[GER],Und genau das hätte|er auch entschieden.
+501,1044,[FRE],Je connais bien la structure de |cet assemblage.
+1058,1893,[FRE],"S'il a l'intention de tout détruire, |je sais comment il s'y est pris..."
+2201,2507,[FRE],Tu en es sûr ?
+2521,2743,[FRE],Evidemment !
+3037,3608,[FRE],C'est moi qui lui ai enseigné |les techniques qu'il utilise.
+3831,4527,[FRE],Ses idées se conforment|à mes théories
+4639,5140,[FRE],et la démolition obéit|à une certaine idéologie
+5154,5767,[FRE],intemporelle et applicable partout.
+6144,7244,[FRE],"La Big Shell est constituée|de 2hexagones joints l'un à l'autre,"
+7244,7564,[FRE],du nord au sud.
+7843,8776,[FRE],"Il a dû placer des paquets de C4|sur chacun des sommets,"
+8791,9222,[FRE],représentés ici par des étais.
+9487,10392,[FRE],Il faut au moins ça pour démolir |un bâtiment de cette ampleur.
+10922,11994,[FRE],"Six C4 sur la Shell 1 et six autres|sur la Shell 2, ce qui donne un total"
+11995,12524,[FRE],au moins égal à 12 bombes ?
+12622,13318,[FRE],"En tenant compte de l'architecture et|de l'agencement de la Big Shell,"
+13318,14000,[FRE],on aboutit à cette conclusion !
+14043,14725,[FRE],"Et c'est exactement|ce qu'il a dû décider, lui aussi."
+501,1044,[ITA],Conosco la struttura di questo impianto.
+1058,1893,[ITA],"E se lui lo volesse distruggere, allora|si concentrerebbe su..."
+2201,2507,[ITA],Ne sei sicuro?
+2521,2743,[ITA],Sì.
+3037,3608,[ITA],Gli ho insegnato io le tecniche che usa.
+3831,4527,[ITA],Le sue idee si basano sulle mie teorie.
+4639,5140,[ITA],La demolizione è come un'ideologia:
+5154,5767,[ITA],non fa mai eccezioni.
+6157,7536,[ITA],"La Big Shell consiste di 2 esagoni|concatenati, da nord a sud."
+7843,8776,[ITA],"Ora, dovrebbero esserci grappoli di C4|su ciascuno dei vertici,"
+8791,9222,[ITA],ossia i supporti nel nostro caso.
+9487,10392,[ITA],Servono almeno queste per distruggere|l'integrità della struttura.
+10936,12482,[ITA],"Sei per Shell 1, altre sei per Shell 2 #_|almeno 12 bombe in tutto?"
+12622,13318,[ITA],Considerando l'architettura e|la composizione di Shell
+13318,14000,[ITA],dal punto di vista tecnico #_|questa è la mia conclusione..
+14043,14725,[ITA],E queste sono esattamente le conclusioni|a cui sarà arrivato lui.
+3859,4541,[JPN],奴の発想は私の理論
+4639,5795,[JPN],爆弾は一種の思想だ|場所や時代には左右されない
+6130,7523,[JPN],『ビッグ・シェル』は6角形の|ユ二ットが南北につながっている
+7760,9292,[JPN],それぞれの脚部 つまり6角形の各頂点に|最低1個所ずつC4が仕掛けられているはず
+9445,10475,[JPN],ここにダメージを与えるには|最低限それだけ必要だ
+10922,11897,[JPN],シェル1に6個所 シェル2に6個所…
+11911,12510,[JPN],…少なくとも計12個所
+12608,14029,[JPN],『ビッグ・シェル』の構造と材質|力学上からみての結論だ
+14043,14892,[JPN],勿論 奴も同じ結論に達したはず
