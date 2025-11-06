@@ -3,6 +3,9 @@ HAS ALPHA
 ========================================
 
 ---------- HAS ALPHA ----------
+	00304bdd
+	00314bdb
+	0094b3c7
 	234284_alp_ovl.bmp
 	352537_alp_ovl.bmp
 	373737_alp_ovl.bmp
@@ -15,12 +18,17 @@ HAS ALPHA
 	amg_silhoue_alp_ovl.bmp
 	at_break_alp.bmp
 	at_normal_alp.bmp
+	atop_alp_ovl.bmp
+	bc_alp_ovl.bmp
 	bel_lig02_alp_add_ovl.bmp
+	berrazano_alp_ovl.bmp
+	bigshell_alp_ovl.bmp
 	c4_a_beruto2_msk.bmp
 	c4_a_beruto3_msk.bmp
 	c4_ovl_alp.bmp
 	cam_mtg_alp_ovl.bmp
 	caution_alp_ovl.bmp
+	cd_alp_ovl.bmp
 	chi02_msk.bmp
 	chi03_msk.bmp
 	chi04_msk.bmp
@@ -38,6 +46,7 @@ HAS ALPHA
 	d00a_gaitou_s_msk.bmp
 	d00a_irn_bridgeu_msk.bmp
 	d00a_mht1_alp_ovl.bmp
+	de_alp_ovl.bmp
 	dead_fish_hire01_alp.bmp
 	dead_fish_hire05_alp.bmp
 	demo_teng_blood_01_alp_ovl.bmp
@@ -51,6 +60,7 @@ HAS ALPHA
 	e_alp_ovl.bmp
 	e_alp_ovl.bmp_8e27cb0e71983c0e48ae8d1f53626f8d
 	eb1_alp_ovl.bmp
+	ef_alp_ovl.bmp
 	eki1_ovl_alp.bmp
 	elevt_floor7_alp_ovl.bmp
 	elv2_rflig01_add_alp_ovl.bmp
@@ -65,6 +75,9 @@ HAS ALPHA
 	elvt_nwall3pb1B_alp.bmp
 	elvt_nwall3pb2B_alp.bmp
 	elvt_p1_alp_ovl.bmp
+	elvt_pane_1_alp.bmp
+	elvt_pane_B1_alp.bmp
+	elvt_pane_B2_alp.bmp
 	elvt_pane_lig_add_alp.bmp
 	elvt_roof1_add_alp.bmp
 	elvt_wall_ligh1_alp_add.bmp
@@ -80,6 +93,8 @@ HAS ALPHA
 	env00_mht1_alp_ovl.bmp
 	env00_mht2_alp_ovl.bmp
 	env00_mht3_alp_ovl.bmp
+	etop_alp_ovl.bmp
+	fa_alp_ovl.bmp
 	fog02_alp_ovl.bmp
 	fog_alp_ovl.bmp
 	forklift_number_side_01_alp_ovl.bmp
@@ -108,8 +123,10 @@ HAS ALPHA
 	kck_ckpt_win02_alp.bmp
 	kck_ckpt_win_alp.bmp
 	kckis_belt1_msk.bmp
+	keep_clear_alp_ovl.bmp
 	keep_out_alp_ovl.bmp
 	kit_sh_alp_ovl.bmp
+	kl_alp_ovl.bmp
 	kmo_foot_ovl_alp.bmp
 	kmo_win_ovl_alp.bmp
 	kmo_winD_ovl_alp.bmp
@@ -120,6 +137,7 @@ HAS ALPHA
 	label02_alp_ovl.bmp
 	label_00_alp_ovl.bmp
 	label_01_alp_ovl.bmp
+	label_28_alp_ovl.bmp
 	label_rei_alp_ovl.bmp
 	lamp_off_alp_add_ovl.bmp
 	Lig_u_add_alp_ovl.bmp
@@ -172,9 +190,12 @@ HAS ALPHA
 	par_cage_top_alp_ovl.bmp
 	par_wing_ovl_alp.bmp
 	paSbr_alp_ovl.bmp
+	pdray_navy_alp_ovl.bmp
+	pdray_number_a01_alp_ovl.bmp
 	pdray_number_w42_alp_ovl.bmp
 	pdray_seal_mgrpdm_alp_ovl.bmp
 	pipe_ovl_alp_02.bmp
+	psg1-T_tx_alp.bmp
 	qt_break_alp.bmp
 	qt_normal_alp.bmp
 	rai_dtg_chain_msk.bmp
@@ -1447,10 +1468,13 @@ HAS ALPHA
 	fat_calf_sub_alp_ovl.bmp
 	fat_ep0_sub_ovl_alp.bmp
 	fat_eri_back_sub_alp_ovl.bmp
+	fat_eri_side_sub_alp_ovl.bmp
 	fat_eyes_ovl_sub_alp.bmp
 	fat_hand_sub_alp_ovl.bmp
 	fat_larm_sub_alp_ovl.bmp
+	fat_radio_sub_ovl_alp.bmp
 	fat_shues00_sub_ovl_alp.bmp
+	fat_suits_kat_sub_alp_ovl.bmp
 	for_body_ovl_sub_alp.bmp
 	for_eye_ovl_sub_alp.bmp
 	for_face_ovl_sub_alp.bmp
@@ -1469,7 +1493,16 @@ HAS ALPHA
 	ray_arm_t1_sub_alp_ovl.bmp
 	ray_canopy_sub_ovl_alp.bmp
 	ray_canopy_sub_ovl_alp.bmp_262887ad5d1a24632bc26b95450cb515
+	ray_face_s1_sub_alp_ovl.bmp
+	ray_face_s2_sub_alp_ovl.bmp
+	ray_face_t1_sub_alp_ovl.bmp
+	ray_leg1_s1_sub_alp_ovl.bmp
+	ray_lip_out_sub_alp_ovl.bmp
 	ray_tail_s1x_sub_alp_ovl.bmp
+	ray_temptex1_sub_alp_ovl.bmp
+	ray_thigh_b1_sub_alp_ovl.bmp
+	ray_thigh_t1_sub_ovl_alp.bmp
+	ray_waist_b1x_sub_alp_ovl.bmp
 	ray_waist_s1_sub_alp_ovl.bmp
 	ros_hair_p4mc_sub_ovl_alp.bmp
 	ros_handmc_ovl_sub_alp.bmp
@@ -1478,11 +1511,13 @@ HAS ALPHA
 	ros_hi_facemc_ovl_sub_alp.bmp
 	sol_hi_face_d1_ovl_sub_alp.bmp
 	sol_hi_face_d2_ovl_sub_alp.bmp
+	sol_mant_n_ovl_sub_alp.bmp
 	sol_sa_chest_dt_ovl_sub_alp.bmp
 	sol_sa_tu_dt01_ovl_sub_alp.bmp
 	sol_sa_tu_dt03_ovl_sub_alp.bmp
 	sol_sa_tu_dt04_ovl_sub_alp.bmp
 	sol_shoulder_dt_ovl_sub_alp.bmp
+	usa_met01dt_ovl_sub_alp.bmp
 
 ---------- HAS ALPHA\no_mip_fixes ----------
 	ag_door_kage_alp_sub_ovl.bmp
