@@ -11,6 +11,8 @@ HAS ALPHA
 	373737_alp_ovl.bmp
 	865888_alp_ovl.bmp
 	888888_alp_ovl.bmp
+	a_alp_ovl.bmp
+	a_alp_ovl.bmp_62308f2aa3d5fa8c5cc1257773d57f34
 	ag_line_alp_add_ovl.bmp
 	ag_line_alp_ovl.bmp
 	ak_sp_tx_mk_alp.bmp
@@ -19,13 +21,19 @@ HAS ALPHA
 	at_break_alp.bmp
 	at_normal_alp.bmp
 	atop_alp_ovl.bmp
+	b_alp_ovl.bmp
+	b_alp_ovl.bmp_29d4c42def820463fd8423fe64aaf73e
 	bc_alp_ovl.bmp
 	bel_lig02_alp_add_ovl.bmp
 	berrazano_alp_ovl.bmp
 	bigshell_alp_ovl.bmp
 	c4_a_beruto2_msk.bmp
 	c4_a_beruto3_msk.bmp
+	c4_a_frozen_ovl_alp.bmp
+	c4_c1_frost_alp_ovl.bmp
 	c4_ovl_alp.bmp
+	c_alp_ovl.bmp
+	c_alp_ovl.bmp_c3c45df5eff774d767719a74e507012e
 	cam_mtg_alp_ovl.bmp
 	caution_alp_ovl.bmp
 	cd_alp_ovl.bmp
@@ -46,13 +54,17 @@ HAS ALPHA
 	d00a_gaitou_s_msk.bmp
 	d00a_irn_bridgeu_msk.bmp
 	d00a_mht1_alp_ovl.bmp
+	d_alp_ovl.bmp
+	d_sky_top_01_alp.bmp
 	de_alp_ovl.bmp
 	dead_fish_hire01_alp.bmp
 	dead_fish_hire05_alp.bmp
+	demo_chain02_alp_ovl.bmp
 	demo_teng_blood_01_alp_ovl.bmp
 	demo_teng_blood_07_alp_ovl.bmp
 	digicame_tx_alp.bmp
 	dmp_ibx_label_alp.bmp
+	dogtag_sh_alp.bmp
 	door_lamp_alp.bmp
 	drlit_01_alp_add_ovl.bmp
 	drlit_02_alp_add_ovl.bmp
@@ -71,7 +83,9 @@ HAS ALPHA
 	elvt_fi_alarm_alp_ovl.bmp_455b5d810fc2470de1b126d7978c8e4a
 	elvt_ligs_alp_add.bmp
 	elvt_moji3_alp_ovl.bmp
+	elvt_moji4_alp_ovl.bmp
 	elvt_moji5_alp_ovl.bmp
+	elvt_moji6_alp_ovl.bmp
 	elvt_nwall3pb1B_alp.bmp
 	elvt_nwall3pb2B_alp.bmp
 	elvt_p1_alp_ovl.bmp
@@ -80,6 +94,7 @@ HAS ALPHA
 	elvt_pane_B2_alp.bmp
 	elvt_pane_lig_add_alp.bmp
 	elvt_roof1_add_alp.bmp
+	elvt_tes3_alp_ovl.bmp
 	elvt_wall_ligh1_alp_add.bmp
 	elvt_wall_ligh2_alp_add.bmp
 	elvt_wall_ligh3_alp_add_ovl.bmp
@@ -94,14 +109,21 @@ HAS ALPHA
 	env00_mht2_alp_ovl.bmp
 	env00_mht3_alp_ovl.bmp
 	etop_alp_ovl.bmp
+	evdr_line00_alp_ovl.bmp
+	evdr_line01_alp_ovl.bmp
+	f_alp_ovl.bmp
 	fa_alp_ovl.bmp
+	fog02_alp.bmp
 	fog02_alp_ovl.bmp
 	fog_alp_ovl.bmp
 	forklift_number_side_01_alp_ovl.bmp
+	g_alp_ovl.bmp
 	g_dankon_alp.bmp
 	gba_radio_wire2_alp_ovl.bmp
 	gwb_tower_all_alp_ovl.bmp
 	h6h_navy_marking_alp_ovl.bmp
+	h_alp_ovl.bmp
+	h_alp_ovl.bmp_195755e5686e25eaa259a854a626b6f0
 	h_grenade_alp.bmp
 	hahen02_alp_ovl.bmp
 	hi_alp_ovl.bmp
@@ -110,15 +132,20 @@ HAS ALPHA
 	hos_fb_hair02_alp_ovl.bmp
 	hos_neckless_alp_ovl.bmp
 	htc_blood_alp_ovl.bmp
+	i_alp_ovl.bmp
 	ibox2_tx_all_alp.bmp
 	ibox_tx_all_alp.bmp_791e610c4fcf41bf273b86f3bef405c7
 	jam_blood_dt_alp_ovl.bmp
 	jam_hi_ela_dt01_alp_ovl.bmp
+	k_alp_ovl.bmp_7fe64e4db1f9203a7b1358af99cce877
 	kage1_alp_ovl.bmp
+	kage2_alp_ovl.bmp
 	kageBel_alp_ovl.bmp
 	kageBood2_alp_ovl.bmp
 	kageDa_alp_ovl.bmp
+	kageMe1_alp_ovl.bmp
 	kageMe2_alp_ovl.bmp
+	kageSho_alp_ovl.bmp
 	kageWa_alp_ovl.bmp
 	kck_ckpt_win02_alp.bmp
 	kck_ckpt_win_alp.bmp
@@ -131,6 +158,9 @@ HAS ALPHA
 	kmo_win_ovl_alp.bmp
 	kmo_winD_ovl_alp.bmp
 	kmo_wing_ovl__alp.bmp
+	l_alp_ovl.bmp
+	l_alp_ovl.bmp_3ec8086acbe2099214f0863735b9c8c4
+	label00_alp_ovl.bmp
 	label00_alp_ovl.bmp_1c93414ee6868e6f9ad3facf3f6782e4
 	label01_alp_ovl.bmp
 	label01a_alp_ovl.bmp
@@ -163,6 +193,7 @@ HAS ALPHA
 	mrl_hair_t_alp_ovl.bmp
 	muzzlefrash_sev_01_alp.bmp
 	n523_alp_ovl.bmp
+	nametag_cube_def_add_alp.bmp
 	no_use_alp_ovl.bmp
 	node_pipe_alp_ovl.bmp
 	node_pipe_alp_ovl.bmp_d2e26dc22aa153eff8267589cff125d9
@@ -274,6 +305,7 @@ HAS ALPHA
 	suppressor_mk_alp.bmp
 	ter_rgb_ovl_alp_0001.bmp
 	test_lit3_add_alp.bmp
+	ticsh2_alp_ovl.bmp
 	ticsh_alp_ovl.bmp
 	title_sol_alp_ovl.bmp
 	tools_shadow02_alp_ovl.bmp
@@ -330,13 +362,18 @@ HAS ALPHA
 	w01a0_fl00a_alp_ovl.bmp
 	w01a0_fl02b_alp_ovl.bmp
 	w01a13_panel_alp_ovl.bmp
+	w01a13_wall_hole_alp.bmp
 	w01a1_clit02_alp_add_ovl.bmp
+	w01alc_lc_sh2_alp_ovl.bmp
+	w01alc_lc_sh_alp_ovl.bmp
 	w01alc_ws_sh_alp_ovl.bmp
 	w01b_fla02u_alp_ovl.bmp
 	w01b_fla05u_alp_ovl.bmp
 	w01b_flb00_alp_ovl.bmp
 	w01b_lit01_add_alp.bmp
+	w01c_firekg00_alp_ovl.bmp
 	w01c_lit01a_add_alp_ovl.bmp
+	w01d1_kage00_alp_ovl.bmp
 	w01d1_ppk00_alp.bmp
 	w01e_hl_rwl_add_alp_ovl.bmp
 	w01e_rf_hglit_add_alp_ovl.bmp
@@ -380,14 +417,35 @@ HAS ALPHA
 	w11a2_c_ita_kage_alp_ovl.bmp
 	w11a2_floor_kage01_alp_ovl.bmp
 	w11a2_floor_kage02_alp_ovl.bmp
+	w11a2_floor_kage03_alp_ovl.bmp
+	w11a2_floor_kage04_alp_ovl.bmp
 	w11a2_floor_kage05_2_alp_ovl.bmp
+	w11a2_floor_kage08_alp_ovl.bmp
+	w11a2_floor_kage09_alp_ovl.bmp
+	w11a2_hako_kage01_alp_ovl.bmp
+	w11a2_hako_kage02_alp_ovl.bmp
+	w11a2_hako_kage03_alp_ovl.bmp
+	w11a2_hako_kage04_alp_ovl.bmp
+	w11a2_hako_kage06_alp_ovl.bmp
+	w11a2_hako_kage07_alp_ovl.bmp
+	w11a2_hako_kage08_alp_ovl.bmp
 	w11a2_hako_kage10_alp_ovl.bmp
+	w11a2_hako_kage11_alp_ovl.bmp
+	w11a2_hako_kage12_alp_ovl.bmp
+	w11a2_hako_kage13_alp_ovl.bmp
 	w11a2_hako_kage14_alp_ovl.bmp
+	w11a2_wall_l1_kage_alp_ovl.bmp
 	w11a2_wl_number_alp_ovl.bmp
 	w11a_gas_05_t_alp.bmp
+	w11a_t_tana_white_naka_alp_ovl.bmp
+	w11a_t_tana_white_shita_alp_ovl.bmp
+	w11a_t_tana_white_ue_alp_ovl.bmp
 	w11a_walllit_fance_alp.bmp
 	w12a_12bsdw00_alp_ovl.bmp
+	w12a_12bsdw00a_alp_ovl.bmp
+	w12a_12bsdw00b_alp_ovl.bmp
 	w12a_12bsdw00c_alp_ovl.bmp
+	w12a_12bsdw01_alp_ovl.bmp
 	w12a_ami00a_alp.bmp
 	w12a_ami00b_alp.bmp
 	w12a_ami00c_alp.bmp
@@ -398,6 +456,8 @@ HAS ALPHA
 	w12a_drami02_alp.bmp
 	w12a_fl00h_alp_ovl.bmp
 	w12a_floutpp00_alp_ovl.bmp
+	w12a_label02_alp_ovl.bmp
+	w12a_line00_add_alp_ovl.bmp
 	w12a_line00a_add_alp_ovl.bmp
 	w12a_line01_add_alp_ovl.bmp
 	w12a_number01_alp_ovl.bmp
@@ -452,15 +512,20 @@ HAS ALPHA
 	w12a_sdwwl00_alp_ovl.bmp
 	w12a_sdwwl00a_alp_ovl.bmp
 	w12a_sdwwl00b_alp_ovl.bmp
+	w12b0_kage_06_ovl_alp.bmp
+	w12b0_kage_13_ovl_alp.bmp
 	w12b0_kage_17_ovl_alp.bmp
 	w12b0_kage_18_ovl_alp.bmp
 	w12b0_kage_20_ovl_alp.bmp
 	w12b0_kage_21_ovl_alp.bmp
 	w12b0_kage_22_ovl_alp.bmp
 	w12b0_rflit10_alp_add.bmp
+	w12b0_txt_alp_ovl_02.bmp
+	w12b0_txt_alp_ovl_03.bmp
 	w12b0_wire_kanagu_alp.bmp
 	w12b1_kage_01_ovl_alp.bmp
 	w12b1_kage_03_ovl_alp.bmp
+	w12b1_kage_03mk_alp_ovl.bmp
 	w12b1_kage_04_ovl_alp.bmp
 	w12b1_kage_05_ovl_alp.bmp
 	w12b1_kage_06_ovl_alp.bmp
@@ -471,6 +536,7 @@ HAS ALPHA
 	w12b1_pipe_seal1_alp_ovl.bmp
 	w12b1_pipe_seal2_alp_ovl.bmp
 	w12b1_pipe_seal3_alp_ovl.bmp
+	w12b_floor_alp_ovl_01.bmp
 	w12b_lit_mawari_alp_ovl_add.bmp
 	w12b_lit_mawari_alp_ovl_add_01.bmp
 	w12b_pipe_moji_alp_ovl.bmp
@@ -512,12 +578,22 @@ HAS ALPHA
 	w13b_sdw03_alp_ovl.bmp
 	w14a0_fl_kage_a01_alp_ovl.bmp
 	w14a0_fl_situkan_p01_alp_ovl.bmp
+	w14a0_hitokage_01_alp_ovl.bmp
+	w14a0_hitokage_03_alp_ovl.bmp
+	w14a0_hitokage_04_alp_ovl.bmp
+	w14a0_kage_r01_alp_ovl.bmp
 	w14a0_kage_r02_alp_ovl.bmp
+	w14a0_kage_r03_alp_ovl.bmp
+	w14a0_kage_r04_alp_ovl.bmp
+	w14a0_kage_r05_alp_ovl.bmp
+	w14a0_kage_r06_alp_ovl.bmp
 	w14a0_photo_alp_ovl.bmp
 	w14a0_ravel_a01_alp_ovl.bmp
 	w14a0_ravel_a02_alp_ovl.bmp
 	w14a0_tinori_p01_4_alp_ovl.bmp
 	w14a0_tinori_p01_4_alp_ovl.bmp_5058ff9f5362ead02ffc0767e2b01fe0
+	w14a0_tinori_p02_1_alp_ovl.bmp
+	w14a0_tinori_p03_2_alp_ovl.bmp
 	w14a0_tinori_p03_2_alp_ovl.bmp_050c64313613dc2dfc182a2cb2478764
 	w14a0_tinori_p04_1_alp_ovl.bmp
 	w14a0_tinori_p04_1_alp_ovl.bmp_87e28fcd39d5388885f9d8cdf4ef8c03
@@ -536,11 +612,15 @@ HAS ALPHA
 	w14a_hekomi_05_alp_ovl.bmp
 	w14a_kage_b01_alp_ovl.bmp
 	w14a_kage_b02_alp_ovl.bmp
+	w14a_kage_e01_alp_ovl.bmp
+	w14a_kage_f01_2_alp_ovl.bmp
 	w14a_kage_g01_alp_ovl.bmp
 	w14a_kage_g02_alp_ovl.bmp
 	w14a_plate_a02_alp_ovl.bmp
 	w14a_roof_a01_alp.bmp
 	w14a_roof_a01_alp_ovl.bmp
+	w14a_roof_a02_alp.bmp
+	w14a_roof_a03_alp.bmp
 	w15a_sdw04_alp_ovl.bmp
 	w15a_sdw04a_alp_ovl.bmp
 	w15a_sdw04c_alp_ovl.bmp
@@ -549,20 +629,24 @@ HAS ALPHA
 	w16a0_glass_bro_alp.bmp
 	w16a0_hunsh01_alp_ovl.bmp
 	w16a0_ref01sh_alp_ovl.bmp
+	w16a0_ref02sh_alp_ovl.bmp
 	w16a0_ref14_msk.bmp
 	w16a0_tash01_alp_ovl.bmp
+	w16a0_wa13_alp_ovl.bmp
 	w16a0_wa14_alp_ovl.bmp
 	w16a0_wa14a_alp_ovl.bmp
 	w16a0_wa_lig01_add_alp_ovl.bmp
 	w16a0_wa_lig_add_alp_ovl.bmp
 	w16a0_waki_sh_alp_ovl.bmp
 	w16a0_wash02_alp_ovl.bmp
+	w16a0_wash03_alp_ovl.bmp
 	w16a0n_p3_alp_ovl.bmp
 	w16a0n_wa12_alp_ovl.bmp
 	w16a1_fl_sh02_alp_ovl.bmp
 	w16a1_floorSH_alp_ovl.bmp
 	w16a1_obj04.bmp
 	w16a1_p2_alp_ovl.bmp
+	w16a1_wa_sh01_alp_ovl.bmp
 	w16a2_mirror_bro_alp.bmp
 	w16a4_rf_pi1_add_alp_ovl.bmp
 	w16a4_wa_sh01_alp_ovl.bmp
@@ -579,6 +663,7 @@ HAS ALPHA
 	w16a_wa_lig_add_alp_ovl.bmp
 	w16a_wa_lig_add_alp_ovl.bmp_297541e965d21d318a85ed311831275d
 	w16a_wclabel00_alp_add_ovl.bmp
+	w16a_wclabelsdw00_alp_ovl.bmp
 	w16a_women2_alp_ovl.bmp
 	w16a_women_alp_add_ovl.bmp
 	w16an_flsh_alp_ovl.bmp
@@ -589,8 +674,12 @@ HAS ALPHA
 	w17a_sdw01b_alp_ovl.bmp
 	w18a_flrshd2_alp_ovl.bmp
 	w18a_lowlit_shd1_alp_ovl.bmp
+	w18a_node_shad1_alp_ovl.bmp
 	w18a_pinlit_vlm_add_alp.bmp
+	w18a_stpshd1_alp_ovl.bmp
 	w18a_tankfence_alp.bmp
+	w18a_wlshd1_alp_ovl.bmp
+	w18a_wlshd2_alp_ovl.bmp
 	w19a_label00_alp_ovl.bmp
 	w19a_label01_alp_ovl.bmp
 	w19a_label03_alp_ovl.bmp
@@ -605,27 +694,44 @@ HAS ALPHA
 	w19a_sdw06_alp_ovl.bmp
 	w19a_sdw06a_alp_ovl.bmp
 	w19a_sdwpp02a_alp_ovl.bmp
+	w20a0_flsh01_alp_ovl.bmp
+	w20a0_nodosh_alp_ovl.bmp
 	w20a0_obj09_msk.bmp
 	w20a0_objsh02a_alp_ovl.bmp
 	w20a0_objsh02b_alp_ovl.bmp
 	w20a0_objsh02c_alp_ovl.bmp
+	w20a0_objsh05_alp_ovl.bmp
 	w20a0_pane03_msk.bmp
 	w20a0_rf10a_mk_add_alp_ovl.bmp
 	w20a0_rflit01_alp_add_ovl.bmp
+	w20a0_wallsh02_alp_ovl.bmp
+	w20a0_wallsh03_all_alp_ovl.bmp
+	w20a0_wallsh04b_alp_ovl.bmp
+	w20a0_wallsh04c_alp_ovl.bmp
+	w20a0_wallsh04d_alp_ovl.bmp
+	w20a0_wallsh04e_alp_ovl.bmp
+	w20a0_wallsh04f_alp_ovl.bmp
 	w20a0_wallsh07_alp_ovl.bmp
 	w20a0_wallsh08_alp_ovl.bmp
 	w20a0_wallsh09a_alp_ovl.bmp
 	w20a0_wallsh09b_alp_ovl.bmp
 	w20a0_wallsh09c_alp_ovl.bmp
+	w20a0_wallsh09d_alp_ovl.bmp
 	w20a0_wallsh0a_alp_ovl.bmp
 	w20a0_wallsh0c_alp_ovl.bmp
+	w20a0_wallsh0d_alp_ovl.bmp
 	w20a0_wallsh0e_alp_ovl.bmp
 	w20a2_sh01_alp.bmp
 	w20a3_belst05_alp_ovl.bmp
 	w20a3_ema_blood02_alp_ovl.bmp
 	w20a3_wallsh01_alp_ovl.bmp
 	w20a3_wallsh02_alp_ovl.bmp
+	w20a3_wallsh03_alp_ovl.bmp
+	w20a3_wallsh04_alp_ovl.bmp
+	w20a3_wallsh05_alp_ovl.bmp
+	w20a3_wallsh06_alp_ovl.bmp
 	w20a3_wallsh07_alp_ovl.bmp
+	w20a3_wallsh08_alp_ovl.bmp
 	w20a4_sdwpp00_alp_ovl.bmp
 	w20a_bel34_sh_alp_ovl.bmp
 	w20a_bel_lig_add_alp.bmp
@@ -642,9 +748,11 @@ HAS ALPHA
 	w20a_belst16_alp_ovl.bmp
 	w20a_moji_alp_ovl.bmp
 	w20a_walllit_fance1_add_alp_ovl.bmp
+	w20b_1fbox_hl_add_alp_ovl.bmp
 	w20b_bsflr_hl1_add_alp_ovl.bmp
 	w20b_bsflr_hl2_add_alp_ovl.bmp
 	w20b_comp_shd1_alp_ovl.bmp
+	w20b_cont_shd_alp_ovl.bmp
 	w20b_crnshd_alp_ovl.bmp
 	w20b_hmark1_alp_ovl.bmp
 	w20b_hri2_canopy_alp.bmp
@@ -657,22 +765,73 @@ HAS ALPHA
 	w21a_sdw08_alp_ovl.bmp
 	w21b_sdw00e2_alp_ovl.bmp
 	w22a0_saku_alp_ovl.bmp
+	w22a0a_boxshd01_alp_ovl_mk.bmp
 	w22a0a_boxshd02_alp_ovl_mk.bmp
+	w22a0a_boxshd03_alp_ovl_mk.bmp
+	w22a0a_boxshd04_alp_ovl_mk.bmp
+	w22a0a_l_kage_alp_ovl_ns.bmp
+	w22a0a_oku_kage_alp_ovl_ns.bmp
 	w22a0a_r01_kage_alp_ovl_ns.bmp
+	w22a0a_r02_kage_alp_ovl_ns.bmp
+	w22a0a_yuka_kage_alp_ovl_mk.bmp
+	w22a0b_l_kage_alp_ovl_ns.bmp
+	w22a0b_oku_kage_alp_ovl_ns.bmp
+	w22a0b_r_kage_alp_ovl_ns.bmp
+	w22a0b_yuka_kage_alp_ovl_mk.bmp
+	w22a0bhashira_kage_alp_ovl_ns.bmp
+	w22a0c_hako_kage_alp_ovl_ns.bmp
+	w22a0c_l_alp_ovl_ns.bmp
+	w22a0c_l_hashira_kage_alp_ovl_ns.bmp
+	w22a0c_oku_kage_alp_ovl_ns.bmp
+	w22a0c_r_kage_alp_ovl_ns.bmp
+	w22a0c_yuka_kage_alp_ovl_ns.bmp
+	w22a0d_kage_l_alp_ns_ovl.bmp
+	w22a0d_kage_pipe2_alp_ovl_ns.bmp
+	w22a0d_oku_kage_alp_ovl_ns.bmp
+	w22a0d_r_kage_r_alp_ovl_ns.bmp
+	w22a0d_yuka_kage_alp_ovl_ns.bmp
+	w22a0e_hako_l_kage_alp_ovl_ns.bmp
+	w22a0e_l_kage_alp_ovl_ns.bmp
+	w22a0e_oku_kage_alp_ovl_ns.bmp
+	w22a0e_r_kage_alp_ovl_ns.bmp
+	w22a0e_yuka_kage_alp_ovl_ns.bmp
+	w22a0f_kage_iriguchi_alp_ovl_ns.bmp
+	w22a0f_kage_oku_tana02_alp_ovl_ns.bmp
+	w22a0f_kage_yuka_ovl_ns_alp.bmp
 	w22a1box_alp_ovl_04.bmp
+	w22a1box_alp_ovl_05.bmp
 	w22a1box_alp_ovl_07.bmp
+	w22a1box_alp_ovl_08.bmp
 	w22a1box_alp_ovl_09.bmp
 	w22a1box_alp_ovl_10.bmp
+	w22a1g_hako_kage_01_02_alp_ovl_light.bmp
+	w22a1g_hako_kage_01_alp_ovl.bmp
+	w22a1g_hako_kage_02_02_alp_ovl_light.bmp
+	w22a1g_hako_kage_02_alp_ovl_light.bmp
 	w22a1g_line_01_alp_ovl.bmp
 	w22a1g_line_02_alp_ovl.bmp
 	w22a1g_nuno02_alp_ovl.bmp
 	w22a1g_nuno044_alp_ovl.bmp
+	w22a1g_tana2_kage_01_alp_ovl.bmp
+	w22a1g_tana2_kage_02_alp_ovl.bmp
+	w22a1g_tana_kage_l_alp_ovl.bmp
+	w22a1g_tana_kage_r_alp_ovl.bmp
+	w22a1g_wall_b_alp_ovl.bmp
+	w22a1g_wall_l_alp_ovl.bmp
+	w22a1g_wall_r_alp_ovl.bmp
 	w22a1g_yuka_kage_alp_ovl.bmp
+	w22a1h_floor_kage_alp_ovl.bmp
 	w22a1h_tana_02_alp_ovl.bmp
 	w22a1h_tana_06_alp_ovl.bmp
 	w22a1h_tana_08_alp_ovl.bmp
 	w22a1h_wall_kage_b_alp_ovl.bmp
+	w22a1h_wall_kage_f_alp_ovl.bmp
+	w22a1h_wall_kage_r_alp_ovl.bmp
+	w22a1i_kage_oku01_alp_ovl.bmp
+	w22a1i_kage_r_alp_ovl.bmp
 	w22a1i_kage_roof_alp_ovl.bmp
+	w22a1i_kage_temae_alp_ovl.bmp
+	w22a1i_yuka_kage_alp_ovl.bmp
 	w22a_floor__hole_alp_ovl.bmp
 	w22a_floor_line_01_add_alp_ovl.bmp
 	w22a_floor_line_03_add_alp_ovl.bmp
@@ -715,6 +874,7 @@ HAS ALPHA
 	w24a0_fla06b_alp_ovl.bmp
 	w24a0_fla06c_alp_ovl.bmp
 	w24a0_fla06d_alp_ovl.bmp
+	w24a0_flsdw00_alp_ovl.bmp
 	w24a0_flu2_alp_ovl.bmp
 	w24a0_rflit00a_alp_add_ovl.bmp
 	w24a0_rflit05_alp_add_ovl.bmp
@@ -728,14 +888,18 @@ HAS ALPHA
 	w24a0_wlit00_alp_add_ovl.bmp_35387b1938172caa52bc5e2b88d0929a
 	w24a0_wlit00_alp_add_ovl.bmp_adffa762b496e262c2579456137bfc5e
 	w24a0_wlit02_alp_add_ovl.bmp
+	w24a1_boxsdw00_alp_ovl.bmp
+	w24a1_flsdw00_alp_ovl.bmp
 	w24a1_rflit00a_alp_add_ovl.bmp
 	w24a1_sdw00_alp_ovl.bmp
 	w24a1_sdw01_alp_ovl.bmp
 	w24a1_sdw01a_alp_ovl.bmp
+	w24b0_kage00_alp_ovl.bmp
 	w24b0_ms03_alp_add_ovl.bmp
 	w24b1_sdw01_alp_ovl.bmp
 	w24b1_sdw02_alp_ovl.bmp
 	w24b2_fl01_alp_ovl.bmp
+	w24b2_mizo_alp_ovl.bmp
 	w24b2_wa_lig01_add_alp_ovl.bmp
 	w24b2_wa_lig02_add_alp_ovl.bmp
 	w24b2_wash01_alp_ovl.bmp
@@ -744,11 +908,16 @@ HAS ALPHA
 	w24c0_fl06_alp_ovl.bmp
 	w24c0_fl07_alp_ovl.bmp
 	w24c0_fl08_alp_ovl.bmp
+	w24c0_fl09_alp_ovl.bmp
+	w24c0_fl10_alp_ovl.bmp
+	w24c0_fl_06_alp_ovl.bmp
 	w24c0_hata_alp_ovl.bmp
 	w24c0_lig03_add_alp.bmp
 	w24c0_light_01_alp_add_ovl.bmp
 	w24c0_number_alp.bmp
 	w24c0_obj15_msk.bmp
+	w24c0_pish01_alp_ovl.bmp
+	w24c0_sh3_alp_ovl.bmp
 	w24c0_st03_alp_ovl.bmp
 	w24c0_stst01_alp_ovl.bmp
 	w24c0_stst02_alp_ovl.bmp
@@ -760,6 +929,7 @@ HAS ALPHA
 	w24c0_ta02_alp_ovl.bmp
 	w24c0_wa_lig_add_alp_ovl.bmp
 	w24c0_wall01_alp_ovl.bmp
+	w24c0_wall01_mk_alp_ovl.bmp
 	w24c0_wall02_alp_ovl.bmp
 	w24c0_wall03a_alp_ovl.bmp
 	w24c0_wall03b_alp_ovl.bmp
@@ -769,6 +939,7 @@ HAS ALPHA
 	w24c0_wall06_alp_ovl.bmp
 	w24c0_wlit00_alp_add_ovl.bmp
 	w24c0_wlit02_alp_add_ovl.bmp
+	w24c0n_label02_alp_ovl.bmp
 	w24c0n_line00_add_alp_ovl.bmp
 	w24c0n_line00a_add_alp_ovl.bmp
 	w24c0n_lit2_alp_add.bmp
@@ -778,6 +949,8 @@ HAS ALPHA
 	w24c1_rev_disp_maku_alp_add_ovl.bmp
 	w24d1n_walig02_add_alp_ovl.bmp
 	w24d2_fr_all1_alp_ovl.bmp
+	w24d2_fr_all3_alp_ovl.bmp
+	w24d2_mo3sh_alp_ovl.bmp
 	w24d2_pane01_alp.bmp
 	w24d2_pane02_alp.bmp
 	w24d2_pi_turi2_msk.bmp
@@ -839,12 +1012,17 @@ HAS ALPHA
 	w31a_duct_alp_ovl_03.bmp
 	w31a_duct_alp_ovl_04.bmp
 	w31a_kage_alp_ovl_01.bmp
+	w31a_kage_alp_ovl_02.bmp
 	w31a_kage_alp_ovl_03.bmp
+	w31a_kage_alp_ovl_04.bmp
 	w31a_kage_alp_ovl_05.bmp
 	w31a_kage_alp_ovl_06.bmp
 	w31a_kage_alp_ovl_07.bmp
 	w31a_kage_alp_ovl_08.bmp
 	w31a_kage_alp_ovl_09.bmp
+	w31a_kage_alp_ovl_11.bmp
+	w31a_kage_alp_ovl_12.bmp
+	w31a_kage_alp_ovl_13.bmp
 	w31a_light_ovl_alp_add_01.bmp
 	w31a_mark_add_alp_ovl_01.bmp
 	w31a_mark_add_alp_ovl_02.bmp
@@ -881,16 +1059,24 @@ HAS ALPHA
 	w31c_floor_alp_ovl_01.bmp
 	w31c_floor_alp_ovl_02.bmp
 	w31c_floor_alp_ovl_03.bmp
+	w31c_kage_ovl_alp_01.bmp
+	w31c_kage_ovl_alp_02.bmp
 	w31c_kage_ovl_alp_03.bmp
 	w31c_kage_ovl_alp_06.bmp
 	w31c_kage_ovl_alp_07.bmp
 	w31c_kage_ovl_alp_08.bmp
 	w31c_kage_ovl_alp_09.bmp
 	w31c_kage_ovl_alp_10.bmp
+	w31c_kage_ovl_alp_11.bmp
+	w31c_kage_ovl_alp_12.bmp
+	w31c_kage_ovl_alp_13.bmp
+	w31c_kage_ovl_alp_14.bmp
 	w31c_kage_ovl_alp_15.bmp
 	w31c_kage_ovl_alp_16.bmp
 	w31c_kage_ovl_alp_17.bmp
 	w31c_kage_ovl_alp_18.bmp
+	w31c_kage_ovl_alp_19.bmp
+	w31c_kage_ovl_alp_21.bmp
 	w31c_kage_ovl_alp_24.bmp
 	w31c_kage_ovl_alp_25.bmp
 	w31c_kage_ovl_alp_add_23.bmp
@@ -920,8 +1106,10 @@ HAS ALPHA
 	w41a_dr_lamp_on_alp_add_ovl.bmp
 	w41a_kanpul_alp.bmp
 	w41a_maku_add_alp_ovl.bmp
+	w41a_tash_alp_ovl.bmp
 	w41a_wali1_alp_add.bmp
 	w42a_1f_box_kage02_alp_ovl.bmp
+	w42a_1f_box_kage04_alp_ovl.bmp
 	w42a_1f_box_kage06_alp_ovl.bmp
 	w42a_1f_box_kage07_alp_ovl.bmp
 	w42a_1f_box_kage_alp_ovl.bmp
@@ -932,6 +1120,7 @@ HAS ALPHA
 	w42a_bridge_floor_01_alp.bmp
 	w42a_bridge_floor_03_alp.bmp
 	w42a_data_light_01_alp_add_ovl.bmp
+	w42a_data_light_01_alp_add_ovl.bmp_7246e3bdca03aae1d4a9093e82663db5
 	w42a_data_light_02_alp_add_ovl.bmp
 	w42a_efct_1f_disp_alp_add_ovl.bmp
 	w42a_efct_disp_01_alp_add_ovl.bmp
@@ -953,18 +1142,25 @@ HAS ALPHA
 	w42a_efct_rbn_smt02_alp_add_ovl.bmp
 	w42a_light_maku_alp_add_ovl.bmp
 	w42a_oil_tank_in_alp_ovl.bmp
+	w42a_step_line02_alp_ovl.bmp
+	w42a_step_line_alp_ovl.bmp
+	w42a_white_line_alp_ovl.bmp
 	w43a_2f_kage_alp_ovl.bmp
 	w43a_dai_03_alp_ovl.bmp
 	w43a_efct_rbn_01_alp_add_ovl.bmp
 	w43a_efct_rbn_02_alp_add_ovl.bmp
 	w43a_efct_rbn_03_alp_add_ovl.bmp
+	w43a_efct_rbn_04_alp_add_ovl.bmp
+	w43a_efct_rbn_05_alp_add_ovl.bmp
 	w43a_efct_rbn_06_alp_add_ovl.bmp
 	w43a_efct_rbn_08_alp_add_ovl.bmp
 	w43a_ent_light_alp_add_ovl.bmp
 	w43a_ent_maku_alp_add_ovl.bmp
 	w43a_light_maku02_alp_add_ovl.bmp
 	w43a_light_maku03_alp_add_ovl.bmp
+	w43a_light_maku_alp_add_ovl.bmp
 	w43a_light_maku_red_alp_add_ovl.bmp
+	w44a_efct_1f_disp_alp_add_ovl.bmp
 	w44a_efct_rbn_02_alp_add_ovl.bmp
 	w45a_efct_caution_alp_add_ovl.bmp
 	w45a_efct_disp_01_alp_add_ovl.bmp
@@ -980,11 +1176,16 @@ HAS ALPHA
 	w45a_efct_disp_06_noiz_alp_add_ovl.bmp
 	w45a_efct_rbn_01_alp_add_ovl.bmp
 	w45a_efct_rbn_02_alp_add_ovl.bmp
+	w45a_efct_rbn_smt01_2_alp_add_ovl.bmp
+	w45a_efct_rbn_smt01_3_alp_add_ovl.bmp
 	w45a_efct_rbn_smt01_alp_add_ovl.bmp
 	w45a_floor_01_alp.bmp
 	w45a_number20_alp_add_ovl.bmp
 	w45a_number30_alp_add_ovl.bmp
 	w45a_number40_alp_add_ovl.bmp
+	w46a_line_01_02_alp_add_ovl.bmp
+	w46a_line_01_03_alp_add_ovl.bmp
+	w46a_line_01_04_alp_add_ovl.bmp
 	w46a_line_01_1_moji_alp_add_ovl.bmp
 	w46a_line_01_2_moji_alp_add_ovl.bmp
 	w46a_line_01_3_moji_alp_add_ovl.bmp
@@ -1023,6 +1224,9 @@ HAS ALPHA
 	w46a_line_06_04_alp_add_ovl.bmp
 	w46a_line_06_alp_add_ovl.bmp
 	w46a_line_06_moji_alp_add_ovl.bmp
+	w46a_line_side02_alp_add_ovl.bmp
+	w46a_line_side03_alp_add_ovl.bmp
+	w46a_line_side04_alp_add_ovl.bmp
 	w46a_line_side_alp_add_ovl.bmp
 	w46a_line_slm_02_alp_add_ovl.bmp
 	w46a_line_slm_03_alp_add_ovl.bmp
@@ -1043,6 +1247,7 @@ HAS ALPHA
 	w62a_kyoukai_02_alp.bmp
 	w62a_saku_02_1_alp_ovl.bmp
 	w62a_saku_02_alp.bmp
+	w62a_sky_top_01_alp.bmp
 	w62a_vamp_01_alp_ovl.bmp
 	wa_be_sh_alp_ovl.bmp
 	WallLc1Up2.bmp_8bcf03bfb0e39c5e15c0c5a38913842a
@@ -1052,7 +1257,9 @@ HAS ALPHA
 	window00_alp.bmp
 	window00_alp.bmp_b6b4e5482f0d2c79212fb315ca632a72
 	window01_alp.bmp
+	window01_alp.bmp_7bbfecbc9a722557df5da7eed5410eb4
 	window1_alp.bmp
+	window2_alp.bmp
 	window_ode_01_alp.bmp
 	window_ode_02_alp.bmp
 	ws31a_sdw002_alp_ovl.bmp
@@ -1141,6 +1348,7 @@ HAS ALPHA
 	007be718
 	007f6817
 	0083fa46
+	0086a618
 	00892df9
 	008c9a00
 	008cc589
@@ -1527,14 +1735,21 @@ HAS ALPHA
 	cam_chest_bo_dt_sub_alp_ovl.bmp
 	cam_chest_na_dt_sub_alp_ovl.bmp
 	cam_chest_sm_dt_sub_alp_ovl.bmp
+	cam_color_l_sub_alp_ovl.bmp
+	cam_color_r_sub_alp_ovl.bmp
 	cam_eyes_ovl_sub_alp.bmp
 	cam_face_dt_sub_ovl_alp.bmp
 	cam_fh_ovl_alp_mod1120_emap.bmp
 	cam_hat_fh_dt_sub_alp_ovl.bmp
 	cam_hat_side_sub_alp_ovl.bmp
 	cam_kata_big_sub_alp_ovl.bmp
+	cam_kata_sml_dt_sub_alp_ovl.bmp
+	chr1_00_alp_sub_ovl.bmp
 	chr1_01_alp_sub_ovl.bmp
+	chr1_02_alp_sub_ovl.bmp
 	chr1_02a_alp_sub_ovl.bmp
+	chr1_03_alp_sub_ovl.bmp
+	chr1_03a_alp_sub_ovl.bmp
 	crg_shues_sub_ovl_alp.bmp_ec89b524e5f1c44785abbf10997f5b29
 	d00a_sdw_cf01_sub_alp_ovl.bmp
 	d00a_sdw_cf02_sub_alp_ovl.bmp
@@ -1560,16 +1775,23 @@ HAS ALPHA
 	ema_eye_dt_ovl_sub_alp.bmp
 	ema_eye_re_ovl_sub_alp.bmp
 	ema_face_houtai_alp_sub_ovl.bmp
+	ema_hand_sub_alp_ovl.bmp
 	ema_id_sub_alp_ovl.bmp
 	ema_legl_sub_alp_ovl_new.bmp
+	fat_eri_front_sub_alp_ovl.bmp
 	gbs_arm_ovl_sub_alp.bmp
 	gbs_body_ovl_sub_alp.bmp
 	gbs_leg_ovl_sub_alp.bmp
 	gbs_toe2_ovl_sub_alp.bmp
+	h6h_side_window_sub_alp_ovl.bmp
+	hfb_sub_gr2_alp_ovl.bmp
+	hfbs3_sub_alp_ovl.bmp
 	hos_fa_foot01_ovl_sub_alp.bmp
 	hos_fa_hair01_ovl_sub_alp.bmp
 	hos_neckless_ovl_sub_alp.bmp
 	hos_pump_ovl_sub_alp.bmp
+	hri2_canopy_brk_kato_sub_alp_ovl.bmp
+	hri2_cnpy_new_sub_alp_ovl.bmp
 	htc_helmet_b_uc_ovl_alp_sub.bmp
 	htc_helmet_uc_ovl_alp_sub.bmp
 	htc_light_uc_ovl_sub_alp.bmp
@@ -1596,6 +1818,7 @@ HAS ALPHA
 	kck_ropebox_sub_ovl_alp.bmp
 	kck_twing2_s_sub_ovl_alp.bmp
 	kck_twing_s_sub_ovl_alp.bmp
+	kirari_msk.bmp
 	mrl_arm_sub_ovl_alp.bmp
 	mrl_arm_wrist_sub_ovl_alp.bmp
 	mrl_belt_sub_alp_ovl.bmp
@@ -1615,18 +1838,26 @@ HAS ALPHA
 	org_hi_hands_ovl_sub_alp.bmp
 	org_leg_ovl_sub_alp.bmp
 	org_waist_ovl_sub_alp.bmp
+	orn_arm_dt01_sub_alp_ovl.bmp
 	orn_arm_dt02_sub_alp_ovl.bmp
 	orn_arm_dt03_sub_alp_ovl.bmp
 	orn_arm_dt04_sub_alp_ovl.bmp
 	orn_backb_dt02_sub_alp_ovl.bmp
 	orn_body_dt01_sub_alp_ovl.bmp
 	orn_finger_dt00_sub_alp_ovl.bmp
+	orn_foot_dt00_sub_alp_ovl.bmp
 	orn_foot_dt03_sub_alp_ovl.bmp
+	orn_hand_dt00_sub_alp_ovl.bmp
+	orn_hand_dt01_sub_alp_ovl.bmp
+	orn_hand_dt02_sub_alp_ovl.bmp
 	orn_helmet_dt02_sub_alp_ovl.bmp
+	orn_leg02_sub_alp_ovl.bmp
 	orn_leg04_sub_alp_ovl.bmp
 	orn_leg_dt00_sub_alp_ovl.bmp
 	orn_leg_dt03_sub_alp_ovl.bmp
 	orn_leg_dt04_sub_alp_ovl.bmp
+	orn_neck_sub_alp_ovl.bmp
+	orn_should_dt01_sub_alp_ovl.bmp
 	orp__arm_ovl_sub_alp.bmp
 	orp_boot_alp_ovl_sub.bmp
 	orp_chest_re_s_alp_sub_ovl.bmp
@@ -1634,9 +1865,13 @@ HAS ALPHA
 	orp_eyes_ovl_sub_alp.bmp
 	orp_hi_finger2_sub_ovl_alp.bmp
 	otc_eye_ovl_sub_alp.bmp
+	otc_eye_ovl_sub_alp.bmp_9421d623f841d62c323b3ceb35b9e232
 	otc_hi_face_sub_ovl_alp.bmp
+	otc_hi_face_sub_ovl_alp.bmp_4efb956ecb9f5c16367dc35e559f3f8c
 	otc_hi_fintume_sub_alp_ovl.bmp
 	otc_hi_hand00_sub_alp_ovl.bmp
+	otc_hi_hand01_sub_alp_ovl.bmp
+	otc_megane_sub_alp_ovl.bmp
 	otc_neck_sub_ovl_alp.bmp
 	otc_tear_l_sub_alp_ovl.bmp
 	otc_tear_r_sub_alp_ovl.bmp
@@ -1644,9 +1879,20 @@ HAS ALPHA
 	pdray_b_pack_t1_sub_alp_ovl.bmp
 	pdray_canopy_sub_ovl_alp.bmp
 	pdray_chin1_u_sub_alp_ovl.bmp
+	pdray_face_b1_sub_alp_ovl.bmp
+	pdray_face_s1_sub_alp_ovl.bmp
+	pdray_face_s2_sub_alp_ovl.bmp
+	pdray_face_t1_sub_alp_ovl.bmp
+	pdray_leg1_s1_sub_alp_ovl.bmp
 	pdray_leg_s1_sub_ovl_alp.bmp
+	pdray_lip_out_sub_alp_ovl.bmp
 	pdray_tail_s1x_sub_alp_ovl.bmp
+	pdray_thigh_b1_sub_alp_ovl.bmp
+	pdray_thigh_cir_sub_alp_ovl.bmp
+	pdray_thigh_t1_sub_ovl_alp.bmp
 	pdray_waist_b1x_sub_alp_ovl.bmp
+	pdray_waist_s1_sub_alp_ovl.bmp
+	pdray_waist_s2_sub_alp_ovl.bmp
 	pipe_hole_sub_alp.bmp
 	pit_arm_l_sub_alp_ovl.bmp
 	pit_arm_r_sub_alp_ovl.bmp
@@ -1665,8 +1911,10 @@ HAS ALPHA
 	rai_body_02_fix_ovl_sub_alp.bmp
 	rai_body_fix_ovl_sub_alp.bmp
 	rai_diver_eye_ovl_sub_alp.bmp
+	rai_finger_fix_ovl_sub_alp.bmp
 	rai_foot_a_fix_ovl_sub_alp.bmp
 	rai_foot_b_fix_ovl_sub_alp.bmp
+	rai_foot_c_fix_ovl_sub_alp.bmp
 	rai_foot_fix_ovl_sub_alp.bmp
 	rai_foot_fix_ovl_sub_alp.bmp_29be7bb5ef9dee5d92da7b6bde90985b
 	rai_hand_01_fix_ovl_sub_alp.bmp
@@ -1682,6 +1930,7 @@ HAS ALPHA
 	rai_naked_leg_ovl_sub_alp.bmp
 	rai_nin_hand_c_fix_ovl_sub_alp.bmp
 	rai_rist_dt01_ovl_sub_alp.bmp
+	rai_rist_fix_ovl_sub_alp.bmp
 	rai_rist_ovl_sub_alp.bmp
 	rai_toe_01_fix_ovl_sub_alp.bmp
 	rai_toe_02_fix_ovl_sub_alp.bmp
@@ -1692,6 +1941,9 @@ HAS ALPHA
 	rev_pla_leg_ovl_sub_alp.bmp
 	rev_plant_arm_ovl_sub_alp.bmp
 	rev_plant_body_ovl_sub_alp.bmp
+	sco_hand_in_ovl_sub_alp.bmp
+	sco_hand_o_ovl_sub_alp.bmp_7ae46165cf53cfc184eb18f1cbb93ce8
+	sco_hand_out_ovl_sub_alp.bmp
 	sco_n3_ude_u_ovl_sub_alp.bmp
 	sco_n3_ude_u_ovl_sub_alp.bmp_160fc82beaf190aad4b9ed0deee98d37
 	sna_arm_ovl_sub_alp.bmp
@@ -1717,10 +1969,12 @@ HAS ALPHA
 	sol_foot_dt01_ovl_sub_alp.bmp
 	sol_foot_dt02_ovl_sub_alp.bmp
 	sol_guard_dt_ovl_sub_alp.bmp
+	sol_hand_dt_ovl_sub_alp.bmp
 	sol_leg_dt01_ovl_sub_alp.bmp
 	sol_leg_dt02_ovl_sub_alp.bmp
 	sol_leg_dt03_ovl_sub_alp.bmp
 	sol_leg_dt05_sub_alp_ovl.bmp
+	sol_sa_tu_dt02_ovl_sub_alp.bmp
 	ter_ovl_sub_alp_0001.bmp
 	tng_arm_ovl_sub_alp.bmp
 	tng_body_b_ovl_sub_alp.bmp
@@ -1729,6 +1983,7 @@ HAS ALPHA
 	tng_foot_ovl_sub_alp.bmp
 	tng_hand_ovl_sub_alp.bmp
 	tng_head_b_ovl_sub_alp.bmp
+	tng_head_f_ovl_sub_alp.bmp
 	tng_head_t_ovl_sub_alp.bmp
 	tng_katana03_ovl_sub_alp.bmp
 	tng_knife_ovl_sub_alp.bmp
@@ -1796,8 +2051,12 @@ HAS ALPHA
 	w28a_light_kage_alp_sub_ovl.bmp
 	w31a_duct_yogore_alp_ovl_sub_02.bmp
 	w31a_kage_alp_ovl_sub_02.bmp
+	w42a_1f_box_kage01_alp_sub_ovl.bmp
 	w42a_1f_box_kage02_alp_sub_ovl.bmp
 	w42a_1f_box_kage03_alp_sub_ovl.bmp
+	w42a_1f_box_kage05_alp_sub_ovl.bmp
 	w42a_1f_box_kage_ent_alp_sub_ovl.bmp
 	w42a_2f_kage_alp_sub_ovl.bmp
+	wtd_mini_petbottle2_mt_alp_ovl_sub_.bmp
+	wtd_petbottle2_mt_ovl_alp_sub_01.bmp
 

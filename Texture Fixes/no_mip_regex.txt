@@ -60,3 +60,4 @@ _bg\.bmp$
 ^w24c_over_mrs_alp_ovl\.bmp$
 ^w24c_over_oba_alp_ovl\.bmp$
 ^w24c_overguy_alp_ovl\.bmp$
+^kirari_msk.bmp$
