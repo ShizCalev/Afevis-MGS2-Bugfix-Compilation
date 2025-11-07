@@ -3,62 +3,116 @@ import shutil
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
+import multiprocessing
 
 # ==========================================================
 # CONFIGURATION
 # ==========================================================
-# Resolve repo root dynamically from script location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 
-# Relative paths
-SRC_DIR = os.path.join(REPO_ROOT, "Texture Fixes", "ps2 textures", "OPAQUE", "bp_remade")
-CTXR_SOURCE = os.path.join(REPO_ROOT, "external", "MGS2-PS2-Textures", "flatlist", "_win")
-DEST_DIR = os.path.join(REPO_ROOT, "Texture Fixes", "mc textures", "opaque", "bp_remade")
-ROGUE_DIR = os.path.join(REPO_ROOT, "Texture Fixes", "mc textures", "opaque", "ROGUE FILE")
+# Root search folders
+PS2_ROOT = os.path.join(REPO_ROOT, "Texture Fixes", "ps2 textures")
+MC_ROOT = os.path.join(REPO_ROOT, "Texture Fixes", "mc textures")
 
-THREADS = 12
+# Correct CTXR source path
+CTXR_SOURCE = r"G:\Steam\steamapps\common\MGS2\textures\flatlist\_win"
+
+ROGUE_DIR = os.path.join(MC_ROOT, "ROGUE FILE")
 LOG_PATH = os.path.join(SCRIPT_DIR, "missing_ctxr_log.txt")
+
+THREADS = max(4, multiprocessing.cpu_count())
 
 # Next stage scripts
 NEXT_SCRIPT_1 = os.path.join(SCRIPT_DIR, "0006 - strip alpha from opaque mc pngs.py")
 NEXT_SCRIPT_2 = os.path.join(SCRIPT_DIR, "0009 - find incorrect ps2 to mc alpha levels.py")
 
+print_lock = Lock()
+
 # ==========================================================
 # UTILITIES
 # ==========================================================
-print_lock = Lock()
-
 def ensure_dir(path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
 
-def find_ctxr(target_name):
-    """Find ctxr file in CTXR_SOURCE with matching name (no extension)."""
-    name_no_ext = os.path.splitext(target_name)[0].lower()
+def normalize_name(filename):
+    """Lowercase and remove only the final extension (.png/.tga/.ctxr)."""
+    name = filename.lower()
+    for ext in (".png", ".tga", ".ctxr"):
+        if name.endswith(ext):
+            return name[:-len(ext)]
+    return name
+
+
+def build_ctxr_index():
+    """Build lookup index of all .ctxr files in CTXR_SOURCE."""
+    print(f"[+] Building CTXR index from: {CTXR_SOURCE}")
+    index = {}
     for root, _, files in os.walk(CTXR_SOURCE):
         for f in files:
-            if f.lower().endswith(".ctxr") and os.path.splitext(f)[0].lower() == name_no_ext:
-                return os.path.join(root, f)
-    return None
+            if f.lower().endswith(".ctxr"):
+                key = normalize_name(f)
+                index[key] = os.path.join(root, f)
+    print(f"[+] Indexed {len(index)} ctxr files.")
+    return index
 
 
-def copy_ctxr(file_path):
+def should_include_texture(path):
+    """
+    Determine if a texture should be included:
+    - Always include if under OPAQUE/bp_remade/
+    - For other folders, only include if under a subfolder of bp_remade/
+    """
+    rel = os.path.relpath(path, PS2_ROOT)
+    parts = rel.lower().split(os.sep)
+
+    if "opaque" in parts and "bp_remade" in parts:
+        return True
+
+    if "bp_remade" in parts:
+        idx = parts.index("bp_remade")
+        if idx < len(parts) - 2:
+            return True
+
+    return False
+
+
+def get_all_bp_remade_textures(root_dir):
+    """Recursively find all .png/.tga files under valid bp_remade subfolders."""
+    textures = []
+    for root, _, files in os.walk(root_dir):
+        if "bp_remade" in root.lower():
+            for f in files:
+                if f.lower().endswith((".png", ".tga")):
+                    full_path = os.path.join(root, f)
+                    if should_include_texture(full_path):
+                        textures.append(full_path)
+    return textures
+
+
+def find_ctxr(target_name, ctxr_index):
+    """Find matching ctxr path from index using strict name match."""
+    key = normalize_name(target_name)
+    return ctxr_index.get(key)
+
+
+def copy_ctxr(file_path, ctxr_index):
     """Locate and copy ctxr file if found, skip if already exists."""
-    rel_path = os.path.relpath(file_path, SRC_DIR)
+    rel_path = os.path.relpath(file_path, PS2_ROOT)
     rel_base = os.path.splitext(rel_path)[0] + ".ctxr"
-    dest_path = os.path.join(DEST_DIR, rel_base)
+    dest_path = os.path.join(MC_ROOT, rel_base)
 
     if os.path.exists(dest_path):
         with print_lock:
             print(f"[Skipped - already exists] {dest_path}")
         return "skipped"
 
-    match = find_ctxr(os.path.basename(file_path))
+    match = find_ctxr(os.path.basename(file_path), ctxr_index)
     if not match:
         with print_lock:
             print(f"[Missing] {file_path}")
-        return file_path  # return full path for logging
+        return file_path
 
     try:
         ensure_dir(dest_path)
@@ -72,23 +126,53 @@ def copy_ctxr(file_path):
         return "error"
 
 
-def get_all_textures(root_dir):
-    """Recursively gather all .png and .tga files."""
-    files = []
-    for root, _, fns in os.walk(root_dir):
-        for f in fns:
-            if f.lower().endswith((".png", ".tga")):
-                files.append(os.path.join(root, f))
-    return files
+# ==========================================================
+# CLEANUP / SYNC
+# ==========================================================
+def cleanup_removed_ps2_textures():
+    """
+    Remove .ctxr files from MC_ROOT that no longer have a corresponding
+    .png or .tga in PS2_ROOT under bp_remade.
+    """
+    print("\n[+] Checking for stale ctxr files in MC textures...")
+
+    removed = 0
+    for root, _, files in os.walk(MC_ROOT):
+        if "bp_remade" not in root.lower():
+            continue
+
+        for f in files:
+            if not f.lower().endswith(".ctxr"):
+                continue
+
+            mc_ctxr_path = os.path.join(root, f)
+            rel_ctxr = os.path.relpath(mc_ctxr_path, MC_ROOT)
+            rel_base = os.path.splitext(rel_ctxr)[0]
+
+            ps2_png = os.path.join(PS2_ROOT, rel_base + ".png")
+            ps2_tga = os.path.join(PS2_ROOT, rel_base + ".tga")
+
+            if not os.path.exists(ps2_png) and not os.path.exists(ps2_tga):
+                try:
+                    os.remove(mc_ctxr_path)
+                    removed += 1
+                    with print_lock:
+                        print(f"[Removed stale ctxr] {mc_ctxr_path}")
+                except Exception as e:
+                    with print_lock:
+                        print(f"[Error removing {mc_ctxr_path}] {e}")
+
+    print(f"[+] Cleanup complete. Removed {removed} stale ctxr files.")
+    return removed
 
 
 # ==========================================================
 # ROGUE CHECK
 # ==========================================================
 def find_rogue_pngs():
-    """Find .png files in DEST_DIR without matching .ctxr and move to ROGUE_DIR."""
+    """Find .png files in MC_ROOT without matching .ctxr and move to ROGUE_DIR."""
     rogue_files = []
-    for root, _, files in os.walk(DEST_DIR):
+    for root, _, files in os.walk(MC_ROOT):
         for f in files:
             if f.lower().endswith(".png"):
                 png_path = os.path.join(root, f)
@@ -104,7 +188,7 @@ def find_rogue_pngs():
     print(f"[!] Found {len(rogue_files)} rogue PNGs. Moving to: {ROGUE_DIR}")
 
     for path in rogue_files:
-        rel_path = os.path.relpath(path, DEST_DIR)
+        rel_path = os.path.relpath(path, MC_ROOT)
         dest_path = os.path.join(ROGUE_DIR, rel_path)
         ensure_dir(dest_path)
         try:
@@ -140,14 +224,17 @@ def run_next_stage(script_path):
 # ==========================================================
 def main():
     print(f"[+] Repo root: {REPO_ROOT}")
-    all_textures = get_all_textures(SRC_DIR)
-    print(f"[+] Found {len(all_textures)} texture files in {SRC_DIR}")
+
+    all_textures = get_all_bp_remade_textures(PS2_ROOT)
+    print(f"[+] Found {len(all_textures)} valid textures for processing under ps2 textures.")
+
+    ctxr_index = build_ctxr_index()
 
     results = {"copied": 0, "skipped": 0, "error": 0}
     missing_files = []
 
     with ThreadPoolExecutor(max_workers=THREADS) as executor:
-        futures = [executor.submit(copy_ctxr, f) for f in all_textures]
+        futures = [executor.submit(copy_ctxr, f, ctxr_index) for f in all_textures]
         for fut in as_completed(futures):
             res = fut.result()
             if res == "copied":
@@ -173,6 +260,9 @@ def main():
     print(f"    Skipped: {results['skipped']}")
     print(f"    Errors : {results['error']}")
     print(f"    Missing: {len(missing_files)}")
+
+    # --- Cleanup stale ctxr files ---
+    cleanup_removed_ps2_textures()
 
     # --- Rogue PNG verification ---
     print("\n[+] Starting rogue PNG verification...")
