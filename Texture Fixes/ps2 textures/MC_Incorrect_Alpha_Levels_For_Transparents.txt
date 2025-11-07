@@ -2179,51 +2179,7 @@ HAS ALPHA
 	sna_hi_ela01_alp_ovl.bmp
 	sol_mant_n_alp_ovl.bmp
 	sp_alp_ovl.bmp
-	sr00e_alp_ovl.bmp
-	sr01j_alp_ovl.bmp_71b551295ba518fae4283bd712544a6d
-	sr02j_alp_ovl.bmp_4a09a9b88e5c9d0cf6da451edf0dbec7
-	sr04e_alp_ovl.bmp
-	sr04e_alp_ovl.bmp_7df013dc1a4acc27c98bdd79b9268942
-	sr04j_alp_ovl.bmp_1383a677978c887d8f593c2469a8401a
-	sr05e_alp_ovl.bmp
-	sr05e_alp_ovl.bmp_fa8e2b5b866afff71bcedae16df8e3df
-	sr05j_alp_ovl.bmp_bf1906e485ccafe1c218be12a5453562
-	sr06e_alp_ovl.bmp
-	sr06e_alp_ovl.bmp_93ce3028cb41917a7f5a86e1a5cef339
-	sr06j_alp_ovl.bmp_3930ac3de40a80d7335f659d8d3b18df
-	sr07e_alp_ovl.bmp
-	sr07e_alp_ovl.bmp_1facc522d39aa7af4c8f475392ce56fb
-	sr07j_alp_ovl.bmp_df4abf9598b5e1aaa1c931ea907a758a
-	sr08e_alp_ovl.bmp
-	sr08e_alp_ovl.bmp_94c5b46b1b4c4dd69ab4b85ecd7d43fe
-	sr08j_alp_ovl.bmp_501fe309963ffa2693e775abe15afe45
-	sr09e_alp_ovl.bmp
-	sr09e_alp_ovl.bmp_2bec0cf6e2d48a41d9297cf01513f45c
-	sr10e_alp_ovl.bmp
-	sr10e_alp_ovl.bmp_1927c59b5a429c24eac1732749ce574a
-	sr11e_alp_ovl.bmp
-	sr11e_alp_ovl.bmp_cb0dce75f41243b62d86315f2154df35
-	sr11j_alp_ovl.bmp_d403a96582282e98da76e6194a8a4c58
-	sr12e_alp_ovl.bmp
-	sr12e_alp_ovl.bmp_49da83a2fc34ffff91d496c4100267ab
-	sr12j_alp_ovl.bmp_17fe60f718f515850942f8f66ba0be2a
-	sr13e_alp_ovl.bmp
-	sr13e_alp_ovl.bmp_8e5d765a189254623f05bef061d0db1a
-	sr14e_alp_ovl.bmp
-	sr14e_alp_ovl.bmp_ea172754f17f49457f2f04ae2319add2
-	sr14j_alp_ovl.bmp_104b15f9971860fa4c6923382baf1463
 	sr14j_bg_alp_ovl.bmp
-	sr16e_alp_ovl.bmp
-	sr17e_alp_ovl.bmp
-	sr18e_alp_ovl.bmp
-	sr18e_alp_ovl.bmp_472bed0a443e29c45de18a81421d2ee0
-	sr19e_alp_ovl.bmp
-	sr20e_alp_ovl.bmp
-	sr21e_alp_ovl.bmp
-	sr22e_alp_ovl.bmp
-	sr23e_alp_ovl.bmp
-	sr24e_alp_ovl.bmp
-	sr25e_alp_ovl.bmp
 	stin_alp_ovl.bmp
 	stun_alp_ovl.bmp
 	styp_alp_ovl.bmp
@@ -2361,6 +2317,50 @@ HAS ALPHA
 	sol_sa_tu_dt03_ovl_sub_alp.bmp
 	sol_sa_tu_dt04_ovl_sub_alp.bmp
 	sol_shoulder_dt_ovl_sub_alp.bmp
+	sr00e_alp_ovl.bmp
+	sr01j_alp_ovl.bmp_71b551295ba518fae4283bd712544a6d
+	sr02j_alp_ovl.bmp_4a09a9b88e5c9d0cf6da451edf0dbec7
+	sr04e_alp_ovl.bmp
+	sr04e_alp_ovl.bmp_7df013dc1a4acc27c98bdd79b9268942
+	sr04j_alp_ovl.bmp_1383a677978c887d8f593c2469a8401a
+	sr05e_alp_ovl.bmp
+	sr05e_alp_ovl.bmp_fa8e2b5b866afff71bcedae16df8e3df
+	sr05j_alp_ovl.bmp_bf1906e485ccafe1c218be12a5453562
+	sr06e_alp_ovl.bmp
+	sr06e_alp_ovl.bmp_93ce3028cb41917a7f5a86e1a5cef339
+	sr06j_alp_ovl.bmp_3930ac3de40a80d7335f659d8d3b18df
+	sr07e_alp_ovl.bmp
+	sr07e_alp_ovl.bmp_1facc522d39aa7af4c8f475392ce56fb
+	sr07j_alp_ovl.bmp_df4abf9598b5e1aaa1c931ea907a758a
+	sr08e_alp_ovl.bmp
+	sr08e_alp_ovl.bmp_94c5b46b1b4c4dd69ab4b85ecd7d43fe
+	sr08j_alp_ovl.bmp_501fe309963ffa2693e775abe15afe45
+	sr09e_alp_ovl.bmp
+	sr09e_alp_ovl.bmp_2bec0cf6e2d48a41d9297cf01513f45c
+	sr10e_alp_ovl.bmp
+	sr10e_alp_ovl.bmp_1927c59b5a429c24eac1732749ce574a
+	sr11e_alp_ovl.bmp
+	sr11e_alp_ovl.bmp_cb0dce75f41243b62d86315f2154df35
+	sr11j_alp_ovl.bmp_d403a96582282e98da76e6194a8a4c58
+	sr12e_alp_ovl.bmp
+	sr12e_alp_ovl.bmp_49da83a2fc34ffff91d496c4100267ab
+	sr12j_alp_ovl.bmp_17fe60f718f515850942f8f66ba0be2a
+	sr13e_alp_ovl.bmp
+	sr13e_alp_ovl.bmp_8e5d765a189254623f05bef061d0db1a
+	sr14e_alp_ovl.bmp
+	sr14e_alp_ovl.bmp_ea172754f17f49457f2f04ae2319add2
+	sr14j_alp_ovl.bmp_104b15f9971860fa4c6923382baf1463
+	sr16e_alp_ovl.bmp
+	sr17e_alp_ovl.bmp
+	sr18e_alp_ovl.bmp
+	sr18e_alp_ovl.bmp_472bed0a443e29c45de18a81421d2ee0
+	sr19e_alp_ovl.bmp
+	sr20e_alp_ovl.bmp
+	sr21e_alp_ovl.bmp
+	sr22e_alp_ovl.bmp
+	sr23e_alp_ovl.bmp
+	sr24e_alp_ovl.bmp
+	sr25e_alp_ovl.bmp
 	usa_met01dt_ovl_sub_alp.bmp
 
 ---------- HAS ALPHA\no_mip_fixes ----------

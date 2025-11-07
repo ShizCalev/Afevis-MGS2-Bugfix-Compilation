@@ -61,3 +61,6 @@ _bg\.bmp$
 ^w24c_over_oba_alp_ovl\.bmp$
 ^w24c_overguy_alp_ovl\.bmp$
 ^kirari_msk.bmp$
+^qt_bleak_alp.bmp$
+^title_logo_mono_alp_ovl.bmp$
+^sr.{3}_alp_ovl\..*
