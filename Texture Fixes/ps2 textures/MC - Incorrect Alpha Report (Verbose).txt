@@ -3810,10 +3810,61 @@ cam_fh_ovl_alp_mod1120_emap.bmp					PS2: [108, 117, 119, 120, 128]					MC: [105,
 ###############################################################
 ===== BP REMADE (Total: 173) =====
 
------ NEEDS MIPS STRIPPED - Power of 2 (Count: 0) -----
-None
+----- NEEDS MIPS STRIPPED - Power of 2 (Count: 3) -----
+00248df3
+007255d8
+009cc0bf
 
------ NEEDS MIPS STRIPPED - NPOT (Count: 30) -----
+----- NEEDS MIPS STRIPPED - NPOT (Count: 82) -----
+0000c4dd_d0bf2476e36b7e6db64e892154845abf
+001a8739
+0020c7c1
+002387da
+00265522
+002ca269_3ad823d6b15d2e0656bc022f9ae4d1ed
+00351bd0
+003587ad
+003954fa
+003a8d29
+004579c8
+00487b63
+00497b63
+004a7b63
+004b7b63
+004dd2d1
+0051b133
+005ff82e_f97787dc7fe63e42e80355f33d14a0d4
+0060f82e_374e8e111c7b80fe71fb8546dc332f00
+0061f82e_56a2e72ba853ea67570ccd655ca9d447
+0062f82e_3db2c3061fabc2281c2dd6b4130eedb9
+0063f82e_52b985aaa92b3207cd49053dffbf523d
+0064f82e_db973ad91fc30e3c42f866a3eb7d4d74
+00667ab6
+006bf7fe
+0071852b
+007655d8
+0079852b
+008387e2
+00885728
+008a2128
+00925410
+0092ec26
+0094b8a4
+0096e12a
+0099b8a4
+00a4b8a4
+00aa83e6
+00afab44
+00b15410
+00b44ad1
+00bc9205
+00c4c778
+00c687d4
+00cf1e6a
+00d7a5d6_543420bb4ab393b8a988314352eaca9c
+00d97e9d
+00e8533f
+00fb5e0d_3a2f9c020f2b36a95c909e29cb3e4aae
 orn_head_met_sub_alp_ovl.bmp
 sr00j_alp_ovl.bmp
 sr01e_alp_ovl.bmp
@@ -3843,20 +3894,20 @@ sr22j_alp_ovl.bmp
 sr23j_alp_ovl.bmp
 sr24j_alp_ovl.bmp
 sr25j_alp_ovl.bmp
+tag1_alp_ovl.bmp
+tag2_alp_ovl.bmp
+tag3_alp_ovl.bmp
 usa_met_ovl_sub_alp.bmp
 
------ MIPS CORRECT - Power of 2 (LOW PRIORITY) (Count: 18) -----
+----- MIPS CORRECT - Power of 2 (LOW PRIORITY) (Count: 15) -----
 0016cb7f
 00180189
-00248df3
 0050bfc5
 0055b270
 006baeb5
 006d97ed
-007255d8
 007a0189
 009720e7
-009cc0bf
 00b7b270
 00b8cb7a
 00eebfc4
@@ -3865,47 +3916,23 @@ fat_pias_alp_ovl.bmp_49150a74dd0fd7cd13ca0f60cd40eca7
 kmo_droppings01_alp.bmp
 kmo_droppings04_alp.bmp
 
------ MIPS CORRECT - NPOT (NPOT) (Count: 125) -----
-0000c4dd_d0bf2476e36b7e6db64e892154845abf
+----- MIPS CORRECT - NPOT (NPOT) (Count: 73) -----
 000385a3
 0003c3de_59747dd0818a4f3d78cd7938115b9093
 000f0073
-001a8739
-0020c7c1
-002387da
-00265522
-002ca269_3ad823d6b15d2e0656bc022f9ae4d1ed
 002fc581
-00351bd0
-003587ad
-003954fa
-003a8d29
-004579c8
-00487b63
-00497b63
-004a7b63
-004b7b63
-004dd2d1
 004e93c9
-0051b133
 0053d14e
 0053d891
 005d4f23
 005ff82e_177b36c205877f0112c491da63538970
-005ff82e_f97787dc7fe63e42e80355f33d14a0d4
 0060f82e_0264bded5e12e838c3912158a2f4d769
-0060f82e_374e8e111c7b80fe71fb8546dc332f00
-0061f82e_56a2e72ba853ea67570ccd655ca9d447
 0061f82e_ca18611ab4a038674f959c4e94e7aede
-0062f82e_3db2c3061fabc2281c2dd6b4130eedb9
 0062f82e_ca73d55a3d70d5450a3ed37eb948cb64
 0063f82e_0d434fbe975ba169dfc89ffe2f3f2a27
-0063f82e_52b985aaa92b3207cd49053dffbf523d
 0064f82e_923078466946a3acdea05dbf22e0f6e7
-0064f82e_db973ad91fc30e3c42f866a3eb7d4d74
 0065f82e
 0065f82e_599e1a822c915823a768daf1f6ee7174
-00667ab6
 00667ab6_ef3811ba64502191909b0210b17b8b02
 0066f82e
 0066f82e_e37d08b66c98c80f675d8c6d9a2cebdb
@@ -3915,47 +3942,22 @@ kmo_droppings04_alp.bmp
 006897ed
 006897ed_b5a6bb72c760a236a2c84a220920037b
 006997ed
-006bf7fe
-0071852b
-007655d8
 0076ad61_791fdad64710d9802f4adcf5d0f3db51
-0079852b
 007995dc
-008387e2
 00857db6
-00885728
 0089a618
-008a2128
 008c4aba
 008cbb54
-00925410
-0092ec26
-0094b8a4
-0096e12a
-0099b8a4
 00a415a4
-00a4b8a4
-00aa83e6
-00afab44
 00afb274
-00b15410
-00b44ad1
 00bb5e27
-00bc9205
 00c10972
-00c4c778
-00c687d4
 00ca1816
-00cf1e6a
 00d47f22
 00d5b0e4
-00d7a5d6_543420bb4ab393b8a988314352eaca9c
-00d97e9d
 00da6b5a
-00e8533f
 00e9c58b
 00fb5e0d
-00fb5e0d_3a2f9c020f2b36a95c909e29cb3e4aae
 1_chuou_b1_shukai_alp_ovl.bmp
 2_chuou_b1_roka_02_alp_ovl.bmp
 act_telop1_alp_ovl.bmp
@@ -3986,27 +3988,31 @@ snake_tales_ltitleb_alp_ovl.bmp
 snake_tales_ltitlec_alp_ovl.bmp
 snake_tales_ltitled_alp_ovl.bmp
 snake_tales_ltitlee_alp_ovl.bmp
-tag1_alp_ovl.bmp
-tag2_alp_ovl.bmp
-tag3_alp_ovl.bmp
 usp_sp2_alp_ovl.bmp
 usp_sp_alp_ovl.bmp
 
 
 ===== OG PS2 FILES (Total: 308) =====
 
------ NEEDS MIPS STRIPPED - Power of 2 (Count: 3) -----
+----- NEEDS MIPS STRIPPED - Power of 2 (Count: 4) -----
+007155d8
 gen_mecaskirt_sub_ovl_alp.bmp
 gol_tarai_ovl_sub_alp.bmp
 vr2_dmm_sub_alp_ovl.bmp
 
------ NEEDS MIPS STRIPPED - NPOT (Count: 21) -----
+----- NEEDS MIPS STRIPPED - NPOT (Count: 27) -----
+0051a133
 ema_leg_sub_alp_ovl.bmp_59cf833a559696b26388f9f9abed5184
 gen_mecaarm_sub_ovl_alp.bmp
 gen_mecabody_sub_ovl_alp.bmp
 gen_mecahead_sub_ovl_alp.bmp
 gen_mecaleg_sub_ovl_alp.bmp
 gur_alp_ovl.bmp
+ibox_tx_all_alp_ovl.bmp
+list1_alp_ovl.bmp
+list2_alp_ovl.bmp
+list3_alp_ovl.bmp
+menu_fnt_alp_ovl.bmp
 nypo_ovl_mod1210_alp.bmp
 pit_arm_ovl_alp_sub.bmp
 pit_armark_l_alp_ovl_sub.bmp
@@ -4023,8 +4029,7 @@ sco_hand_i_ovl_sub_alp.bmp
 sco_hand_o_ovl_sub_alp.bmp
 sco_ude_ovl_sub_alp.bmp
 
------ MIPS CORRECT - Power of 2 (LOW PRIORITY) (Count: 93) -----
-007155d8
+----- MIPS CORRECT - Power of 2 (LOW PRIORITY) (Count: 92) -----
 a_p_sensor_alp.bmp
 apple_alp.bmp
 b_mark_msk.bmp
@@ -4118,8 +4123,7 @@ ws71a_sdw_12_alp_ovl.bmp
 xlit24a_alp.bmp
 xlit24b_alp.bmp
 
------ MIPS CORRECT - NPOT (NPOT) (Count: 191) -----
-0051a133
+----- MIPS CORRECT - NPOT (NPOT) (Count: 185) -----
 1wallSh_alp_ovl.bmp
 1wallSh_alp_ovl.bmp_0632d8b69677918c5ecab5a7bf5e3589
 angle_alp_ovl.bmp
@@ -4151,17 +4155,12 @@ geno_alp_ovl.bmp
 geno_e_alp_ovl.bmp
 gogle_rabel_alp_ovl.bmp
 hri_ef_alp_add_ovl.bmp
-ibox_tx_all_alp_ovl.bmp
 kantoku_alp_01.bmp
 launch_rabel_alp_ovl.bmp
-list1_alp_ovl.bmp
-list2_alp_ovl.bmp
-list3_alp_ovl.bmp
 mark_noise_alp.bmp
 mecgeno1_alp_ovl.bmp
 mecgeno1_e_alp_ovl.bmp
 medicine_rabel_alp_ovl.bmp
-menu_fnt_alp_ovl.bmp
 mode_alp_ovl.bmp
 nametag_gbs1_def_add_alp.bmp
 nametag_wall_def_add_alp.bmp
@@ -4316,16 +4315,16 @@ zoom_alp_ovl.bmp
 ########################  SUMMARY COUNTS FOR REMAINING UNDUMPED #########################
 ###############################################################
 
-BP REMADE | NEEDS MIPS STRIPPED - POT (NEED TO FIND): 0
-BP REMADE | NEEDS MIPS STRIPPED - NPOT (NEED TO FIND): 30
-BP REMADE | MIPS CORRECT - POT (LOW PRIORITY): 18
-BP REMADE | MIPS CORRECT - NPOT (NEED TO FIND): 125
-OG PS2 FILES | NEEDS MIPS STRIPPED - POT (NEED TO FIND): 3
-OG PS2 FILES | NEEDS MIPS STRIPPED - NPOT (NEED TO FIND): 21
-OG PS2 FILES | MIPS CORRECT - POT (LOW PRIORITY): 93
-OG PS2 FILES | MIPS CORRECT - NPOT (NEED TO FIND): 191
+BP REMADE | NEEDS MIPS STRIPPED - POT (NEED TO FIND): 3
+BP REMADE | NEEDS MIPS STRIPPED - NPOT (NEED TO FIND): 82
+BP REMADE | MIPS CORRECT - POT (LOW PRIORITY): 15
+BP REMADE | MIPS CORRECT - NPOT (NEED TO FIND): 73
+OG PS2 FILES | NEEDS MIPS STRIPPED - POT (NEED TO FIND): 4
+OG PS2 FILES | NEEDS MIPS STRIPPED - NPOT (NEED TO FIND): 27
+OG PS2 FILES | MIPS CORRECT - POT (LOW PRIORITY): 92
+OG PS2 FILES | MIPS CORRECT - NPOT (NEED TO FIND): 185
 
-TOTAL MIPS CORRECT (POT): 111
-ALL OTHER CATEGORIES: 370
+TOTAL MIPS CORRECT (POT): 107
+ALL OTHER CATEGORIES: 374
 COMBINED TOTAL: 481
-OG PS2 LEFT TO FIND: 215
+OG PS2 LEFT TO FIND: 216

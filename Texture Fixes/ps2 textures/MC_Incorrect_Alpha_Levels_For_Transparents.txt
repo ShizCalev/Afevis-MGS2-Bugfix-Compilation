@@ -4,11 +4,6 @@ HAS ALPHA
 
 ---------- HAS ALPHA ----------
 	00002016
-	00304bdd
-	00314bdb
-	0094b3c7
-	00f7f08f
-	00f8f08f
 	234284_alp_ovl.bmp
 	352537_alp_ovl.bmp
 	373737_alp_ovl.bmp
@@ -21,15 +16,11 @@ HAS ALPHA
 	ak_sp_tx_mk_alp.bmp
 	ak_tx_alp.bmp
 	amg_silhoue_alp_ovl.bmp
-	at_break_alp.bmp
-	at_normal_alp.bmp
 	atop_alp_ovl.bmp
 	b_alp_ovl.bmp
 	b_alp_ovl.bmp_29d4c42def820463fd8423fe64aaf73e
 	bc_alp_ovl.bmp
 	bel_lig02_alp_add_ovl.bmp
-	berrazano_alp_ovl.bmp
-	bigshell_alp_ovl.bmp
 	c4_a_beruto2_msk.bmp
 	c4_a_beruto3_msk.bmp
 	c4_a_frozen_ovl_alp.bmp
@@ -52,7 +43,6 @@ HAS ALPHA
 	crd_pp05.bmp_68d8cf100718b565e0eecf3ff7585eb5
 	crd_pp05.bmp_c9e026756e1ac92120d9d6d7dc7f56f1
 	cti_hair3_alp_ovl.bmp
-	curs_alp_ovl.bmp
 	cyp_roter01_alp.bmp
 	d00a_gaitou_s_msk.bmp
 	d00a_irn_bridgeu_msk.bmp
@@ -119,8 +109,6 @@ HAS ALPHA
 	f_alp_ovl.bmp
 	f_alp_ovl.bmp_dacca138520a09db2f382cd802c85ce1
 	fa_alp_ovl.bmp
-	fake_cont_alp_ovl.bmp
-	fake_failed_alp_ovl.bmp
 	fog02_alp.bmp
 	fog02_alp_ovl.bmp
 	fog_alp_ovl.bmp
@@ -142,8 +130,6 @@ HAS ALPHA
 	htc_blood_alp_ovl.bmp
 	i_alp_ovl.bmp
 	ibox2_tx_all_alp.bmp
-	ibox_tx_all_alp.bmp
-	ibox_tx_all_alp.bmp_791e610c4fcf41bf273b86f3bef405c7
 	j_alp_ovl.bmp
 	jam_blood_dt_alp_ovl.bmp
 	jam_hi_ela_dt01_alp_ovl.bmp
@@ -231,7 +217,6 @@ HAS ALPHA
 	nametag_square_def_add_alp.bmp
 	nametag_straw_def_add_alp.bmp
 	nametag_triangle_def_add_alp.bmp
-	no_use_alp_ovl.bmp
 	node_pipe_alp_ovl.bmp
 	node_pipe_alp_ovl.bmp_d2e26dc22aa153eff8267589cff125d9
 	node_plate_alp_ovl.bmp
@@ -272,7 +257,6 @@ HAS ALPHA
 	pipe_ovl_alp_02.bmp
 	psg1-T_tx_alp.bmp
 	qt_break_alp.bmp
-	qt_normal_alp.bmp
 	rai_dtg_chain_msk.bmp
 	rai_hi_mtg_alp_ovl.bmp
 	rai_kizu_face_ovl_alp.bmp
@@ -486,7 +470,6 @@ HAS ALPHA
 	test_lit3_add_alp.bmp
 	ticsh2_alp_ovl.bmp
 	ticsh_alp_ovl.bmp
-	title_sol_alp_ovl.bmp
 	tools_shadow02_alp_ovl.bmp
 	val_ra_pts1msk.bmp
 	ved_si2_msk.bmp
@@ -2038,7 +2021,6 @@ HAS ALPHA
 	w62a_sky_top_01_alp.bmp
 	w62a_vamp_01_alp_ovl.bmp
 	wa_be_sh_alp_ovl.bmp
-	WallLc1Up2.bmp_8bcf03bfb0e39c5e15c0c5a38913842a
 	wc_alp_ovl.bmp
 	wep_dot_alp_ovl_decal.bmp
 	win_alp_ovl.bmp
@@ -2383,65 +2365,34 @@ HAS ALPHA
 	ws_13a_sdw05_alp_ovl.bmp
 	ws_13a_sdw07_alp_ovl.bmp
 
----------- HAS ALPHA\bp_mismatch ----------
+---------- HAS ALPHA\bp_mismatch\no_mip_fixes ----------
 	00c1181b
 
 ---------- HAS ALPHA\bp_remade ----------
 	0000c4dd
 	0000f06e
-	0002936b
-	0002cca2
 	000382c8
-	0003c3de
 	000430f2
-	00058f79
-	00065bbe
-	00068f79
-	00075bbe
-	00078f79
-	0007bc34
-	00085bbe
-	0008bc34
 	00096be0
-	0009bc34
 	0009eb6f
 	0009f56f
-	0009f66f
 	000a8fc0
-	000aa7de
 	000b7011
 	000c59bf
-	000cc716
-	000ccd6b
 	000e1a61
 	000ebe38
 	00100d1b
-	0010e123
 	0012e9ed
 	0013486e
-	0013547f
-	0014547f
-	001463f1
-	0015547f
 	00158927
-	0016852b
-	0017bbf5
-	001a8739_9b95ed97d41ce0c9da24766f77e0bf35
-	001bb358
-	001cd071
 	00207af5
-	0020fb52
 	0021e3c2
 	0022e3c2
-	0023ace3
 	002515dc
-	00253181
-	0026f2fc
 	00273921
 	002be6b0
 	002c9415
 	002ca269
-	002ceb42
 	002d83df
 	002d83df_d6d6e25cebf411fbdc10afdc75e6c763
 	002d83e0
@@ -2457,94 +2408,49 @@ HAS ALPHA
 	002e7dff
 	002e8486
 	0030e529
-	0030f164
-	00310ae2
-	00315bd0
-	0031ead8
-	0032ead8
-	0034852b
 	00367807
-	0036ea81
 	0037502a
 	0037513a
-	00376bd0
 	00380922
-	0038e7a7
-	0038f08e
-	0038f2a7
-	0038f2a7_09a2e59f677ae755c7156ae89bea86a9
-	0038f2a7_506b55e6b21d5eaec73ca5aa5ffb9a36
-	0038f2a7_be3ef19531b3a85625ef614280f2874c
 	003997fd
 	003997fd_58fcdefef3f7eda79d7e4a9f65f040ed
 	0039af8a
 	003aa501
-	003c4ad1
-	003e9364
-	003fc7c9
 	00408502
-	0040cd15
-	0040eac3
 	00418502
-	0041eac3
 	00427069
 	00428502
-	0042eac3
-	0043eac3
-	00443f1d
 	00445c5a
-	00463f1d
 	004750b0
 	004750b0_b04d2410ad3d8dfa5e0f135d4c15d11e
-	004767e5
-	00481d9d
-	004867e5
 	00491714
-	00491d9d
-	004967e5
-	004a67e5
 	004acd8a
-	004b67e5
-	004c1d9d
-	004c67e5
 	004c943d
 	004cf0ba
-	004d1d9d
 	004d3971
 	004e6292
 	004f1d9d
-	004f1d9d_86994cb2425e706d85d38eb0d74da538
 	00501d9d
-	00501d9d_1914ca0e502000992f2d09f0b7a86868
-	0053852b
-	005480d6
 	0055e1c2
 	0056e1c2
 	00585d21
 	0059975e
 	005d4f23_b39e4e9a25db3103157377fb4b8b0fec
-	005d8f6f
 	005db736
-	005ef82e
 	005fbe37
 	0060f82e
 	0061f82e
 	0062f82e
 	0063f82e
-	00645d05
 	0064f82e
 	006597ed
 	0065a618
 	006697ed
-	00671d9d
 	00675c5a
-	00681d9d
 	00689021
-	00691d9d
 	00699021
 	006997ed_b20d65f1089467ce6fec4d3a8c8134c8
 	006a97ed
-	006a9dfd
 	006aa618_5e5881ab87a4498b100e3983cca31058
 	006af2ba
 	006af2bb
@@ -2562,68 +2468,41 @@ HAS ALPHA
 	006e6ff1
 	006e99ea
 	006f2b75
-	006f7421
 	0070aeb5
 	00710601
-	0072466d
-	007246ed
-	0072476d
-	00749dfd
 	007559f0
 	00758632
 	0076ad61
-	0076cd21
-	00774c18
 	0078980c
 	0078adc6
-	007a9dfd
 	007b651a
-	007be718
-	007c9dfd
 	007f0488
-	007f6817
-	00818625
 	0081f6b5
 	00829016
 	0083fa46
 	0086a618
 	0088b898
 	0088c589
-	00892df9
 	00895b43
-	008a8469
 	008aa618
 	008c9a00
-	008cc589
-	008d752c
 	008dbe37
-	0091a721
 	00938001
 	0094533a
 	0095cb32
 	00985407
-	0098f24a
-	009ac0bf
-	009bc0bf
 	009dbc16
-	009df079
 	009eafa1
 	009ebc16
 	009f2fba
-	009fa21b
 	009fafa1
 	00a093d7
 	00a0bc16
 	00a127a1
 	00a1bc16
 	00a628ba
-	00a69783
 	00a891e2
-	00a936cb
 	00acbe37
-	00ad7f33
-	00adb42a
-	00aeebfc
 	00af9412
 	00afbbc9
 	00b02021
@@ -2632,43 +2511,19 @@ HAS ALPHA
 	00b32021
 	00b3cb78
 	00b42021
-	00b6ea23
-	00b6eb2c
-	00b99205
 	00ba619d
-	00be80b9
 	00bf085a
-	00bfbb06
 	00c2df96
 	00c3e4f6
 	00c45897
-	00c489c5
-	00c4b02d
 	00c59475
-	00c5a3fd
-	00c6157c
 	00c6e6ab
 	00c6feb6
-	00c8e1b5
-	00c9e1b5
 	00ca3f11
 	00cada49
 	00cb3f11
 	00cc15b7
-	00ccb0a6
 	00cd360c
-	00cdb0a6
-	00cdeba7
-	00ce999d
-	00ceb0a6
-	00ceeba7
-	00cfb0a6
-	00cfe11e
-	00cfeba7
-	00d0eba7
-	00d1eba7
-	00d4e124
-	00d7a5d6
 	00d84d77
 	00d85d25
 	00da15e3
@@ -2677,31 +2532,16 @@ HAS ALPHA
 	00de6344
 	00de6f30
 	00e0bf95
-	00e20d51
-	00e22d51
-	00e3d071
-	00e4b51b
-	00e4d0de
 	00e4d0de_41da87e72c01ef976b914cd59eef1df9
 	00e7ddd3
-	00e8533f_c9656c04a66db3d24c7fb50dd516a45e
-	00e9800a
-	00ec73af
 	00eca640
 	00efa150
-	00f0852a
 	00f0b18b
 	00f40e09
 	00f4b0a9
 	00f52511
 	00f8237e
-	00f84320
-	00f8852a
 	00f995ec
-	00fad318
-	00fb2383
-	00fe4ad1
-	00fe564d
 	1_chuou_1f_alp_ovl.bmp
 	1_chuou_b1_alp_ovl.bmp
 	1_chuou_b2_densan_alp_ovl.bmp
@@ -2763,9 +2603,6 @@ HAS ALPHA
 	cfr_wire_alp.bmp
 	chaff_alp_ovl.bmp
 	chi01_alp.bmp
-	class1_alp_ovl.bmp
-	class2_alp_ovl.bmp
-	class3_alp_ovl.bmp
 	clr_alp_ovl.bmp
 	cls_alp_ovl.bmp
 	cray_alp_ovl.bmp
@@ -2787,7 +2624,6 @@ HAS ALPHA
 	exit_alp_ovl.bmp
 	EXIT_alp_ovl.bmp_2e80fcdf52d4e88c977557d852b3bb00
 	exit_alp_ovl.bmp_6caebe23bde6080a351ba6c3fd17f622
-	exit_alp_ovl.bmp_794456ba9bbbfd3e16cf3cf4157c6d56
 	exit_alp_ovl.bmp_7f9196f232454b86ef93cc3591f1f2ab
 	f_souko_alp_ovl.bmp
 	f_souko_b1_alp_ovl.bmp
@@ -2887,7 +2723,6 @@ HAS ALPHA
 	sol_mant_n_alp_ovl.bmp
 	sol_mayu_alp_ovl.bmp
 	sol_sarm_chest_moji_ovl_alp.bmp
-	sp_alp_ovl.bmp
 	sr14j_bg_alp_ovl.bmp
 	stin_alp_ovl.bmp
 	stun_alp_ovl.bmp
@@ -2959,6 +2794,37 @@ HAS ALPHA
 ---------- HAS ALPHA\bp_remade\no_mip_fixes ----------
 	00004ad1
 	00024ad1
+	0002936b
+	0002cca2
+	0003c3de
+	00058f79
+	00065bbe
+	00068f79
+	00075bbe
+	00078f79
+	0007bc34
+	00085bbe
+	0008bc34
+	0009bc34
+	0009f66f
+	000aa7de
+	000cc716
+	000ccd6b
+	0010e123
+	0013547f
+	0014547f
+	001463f1
+	0015547f
+	0016852b
+	0017bbf5
+	001a8739_9b95ed97d41ce0c9da24766f77e0bf35
+	001bb358
+	001cd071
+	0020fb52
+	0023ace3
+	00253181
+	0026f2fc
+	002ceb42
 	002f0bd0
 	002f1bd0
 	002f2bd0
@@ -2969,16 +2835,21 @@ HAS ALPHA
 	002f7bd0
 	002f8bd0
 	00304ad1
+	0030f164
 	0030fbd0
+	00310ae2
 	00310bd0
 	00311bd0
 	00312bd0
 	00313bd0
 	00314bd0
+	00315bd0
 	00316bd0
 	00317bd0
 	00318bd0
+	0031ead8
 	00324ad1
+	0032ead8
 	0032fbd0
 	00330bd0
 	00331bd0
@@ -2990,6 +2861,7 @@ HAS ALPHA
 	00337bd0
 	00338bd0
 	00344ad1
+	0034852b
 	0034fbd0
 	00350bd0
 	00352bd0
@@ -3000,6 +2872,7 @@ HAS ALPHA
 	00357bd0
 	00358bd0
 	00364ad1
+	0036ea81
 	0036fbd0
 	00370bd0
 	00371bd0
@@ -3007,44 +2880,151 @@ HAS ALPHA
 	00373bd0
 	00374bd0
 	00375bd0
+	00376bd0
 	00384ad1
+	0038e7a7
+	0038f08e
+	0038f2a7
+	0038f2a7_09a2e59f677ae755c7156ae89bea86a9
+	0038f2a7_506b55e6b21d5eaec73ca5aa5ffb9a36
+	0038f2a7_be3ef19531b3a85625ef614280f2874c
 	003a4ad1
+	003c4ad1
 	003e4ad1
+	003e9364
+	003fc7c9
 	00404ad1
+	0040cd15
+	0040eac3
+	0041eac3
 	00424ad1
+	0042eac3
+	0043eac3
+	00443f1d
+	00463f1d
+	004767e5
+	00481d9d
+	004867e5
+	00491d9d
+	004967e5
+	004a67e5
+	004b67e5
+	004c1d9d
+	004c67e5
+	004d1d9d
+	004f1d9d_86994cb2425e706d85d38eb0d74da538
+	00501d9d_1914ca0e502000992f2d09f0b7a86868
+	0053852b
+	005480d6
+	005d8f6f
+	005ef82e
+	00645d05
+	00671d9d
+	00681d9d
+	00691d9d
+	006a9dfd
+	006f7421
 	00704ad1
+	0072466d
+	007246ed
+	0072476d
 	00724ad1
 	00744ad1
+	00749dfd
 	00764ad1
+	0076cd21
+	00774c18
 	00784ad1
 	007a4ad1
+	007a9dfd
+	007be718
 	007c4ad1
+	007c9dfd
 	007e4ad1
+	007f6817
 	00804ad1
+	00818625
 	00824ad1
+	00892df9
+	008a8469
+	008cc589
+	008d752c
+	0091a721
+	0098f24a
+	009ac0bf
+	009bc0bf
+	009df079
+	009fa21b
+	00a69783
+	00a936cb
+	00ad7f33
+	00adb42a
+	00aeebfc
 	00b04ad1
 	00b24ad1
 	00b64ad1
+	00b6ea23
+	00b6eb2c
 	00b84ad1
+	00b99205
 	00ba4ad1
 	00bc4ad1
 	00be4ad1
+	00be80b9
+	00bfbb06
 	00c04ad1
 	00c24ad1
+	00c489c5
+	00c4b02d
+	00c5a3fd
+	00c6157c
+	00c8e1b5
+	00c9e1b5
+	00ccb0a6
+	00cdb0a6
+	00cdeba7
+	00ce999d
+	00ceb0a6
+	00ceeba7
+	00cfb0a6
+	00cfe11e
+	00cfeba7
+	00d0eba7
+	00d1eba7
+	00d4e124
+	00d7a5d6
+	00e20d51
+	00e22d51
+	00e3d071
+	00e4b51b
+	00e4d0de
+	00e8533f_c9656c04a66db3d24c7fb50dd516a45e
+	00e9800a
+	00ec73af
 	00f04ad1
+	00f0852a
 	00f24ad0
 	00f24ad1
 	00f44ad0
 	00f44ad1
 	00f64ad0
 	00f64ad1
+	00f84320
 	00f84ad0
 	00f84ad1
+	00f8852a
 	00fa4ad0
 	00fa4ad1
+	00fad318
+	00fb2383
 	00fc4ad0
 	00fc4ad1
 	00fe4ad0
+	00fe4ad1
+	00fe564d
+	class1_alp_ovl.bmp
+	class2_alp_ovl.bmp
+	class3_alp_ovl.bmp
 	crg_body_down_sub_alp_ovl.bmp
 	crg_body_up_sub_alp_ovl.bmp
 	crg_cap_eri_sub_alp_ovl.bmp
@@ -3059,6 +3039,7 @@ HAS ALPHA
 	crg_hi_hf03_sub_alp_ovl.bmp
 	crg_kata_sub_alp_ovl.bmp
 	crg_shues_sub_ovl_alp.bmp
+	exit_alp_ovl.bmp_794456ba9bbbfd3e16cf3cf4157c6d56
 	fat_allleg_sub_ovl_alp.bmp
 	fat_arm_sub_ovl_alp.bmp
 	fat_body3_sub_ovl_alp.bmp
@@ -3122,6 +3103,7 @@ HAS ALPHA
 	sol_shoes2_n_ovl_sub_alp.bmp
 	sol_shoulder_dt_ovl_sub_alp.bmp
 	sol_shoulder_n_ovl_sub_alp.bmp
+	sp_alp_ovl.bmp
 	sr00e_alp_ovl.bmp
 	sr01j_alp_ovl.bmp_71b551295ba518fae4283bd712544a6d
 	sr02j_alp_ovl.bmp_4a09a9b88e5c9d0cf6da451edf0dbec7
@@ -3170,9 +3152,18 @@ HAS ALPHA
 	usa_met01dt_ovl_sub_alp.bmp
 
 ---------- HAS ALPHA\no_mip_fixes ----------
+	00304bdd
+	00314bdb
+	0094b3c7
+	00f7f08f
+	00f8f08f
 	ag_door_kage_alp_sub_ovl.bmp
 	ag_door_kage_alp_sub_ovl.bmp_192ceb88aee6631d717247db16075c3d
 	ag_rouka_kage01_alp_sub_ovl.bmp
+	at_break_alp.bmp
+	at_normal_alp.bmp
+	berrazano_alp_ovl.bmp
+	bigshell_alp_ovl.bmp
 	cam_arm_mark_dt_sub_alp_ovl.bmp
 	cam_chest_bo_dt_sub_alp_ovl.bmp
 	cam_chest_na_dt_sub_alp_ovl.bmp
@@ -3193,6 +3184,7 @@ HAS ALPHA
 	chr1_03_alp_sub_ovl.bmp
 	chr1_03a_alp_sub_ovl.bmp
 	crg_shues_sub_ovl_alp.bmp_ec89b524e5f1c44785abbf10997f5b29
+	curs_alp_ovl.bmp
 	d00a_sdw_cf01_sub_alp_ovl.bmp
 	d00a_sdw_cf02_sub_alp_ovl.bmp
 	d00a_sdw_cf03_sub_alp_ovl.bmp
@@ -3220,6 +3212,8 @@ HAS ALPHA
 	ema_hand_sub_alp_ovl.bmp
 	ema_id_sub_alp_ovl.bmp
 	ema_legl_sub_alp_ovl_new.bmp
+	fake_cont_alp_ovl.bmp
+	fake_failed_alp_ovl.bmp
 	fat_eri_front_sub_alp_ovl.bmp
 	gbs_arm_ovl_sub_alp.bmp
 	gbs_body_ovl_sub_alp.bmp
@@ -3239,7 +3233,9 @@ HAS ALPHA
 	htc_helmet_uc_ovl_alp_sub.bmp
 	htc_light_uc_ovl_sub_alp.bmp
 	htc_shoulder_uc_ovl_sub_alp.bmp
+	ibox_tx_all_alp.bmp
 	ibox_tx_all_alp.bmp_542a0e8227207db0a7c5b8c61cc0345d
+	ibox_tx_all_alp.bmp_791e610c4fcf41bf273b86f3bef405c7
 	ibox_tx_all_alp.bmp_c9d3a3451227c3cc7e6447a2754c7b93
 	iro_face_ovl_sub_alp.bmp
 	iro_hi_face_ovl_sub_alp.bmp
@@ -3273,6 +3269,7 @@ HAS ALPHA
 	mrl_hiza_sub_alp_ovl.bmp
 	mrl_leg_l_sub_ovl_alp.bmp
 	mrl_tatoo_sub_ovl_alp.bmp
+	no_use_alp_ovl.bmp
 	org_hands_ovl_sub_alp.bmp
 	org_hatfront_sub_alp_ovl.bmp
 	org_hatsaide_sub_ovl_alp.bmp
@@ -3348,6 +3345,7 @@ HAS ALPHA
 	pit_nypd_sub_alp_ovl.bmp
 	ptr_eyes_ovl_sub_alp.bmp
 	ptr_hi_fintume_sub_alp_ovl.bmp
+	qt_normal_alp.bmp
 	rah_nin_hi_hand1_fix_ovl_sub_alp.bmp
 	rai_arm_fix_ovl_sub_alp.bmp
 	rai_arm_fix_ovl_sub_alp.bmp_e9340309b4fea037783347dd3285b3c1
@@ -3448,6 +3446,7 @@ HAS ALPHA
 	sol_sa_tu_dt02_ovl_sub_alp.bmp
 	sol_sarm_tube3_ovl_sub_alp.bmp
 	ter_ovl_sub_alp_0001.bmp
+	title_sol_alp_ovl.bmp
 	tng_arm_ovl_sub_alp.bmp
 	tng_body_b_ovl_sub_alp.bmp
 	tng_body_f_ovl_sub_alp.bmp
@@ -3529,6 +3528,7 @@ HAS ALPHA
 	w42a_1f_box_kage05_alp_sub_ovl.bmp
 	w42a_1f_box_kage_ent_alp_sub_ovl.bmp
 	w42a_2f_kage_alp_sub_ovl.bmp
+	WallLc1Up2.bmp_8bcf03bfb0e39c5e15c0c5a38913842a
 	wtd_mini_petbottle2_mt_alp_ovl_sub_.bmp
 	wtd_petbottle2_mt_ovl_alp_sub_01.bmp
 
