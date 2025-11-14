@@ -292,6 +292,32 @@ def main():
         log_hierarchy("OG PS2 FILES", og_unref)
 
         # ======================================================
+        # FILTERED VERSION: "Left to Find - TRI Dumped Included"
+        # ======================================================
+        print("\n[Filtered Export] Creating left-to-find list excluding any Texture Fixes assets...")
+
+        texture_fixes_dir = repo_root / "Texture Fixes"
+        all_existing_fix_textures = set()
+
+        # Gather all TGA/PNG basenames (lowercase, without extension)
+        for ext in ("*.tga", "*.png"):
+            for path in texture_fixes_dir.rglob(ext):
+                all_existing_fix_textures.add(path.stem.lower())
+
+        filtered_unref = [t for t in unreferenced if t.lower() not in all_existing_fix_textures]
+
+        # Save as CSV
+        filtered_csv_path = script_dir / "left to find - tri dumped removed.csv"
+        with open(filtered_csv_path, "w", newline="", encoding="utf-8") as fcsv:
+            writer = csv.writer(fcsv)
+            writer.writerow(["texture_name"])
+            for tex in sorted(filtered_unref, key=str.lower):
+                writer.writerow([tex])
+
+        print(f"[Filtered Export] Saved {len(filtered_unref)} remaining entries to {filtered_csv_path}")
+        print(f"[Filtered Export] {len(unreferenced) - len(filtered_unref)} excluded (found in Texture Fixes).")
+
+        # ======================================================
         # SUMMARY TABLE
         # ======================================================
         total_mips_correct_pot = sum(v for k, v in summary_counts.items() if "MIPS CORRECT - POT (LOW PRIORITY)" in k)

@@ -3,6 +3,7 @@ HAS ALPHA
 ========================================
 
 ---------- HAS ALPHA ----------
+	00002016
 	00304bdd
 	00314bdb
 	0094b3c7
@@ -36,6 +37,7 @@ HAS ALPHA
 	c4_ovl_alp.bmp
 	c_alp_ovl.bmp
 	c_alp_ovl.bmp_c3c45df5eff774d767719a74e507012e
+	cam_face_dt_skl_alp_ovl.bmp
 	cam_mtg_alp_ovl.bmp
 	caution_alp_ovl.bmp
 	cd_alp_ovl.bmp
@@ -47,8 +49,6 @@ HAS ALPHA
 	cit_hair1_alp.bmp
 	cit_hair2_alp.bmp
 	coldmedicine_tx_alp.bmp
-	crd_pp05.bmp
-	crd_pp05.bmp_276e6284cf2e0055cf730766f998bbac
 	crd_pp05.bmp_68d8cf100718b565e0eecf3ff7585eb5
 	crd_pp05.bmp_c9e026756e1ac92120d9d6d7dc7f56f1
 	cti_hair3_alp_ovl.bmp
@@ -107,6 +107,7 @@ HAS ALPHA
 	ema_hair_front_dt_ovl_alp.bmp
 	ema_hair_tail_alp_ovl.bmp
 	ema_mtg_alp_ovl.bmp
+	ema_ooze_blood00_alp_ovl.bmp
 	entrance_alp_add_ovl.bmp
 	env00_brk2_alp_ovl.bmp
 	env00_mht1_alp_ovl.bmp
@@ -118,6 +119,8 @@ HAS ALPHA
 	f_alp_ovl.bmp
 	f_alp_ovl.bmp_dacca138520a09db2f382cd802c85ce1
 	fa_alp_ovl.bmp
+	fake_cont_alp_ovl.bmp
+	fake_failed_alp_ovl.bmp
 	fog02_alp.bmp
 	fog02_alp_ovl.bmp
 	fog_alp_ovl.bmp
@@ -139,6 +142,7 @@ HAS ALPHA
 	htc_blood_alp_ovl.bmp
 	i_alp_ovl.bmp
 	ibox2_tx_all_alp.bmp
+	ibox_tx_all_alp.bmp
 	ibox_tx_all_alp.bmp_791e610c4fcf41bf273b86f3bef405c7
 	j_alp_ovl.bmp
 	jam_blood_dt_alp_ovl.bmp
@@ -179,6 +183,7 @@ HAS ALPHA
 	lamp_off_alp_add_ovl.bmp
 	Lig_u_add_alp_ovl.bmp
 	light05_msk.bmp
+	lockon_tag1_add_alp.bmp
 	logo02_alp_ovl.bmp
 	lv1_alp_ovl.bmp
 	lv2_alp_ovl.bmp
@@ -200,11 +205,39 @@ HAS ALPHA
 	mrl_hair_t_alp_ovl.bmp
 	muzzlefrash_sev_01_alp.bmp
 	n523_alp_ovl.bmp
+	n_vs06a_sdw00_alp_ovl.bmp
+	n_vs06a_sdw01_alp_ovl.bmp
+	n_vs06a_sdw03_alp_ovl.bmp
+	n_vs06a_sdw04_alp_ovl.bmp
+	n_vs06a_sdw05_alp_ovl.bmp
+	n_vs06a_sdw07_alp_ovl.bmp
+	n_vs06a_sdw10_alp_ovl.bmp
+	n_vs06a_sdw11_alp_ovl.bmp
+	n_vs06a_sdw13_alp_ovl.bmp
+	n_vs06a_sdw14_alp_ovl.bmp
+	n_vs06a_sdw16_alp_ovl.bmp
+	n_vs06a_sdw17_alp_ovl.bmp
+	n_vs06a_sdw24_alp_ovl.bmp
+	n_vs06a_sdw25_alp_ovl.bmp
+	n_vs06a_sdw26_alp_ovl.bmp
+	n_vs06a_sdw28_alp_ovl.bmp
+	n_vs06a_sdw31_alp_ovl.bmp
+	n_vs06a_sdw32_alp_ovl.bmp
+	n_vs06a_sdw33_alp_ovl.bmp
+	n_vs06a_sdw35_alp_ovl.bmp
 	nametag_cube_def_add_alp.bmp
+	nametag_hexa_def_add_alp.bmp
+	nametag_octa_def_add_alp.bmp
+	nametag_square_def_add_alp.bmp
+	nametag_straw_def_add_alp.bmp
+	nametag_triangle_def_add_alp.bmp
 	no_use_alp_ovl.bmp
 	node_pipe_alp_ovl.bmp
 	node_pipe_alp_ovl.bmp_d2e26dc22aa153eff8267589cff125d9
 	node_plate_alp_ovl.bmp
+	oce_collar1msk.bmp
+	oce_collar2msk.bmp
+	oce_skirt6msk.bmp
 	odessey_light_alp_decal.bmp
 	orn_sld_square_alp.bmp
 	orn_sld_text_L_alp.bmp
@@ -230,6 +263,10 @@ HAS ALPHA
 	paSbr_alp_ovl.bmp
 	pdray_navy_alp_ovl.bmp
 	pdray_number_a01_alp_ovl.bmp
+	pdray_number_a02_alp_ovl.bmp
+	pdray_number_a03_alp_ovl.bmp
+	pdray_number_a04_alp_ovl.bmp
+	pdray_number_a05_alp_ovl.bmp
 	pdray_number_w42_alp_ovl.bmp
 	pdray_seal_mgrpdm_alp_ovl.bmp
 	pipe_ovl_alp_02.bmp
@@ -295,6 +332,7 @@ HAS ALPHA
 	sky_m1_alp.bmp
 	sky_m2_alp.bmp
 	sky_m4_alp.bmp
+	sky_sun_n_alp.bmp
 	skyline_light_alp_decal.bmp
 	so_lig4_add_alp.bmp
 	so_wa_hasi_alp_add_ovl.bmp
@@ -309,6 +347,38 @@ HAS ALPHA
 	sol_hair_dt01_alp_ovl.bmp
 	sol_hair_dt02_alp_ovl.bmp
 	sol_sa_us_dt_ovl_alp.bmp
+	sp01a_sdw00_alp_ovl.bmp
+	sp01a_sdw00a_alp_ovl.bmp
+	sp01a_sdw00b_alp_ovl.bmp
+	sp01a_sdw00c_alp_ovl.bmp
+	sp01a_sdw00d_alp_ovl.bmp
+	sp01a_sdw00e_alp_ovl.bmp
+	sp01a_sdw00f_alp_ovl.bmp
+	sp01a_sdw01_alp_ovl.bmp
+	sp01a_sdw01a_alp_ovl.bmp
+	sp01a_sdw02a_alp_ovl.bmp
+	sp01a_sdw02b_alp_ovl.bmp
+	sp01a_sdw02e_alp_ovl.bmp
+	sp01a_sdw03_alp_ovl.bmp
+	sp01a_sdw03b_alp_ovl.bmp
+	sp01a_sdw03d_alp_ovl.bmp
+	sp01a_sdw03k_alp_ovl.bmp
+	sp01a_sdw03l_alp_ovl.bmp
+	sp01a_sdw03m_alp_ovl.bmp
+	sp01a_sdw03n_alp_ovl.bmp
+	sp01a_sdw03o_alp_ovl.bmp
+	sp01a_sdw03p_alp_ovl.bmp
+	sp01a_sdw04_alp_ovl.bmp
+	sp01a_sdw04a_alp_ovl.bmp
+	sp01a_sdw04b_alp_ovl.bmp
+	sp01a_sdw04c_alp_ovl.bmp
+	sp01a_sdw04d_alp_ovl.bmp
+	sp01a_sdw04f_alp_ovl.bmp
+	sp01a_sdw04g_alp_ovl.bmp
+	sp02a_shw00_alp_ovl.bmp
+	sp02a_shw01_alp_ovl.bmp
+	sp02a_shw03_alp_ovl.bmp
+	sp03a4_shd02_alp_ovl.bmp
 	sp06a_shw01_alp_ovl.bmp
 	sp06a_shw02_alp_ovl.bmp
 	sp06a_shw03_alp_ovl.bmp
@@ -322,8 +392,93 @@ HAS ALPHA
 	sp06a_shw13_alp_ovl.bmp
 	sp06a_shw15_alp_ovl.bmp
 	sp06a_shw16_alp_ovl.bmp
+	sp06a_shw19_alp_ovl.bmp
 	sp06a_shw22_alp_ovl.bmp
 	sp06a_shw29_alp_ovl.bmp
+	sp07a_shw01_alp_ovl.bmp
+	sp07a_shw02_alp_ovl.bmp
+	sp07a_shw04_alp_ovl.bmp
+	sp07a_shw05_alp_ovl.bmp
+	sp07a_shw06_alp_ovl.bmp
+	sp07a_shw07_alp_ovl.bmp
+	sp07a_shw09_alp_ovl.bmp
+	sp07a_shw10_alp_ovl.bmp
+	sp07a_shw11_alp_ovl.bmp
+	sp07a_shw12_alp_ovl.bmp
+	sp07a_shw15_alp_ovl.bmp
+	sp07a_shw16_alp_ovl.bmp
+	sp07a_shw17_alp_ovl.bmp
+	sp07a_shw18_alp_ovl.bmp
+	sp07a_shw19_alp_ovl.bmp
+	sp07a_wall_shw01_alp_ovl.bmp
+	sp07a_wall_shw02_alp_ovl.bmp
+	sp21a_sdw00_alp_ovl.bmp
+	sp21a_sdw00a_alp_ovl.bmp
+	sp21a_sdw00b_alp_ovl.bmp
+	sp21a_sdw00f_alp_ovl.bmp
+	sp21a_sdw01_alp_ovl.bmp
+	sp21a_sdw01a_alp_ovl.bmp
+	sp21a_sdw02_alp_ovl.bmp
+	sp21a_sdw02a_alp_ovl.bmp
+	sp21a_sdw02b_alp_ovl.bmp
+	sp21a_sdw02c_alp_ovl.bmp
+	sp21a_sdw02d_alp_ovl.bmp
+	sp21a_sdw03a_alp_ovl.bmp
+	sp21a_sdw03b_alp_ovl.bmp
+	sp21a_sdw03g_alp_ovl.bmp
+	sp21a_sdw04_alp_ovl.bmp
+	sp21a_sdw04a_alp_ovl.bmp
+	sp21a_sdw05_alp_ovl.bmp
+	sp21a_sdw05a_alp_ovl.bmp
+	sp21a_sdw05e_alp_ovl.bmp
+	sp21a_sdw06_alp_ovl.bmp
+	sp21a_sdw06a_alp_ovl.bmp
+	sp21a_sdw07_alp_ovl.bmp
+	sp21a_sdw09_alp_ovl.bmp
+	sp21a_sdw09a_alp_ovl.bmp
+	sp21a_sdw09b_alp_ovl.bmp
+	sp21a_sdw09c_alp_ovl.bmp
+	sp21a_sdw10_alp_ovl.bmp
+	sp21a_sdw11_alp_ovl.bmp
+	sp21a_sdwwl00_alp_ovl.bmp
+	sp21a_sdwwl01_alp_ovl.bmp
+	sp21a_sdwwl02_alp_ovl.bmp
+	sp21a_sdwwl04_alp_ovl.bmp
+	sp25a_sdw01_alp_ovl.bmp
+	sp25a_sdw04_alp_ovl.bmp
+	sp25a_sdw05_alp_ovl.bmp
+	sp25a_sdw06_alp_ovl.bmp
+	sp25a_sdw07_alp_ovl.bmp
+	sp25a_sdw08_alp_ovl.bmp
+	sp25a_sdw09_alp_ovl.bmp
+	sp25a_sdw11_alp_ovl.bmp
+	sp25a_sdw15_alp_ovl.bmp
+	sp25a_sdw16_alp_ovl.bmp
+	sp25a_sdw17_alp_ovl.bmp
+	sp25a_sdw18_alp_ovl.bmp
+	sp25a_sdw19_alp_ovl.bmp
+	sp25a_sdw20_alp_ovl.bmp
+	sp25a_sdw21_alp_ovl.bmp
+	sp25a_sdw23_alp_ovl.bmp
+	sp25a_sdw27_alp_ovl.bmp
+	sp25a_sdw28_alp_ovl.bmp
+	sp25a_sdw29_alp_ovl.bmp
+	sp25a_sdw30_alp_ovl.bmp
+	sp25a_sdw31_alp_ovl.bmp
+	sp25a_sdw32_alp_ovl.bmp
+	sp25a_sdw34_alp_ovl.bmp
+	sp25a_sdw45_alp_ovl.bmp
+	sp25a_sdw48_alp_ovl.bmp
+	sp25a_sdw52_alp_ovl.bmp
+	sp25a_sdw56_alp_ovl.bmp
+	sp25a_sdw57_alp_ovl.bmp
+	sp25a_sdw59_alp_ovl.bmp
+	sp25a_sdw65_alp_ovl.bmp
+	sp25a_sdw_dan02_1_alp_ovl.bmp
+	sp25a_sdw_dan02_2_alp_ovl.bmp
+	sp25a_sdw_dan04_alp_ovl.bmp
+	sp25a_sdw_dan07_alp_ovl.bmp
+	sp25a_sdw_rp_alp_ovl.bmp
 	sps_all2_msk.bmp
 	sun_alp.bmp
 	suppressor_mk_alp.bmp
@@ -346,9 +501,17 @@ HAS ALPHA
 	vmp_kizu_face_p046_ovl_alp.bmp
 	vmp_kizu_ovl_alp.bmp
 	vmp_munage_ovl_alp.bmp
+	vr2_dankon1_add_alp.bmp
+	vr2_dankon2_add_alp.bmp
+	vr2_footstamp1_add_alp.bmp
 	vr2_goal_add_alp.bmp
+	vr2_gpa_mark02_alp_ovl.bmp
+	vr2_gpa_mark03_alp_ovl.bmp
+	vr2_gpa_mark06_alp_ovl.bmp
+	vr2_gpa_mark07_alp_ovl.bmp
 	vr2_no_elude1_add_alp.bmp
 	vr2_no_elude2_add_alp.bmp
+	vr2_pitfall_b0_all_add_alp.bmp
 	vr2_tonbo_alp_add.bmp
 	vr2_toon01_mark01_alp_ovl.bmp
 	vr2_toon01_mark03_alp_ovl.bmp
@@ -366,8 +529,129 @@ HAS ALPHA
 	vs01a_sdw03_alp_ovl.bmp
 	vs01a_sdw04_alp_ovl.bmp
 	vs01a_sdw05_alp_ovl.bmp
+	vs01a_sdw05_alp_ovl.bmp_40b97c8de7e575d4104872b918f29e71
 	vs01a_sdw06_alp_ovl.bmp
+	vs01a_sdw06_alp_ovl.bmp_9cf945d44ef4158476a20499bed16e15
 	vs01a_sdw06a_alp_ovl.bmp
+	vs02a_sdw01_alp_ovl.bmp
+	vs02a_sdw02_alp_ovl.bmp
+	vs02a_sdw03_alp_ovl.bmp
+	vs02a_sdw04_alp_ovl.bmp
+	vs02a_sdw05_alp_ovl.bmp
+	vs03a_sdw00_alp_ovl.bmp
+	vs03a_sdw01_alp_ovl.bmp
+	vs03a_sdw02_alp_ovl.bmp
+	vs03a_sdw03_alp_ovl.bmp
+	vs03a_sdw04_alp_ovl.bmp
+	vs03a_sdw04a_alp_ovl.bmp
+	vs03a_sdw05_alp_ovl.bmp_f9a840517b1ca5676c659c9c4cb3da9a
+	vs04a_sdw02_alp_ovl.bmp
+	vs04a_sdw04_alp_ovl.bmp
+	vs04a_sdw05_alp_ovl.bmp
+	vs05a_sdw01_alp_ovl.bmp
+	vs05a_sdw02_alp_ovl.bmp
+	vs05a_sdw02a_alp_ovl.bmp
+	vs05a_sdw03_alp_ovl.bmp
+	vs05a_sdw03w_alp_ovl.bmp
+	vs05a_sdw04_alp_ovl.bmp
+	vs05a_sdw05_alp_ovl.bmp
+	vs05a_sdw05a_alp_ovl.bmp
+	vs05a_sdw05b_alp_ovl.bmp
+	vs05a_sdw05c_alp_ovl.bmp
+	vs05a_sdw06_alp_ovl.bmp
+	vs05a_sdw06a_alp_ovl.bmp
+	vs05a_sdw06b_alp_ovl.bmp
+	vs05a_sdw06c_alp_ovl.bmp
+	vs07a_sdw01_alp_ovl.bmp
+	vs07a_sdw02_alp_ovl.bmp
+	vs07a_sdw03_alp_ovl.bmp
+	vs07a_sdw05_alp_ovl.bmp
+	vs07a_sdw06_alp_ovl.bmp
+	vs07a_sdw08_alp_ovl.bmp
+	vs07a_sdw09_alp_ovl.bmp
+	vs07a_sdw11_alp_ovl.bmp
+	vs07a_sdw12_alp_ovl.bmp
+	vs07a_sdw13_alp_ovl.bmp
+	vs08a_sdw00_alp_ovl.bmp
+	vs08a_sdw01_alp_ovl.bmp
+	vs08a_sdw01a_alp_ovl.bmp
+	vs08a_sdw01b_alp_ovl.bmp
+	vs08a_sdw01c_alp_ovl.bmp
+	vs08a_sdw01d_alp_ovl.bmp
+	vs08a_sdw01f_alp_ovl.bmp
+	vs08a_sdw01g_alp_ovl.bmp
+	vs08a_sdw01h_alp_ovl.bmp
+	vs08a_sdw01i_alp_ovl.bmp
+	vs08a_sdw01j_alp_ovl.bmp
+	vs08a_sdw01m_alp_ovl.bmp
+	vs08a_sdw01n_alp_ovl.bmp
+	vs08a_sdw01q_alp_ovl.bmp
+	vs08a_sdw01r_alp_ovl.bmp
+	vs08a_sdw02a_alp_ovl.bmp
+	vs08a_sdw02b_alp_ovl.bmp
+	vs08a_sdw02c_alp_ovl.bmp
+	vs08a_sdw02d_alp_ovl.bmp
+	vs08a_sdw02e_alp_ovl.bmp
+	vs08a_sdw02f_alp_ovl.bmp
+	vs08a_sdw03_alp_ovl.bmp
+	vs08a_sdw03l_alp_ovl.bmp
+	vs08a_sdw03n_alp_ovl.bmp
+	vs08a_sdw03o_alp_ovl.bmp
+	vs08a_sdw04_alp_ovl.bmp
+	vs08a_sdw04b_alp_ovl.bmp
+	vs08a_sdw05_alp_ovl.bmp
+	vs08a_sdw05a_alp_ovl.bmp
+	vs08a_sdw05b_alp_ovl.bmp
+	vs08a_sdw05j_alp_ovl.bmp
+	vs08a_sdw05k_alp_ovl.bmp
+	vs08a_sdw05l_alp_ovl.bmp
+	vs08a_sdw06_alp_ovl.bmp
+	vs08a_sdw06a_alp_ovl.bmp
+	vs08a_sdw06b_alp_ovl.bmp
+	vs09a_sdw01_alp_ovl.bmp
+	vs09a_sdw03_alp_ovl.bmp
+	vs09a_sdw07_alp_ovl.bmp
+	vs09a_sdw11_alp_ovl.bmp
+	vs09a_sdw12_alp_ovl.bmp
+	vs09a_sdw16_alp_ovl.bmp
+	vs10a_sdw00a_alp_ovl.bmp
+	vs10a_sdw00d_alp_ovl.bmp
+	vs10a_sdw01a_alp_ovl.bmp
+	vs10a_sdw01b_alp_ovl.bmp
+	vs10a_sdw02_alp_ovl.bmp
+	vs10a_sdw02a_alp_ovl.bmp
+	vs10a_sdw02b_alp_ovl.bmp
+	vs10a_sdw03_alp_ovl.bmp
+	vs10a_sdw03a_alp_ovl.bmp
+	vs10a_sdw03b_alp_ovl.bmp
+	vs10a_sdw03d3_alp_ovl.bmp
+	vs10a_sdw03d_alp_ovl.bmp
+	vs10a_sdw04_alp_ovl.bmp
+	vs10a_sdw04a1_alp_ovl.bmp
+	vs10a_sdw04a2_alp_ovl.bmp
+	vs10a_sdw04a3_alp_ovl.bmp
+	vs10a_sdw04a4_alp_ovl.bmp
+	vs10a_sdw04b1_alp_ovl.bmp
+	vs10a_sdw04b2_alp_ovl.bmp
+	vs10a_sdw04b_alp_ovl.bmp
+	vs10a_sdw04c0_alp_ovl.bmp
+	vs10a_sdw04c1_alp_ovl.bmp
+	vs10a_sdw04c2_alp_ovl.bmp
+	vs10a_sdw04c_alp_ovl.bmp
+	vs10a_sdw05a_alp_ovl.bmp
+	vs10a_sdw05b_alp_ovl.bmp
+	vs10a_sdw06a_alp_ovl.bmp
+	vs10a_sdw07_alp_ovl.bmp
+	vs10a_sdw07a_alp_ovl.bmp
+	vs10a_sdw07c_alp_ovl.bmp
+	vs10a_sdw07e_alp_ovl.bmp
+	vs10a_sdw07f_alp_ovl.bmp
+	vs10a_sdw07g_alp_ovl.bmp
+	vs10a_sdw08_alp_ovl.bmp
+	vs10a_sdw09_alp_ovl.bmp
+	vs10a_sdw10_alp_ovl.bmp
+	vs10a_sdw10a_alp_ovl.bmp
+	vs10a_sdw10b_alp_ovl.bmp
 	w00_front_woods_alp_ovl.bmp
 	w00_pll_pt3msk.bmp
 	w00_pll_pt5msk.bmp
@@ -421,6 +705,7 @@ HAS ALPHA
 	w01f_sdwbox00d_alp_ovl.bmp
 	w02_sr_dis2_alp_ovl.bmp
 	w02a_chain_alp.bmp
+	w02a_sdw_alp_ovl_01.bmp
 	w03b_sdw00_alp.bmp
 	w04a3_d_lit_add_alp.bmp
 	w04a3_floor_ray_f2_alp.bmp
@@ -1064,6 +1349,7 @@ HAS ALPHA
 	w20a_belst16_alp_ovl.bmp
 	w20a_moji_alp_ovl.bmp
 	w20a_walllit_fance1_add_alp_ovl.bmp
+	w20a_walllit_fance1bro_alp_ovl.bmp
 	w20b_1fbox_hl_add_alp_ovl.bmp
 	w20b_bsflr_hl1_add_alp_ovl.bmp
 	w20b_bsflr_hl2_add_alp_ovl.bmp
@@ -1635,6 +1921,15 @@ HAS ALPHA
 	w42a_efct_rbn_smt02_alp_add_ovl.bmp
 	w42a_light_maku_alp_add_ovl.bmp
 	w42a_oil_tank_in_alp_ovl.bmp
+	w42a_sdw_alp_ovl_01.bmp
+	w42a_sdw_alp_ovl_03.bmp
+	w42a_sdw_alp_ovl_04.bmp
+	w42a_sdw_alp_ovl_06.bmp
+	w42a_sdw_alp_ovl_07.bmp
+	w42a_sdw_alp_ovl_08.bmp
+	w42a_sdw_alp_ovl_10.bmp
+	w42a_sdw_alp_ovl_11.bmp
+	w42a_sdw_alp_ovl_12.bmp
 	w42a_step_line02_alp_ovl.bmp
 	w42a_step_line_alp_ovl.bmp
 	w42a_white_line_alp_ovl.bmp
@@ -1755,19 +2050,350 @@ HAS ALPHA
 	window2_alp.bmp
 	window_ode_01_alp.bmp
 	window_ode_02_alp.bmp
+	ws01a_sdw03_alp_ovl.bmp
+	ws01a_sdw04_alp_ovl.bmp
+	ws01a_sdw05_alp_ovl.bmp
+	ws01a_sdw06_alp_ovl.bmp
+	ws01a_sdw07_alp_ovl.bmp
+	ws01a_sdw08_alp_ovl.bmp
+	ws01a_sdw09_alp_ovl.bmp
+	ws01a_sdw10_alp_ovl.bmp
+	ws01a_sdw11_alp_ovl.bmp
+	ws01a_sdw12_alp_ovl.bmp
+	ws01a_sdw14_alp_ovl.bmp
+	ws01a_sdw21_alp_ovl.bmp
+	ws01a_sdw_roof04_alp_ovl.bmp
+	ws01a_sdw_roof05_alp_ovl.bmp
+	ws01a_sdw_roof06_alp_ovl.bmp
+	ws01a_sdw_wall01_alp_ovl.bmp
+	ws01a_sdw_wall04_alp_ovl.bmp
+	ws01a_sdw_wall09_alp_ovl.bmp
+	ws01a_sdw_wall11_alp_ovl.bmp
+	ws01a_sdw_wall14_alp_ovl.bmp
+	ws01a_sdw_wall15_alp_ovl.bmp
+	ws01a_sdw_wall18_alp_ovl.bmp
+	ws01a_sdw_wall19_alp_ovl.bmp
+	ws01a_sdw_wall22_alp_ovl.bmp
+	ws01a_sdw_wall23_alp_ovl.bmp
+	ws01a_sdw_wall24_alp_ovl.bmp
+	ws02a_sdw_alp_ovl_03.bmp
+	ws02a_sdw_alp_ovl_05.bmp
+	ws02a_sdw_alp_ovl_06.bmp
+	ws03a_sdw02_alp_ovl.bmp
+	ws03a_sdw12_alp_ovl.bmp
+	ws03a_sdw17_alp_ovl.bmp
+	ws03a_sdw19_alp_ovl.bmp
+	ws03a_sdw20_alp_ovl.bmp
+	ws03a_sdw21_alp_ovl.bmp
+	ws03a_sdw23_alp_ovl.bmp
+	ws03a_sdw24_alp_ovl.bmp
+	ws03a_sdw25_alp_ovl.bmp
+	ws03a_sdw27a_alp_ovl.bmp
+	ws03a_sdw41_alp_ovl.bmp
+	ws03a_sdw42_alp_ovl.bmp
+	ws03a_sdw47_alp_ovl.bmp
+	ws03a_sdw48_alp_ovl.bmp
+	ws03a_sdw49_alp_ovl.bmp
+	ws03a_sdw49a_alp_ovl.bmp
+	ws04a_sdw03_alp_ovl.bmp
+	ws04a_sdw04_alp_ovl.bmp
+	ws04a_sdw05_alp_ovl.bmp
+	ws04a_sdw06_alp_ovl.bmp
+	ws04a_sdw08_alp_ovl.bmp
+	ws04a_sdw13_alp_ovl.bmp
+	ws04a_sdw14_alp_ovl.bmp
+	ws04a_sdw15_alp_ovl.bmp
+	ws04a_sdw16_alp_ovl.bmp
+	ws11a_sdw00_alp_ovl.bmp
+	ws11a_sdw01_alp_ovl.bmp
+	ws11a_sdw03_alp_ovl.bmp
+	ws11a_sdw03a_alp_ovl.bmp
+	ws11a_sdw03b_alp_ovl.bmp
+	ws12a_sdw01c_alp_ovl.bmp
+	ws12a_sdw01d_alp_ovl.bmp
+	ws12a_sdw01e_alp_ovl.bmp
+	ws12a_sdw02_alp_ovl.bmp
+	ws12a_sdw02a_alp_ovl.bmp
+	ws12a_sdw03a_alp_ovl.bmp
+	ws12a_sdw03b_alp_ovl.bmp
+	ws14a_sdw01_alp_ovl.bmp
+	ws14a_sdw04_alp_ovl.bmp
+	ws14a_sdw05_alp_ovl.bmp
+	ws14a_sdw07_alp_ovl.bmp
+	ws14a_sdw08_alp_ovl.bmp
+	ws14a_sdw11_alp_ovl.bmp
+	ws21a_sdw01_alp_ovl.bmp
+	ws23a_sdw02_alp_ovl.bmp
+	ws23a_sdw03_alp_ovl.bmp
+	ws23a_sdw04_alp_ovl.bmp
+	ws23a_sdw07_alp_ovl.bmp
+	ws23a_sdw09_alp_ovl.bmp
+	ws24a_sdw01_alp_ovl.bmp
+	ws24a_sdw02_alp_ovl.bmp
+	ws24a_sdw03_alp_ovl.bmp
+	ws24a_sdw04_alp_ovl.bmp
+	ws24a_sdw06_alp_ovl.bmp
 	ws31a_sdw002_alp_ovl.bmp
 	ws31a_sdw3_alp_ovl.bmp
 	ws31a_sdw5_alp_ovl.bmp
+	ws32a_sdw01_alp_ovl.bmp
+	ws32a_sdw02_alp_ovl.bmp
+	ws32a_sdw04_alp_ovl.bmp
+	ws32a_sdw07n_alp_ovl.bmp
+	ws33a_shw00_alp_ovl.bmp
+	ws33a_shw01_alp_ovl.bmp
+	ws33a_shw02_alp_ovl.bmp
+	ws33a_shw02_alp_ovl.bmp_d6dfbf599e5c8376dcedcf427dfd67a1
+	ws33a_shw03_alp_ovl.bmp
+	ws33a_shw03_alp_ovl.bmp_14ce115100999d0b16ddad95d1e21090
+	ws33a_shw04_alp_ovl.bmp
+	ws33a_shw04_alp_ovl.bmp_516330636cc6edc108e936cd3648cbb2
+	ws33a_shw05_alp_ovl.bmp
+	ws33a_shw05_alp_ovl.bmp_e04e58b4af6f02c99878419fa8e70e20
+	ws33a_shw06_alp_ovl.bmp
+	ws33a_shw06_alp_ovl.bmp_97e61e5e685e6cff9bfa3bb3c472a1ea
+	ws34a_sdw01_alp_ovl.bmp
+	ws34a_sdw16_alp_ovl.bmp
+	ws34a_sdw19_alp_ovl.bmp
+	ws35a_sdw02_alp_ovl.bmp
+	ws35a_sdw03_alp_ovl.bmp
+	ws35a_sdw04_alp_ovl.bmp
+	ws35a_sdw08_alp_ovl.bmp
+	ws35a_sdw09_alp_ovl.bmp
+	ws35a_sdw17_alp_ovl.bmp
+	ws35a_sdw18_alp_ovl.bmp
+	ws41a_shw01_alp_ovl.bmp
+	ws41a_shw02_alp_ovl.bmp
+	ws41a_shw04_alp_ovl.bmp
+	ws41a_shw09_alp_ovl.bmp
+	ws41a_shw10_alp_ovl.bmp
+	ws43a_shw01_alp_ovl.bmp
+	ws43a_shw02_alp_ovl.bmp
+	ws43a_shw03_alp_ovl.bmp
+	ws43a_shw04_alp_ovl.bmp
+	ws43a_shw05_alp_ovl.bmp
+	ws43a_shw06_alp_ovl.bmp
+	ws43a_shw07_alp_ovl.bmp
+	ws43a_shw09_alp_ovl.bmp
+	ws43a_shw10_alp_ovl.bmp
+	ws43a_shw11_alp_ovl.bmp
+	ws43a_shw12_alp_ovl.bmp
+	ws43a_shw14_alp_ovl.bmp
+	ws43a_shw16_alp_ovl.bmp
+	ws43a_shw17_alp_ovl.bmp
+	ws43a_shw18_alp_ovl.bmp
+	ws43a_shw19_alp_ovl.bmp
+	ws43a_shw21_alp_ovl.bmp
+	ws51a_sdw00_alp_ovl.bmp
+	ws51a_sdw00a_alp_ovl.bmp
+	ws51a_sdw00b_alp_ovl.bmp
+	ws52a_sdw00_alp_ovl.bmp
+	ws52a_sdw02_alp_ovl.bmp
+	ws52a_sdw02a_alp_ovl.bmp
+	ws52a_sdw02b_alp_ovl.bmp
+	ws52a_sdw02c_alp_ovl.bmp
+	ws52a_sdw02d_alp_ovl.bmp
+	ws52a_sdw02e_alp_ovl.bmp
+	ws52a_sdw02f_alp_ovl.bmp
+	ws52a_sdw03_alp_ovl.bmp
+	ws52a_sdw03a_alp_ovl.bmp
+	ws52a_sdw03b_alp_ovl.bmp
+	ws52a_sdw03c_alp_ovl.bmp
+	ws52a_sdw03d_alp_ovl.bmp
+	ws52a_sdw03e_alp_ovl.bmp
+	ws52a_sdw04_alp_ovl.bmp
+	ws52a_sdw04b_alp_ovl.bmp
+	ws52a_sdw04c_alp_ovl.bmp
+	ws52a_sdw04d_alp_ovl.bmp
+	ws52a_sdw04g_alp_ovl.bmp
+	ws53a_sdw003_alp_ovl.bmp
+	ws53a_sdw004_alp_ovl.bmp
+	ws53a_sdw008_alp_ovl.bmp
+	ws53a_sdw08_alp_ovl.bmp
+	ws53a_sdw10_alp_ovl.bmp
+	ws53a_sdw12_alp_ovl.bmp
+	ws53a_sdw9_alp_ovl.bmp
+	ws54a_wshw01_alp_ovl.bmp
+	ws54a_wshw09_alp_ovl.bmp
+	ws54a_wshw11_alp_ovl.bmp
+	ws54a_wshw21_alp_ovl.bmp
+	ws54a_wshw22_alp_ovl.bmp
+	ws55a_sdw01_alp_ovl.bmp
+	ws55a_sdw02_alp_ovl.bmp
+	ws55a_sdw03_alp_ovl.bmp
+	ws55a_sdw04_alp_ovl.bmp
+	ws55a_sdw05_alp_ovl.bmp
+	ws55a_sdw06_alp_ovl.bmp
+	ws55a_sdw07_alp_ovl.bmp
+	ws55a_sdw08_alp_ovl.bmp
+	ws55a_sdw09_alp_ovl.bmp
+	ws55a_sdw10_alp_ovl.bmp
+	ws55a_sdw13_alp_ovl.bmp
+	ws55a_sdw14_alp_ovl.bmp
+	ws55a_sdw15_alp_ovl.bmp
+	ws55a_sdw17_alp_ovl.bmp
+	ws55a_sdw18_alp_ovl.bmp
+	ws55a_sdw31_alp_ovl.bmp
+	ws61a_sdw01a_alp_ovl.bmp
+	ws61a_sdw01b_alp_ovl.bmp
+	ws62a_sdw00_alp_ovl.bmp
+	ws62a_sdw00a_alp_ovl.bmp
+	ws62a_sdw00b_alp_ovl.bmp
+	ws62a_sdw00e_alp_ovl.bmp
+	ws62a_sdw00f_alp_ovl.bmp
+	ws62a_sdw00g_alp_ovl.bmp
+	ws62a_sdw02_alp_ovl.bmp
+	ws62a_sdw03e_alp_ovl.bmp
+	ws62a_sdw04_alp_ovl.bmp
+	ws62a_sdw04b_alp_ovl.bmp
+	ws62a_sdw04c_alp_ovl.bmp
+	ws62a_sdw05_alp_ovl.bmp
+	ws62a_sdw05a_alp_ovl.bmp
+	ws62a_sdw06a_alp_ovl.bmp
+	ws62a_sdw07_alp_ovl.bmp
+	ws62a_sdw08_alp_ovl.bmp
+	ws62a_sdw08b_alp_ovl.bmp
+	ws62a_sdw09a_alp_ovl.bmp
+	ws62a_sdw10_alp_ovl.bmp
+	ws62a_sdw10a_alp_ovl.bmp
+	ws62a_sdw10b_alp_ovl.bmp
+	ws62a_sdw10c_alp_ovl.bmp
+	ws62a_sdw11a_alp_ovl.bmp
+	ws62a_sdw11b_alp_ovl.bmp
+	ws62a_sdw11c_alp_ovl.bmp
+	ws62a_sdw12_alp_ovl.bmp
+	ws62a_sdw12b_alp_ovl.bmp
+	ws62a_sdw13c_alp_ovl.bmp
+	ws62a_sdw13f_alp_ovl.bmp
+	ws62a_sdw13j_alp_ovl.bmp
+	ws62a_sdw13k_alp_ovl.bmp
+	ws62a_sdw13l_alp_ovl.bmp
+	ws62a_sdw13m_alp_ovl.bmp
+	ws62a_sdw13n_alp_ovl.bmp
+	ws62a_sdw14b_alp_ovl.bmp
+	ws62a_sdw15d_alp_ovl.bmp
+	ws62a_sdw16_alp_ovl.bmp
+	ws62a_sdw16a_alp_ovl.bmp
+	ws62a_sdw16b_alp_ovl.bmp
+	ws62a_sdw16d_alp_ovl.bmp
+	ws62a_sdw16e_alp_ovl.bmp
+	ws63a_shw00_alp_ovl.bmp
+	ws63a_shw01_alp_ovl.bmp
+	ws63a_shw02_alp_ovl.bmp
+	ws63a_shw04_alp_ovl.bmp
+	ws63a_shw06_alp_ovl.bmp
+	ws63a_shw08_alp_ovl.bmp
+	ws63a_shw09_alp_ovl.bmp
+	ws63a_shw10_alp_ovl.bmp
+	ws63a_shw11_alp_ovl.bmp
+	ws63a_shw12_alp_ovl.bmp
+	ws64a_sdw_alp_ovl_01.bmp
+	ws64a_sdw_alp_ovl_02.bmp
+	ws64a_sdw_alp_ovl_03.bmp
+	ws64a_sdw_alp_ovl_04.bmp
+	ws64a_sdw_alp_ovl_05.bmp
+	ws64a_sdw_alp_ovl_06.bmp
+	ws64a_sdw_alp_ovl_07.bmp
+	ws64a_sdw_alp_ovl_08.bmp
+	ws64a_sdw_alp_ovl_09.bmp
+	ws64a_sdw_alp_ovl_10.bmp
+	ws64a_sdw_alp_ovl_11.bmp
+	ws64a_sdw_alp_ovl_12.bmp
+	ws64a_sdw_alp_ovl_13.bmp
+	ws64a_sdw_alp_ovl_15.bmp
+	ws65a_sdw01_alp_ovl.bmp
+	ws65a_sdw02_alp_ovl.bmp
+	ws65a_sdw05_alp_ovl.bmp
+	ws65a_sdw11_alp_ovl.bmp
+	ws65a_sdw12_alp_ovl.bmp
+	ws65a_sdw14_alp_ovl.bmp
+	ws65a_sdw15_alp_ovl.bmp
+	ws65a_sdw18_alp_ovl.bmp
+	ws65a_sdw19_alp_ovl.bmp
+	ws65a_sdw20_alp_ovl.bmp
+	ws65a_sdw26_alp_ovl.bmp
+	ws65a_sdw27_alp_ovl.bmp
+	ws65a_sdw28_alp_ovl.bmp
+	ws65a_sdw29_alp_ovl.bmp
+	ws65a_sdw30_alp_ovl.bmp
+	ws65a_sdw33_alp_ovl.bmp
+	ws65a_sdw34_alp_ovl.bmp
+	ws65a_sdw35_alp_ovl.bmp
+	ws65a_sdw40_alp_ovl.bmp
+	ws65a_sdw42_alp_ovl.bmp
+	ws65a_sdw43_alp_ovl.bmp
+	ws65a_sdw45_alp_ovl.bmp
+	ws65a_sdw49_alp_ovl.bmp
+	ws65a_sdw50_alp_ovl.bmp
+	ws65a_sdw51_alp_ovl.bmp
+	ws65a_sdw52_alp_ovl.bmp
+	ws65a_sdw54_alp_ovl.bmp
+	ws65a_sdw56_alp_ovl.bmp
+	ws65a_sdw58_alp_ovl.bmp
+	ws65a_sdw59_alp_ovl.bmp
+	ws65a_sdw60_alp_ovl.bmp
+	ws65a_sdw61_alp_ovl.bmp
+	ws65a_sdw63_alp_ovl.bmp
+	ws65a_sdw64_alp_ovl.bmp
+	ws65a_sdw65_alp_ovl.bmp
+	ws65a_sdw68_alp_ovl.bmp
+	ws65a_sdw_duct01_alp_ovl.bmp
+	ws65a_sdw_duct02_alp_ovl.bmp
+	ws71a_sdw_01_alp_ovl.bmp
+	ws71a_sdw_02_alp_ovl.bmp
+	ws71a_sdw_03_alp_ovl.bmp
+	ws71a_sdw_04_alp_ovl.bmp
+	ws71a_sdw_05_alp_ovl.bmp
+	ws71a_sdw_07_alp_ovl.bmp
+	ws72a_sdw01_alp_ovl.bmp
+	ws72a_sdw02_alp_ovl.bmp
+	ws72a_sdw12_alp_ovl.bmp
+	ws72a_sdw13n_alp_ovl.bmp
+	ws72a_sdw15_alp_ovl.bmp
+	ws72a_sdw19_alp_ovl.bmp
+	ws72a_sdw23_alp_ovl.bmp
+	ws73a_sdw_01_alp_ovl.bmp
+	ws73a_sdw_03_alp_ovl.bmp
+	ws73a_sdw_06_alp_ovl.bmp
+	ws73a_sdw_07_alp_ovl.bmp
+	ws73a_sdw_08_alp_ovl.bmp
+	ws73a_sdw_09_alp_ovl.bmp
+	ws73a_sdw_10_alp_ovl.bmp
+	ws73a_sdw_11_alp_ovl.bmp
+	ws73a_sdw_13_alp_ovl.bmp
+	ws73a_sdw_14_alp_ovl.bmp
+	ws73a_sdw_15_alp_ovl.bmp
+	ws73a_sdw_17_alp_ovl.bmp
+	ws73a_sdw_18_alp_ovl.bmp
+	ws73a_sdw_1_alp_ovl.bmp
+	ws73a_sdw_21_alp_ovl.bmp
+	ws73a_sdw_22_alp_ovl.bmp
+	ws73a_sdw_24_alp_ovl.bmp
+	ws73a_sdw_28_alp_ovl.bmp
+	ws73a_sdw_31_alp_ovl.bmp
+	ws73a_sdw_32_alp_ovl.bmp
+	ws73a_sdw_38_alp_ovl.bmp
+	ws73a_sdw_39_alp_ovl.bmp
+	ws73a_sdw_40_alp_ovl.bmp
+	ws73a_sdw_45_alp_ovl.bmp
+	ws_13a_sdw01_alp_ovl.bmp
+	ws_13a_sdw02_alp_ovl.bmp
+	ws_13a_sdw03_alp_ovl.bmp
+	ws_13a_sdw04_alp_ovl.bmp
+	ws_13a_sdw05_alp_ovl.bmp
+	ws_13a_sdw07_alp_ovl.bmp
 
 ---------- HAS ALPHA\bp_mismatch ----------
 	00c1181b
 
 ---------- HAS ALPHA\bp_remade ----------
 	0000c4dd
+	0000f06e
 	0002936b
 	0002cca2
 	000382c8
 	0003c3de
+	000430f2
 	00058f79
 	00065bbe
 	00068f79
@@ -1776,30 +2402,44 @@ HAS ALPHA
 	0007bc34
 	00085bbe
 	0008bc34
+	00096be0
 	0009bc34
 	0009eb6f
 	0009f56f
+	0009f66f
+	000a8fc0
 	000aa7de
 	000b7011
+	000c59bf
 	000cc716
+	000ccd6b
 	000e1a61
 	000ebe38
+	00100d1b
 	0010e123
 	0012e9ed
+	0013486e
 	0013547f
 	0014547f
 	001463f1
 	0015547f
 	00158927
+	0016852b
 	0017bbf5
+	001a8739_9b95ed97d41ce0c9da24766f77e0bf35
+	001bb358
+	001cd071
 	00207af5
 	0020fb52
 	0021e3c2
 	0022e3c2
 	0023ace3
+	002515dc
 	00253181
 	0026f2fc
 	00273921
+	002be6b0
+	002c9415
 	002ca269
 	002ceb42
 	002d83df
@@ -1810,34 +2450,49 @@ HAS ALPHA
 	002d83e2
 	002d83e3
 	002d83e4
+	002e7dde
 	002e7de3
 	002e7de4
+	002e7de5
+	002e7dff
 	002e8486
 	0030e529
 	0030f164
+	00310ae2
 	00315bd0
 	0031ead8
 	0032ead8
+	0034852b
 	00367807
 	0036ea81
+	0037502a
 	0037513a
 	00376bd0
 	00380922
 	0038e7a7
 	0038f08e
+	0038f2a7
 	0038f2a7_09a2e59f677ae755c7156ae89bea86a9
 	0038f2a7_506b55e6b21d5eaec73ca5aa5ffb9a36
 	0038f2a7_be3ef19531b3a85625ef614280f2874c
+	003997fd
 	003997fd_58fcdefef3f7eda79d7e4a9f65f040ed
 	0039af8a
+	003aa501
 	003c4ad1
 	003e9364
 	003fc7c9
 	00408502
 	0040cd15
+	0040eac3
 	00418502
+	0041eac3
+	00427069
 	00428502
+	0042eac3
+	0043eac3
 	00443f1d
+	00445c5a
 	00463f1d
 	004750b0
 	004750b0_b04d2410ad3d8dfa5e0f135d4c15d11e
@@ -1852,14 +2507,22 @@ HAS ALPHA
 	004b67e5
 	004c1d9d
 	004c67e5
+	004c943d
 	004cf0ba
 	004d1d9d
+	004d3971
+	004e6292
 	004f1d9d
 	004f1d9d_86994cb2425e706d85d38eb0d74da538
 	00501d9d
 	00501d9d_1914ca0e502000992f2d09f0b7a86868
+	0053852b
+	005480d6
 	0055e1c2
 	0056e1c2
+	00585d21
+	0059975e
+	005d4f23_b39e4e9a25db3103157377fb4b8b0fec
 	005d8f6f
 	005db736
 	005ef82e
@@ -1874,12 +2537,14 @@ HAS ALPHA
 	0065a618
 	006697ed
 	00671d9d
+	00675c5a
 	00681d9d
 	00689021
 	00691d9d
 	00699021
 	006997ed_b20d65f1089467ce6fec4d3a8c8134c8
 	006a97ed
+	006a9dfd
 	006aa618_5e5881ab87a4498b100e3983cca31058
 	006af2ba
 	006af2bb
@@ -1909,16 +2574,23 @@ HAS ALPHA
 	0076ad61
 	0076cd21
 	00774c18
+	0078980c
 	0078adc6
 	007a9dfd
 	007b651a
 	007be718
+	007c9dfd
 	007f0488
 	007f6817
 	00818625
+	0081f6b5
+	00829016
 	0083fa46
 	0086a618
+	0088b898
+	0088c589
 	00892df9
+	00895b43
 	008a8469
 	008aa618
 	008c9a00
@@ -1927,22 +2599,32 @@ HAS ALPHA
 	008dbe37
 	0091a721
 	00938001
+	0094533a
 	0095cb32
+	00985407
 	0098f24a
 	009ac0bf
 	009bc0bf
+	009dbc16
+	009df079
 	009eafa1
+	009ebc16
+	009f2fba
 	009fa21b
 	009fafa1
 	00a093d7
+	00a0bc16
 	00a127a1
+	00a1bc16
 	00a628ba
 	00a69783
 	00a891e2
 	00a936cb
 	00acbe37
 	00ad7f33
+	00adb42a
 	00aeebfc
+	00af9412
 	00afbbc9
 	00b02021
 	00b12021
@@ -1959,14 +2641,18 @@ HAS ALPHA
 	00bfbb06
 	00c2df96
 	00c3e4f6
+	00c45897
+	00c489c5
 	00c4b02d
 	00c59475
 	00c5a3fd
 	00c6157c
+	00c6e6ab
 	00c6feb6
 	00c8e1b5
 	00c9e1b5
 	00ca3f11
+	00cada49
 	00cb3f11
 	00cc15b7
 	00ccb0a6
@@ -1984,21 +2670,33 @@ HAS ALPHA
 	00d4e124
 	00d7a5d6
 	00d84d77
+	00d85d25
 	00da15e3
 	00dc7290
+	00dd93f9
+	00de6344
+	00de6f30
+	00e0bf95
 	00e20d51
 	00e22d51
 	00e3d071
 	00e4b51b
 	00e4d0de
 	00e4d0de_41da87e72c01ef976b914cd59eef1df9
+	00e7ddd3
+	00e8533f_c9656c04a66db3d24c7fb50dd516a45e
 	00e9800a
 	00ec73af
 	00eca640
+	00efa150
+	00f0852a
+	00f0b18b
+	00f40e09
 	00f4b0a9
 	00f52511
 	00f8237e
 	00f84320
+	00f8852a
 	00f995ec
 	00fad318
 	00fb2383
@@ -2036,6 +2734,8 @@ HAS ALPHA
 	act_telop9_alp_ovl.bmp
 	ag_ascending_alp_ovl.bmp
 	ag_jejunum_alp_ovl.bmp
+	ag_rectum_alp_ovl.bmp
+	ag_sigmoid_alp_ovl.bmp
 	ag_stmach_alp_ovl.bmp
 	aks_alp_ovl.bmp
 	aks_sp2_alp_ovl.bmp
@@ -2084,17 +2784,22 @@ HAS ALPHA
 	empty_alp_ovl.bmp
 	eva_alp_ovl.bmp
 	exit_alp_add_ovl.bmp
+	exit_alp_ovl.bmp
 	EXIT_alp_ovl.bmp_2e80fcdf52d4e88c977557d852b3bb00
+	exit_alp_ovl.bmp_6caebe23bde6080a351ba6c3fd17f622
 	exit_alp_ovl.bmp_794456ba9bbbfd3e16cf3cf4157c6d56
 	exit_alp_ovl.bmp_7f9196f232454b86ef93cc3591f1f2ab
 	f_souko_alp_ovl.bmp
 	f_souko_b1_alp_ovl.bmp
 	fa_renraku_alp_ovl.bmp
+	fake_exit_alp_ovl.bmp
 	fat_ooze_blood89_alp_ovl.bmp
 	fat_pias_alp_ovl.bmp
 	fat_strow_alp.bmp
+	for_blood_face_ovl_alp.bmp
 	for_hair_side_ovl_alp.bmp
 	for_hi_mtg_alp_ovl.bmp
+	for_kizu_body_ovl_alp.bmp
 	fstamp03_alp.bmp
 	funabashi_alp_ovl.bmp
 	gol1_alp_ovl.bmp
@@ -2148,6 +2853,7 @@ HAS ALPHA
 	orn_sld_cover_alp.bmp
 	orn_sld_mitsubishi_alp.bmp
 	orn_sld_noiz_alp.bmp
+	orp_hair_alp_ovl_dd.bmp
 	orp_hair_alp_ovl_new.bmp
 	orp_hair_alp_ovl_re03.bmp
 	psg2_alp_ovl.bmp
@@ -2177,7 +2883,10 @@ HAS ALPHA
 	sna_hair1_alp_ovl.bmp
 	sna_hair2dt_alp_ovl.bmp
 	sna_hi_ela01_alp_ovl.bmp
+	sol_hige_alp_ovl.bmp
 	sol_mant_n_alp_ovl.bmp
+	sol_mayu_alp_ovl.bmp
+	sol_sarm_chest_moji_ovl_alp.bmp
 	sp_alp_ovl.bmp
 	sr14j_bg_alp_ovl.bmp
 	stin_alp_ovl.bmp
@@ -2248,6 +2957,94 @@ HAS ALPHA
 	YukaMoto_alp_ovl.bmp
 
 ---------- HAS ALPHA\bp_remade\no_mip_fixes ----------
+	00004ad1
+	00024ad1
+	002f0bd0
+	002f1bd0
+	002f2bd0
+	002f3bd0
+	002f4bd0
+	002f5bd0
+	002f6bd0
+	002f7bd0
+	002f8bd0
+	00304ad1
+	0030fbd0
+	00310bd0
+	00311bd0
+	00312bd0
+	00313bd0
+	00314bd0
+	00316bd0
+	00317bd0
+	00318bd0
+	00324ad1
+	0032fbd0
+	00330bd0
+	00331bd0
+	00332bd0
+	00333bd0
+	00334bd0
+	00335bd0
+	00336bd0
+	00337bd0
+	00338bd0
+	00344ad1
+	0034fbd0
+	00350bd0
+	00352bd0
+	00353bd0
+	00354bd0
+	00355bd0
+	00356bd0
+	00357bd0
+	00358bd0
+	00364ad1
+	0036fbd0
+	00370bd0
+	00371bd0
+	00372bd0
+	00373bd0
+	00374bd0
+	00375bd0
+	00384ad1
+	003a4ad1
+	003e4ad1
+	00404ad1
+	00424ad1
+	00704ad1
+	00724ad1
+	00744ad1
+	00764ad1
+	00784ad1
+	007a4ad1
+	007c4ad1
+	007e4ad1
+	00804ad1
+	00824ad1
+	00b04ad1
+	00b24ad1
+	00b64ad1
+	00b84ad1
+	00ba4ad1
+	00bc4ad1
+	00be4ad1
+	00c04ad1
+	00c24ad1
+	00f04ad1
+	00f24ad0
+	00f24ad1
+	00f44ad0
+	00f44ad1
+	00f64ad0
+	00f64ad1
+	00f84ad0
+	00f84ad1
+	00fa4ad0
+	00fa4ad1
+	00fc4ad0
+	00fc4ad1
+	00fe4ad0
 	crg_body_down_sub_alp_ovl.bmp
 	crg_body_up_sub_alp_ovl.bmp
 	crg_cap_eri_sub_alp_ovl.bmp
@@ -2309,6 +3106,7 @@ HAS ALPHA
 	ros_hi_eyemc_ovl_sub_alp.bmp
 	ros_hi_eyermc_ovl_sub_alp.bmp
 	ros_hi_facemc_ovl_sub_alp.bmp
+	sol_hi_face02_ovl_sub_alp.bmp
 	sol_hi_face_d1_ovl_sub_alp.bmp
 	sol_hi_face_d2_ovl_sub_alp.bmp
 	sol_mant_n_ovl_sub_alp.bmp
@@ -2316,7 +3114,14 @@ HAS ALPHA
 	sol_sa_tu_dt01_ovl_sub_alp.bmp
 	sol_sa_tu_dt03_ovl_sub_alp.bmp
 	sol_sa_tu_dt04_ovl_sub_alp.bmp
+	sol_sarm_chest_ovl_sub_alp.bmp
+	sol_sarm_tube1_ovl_sub_alp.bmp
+	sol_sarm_tube2_ovl_sub_alp.bmp
+	sol_sarm_tube4_ovl_sub_alp.bmp
+	sol_shoes1_n_ovl_sub_alp.bmp
+	sol_shoes2_n_ovl_sub_alp.bmp
 	sol_shoulder_dt_ovl_sub_alp.bmp
+	sol_shoulder_n_ovl_sub_alp.bmp
 	sr00e_alp_ovl.bmp
 	sr01j_alp_ovl.bmp_71b551295ba518fae4283bd712544a6d
 	sr02j_alp_ovl.bmp_4a09a9b88e5c9d0cf6da451edf0dbec7
@@ -2361,6 +3166,7 @@ HAS ALPHA
 	sr23e_alp_ovl.bmp
 	sr24e_alp_ovl.bmp
 	sr25e_alp_ovl.bmp
+	title_logo_mono_alp_ovl.bmp
 	usa_met01dt_ovl_sub_alp.bmp
 
 ---------- HAS ALPHA\no_mip_fixes ----------
@@ -2419,6 +3225,7 @@ HAS ALPHA
 	gbs_body_ovl_sub_alp.bmp
 	gbs_leg_ovl_sub_alp.bmp
 	gbs_toe2_ovl_sub_alp.bmp
+	gur_e_alp_ovl.bmp
 	h6h_side_window_sub_alp_ovl.bmp
 	hfb_sub_gr2_alp_ovl.bmp
 	hfbs3_sub_alp_ovl.bmp
@@ -2460,6 +3267,7 @@ HAS ALPHA
 	mrl_belt_sub_alp_ovl.bmp
 	mrl_boot_D_sub_alp_ovl.bmp
 	mrl_des_sub_ovl_alp.bmp
+	mrl_face_sub_ovl_alp.bmp
 	mrl_face_sub_ovl_alp.bmp_3d157db90c9f53521933b0b8b3e74e25
 	mrl_hair_top_sub_ovl_alp.bmp
 	mrl_hiza_sub_alp_ovl.bmp
@@ -2592,25 +3400,53 @@ HAS ALPHA
 	sna_hi_face_ovl_sub_alp.bmp
 	sna_leg_ovl_sub_alp.bmp
 	sna_leg_r01dt_ovl_sub_alp.bmp
+	sna_oss_arm_ovl_sub_alp.bmp
+	sna_oss_body_ovl_sub_alp.bmp
+	sna_oss_eri_ovl_sub_alp.bmp
+	sna_oss_hip_ovl_sub_alp.bmp
+	sna_oss_leg_ovl_sub_alp.bmp
+	sna_oss_oshould_ovl_sub_alp.bmp
+	sna_oss_rthigh_ovl_sub_alp.bmp
+	sna_oss_spad_ovl_sub_alp.bmp
+	sna_oss_weast_ovl_sub_alp.bmp
 	sna_shaved_ss_ovl_sub_alp.bmp
 	sna_shoul01dt_ovl_sub_alp.bmp
+	sna_txd_arm_ovl_sub_alp.bmp
+	sna_txd_collar_ovl_sub_alp.bmp
+	sna_txd_jacket_ovl_sub_alp.bmp
+	sna_txd_leg_ovl_sub_alp.bmp
+	sna_txd_shoe_ovl_sub_alp.bmp
 	sofa00_alp_sub_ovl.bmp
+	sol_arm1_nn_ovl_sub_alp.bmp
+	sol_arm_bane_ovl_sub_alp.bmp
 	sol_arm_dt01_ovl_sub_alp.bmp
 	sol_arm_dt02_sub_alp_ovl.bmp
+	sol_arm_y_ovl_sub_alp.bmp
 	sol_body_dt01_ovl_sub_alp.bmp
 	sol_body_dt02_ovl_sub_alp.bmp
 	sol_body_dt04_ovl_sub_alp.bmp
 	sol_body_dt05_ovl_sub_alp.bmp
 	sol_body_dt06_ovl_sub_alp.bmp
+	sol_body_n_1_ovl_sub_alp.bmp
+	sol_body_n_2_ovl_sub_alp.bmp
+	sol_eri_n_ovl_sub_alp.bmp
 	sol_foot_dt01_ovl_sub_alp.bmp
 	sol_foot_dt02_ovl_sub_alp.bmp
 	sol_guard_dt_ovl_sub_alp.bmp
 	sol_hand_dt_ovl_sub_alp.bmp
+	sol_hand_y_ovl_sub_alp.bmp
+	sol_hi_face01_ovl_sub_alp.bmp
+	sol_leg_2_n_ovl_sub_alp.bmp
 	sol_leg_dt01_ovl_sub_alp.bmp
 	sol_leg_dt02_ovl_sub_alp.bmp
 	sol_leg_dt03_ovl_sub_alp.bmp
 	sol_leg_dt05_sub_alp_ovl.bmp
+	sol_leg_n_1_ovl_sub_alp.bmp
+	sol_leg_pad_n_ovl_sub_alp.bmp
+	sol_leg_sune_n_ovl_sub_alp.bmp
+	sol_leg_y_ovl_sub_alp.bmp
 	sol_sa_tu_dt02_ovl_sub_alp.bmp
+	sol_sarm_tube3_ovl_sub_alp.bmp
 	ter_ovl_sub_alp_0001.bmp
 	tng_arm_ovl_sub_alp.bmp
 	tng_body_b_ovl_sub_alp.bmp

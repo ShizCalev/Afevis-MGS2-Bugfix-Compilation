@@ -108,6 +108,40 @@ def main():
 
     print("\n[+] Done.")
     print(f"[+] Non-matching PNGs logged to: {LOG_PATH}")
+    
+        # ==========================================================
+    # CLEANUP: Remove PNGs in TGA_DIR that do NOT exist in PNG_DIR
+    # ==========================================================
+    print("[+] Cleaning up orphan PNGs in TGA_DIR...")
+
+    # Build a set of valid PNG basenames from PNG_DIR
+    valid_png_names = set()
+    for root, _, files in os.walk(PNG_DIR):
+        for f in files:
+            if f.lower().endswith(".png"):
+                name = os.path.splitext(f)[0].lower()
+                valid_png_names.add(name)
+
+    removed_count = 0
+
+    for root, _, files in os.walk(TGA_DIR):
+        for f in files:
+            if not f.lower().endswith(".png"):
+                continue
+
+            name = os.path.splitext(f)[0].lower()
+            full_path = os.path.join(root, f)
+
+            if name not in valid_png_names:
+                try:
+                    os.remove(full_path)
+                    removed_count += 1
+                    print(f"[REMOVED ORPHAN] {full_path}")
+                except Exception as e:
+                    print(f"[ERROR] Failed to remove {full_path}: {e}")
+
+    print(f"[+] Removed {removed_count} orphan PNG(s).\n")
+
 
     # --- Run the next script ---
     print("\n[+] Launching next stage: 0002 - sort alpha.py")
