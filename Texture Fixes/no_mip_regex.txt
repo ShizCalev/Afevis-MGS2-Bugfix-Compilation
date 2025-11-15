@@ -444,3 +444,4 @@ _bg\.bmp$
 ^snake_tales_ltitle
 ^title_mgs2_alp_ovl.bmp$
 ^title_logo_blue_alp_ovl.bmp$
+^00b60372$
