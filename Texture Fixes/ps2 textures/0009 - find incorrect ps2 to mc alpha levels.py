@@ -292,7 +292,7 @@ def main():
         log_hierarchy("OG PS2 FILES", og_unref)
 
         # ======================================================
-        # FILTERED VERSION: "Left to Find - TRI Dumped Included"
+        # FILTERED VERSION 1: "Left to Find - TRI Dumped Removed (Texture Fixes only)"
         # ======================================================
         print("\n[Filtered Export] Creating left-to-find list excluding any Texture Fixes assets...")
 
@@ -304,18 +304,71 @@ def main():
             for path in texture_fixes_dir.rglob(ext):
                 all_existing_fix_textures.add(path.stem.lower())
 
-        filtered_unref = [t for t in unreferenced if t.lower() not in all_existing_fix_textures]
+        # Filter only Texture Fixes matches
+        filtered_unref_basic = [t for t in unreferenced if t.lower() not in all_existing_fix_textures]
 
-        # Save as CSV
-        filtered_csv_path = script_dir / "left to find - tri dumped removed.csv"
-        with open(filtered_csv_path, "w", newline="", encoding="utf-8") as fcsv:
+        # Save first CSV
+        filtered_basic_csv = script_dir / "left to find - tri dumped removed.csv"
+        with open(filtered_basic_csv, "w", newline="", encoding="utf-8") as fcsv:
             writer = csv.writer(fcsv)
             writer.writerow(["texture_name"])
-            for tex in sorted(filtered_unref, key=str.lower):
+            for tex in sorted(filtered_unref_basic, key=str.lower):
                 writer.writerow([tex])
 
-        print(f"[Filtered Export] Saved {len(filtered_unref)} remaining entries to {filtered_csv_path}")
-        print(f"[Filtered Export] {len(unreferenced) - len(filtered_unref)} excluded (found in Texture Fixes).")
+        print(f"[Filtered Export] Saved {len(filtered_unref_basic)} items to {filtered_basic_csv}")
+        print(f"[Filtered Export] {len(unreferenced) - len(filtered_unref_basic)} excluded (found in Texture Fixes).")
+
+
+        # ======================================================
+        # FILTERED VERSION 2:
+        # "Left to Find - no_ui (Texture Fixes + NPOT MC + bp_remade\\no_mip_fixes\\ui excluded)"
+        # ======================================================
+
+        # Collect all texture stems that live under any bp_remade/no_mip_fixes/ui path
+        ui_textures = set()
+
+        for ui_dir in script_dir.rglob("ui"):
+            if not ui_dir.is_dir():
+                continue
+            parent = ui_dir.parent
+            grandparent = parent.parent if parent is not None else None
+
+            if parent is not None and grandparent is not None:
+                if parent.name == "no_mip_fixes" and grandparent.name == "bp_remade":
+                    for ext in ("*.tga", "*.png"):
+                        for path in ui_dir.rglob(ext):
+                            ui_textures.add(path.stem.lower())
+
+        # Helper: NPOT check using MC dimensions
+        def is_npot_mc(tex_name: str) -> bool:
+            row = mc_data.get(tex_name.lower())
+            if not row:
+                return False
+            w, h = to_int(row.get("mc_width")), to_int(row.get("mc_height"))
+            if not w or not h:
+                return False
+            # power of two check
+            return not ((w & (w - 1)) == 0 and (h & (h - 1)) == 0)
+
+        # Filter: remove anything that is in a bp_remade/no_mip_fixes/ui folder OR NPOT in MC
+        filtered_unref_ui_removed = [
+            t for t in filtered_unref_basic
+            if t.lower() not in ui_textures
+            and not is_npot_mc(t)
+        ]
+
+        filtered_ui_csv = script_dir / "left to find - no_ui.csv"
+        with open(filtered_ui_csv, "w", newline="", encoding="utf-8") as fcsv:
+            writer = csv.writer(fcsv)
+            writer.writerow(["texture_name"])
+            for tex in sorted(filtered_unref_ui_removed, key=str.lower):
+                writer.writerow([tex])
+
+        print(f"[Filtered Export] Saved {len(filtered_unref_ui_removed)} items to {filtered_ui_csv}")
+        print(
+            f"[Filtered Export] {len(filtered_unref_basic) - len(filtered_unref_ui_removed)} "
+            f"excluded (UI folders or NPOT MC)."
+        )
 
         # ======================================================
         # SUMMARY TABLE

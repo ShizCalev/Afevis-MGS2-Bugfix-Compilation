@@ -46,7 +46,7 @@ jobs:
         echo "version=$version" >> $GITHUB_OUTPUT
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.1
+      uses: microsoft/setup-msbuild@v2
       
     - name: Get wxWidgets submodule hash
       id: wxhash
@@ -184,11 +184,10 @@ jobs:
     # Build
     # -------------------------
     - name: Build
-      run: msbuild "${{ github.event.repository.name }}.sln" /m -t:rebuild -verbosity:minimal -property:Configuration=Release -property:Platform=x64
+      run: msbuild "ASI Mod\${{ github.event.repository.name }}.sln" /m -t:rebuild -verbosity:minimal -property:Configuration=Release -property:Platform=x64  -property:PlatformToolset=v143
 
     # Copy built binaries into plugins
-    - run: Copy-Item "x64\Release\${{ github.event.repository.name }}.asi" "dist/plugins/${{ github.event.repository.name }}.asi"
-    - run: Copy-Item "x64\Release\${{ github.event.repository.name }} Config Tool.exe" "dist/plugins/${{ github.event.repository.name }} Config Tool.exe"
+    - run: Copy-Item "ASI Mod\x64\Release\${{ github.event.repository.name }}.asi" "dist/plugins/${{ github.event.repository.name }}.asi"
 
     # Download Ultimate ASI Loader
     - uses: robinraju/release-downloader@v1.8
@@ -209,10 +208,10 @@ jobs:
         Move-Item dist/dinput8.dll dist/winhttp.dll
 
     # Logs & metadata
-    - run: Copy-Item README.md "dist/logs/${{ github.event.repository.name }}_Game.log"
-    - run: Copy-Item README.md "dist/logs/${{ github.event.repository.name }}_Launcher.log"
-    - run: Copy-Item README.md "dist/plugins/${{ github.event.repository.name }}_README.md"
-    - run: Copy-Item LICENSE.md "dist/plugins/${{ github.event.repository.name }}_LICENSE.md"
+    - run: Copy-Item README.md "dist/logs/${{ github.event.repository.name }}.log"
+    - run: Copy-Item LICENSE "dist/plugins/${{ github.event.repository.name }}_LICENSE"
+    - run: Copy-Item "ASI Mod\${{ github.event.repository.name }}.ini" "dist/plugins/${{ github.event.repository.name }}.ini"
+
 
     # Package everything
     - name: Create release zip

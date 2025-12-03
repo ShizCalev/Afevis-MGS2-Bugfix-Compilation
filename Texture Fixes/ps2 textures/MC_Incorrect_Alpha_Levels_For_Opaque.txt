@@ -275,7 +275,7 @@ OPAQUE
 	yu_ne.bmp
 	yu_ne2.bmp
 
----------- OPAQUE\bp_remade\no_mip_fixes ----------
+---------- OPAQUE\bp_remade\no_mip_fixes\ui ----------
 	00696652
 	006b325b
 	006b5ae3

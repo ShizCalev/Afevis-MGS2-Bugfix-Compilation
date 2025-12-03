@@ -14,7 +14,7 @@ SCRIPT_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 
 HASH_FILE = SCRIPT_DIR / "original-sha1-hashes.txt"
 IMPORT_SCRIPT_REL = Path("external/mgs_gcx_editor/_gcx_import_mgs2.py")
-DIST_DIR_REL = Path("_dist/assets/gcx")
+DIST_DIR_REL = Path("dist/assets/gcx")
 THREADS = max(os.cpu_count() or 1, 1)  # Auto-detect CPU threads
 
 # ==========================================================

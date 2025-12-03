@@ -32,6 +32,9 @@ MANUAL_LIST = {
     "008ae623_fad237f35f44f84013d072b01d34bfc0",
 }
 
+# Manual UI override list (filenames without extension)
+MANUAL_UI_FILE = os.path.join(SCRIPT_DIR, "manual_ui_textures.txt")
+
 # Follow-up script path (same folder as this one)
 FOLLOWUP_SCRIPT = os.path.join(SCRIPT_DIR, "0004 - log opaque with wrong alpha.py")
 
@@ -39,6 +42,7 @@ FOLLOWUP_SCRIPT = os.path.join(SCRIPT_DIR, "0004 - log opaque with wrong alpha.p
 # UTILITIES
 # ==========================================================
 print_lock = Lock()
+
 
 def read_csv_dimensions(path):
     dims = {}
@@ -192,6 +196,171 @@ def check_no_mip_fix(file_path, patterns):
 
 
 # ==========================================================
+# STAGE 4: NPOT UI / NOT_REGEX_MATCHED_UI
+# ==========================================================
+def handle_npot_ui_file(file_path, npot_names, patterns):
+    if handle_manual_blacklist(file_path):
+        return 0
+
+    lower_path = file_path.lower()
+
+    # Already in a final destination folder, skip
+    if (
+        "no_mip_fixes" in lower_path
+        and (f"{os.sep}ui{os.sep}" in lower_path or "not_regex_matched_ui" in lower_path)
+    ):
+        return 0
+
+    name_no_ext = os.path.splitext(os.path.basename(file_path))[0].lower()
+    if name_no_ext not in npot_names:
+        return 0
+
+    # Figure out the correct base no_mip_fixes directory:
+    #   - if the path already contains a no_mip_fixes segment, use that as base
+    #   - otherwise, create a no_mip_fixes folder next to the current file
+    dirpath = os.path.dirname(file_path)
+    parts = dirpath.split(os.sep)
+    parts_lower = [p.lower() for p in parts]
+
+    if "no_mip_fixes" in parts_lower:
+        idx = parts_lower.index("no_mip_fixes")
+        base_dir = os.sep.join(parts[:idx + 1])
+    else:
+        base_dir = os.path.join(dirpath, "no_mip_fixes")
+
+    # Decide final subfolder
+    if matches_no_mip_patterns(name_no_ext, patterns):
+        dest_dir = os.path.join(base_dir, "ui")
+        label = "ui"
+    else:
+        dest_dir = os.path.join(base_dir, "not_regex_matched_ui")
+        label = "not_regex_matched_ui"
+
+    os.makedirs(dest_dir, exist_ok=True)
+    dest_path = os.path.join(dest_dir, os.path.basename(file_path))
+
+    try:
+        shutil.move(file_path, dest_path)
+        with print_lock:
+            print(f"[NPOT → {label}] {file_path}")
+        return 1
+    except Exception as e:
+        with print_lock:
+            print(f"[Error NPOT move] {file_path}: {e}")
+        return 0
+
+
+def stage4_npot_ui_move(dims_map, patterns):
+    # Collect all CSV entries with NPOT mc dimensions
+    npot_names = set()
+    for name, (mc_w, mc_h) in dims_map.items():
+        if not is_power_of_two(mc_w) or not is_power_of_two(mc_h):
+            npot_names.add(name)
+
+    print(f"[+] Stage 4: Found {len(npot_names)} NPOT CSV entries (mc_width/mc_height).")
+
+    # Walk filesystem and move any matching textures
+    candidate_files = []
+    for root, _, files in os.walk(ROOT_DIR):
+        for f in files:
+            if f.lower().endswith((".png", ".tga")):
+                candidate_files.append(os.path.join(root, f))
+
+    print(f"[+] Stage 4: Scanning {len(candidate_files)} texture files for NPOT UI classification...")
+
+    moved_count = 0
+    with ThreadPoolExecutor(max_workers=THREADS) as exe:
+        futures = [exe.submit(handle_npot_ui_file, path, npot_names, patterns) for path in candidate_files]
+        for fut in as_completed(futures):
+            moved_count += fut.result() or 0
+
+    print(f"[+] Stage 4: Completed NPOT UI sorting. Moved {moved_count} files.")
+
+
+# ==========================================================
+# STAGE 5: MANUAL UI OVERRIDES INSIDE no_mip_fixes
+# ==========================================================
+def load_manual_ui_list(path):
+    manual_set = set()
+    if not os.path.exists(path):
+        print(f"[!] Manual UI texture list not found: {path}")
+        return manual_set
+
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            manual_set.add(line.lower())
+
+    print(f"[+] Loaded {len(manual_set)} manual UI texture names.")
+    return manual_set
+
+
+def handle_manual_ui_file(file_path, manual_ui_set):
+    # Only operate on files inside a no_mip_fixes folder
+    lower_path = file_path.lower()
+    if "no_mip_fixes" not in lower_path:
+        return 0
+
+    # Skip if already inside .../no_mip_fixes/ui/...
+    if f"{os.sep}no_mip_fixes{os.sep}ui{os.sep}" in lower_path:
+        return 0
+
+    name_no_ext = os.path.splitext(os.path.basename(file_path))[0].lower()
+    if name_no_ext not in manual_ui_set:
+        return 0
+
+    dirpath = os.path.dirname(file_path)
+    parts = dirpath.split(os.sep)
+    parts_lower = [p.lower() for p in parts]
+
+    # Find base no_mip_fixes dir for this file
+    if "no_mip_fixes" not in parts_lower:
+        return 0
+
+    idx = parts_lower.index("no_mip_fixes")
+    base_dir = os.sep.join(parts[:idx + 1])
+    dest_dir = os.path.join(base_dir, "ui")
+    os.makedirs(dest_dir, exist_ok=True)
+
+    dest_path = os.path.join(dest_dir, os.path.basename(file_path))
+    try:
+        shutil.move(file_path, dest_path)
+        with print_lock:
+            print(f"[Manual UI] {file_path} → {dest_path}")
+        return 1
+    except Exception as e:
+        with print_lock:
+            print(f"[Error Manual UI move] {file_path}: {e}")
+        return 0
+
+
+def stage5_manual_ui_overrides(manual_ui_set):
+    if not manual_ui_set:
+        print("[+] Stage 5: No manual UI entries loaded, skipping manual UI overrides.")
+        return
+
+    candidate_files = []
+    for root, _, files in os.walk(ROOT_DIR):
+        if "no_mip_fixes" not in root.lower():
+            continue
+        for f in files:
+            if f.lower().endswith((".png", ".tga")):
+                candidate_files.append(os.path.join(root, f))
+
+    print(f"[+] Stage 5: Scanning {len(candidate_files)} files under no_mip_fixes for manual UI overrides...")
+
+    moved_count = 0
+    with ThreadPoolExecutor(max_workers=THREADS) as exe:
+        futures = [exe.submit(handle_manual_ui_file, path, manual_ui_set) for path in candidate_files]
+        for fut in as_completed(futures):
+            moved_count += fut.result() or 0
+
+    print(f"[+] Stage 5: Manual UI overrides complete. Moved {moved_count} files to ui.")
+
+
+# ==========================================================
 # MAIN
 # ==========================================================
 def main():
@@ -239,9 +408,16 @@ def main():
     with ThreadPoolExecutor(max_workers=THREADS) as exe:
         list(as_completed([exe.submit(check_no_mip_fix, f, patterns) for f in all_png_tga]))
 
+    # --- Stage 4: NPOT mc_width/mc_height → no_mip_fixes/ui or no_mip_fixes/not_regex_matched_ui ---
+    stage4_npot_ui_move(dims_map, patterns)
+
+    # --- Stage 5: Manual UI overrides inside no_mip_fixes ---
+    manual_ui_set = load_manual_ui_list(MANUAL_UI_FILE)
+    stage5_manual_ui_overrides(manual_ui_set)
+
     print("[+] Completed all stages.")
 
-    # --- Stage 4: Follow-up call ---
+    # --- Follow-up call ---
     if os.path.exists(FOLLOWUP_SCRIPT):
         print(f"[+] Running follow-up script: {FOLLOWUP_SCRIPT}")
         try:

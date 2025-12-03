@@ -6,8 +6,6 @@
 #include "logging.hpp"
 
 
-// MIRROR SYNC WITH THE CONFIG TOOL'S UPDATER.CPP
-
 namespace
 {
     std::vector<int> parseVersionString(const std::string& versionStr)
