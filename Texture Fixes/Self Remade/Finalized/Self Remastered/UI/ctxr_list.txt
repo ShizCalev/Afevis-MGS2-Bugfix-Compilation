@@ -1,0 +1,1 @@
+mgs2/textures/flatlist/_win/<animal_alp_ovl.bmp.ctxr|berrazano_alp_ovl.bmp.ctxr|bigshell_alp_ovl.bmp.ctxr|taisa_gb_alp_ovl.bmp.ctxr|taisa_mgs1_alp_ovl.bmp.ctxr|taisa_msx_alp_ovl.bmp.ctxr>
