@@ -4,3 +4,6 @@ C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\Self Remade\Fina
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\Self Remade\Finalized\Dont demaster\Dont upscale
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\Self Remade\Finalized\Not Demaster Fixed
 C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\Self Remade\Finalized\Self Remastered
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\Self Remade\Finalized\Demaster needs manual ctxr
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\Self Remade\Finalized\Self Remastered\UI\Dont Demaster
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\Self Remade\Finalized\Self Remastered\UI
