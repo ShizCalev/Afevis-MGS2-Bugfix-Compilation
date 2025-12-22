@@ -177,6 +177,30 @@ def should_opacity_be_stripped_from_path(path_str: str) -> bool:
 
 
 # ==========================================================
+# OPACITY (PERFORMANCE-GATED)
+# ==========================================================
+def path_contains_self_remade(path: Path) -> bool:
+    return "self remade" in str(path).lower()
+
+
+def image_is_fully_opaque_or_no_alpha(path: Path) -> bool:
+    """
+    True if the image has no alpha channel, OR it has alpha but all pixels are fully opaque (alpha == 255).
+    """
+    try:
+        with Image.open(path) as im:
+            if "A" not in im.getbands():
+                return True
+
+            rgba = im.convert("RGBA")
+            a = rgba.getchannel("A")
+            mn, mx = a.getextrema()
+            return mn == 255
+    except Exception as e:
+        raise RuntimeError(f"Failed checking alpha opacity for {path}: {e}")
+
+
+# ==========================================================
 # ERROR LOG HELPERS
 # ==========================================================
 def write_error_log_or_die(path: Path, failed_images: list[Path]) -> None:
@@ -326,6 +350,9 @@ def load_conversion_csv_unique_or_die(
 
 # ==========================================================
 # IMAGE HASH + ORIGIN + OPACITY STRIPPED EXPECTATION (UNIQUENESS ENFORCED)
+# opacity_stripped expectation:
+# - True if path contains "opaque"
+# - OR (only when path contains "self remade") the image has no alpha or is fully opaque
 # ==========================================================
 def hash_images_unique_or_die(
     image_files: list[Path],
@@ -345,7 +372,15 @@ def hash_images_unique_or_die(
         stem = path.stem.lower()
         digest = sha1_file(path)
         origin = origin_relative_to_required_subpath_or_die(path)
-        opacity_expected = should_opacity_be_stripped_from_path(str(path))
+
+        opaque_by_path = should_opacity_be_stripped_from_path(str(path))
+
+        if path_contains_self_remade(path):
+            opaque_by_pixels = image_is_fully_opaque_or_no_alpha(path)
+            opacity_expected = opaque_by_path or opaque_by_pixels
+        else:
+            opacity_expected = opaque_by_path
+
         return (stem, digest, origin, opacity_expected)
 
     with ThreadPoolExecutor(max_workers=workers) as ex:
@@ -452,6 +487,7 @@ def delete_param_outputs_or_die(param_dir: Path) -> None:
     if failed:
         raise RuntimeError(f"Failed deleting {failed} file(s) in param folder")
 
+
 def delete_tmp_rgb_outputs_or_die(tmp_dir: Path) -> None:
     if not tmp_dir.exists():
         return
@@ -531,9 +567,11 @@ def run_nvtt_exports_or_die(
         if name not in conversion_map:
             missing.append(img)
 
+    error_log = STAGING_FOLDER / ERROR_LOG_PATH
+
     if not missing:
         log("[PARAM] No images missing from conversion_hashes.csv. Nothing to export.")
-        remove_error_log_if_exists(ERROR_LOG_PATH)
+        remove_error_log_if_exists(error_log)
         return
 
     needed_cols = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped"]
@@ -585,7 +623,7 @@ def run_nvtt_exports_or_die(
 
         # If origin_folder includes "opaque", create a temporary RGB-only copy for nvtt
         nvtt_input_path = img_path
-        if should_opacity_be_stripped_from_path(origin_folder):
+        if opacity_expected:
             try:
                 tmp_rgb_path = make_temp_rgb_only_copy_or_die(img_path, tmp_rgb_dir)
                 nvtt_input_path = tmp_rgb_path

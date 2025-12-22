@@ -1,0 +1,7 @@
+w03a_pp02.bmp_09b1a01b9996f568e8ca8e878bee4475 - BP placed the remastered version on the wrong texture.
+w11a2_closed_shatter.bmp - text is flipped in BP version
+w11_drum_f1.bmp - multiple typos
+w32a_asi00.bmp - wrong wall
+w01a0_box00.bmp - HDC remaster restored (red cross)
+w01a0_box002.bmp - HDC remaster restored (red cross)
+sna_body_ss01dt.bmp - fixed white pixel on back of shoulder rigging

@@ -1,0 +1,5 @@
+w24a_flag_usa.bmp - flipped
+w42a_2f_hanger_01.bmp- needs coloring for w42a normal issues
+w42a_2f_hanger_01.bmp_93c338d289b2b6bf19a677e84199a633 - needs coloring for w42a normal issues
+m3l_gou_02msk.bmp - needs alpha on the hole
+iro_boots.bmp - soles are wrong color, use sel_boots.bmp instead.
