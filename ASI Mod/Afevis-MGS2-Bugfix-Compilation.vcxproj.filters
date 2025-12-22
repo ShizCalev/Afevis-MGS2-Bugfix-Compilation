@@ -11,6 +11,7 @@
     <ClCompile Include="src\resources\logging.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\bugfix_mod_checks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\resources\version.h">
@@ -34,6 +35,7 @@
     <ClInclude Include="src\resources\common.hpp">
       <Filter>Utility\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="src\bugfix_mod_checks.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">

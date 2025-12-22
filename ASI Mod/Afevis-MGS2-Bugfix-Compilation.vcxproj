@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\bugfix_mod_checks.cpp" />
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\resources\helper.cpp" />
     <ClCompile Include="src\resources\logging.cpp" />
     <ClCompile Include="src\resources\version_checking.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\bugfix_mod_checks.hpp" />
     <ClInclude Include="src\resources\common.hpp" />
     <ClInclude Include="src\resources\helper.hpp" />
     <ClInclude Include="src\resources\logging.hpp" />
