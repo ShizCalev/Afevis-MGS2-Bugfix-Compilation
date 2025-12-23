@@ -1,3 +1,4 @@
+#include "bugfix_mod_checks.hpp"
 #include "common.hpp"
 #include "logging.hpp"
 #include "submodule_initiailization.hpp"
@@ -56,6 +57,9 @@ static void InitializeSubsystems()
     //Initialization order (these systems initialize vars used by following ones.)
     INITIALIZE(g_Logging.LogSysInfo());            //0
     INITIALIZE(DetectGame());                      //1
+    INITIALIZE(VerifyInstallation::Check());         //3 - Make sure Steam file verification
+
+
     if (!(eGameType & LAUNCHER))
     {
         INITIALIZE(CheckForUpdates());

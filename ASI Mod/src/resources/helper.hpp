@@ -53,6 +53,8 @@ namespace Util
     std::string GetUppercaseNameAtIndex(const std::initializer_list<std::string>& list, int index);
 
     bool IsSteamOS();
+
+    bool SHA1Check(const std::filesystem::path& filePath, const std::string& expected);
 }
 
 

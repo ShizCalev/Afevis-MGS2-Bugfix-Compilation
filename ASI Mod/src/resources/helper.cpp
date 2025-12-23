@@ -3,6 +3,7 @@
 #include "logging.hpp"
 
 #pragma comment(lib,"Version.lib")
+#pragma comment(lib, "bcrypt.lib")
 
 namespace Memory
 {
@@ -410,4 +411,95 @@ namespace Util
         return false;
     }
 
+    bool SHA1Check(const std::filesystem::path& filePath, const std::string& expected)
+    {
+        BCRYPT_ALG_HANDLE hAlg = nullptr;
+        BCRYPT_HASH_HANDLE hHash = nullptr;
+        DWORD hashObjectSize = 0;
+        DWORD cbData = 0;
+        BYTE* hashObject = nullptr;
+        BYTE hash[20]; // SHA-1 = 20 bytes
+
+        if (BCryptOpenAlgorithmProvider(&hAlg, BCRYPT_SHA1_ALGORITHM, nullptr, 0))
+        {
+            spdlog::error("SHA1Check: BCryptOpenAlgorithmProvider failed for '{}'", filePath.string());
+            return false;
+        }
+
+        if (BCryptGetProperty(hAlg, BCRYPT_OBJECT_LENGTH, reinterpret_cast<PUCHAR>(&hashObjectSize),
+                              sizeof(DWORD), &cbData, 0))
+        {
+            spdlog::error("SHA1Check: BCryptGetProperty failed for '{}'", filePath.string());
+            BCryptCloseAlgorithmProvider(hAlg, 0);
+            return false;
+        }
+
+        hashObject = new BYTE[hashObjectSize];
+        if (BCryptCreateHash(hAlg, &hHash, hashObject, hashObjectSize, nullptr, 0, 0))
+        {
+            spdlog::error("SHA1Check: BCryptCreateHash failed for '{}'", filePath.string());
+            delete[] hashObject;
+            BCryptCloseAlgorithmProvider(hAlg, 0);
+            return false;
+        }
+
+        std::ifstream file(filePath, std::ios::binary);
+        if (!file)
+        {
+            spdlog::error("SHA1Check: Failed to open file '{}'", filePath.string());
+            delete[] hashObject;
+            BCryptDestroyHash(hHash);
+            BCryptCloseAlgorithmProvider(hAlg, 0);
+            return false;
+        }
+
+        std::vector<char> buffer(1 << 16);
+        while (file.good())
+        {
+            file.read(buffer.data(), buffer.size());
+            if (BCryptHashData(hHash, reinterpret_cast<PUCHAR>(buffer.data()), static_cast<ULONG>(file.gcount()), 0))
+            {
+                spdlog::error("SHA1Check: BCryptHashData failed for '{}'", filePath.string());
+                delete[] hashObject;
+                BCryptDestroyHash(hHash);
+                BCryptCloseAlgorithmProvider(hAlg, 0);
+                return false;
+            }
+        }
+
+        if (BCryptFinishHash(hHash, hash, sizeof(hash), 0))
+        {
+            spdlog::error("SHA1Check: BCryptFinishHash failed for '{}'", filePath.string());
+            delete[] hashObject;
+            BCryptDestroyHash(hHash);
+            BCryptCloseAlgorithmProvider(hAlg, 0);
+            return false;
+        }
+
+        std::ostringstream oss;
+        for (auto b : hash)
+        {
+            oss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(b);
+        }
+
+        delete[] hashObject;
+        BCryptDestroyHash(hHash);
+        BCryptCloseAlgorithmProvider(hAlg, 0);
+
+        std::string computed = oss.str();
+
+        if (computed.size() != expected.size())
+        {
+            spdlog::error("SHA1Check: Mismatch length for '{}' (expected {} chars, got {})",
+                          filePath.string(), expected.size(), computed.size());
+            return false;
+        }
+
+        bool match = std::equal(computed.begin(), computed.end(), expected.begin(),
+                                [](char a, char b)
+                                {
+                                    return std::tolower(static_cast<unsigned char>(a)) == std::tolower(static_cast<unsigned char>(b));
+                                });
+        return match;
+    }
 }

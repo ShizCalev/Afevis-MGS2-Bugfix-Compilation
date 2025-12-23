@@ -13,3 +13,10 @@
 #include <string>
 #include <iostream>
 #include <filesystem>
+
+
+#include <bcrypt.h> //sha256
+
+
+
+
