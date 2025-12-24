@@ -1,0 +1,1 @@
+mgs2/textures/flatlist/_win/<a_bg.bmp.ctxr|b_bg.bmp.ctxr|bg_alp_ovl.bmp.ctxr|c_bg.bmp.ctxr|d_bg.bmp.ctxr|e_bg.bmp.ctxr|r_bg.bmp.ctxr>

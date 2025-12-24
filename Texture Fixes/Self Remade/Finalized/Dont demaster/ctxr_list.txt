@@ -1,0 +1,1 @@
+mgs2/textures/flatlist/_win/<ibox_tx_all_alp.bmp.ctxr|ibox_tx_all_alp.bmp_542a0e8227207db0a7c5b8c61cc0345d.ctxr|ibox_tx_all_alp.bmp_791e610c4fcf41bf273b86f3bef405c7.ctxr|ibox_tx_all_alp.bmp_c9d3a3451227c3cc7e6447a2754c7b93.ctxr|ibox_tx_all_alp_ovl.bmp.ctxr|obj_hos_book.bmp.ctxr|obj_mog_book_all.bmp.ctxr|sr19e_alp_ovl.bmp.ctxr>

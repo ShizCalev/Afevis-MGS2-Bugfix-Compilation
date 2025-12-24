@@ -561,11 +561,34 @@ def run_nvtt_exports_or_die(
     if not CTXR_TOOL_EXE.is_file():
         raise RuntimeError(f"CtxrTool.exe not found: {CTXR_TOOL_EXE}")
 
+    # ==========================================================
+    # Build missing list, but SKIP "self remade" images that would
+    # use DPF_NOMIPS. Those must be handled manually.
+    # ==========================================================
     missing: list[Path] = []
+    skipped_self_remade_nomips: list[Path] = []
+
     for img in image_files:
         name = img.stem.lower()
-        if name not in conversion_map:
-            missing.append(img)
+        if name in conversion_map:
+            continue
+
+        used_nomips = image_used_nomips_by_name.get(name)
+        if used_nomips is None:
+            used_nomips = should_use_nomips(name, no_mip_regexes, manual_ui_textures)
+
+        if path_contains_self_remade(img) and used_nomips:
+            skipped_self_remade_nomips.append(img)
+            continue
+
+        missing.append(img)
+
+    if skipped_self_remade_nomips:
+        log(f"[PARAM] Skipping {len(skipped_self_remade_nomips)} self-remade image(s) that require NO-MIPS (manual handling required):")
+        for p in sorted(skipped_self_remade_nomips, key=lambda x: x.name.lower()):
+            log(f"  [SKIP SELF-REMADE NOMIPS] {p}")
+
+        log("")
 
     error_log = STAGING_FOLDER / ERROR_LOG_PATH
 
