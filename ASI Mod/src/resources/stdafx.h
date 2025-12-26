@@ -17,6 +17,7 @@
 
 #include <bcrypt.h> //sha256
 
+#include "shellapi.h" //ShellExecuteA
 
 
 

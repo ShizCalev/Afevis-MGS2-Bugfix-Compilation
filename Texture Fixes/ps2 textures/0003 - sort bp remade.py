@@ -35,6 +35,15 @@ MANUAL_LIST = {
 # Manual UI override list (filenames without extension)
 MANUAL_UI_FILE = os.path.join(SCRIPT_DIR, "manual_ui_textures.txt")
 
+# Manual bp_remade list (filenames without extension, lowercased stems)
+MANUAL_BP_REMADE_FILE = os.path.join(
+    REPO_ROOT,
+    "external",
+    "MGS2-PS2-Textures",
+    "u - dumped from substance",
+    "mgs2_mc_manually_identified_bp_remade.txt",
+)
+
 # Follow-up script path (same folder as this one)
 FOLLOWUP_SCRIPT = os.path.join(SCRIPT_DIR, "0004 - log opaque with wrong alpha.py")
 
@@ -77,7 +86,7 @@ def move_file(file_path, folder_name):
     try:
         shutil.move(file_path, dest_path)
         with print_lock:
-            print(f"[Moved → {folder_name}] {file_path}")
+            print(f"[Moved -> {folder_name}] {file_path}")
     except Exception as e:
         with print_lock:
             print(f"[Error moving] {file_path}: {e}")
@@ -100,12 +109,39 @@ def handle_manual_blacklist(file_path):
 
 
 # ==========================================================
+# MANUAL BP_REMADE HANDLING
+# ==========================================================
+def load_manual_bp_remade_list(path):
+    manual_set = set()
+    if not os.path.exists(path):
+        print(f"[!] Manual bp_remade list not found: {path}")
+        return manual_set
+
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip().lower()
+            if not line or line.startswith("#"):
+                continue
+            manual_set.add(line)
+
+    print(f"[+] Loaded {len(manual_set)} manually identified bp_remade texture names.")
+    return manual_set
+
+
+# ==========================================================
 # BP_REMADE CHECKS
 # ==========================================================
-def check_bp_remade(file_path, dims_map):
+def check_bp_remade(file_path, dims_map, manual_bp_remade_set):
     if handle_manual_blacklist(file_path):
         return
+
     name = os.path.splitext(os.path.basename(file_path))[0].lower()
+
+    # Manual bp_remade override: treat as remade even if resolution does not qualify
+    if name in manual_bp_remade_set:
+        move_file(file_path, "bp_remade")
+        return
+
     if name not in dims_map:
         return
     try:
@@ -189,7 +225,7 @@ def check_no_mip_fix(file_path, patterns):
         try:
             shutil.move(file_path, dest_path)
             with print_lock:
-                print(f"[Moved → no_mip_fix] {file_path}")
+                print(f"[Moved -> no_mip_fix] {file_path}")
         except Exception as e:
             with print_lock:
                 print(f"[Error moving to no_mip_fix] {file_path}: {e}")
@@ -242,7 +278,7 @@ def handle_npot_ui_file(file_path, npot_names, patterns):
     try:
         shutil.move(file_path, dest_path)
         with print_lock:
-            print(f"[NPOT → {label}] {file_path}")
+            print(f"[NPOT -> {label}] {file_path}")
         return 1
     except Exception as e:
         with print_lock:
@@ -328,7 +364,7 @@ def handle_manual_ui_file(file_path, manual_ui_set):
     try:
         shutil.move(file_path, dest_path)
         with print_lock:
-            print(f"[Manual UI] {file_path} → {dest_path}")
+            print(f"[Manual UI] {file_path} -> {dest_path}")
         return 1
     except Exception as e:
         with print_lock:
@@ -368,6 +404,8 @@ def main():
     dims_map = read_csv_dimensions(CSV_PATH)
     print(f"[+] Loaded {len(dims_map)} CSV entries")
 
+    manual_bp_remade_set = load_manual_bp_remade_list(MANUAL_BP_REMADE_FILE)
+
     # --- Stage 1: recursive bp_remade check ---
     all_files = []
     for root, _, files in os.walk(ROOT_DIR):
@@ -379,7 +417,8 @@ def main():
 
     print(f"[+] Stage 1: Checking {len(all_files)} files for bp_remade...")
     with ThreadPoolExecutor(max_workers=THREADS) as exe:
-        list(as_completed([exe.submit(check_bp_remade, f, dims_map) for f in all_files]))
+        futures = [exe.submit(check_bp_remade, f, dims_map, manual_bp_remade_set) for f in all_files]
+        list(as_completed(futures))
 
     # --- Stage 2: process files in HAS ALPHA subfolder ---
     if not os.path.isdir(HAS_ALPHA_DIR):
@@ -392,7 +431,8 @@ def main():
         ]
         print(f"[+] Stage 2: Checking {len(has_alpha_files)} files in HAS ALPHA for bp_mismatch/power of two...")
         with ThreadPoolExecutor(max_workers=THREADS) as exe:
-            list(as_completed([exe.submit(check_has_alpha_file, f, dims_map) for f in has_alpha_files]))
+            futures = [exe.submit(check_has_alpha_file, f, dims_map) for f in has_alpha_files]
+            list(as_completed(futures))
 
     # --- Stage 3: no-mip fix check ---
     print("[+] Stage 3: Checking for no-mip regex matches across all subfolders...")
@@ -406,9 +446,10 @@ def main():
 
     print(f"[+] Stage 3: Found {len(all_png_tga)} total candidate textures.")
     with ThreadPoolExecutor(max_workers=THREADS) as exe:
-        list(as_completed([exe.submit(check_no_mip_fix, f, patterns) for f in all_png_tga]))
+        futures = [exe.submit(check_no_mip_fix, f, patterns) for f in all_png_tga]
+        list(as_completed(futures))
 
-    # --- Stage 4: NPOT mc_width/mc_height → no_mip_fixes/ui or no_mip_fixes/not_regex_matched_ui ---
+    # --- Stage 4: NPOT mc_width/mc_height -> no_mip_fixes/ui or no_mip_fixes/not_regex_matched_ui ---
     stage4_npot_ui_move(dims_map, patterns)
 
     # --- Stage 5: Manual UI overrides inside no_mip_fixes ---
