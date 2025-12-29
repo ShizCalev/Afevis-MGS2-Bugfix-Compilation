@@ -100,6 +100,7 @@ jobs:
     - run: mkdir dist/plugins
     - run: mkdir dist/logs
     - run: mkdir dist/assets
+    - run: mkdir dist/eu
     
     - run: mkdir dist_2x
     - run: mkdir dist_2x/plugins
@@ -138,18 +139,46 @@ jobs:
     - run: Copy-Item LICENSE "dist/plugins/${{ github.event.repository.name }}_LICENSE"
     - run: Copy-Item "ASI Mod\${{ github.event.repository.name }}.ini" "dist/plugins/${{ github.event.repository.name }}.ini"
     
-    - run: Copy-Item "dist/plugins" "dist_2x/"
-    - run: Copy-Item "dist/logs" "dist_2x/"
-    
-    - run: Copy-Item "dist/plugins" "dist_4x/"
-    - run: Copy-Item "dist/logs" "dist_4x/"
-   
-    #copy fix files
-    - run: Copy-Item "Model Fixes/assets" "dist/"
-    - run: Copy-Item "Model Fixes/eu" "dist/"
+    - name: Copy files with robocopy
+      shell: pwsh
+      run: |
+        function Invoke-RoboCopy
+        {
+            param(
+                [Parameter(Mandatory = $true)][string] $Source,
+                [Parameter(Mandatory = $true)][string] $Destination,
+                [string] $Options = "/E"
+            )
 
+            robocopy $Source $Destination $Options
 
-    
+            $code = $LASTEXITCODE
+
+            # Robocopy 0–7 = success / acceptable
+            if ($code -gt 7)
+            {
+                Write-Error "Robocopy failed (code $code) from '$Source' to '$Destination'"
+                exit $code
+            }
+
+            # Normalize success so it doesn't leak out of the script
+            $global:LASTEXITCODE = 0
+        }
+
+        # copy plugins/logs into dist_2x
+        Invoke-RoboCopy "dist\plugins"       "dist_2x\plugins"
+        Invoke-RoboCopy "dist\logs"          "dist_2x\logs"
+
+        # merge dist_2x into dist_4x
+        Invoke-RoboCopy "dist_2x"            "dist_4x"
+
+        # copy fix files
+        Invoke-RoboCopy "Model Fixes\assets" "dist\assets"
+        Invoke-RoboCopy "Model Fixes\eu"     "dist\eu"
+
+        # force a clean success exit for the whole step
+        exit 0
+
     
 
     # Package everything
@@ -160,5 +189,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ github.event.repository.name }}-run-${{ github.run_number }}
+        name: ${{ github.event.repository.name }}_Base_-run-${{ github.run_number }}
         path: dist/
