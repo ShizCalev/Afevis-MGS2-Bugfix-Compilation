@@ -8,6 +8,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import time
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -54,6 +55,64 @@ def pause_and_exit(code: int = 1) -> int:
     except KeyboardInterrupt:
         pass
     return code
+
+
+# ==========================================================
+# PROGRESS / ETA
+# ==========================================================
+class ProgressTracker:
+    def __init__(self, total: int, label: str, min_interval: float = 0.25):
+        self.total = max(1, int(total))
+        self.label = label
+        self.min_interval = min_interval
+
+        self.start = time.monotonic()
+        self.last_print = self.start
+        self.done = 0
+
+    @staticmethod
+    def _format_seconds(secs: float) -> str:
+        secs = int(secs)
+        if secs < 0:
+            secs = 0
+        h = secs // 3600
+        m = (secs % 3600) // 60
+        s = secs % 60
+        if h > 0:
+            return f"{h:d}h {m:02d}m {s:02d}s"
+        return f"{m:02d}m {s:02d}s"
+
+    def update(self, step: int = 1) -> None:
+        self.done += step
+        now = time.monotonic()
+        if now - self.last_print < self.min_interval and self.done < self.total:
+            return
+
+        self.last_print = now
+        elapsed = now - self.start
+        rate = self.done / elapsed if elapsed > 0 else 0.0
+        remaining = (self.total - self.done) / rate if rate > 0 and self.done < self.total else 0.0
+
+        elapsed_str = self._format_seconds(elapsed)
+        eta_str = self._format_seconds(remaining) if remaining > 0 else "00m 00s"
+        pct = (self.done / self.total) * 100.0
+
+        line = f"[{self.label}] {self.done}/{self.total} ({pct:5.1f}%) elapsed {elapsed_str} eta {eta_str}"
+
+        with PRINT_LOCK:
+            # Carriage return to overwrite the same line
+            print("\r" + line, end="", flush=True)
+
+    def finish(self) -> None:
+        # Force a final 100 % line with newline
+        self.done = self.total
+        elapsed = time.monotonic() - self.start
+        elapsed_str = self._format_seconds(elapsed)
+        line = f"[{self.label}] {self.total}/{self.total} (100.0%) elapsed {elapsed_str} eta 00m 00s"
+
+        with PRINT_LOCK:
+            print("\r" + line)
+            sys.stdout.flush()
 
 
 def sha1_file(path: Path, chunk_size: int = 8 * 1024 * 1024) -> str:
@@ -383,6 +442,8 @@ def hash_images_unique_or_die(
 
         return (stem, digest, origin, opacity_expected)
 
+    progress = ProgressTracker(len(image_files), "Hash images")
+
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futures = [ex.submit(worker, p) for p in image_files]
         for fut in as_completed(futures):
@@ -405,6 +466,10 @@ def hash_images_unique_or_die(
                 oe = set()
                 opacity_expected_by_name[name] = oe
             oe.add(opacity_expected)
+
+            progress.update()
+
+    progress.finish()
 
     bad_hash: list[tuple[str, list[str]]] = []
     bad_origin: list[tuple[str, list[str]]] = []
@@ -536,6 +601,32 @@ def make_temp_rgb_only_copy_or_die(src: Path, tmp_dir: Path) -> Path:
     return tmp_path
 
 
+def hash_ctxr_files_with_progress(ctxr_files: list[Path], workers: int, label: str) -> dict[Path, str]:
+    """
+    Hash a list of CTXR files with a progress bar.
+    """
+    ctxr_hash_by_path: dict[Path, str] = {}
+    if not ctxr_files:
+        return ctxr_hash_by_path
+
+    log(f"[INFO] Hashing {len(ctxr_files)} ctxr files\n")
+
+    progress = ProgressTracker(len(ctxr_files), label)
+
+    def worker(path: Path) -> tuple[Path, str]:
+        return (path, sha1_file(path))
+
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futures = [ex.submit(worker, p) for p in ctxr_files]
+        for fut in as_completed(futures):
+            p, digest = fut.result()
+            ctxr_hash_by_path[p] = digest
+            progress.update()
+
+    progress.finish()
+    return ctxr_hash_by_path
+
+
 def run_nvtt_exports_or_die(
     image_files: list[Path],
     conversion_map: dict[str, tuple[str, str, bool, str, bool]],
@@ -605,6 +696,7 @@ def run_nvtt_exports_or_die(
     os.chdir(str(PARAM_FOLDER))
 
     tmp_rgb_dir = PARAM_FOLDER / "_tmp_rgb_only"
+    progress = ProgressTracker(len(missing), "Param export")
 
     def worker(img_path: Path) -> tuple[Path, bool, str, str, str, bool, str, bool]:
         stem_lower = img_path.stem.lower()
@@ -640,7 +732,7 @@ def run_nvtt_exports_or_die(
 
         origin_folder = image_origin_by_name.get(stem_lower, "")
         if not origin_folder:
-            return (img_path, False, "Missing origin_folder for image (unexpected)", before_hash, "", used_nomips, "", False)
+            return (img_path, False, "Missing origin_folder for image (unexpected)", before_hash, "", used_nomips, origin_folder, False)
 
         opacity_expected = image_opacity_expected_by_name.get(stem_lower, False)
 
@@ -858,20 +950,23 @@ def run_nvtt_exports_or_die(
                 if details.strip():
                     log(details.rstrip())
 
+            progress.update()
+
             now = time.monotonic()
             if now - last_flush >= CSV_FLUSH_SECONDS:
                 flush_pending_rows()
 
+    progress.finish()
     flush_pending_rows()
 
     log(f"\n[PARAM RESULT] OK: {ok}")
     log(f"[PARAM RESULT] FAIL: {fail}")
 
     if fail:
-        write_error_log_or_die(ERROR_LOG_PATH, failed_images)
+        write_error_log_or_die(error_log, failed_images)
         raise RuntimeError("One or more nvtt_export/CtxrTool jobs failed")
     else:
-        remove_error_log_if_exists(ERROR_LOG_PATH)
+        remove_error_log_if_exists(error_log)
 
     # Final guarantee: sorted on disk (single atomic rewrite)
     write_conversion_csv_atomic(conversion_csv_path, conversion_header, conversion_rows)
@@ -977,17 +1072,9 @@ def main() -> int:
             key=lambda p: p.name.lower(),
         )
 
-        def hash_ctxr(path: Path) -> tuple[Path, str]:
-            return (path, sha1_file(path))
-
         ctxr_hash_by_path: dict[Path, str] = {}
         if ctxr_files:
-            log(f"[INFO] Hashing {len(ctxr_files)} ctxr files\n")
-            with ThreadPoolExecutor(max_workers=workers) as ex:
-                futures = [ex.submit(hash_ctxr, p) for p in ctxr_files]
-                for fut in as_completed(futures):
-                    p, digest = fut.result()
-                    ctxr_hash_by_path[p] = digest
+            ctxr_hash_by_path = hash_ctxr_files_with_progress(ctxr_files, workers, "Hash ctxr (initial)")
 
         # ==========================================================
         # EARLY PRUNE: if image exists and CSV metadata differs
@@ -1070,12 +1157,7 @@ def main() -> int:
 
         ctxr_hash_by_path = {}
         if ctxr_files:
-            log(f"[INFO] Hashing {len(ctxr_files)} ctxr files\n")
-            with ThreadPoolExecutor(max_workers=workers) as ex:
-                futures = [ex.submit(hash_ctxr, p) for p in ctxr_files]
-                for fut in as_completed(futures):
-                    p, digest = fut.result()
-                    ctxr_hash_by_path[p] = digest
+            ctxr_hash_by_path = hash_ctxr_files_with_progress(ctxr_files, workers, "Hash ctxr (after CSV prune)")
 
         if not ctxr_files:
             log("[INFO] No .ctxr files found in staging folder.")
@@ -1135,12 +1217,7 @@ def main() -> int:
 
         ctxr_hash_by_path = {}
         if ctxr_files:
-            log(f"[INFO] Hashing {len(ctxr_files)} ctxr files\n")
-            with ThreadPoolExecutor(max_workers=workers) as ex:
-                futures = [ex.submit(hash_ctxr, p) for p in ctxr_files]
-                for fut in as_completed(futures):
-                    p, digest = fut.result()
-                    ctxr_hash_by_path[p] = digest
+            ctxr_hash_by_path = hash_ctxr_files_with_progress(ctxr_files, workers, "Hash ctxr (final)")
 
         # ==========================================================
         # Decide actions (orphans, mismatches, keeps)
