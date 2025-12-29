@@ -3,102 +3,131 @@ from __future__ import annotations
 import subprocess
 import sys
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# ==========================================================
+# CONFIG
+# ==========================================================
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+STAGING_ORDER = [
+    "Staging",
+    "Staging - 2x Upscaled",
+    "Staging - 4x Upscaled",
+]
+
+FOLDERS_TXT_NAME = "folders to process.txt"
+STAGING_MAIN_NAME = "_staging_main.py"
+
+# Shared main script that lives next to THIS orchestrator
+STAGING_MAIN_PATH = SCRIPT_DIR / STAGING_MAIN_NAME
+
+# How many jobs to run in parallel within each staging tier
+THREADS_PER_TIER = 4
 
 
-LNK_NAME = "0001 - Stage Files.py.lnk"
+# ==========================================================
+# HELPERS
+# ==========================================================
+def find_jobs(root: Path) -> list[Path]:
+    """
+    Find all "folders to process.txt" files under root.
+    Return their parent directories as job directories.
+    """
+    if not root.is_dir():
+        print(f"[WARN] Staging root does not exist, skipping: {root}")
+        return []
+
+    jobs: list[Path] = []
+    for txt in root.rglob(FOLDERS_TXT_NAME):
+        if txt.is_file():
+            jobs.append(txt.parent)
+
+    jobs.sort()
+    return jobs
 
 
-def pause_and_exit(code: int = 1) -> None:
-    try:
-        input("\nPress ENTER to exit...")
-    except KeyboardInterrupt:
-        pass
-    raise SystemExit(code)
+def run_staging_main(job_dir: Path) -> None:
+    """
+    Run shared _staging_main.py with CWD set to the job directory.
+    """
+    if not STAGING_MAIN_PATH.is_file():
+        raise SystemExit(f"ERROR: Cannot find {STAGING_MAIN_NAME} at {STAGING_MAIN_PATH}")
 
+    print("=================================================")
+    print(f"Running: {STAGING_MAIN_PATH}")
+    print(f"CWD:     {job_dir}")
+    print("=================================================")
 
-def ps_quote_single(s: str) -> str:
-    return "'" + s.replace("'", "''") + "'"
-
-
-def run_shortcut_and_wait(lnk_path: Path) -> int:
-    lnk_path = lnk_path.resolve()
-    forced_wd = lnk_path.parent  # <-- THIS is the whole point
-    lnk_ps = ps_quote_single(str(lnk_path))
-    wd_ps = ps_quote_single(str(forced_wd))
-
-    # Resolve .lnk via COM for TargetPath + Arguments.
-    # Force WorkingDirectory to the shortcut's folder so relative paths behave.
-    ps_script = (
-        "$ErrorActionPreference='Stop';"
-        "try {"
-        f"$sc=(New-Object -ComObject WScript.Shell).CreateShortcut({lnk_ps});"
-        "$tp=$sc.TargetPath;"
-        "$al=$sc.Arguments;"
-        f"$wd={wd_ps};"
-        "if([string]::IsNullOrWhiteSpace($tp)){Write-Host '[FATAL] Shortcut has empty TargetPath'; exit 9001}"
-        "if([string]::IsNullOrWhiteSpace($al)) {"
-        "  $p=Start-Process -FilePath $tp -WorkingDirectory $wd -PassThru -Wait;"
-        "} else {"
-        "  $p=Start-Process -FilePath $tp -ArgumentList $al -WorkingDirectory $wd -PassThru -Wait;"
-        "}"
-        "exit $p.ExitCode"
-        "} catch {"
-        "Write-Host $_.Exception.Message;"
-        "exit 9003"
-        "}"
+    result = subprocess.run(
+        [sys.executable, str(STAGING_MAIN_PATH)],
+        cwd=str(job_dir),
     )
 
-    for exe in ("powershell", "pwsh"):
-        try:
-            r = subprocess.run(
-                [exe, "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", ps_script],
-                check=False,
-            )
-            return r.returncode
-        except FileNotFoundError:
-            continue
-
-    print("[FATAL] Could not find PowerShell (powershell or pwsh) on PATH.")
-    return 9002
+    if result.returncode != 0:
+        raise SystemExit(
+            f"{STAGING_MAIN_NAME} failed in {job_dir} with exit code {result.returncode}"
+        )
 
 
+def run_tier(root: Path) -> None:
+    """
+    Run all jobs under a single staging root in parallel.
+    Wait for all jobs in this tier to finish before returning.
+    """
+    jobs = find_jobs(root)
+
+    if not jobs:
+        print(f"[INFO] No '{FOLDERS_TXT_NAME}' found under {root}")
+        return
+
+    print(f"[INFO] Found {len(jobs)} job(s) under {root}")
+
+    workers = min(max(1, THREADS_PER_TIER), len(jobs))
+    print(f"[INFO] Running up to {workers} job(s) in parallel")
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        future_map = {
+            executor.submit(run_staging_main, job_dir): job_dir
+            for job_dir in jobs
+        }
+
+        for idx, future in enumerate(as_completed(future_map), start=1):
+            job_dir = future_map[future]
+            try:
+                future.result()
+                print(f"[INFO] Completed ({idx}/{len(jobs)}): {job_dir}")
+            except SystemExit as e:
+                print(f"[ERROR] Job failed in {job_dir}: {e}")
+                # Kill the whole run if any job fails
+                sys.exit(1)
+            except Exception as e:
+                print(f"[ERROR] Unexpected error in {job_dir}: {e}")
+                sys.exit(1)
+
+    print(f"[INFO] Finished all jobs under {root}")
+
+
+# ==========================================================
+# MAIN
+# ==========================================================
 def main() -> None:
-    root = Path(__file__).resolve().parent
+    if not STAGING_MAIN_PATH.is_file():
+        print(f"ERROR: _staging_main.py not found at: {STAGING_MAIN_PATH}")
+        sys.exit(1)
 
-    # Find shortcuts specifically under _win folders
-    lnks = sorted(
-        root.rglob(LNK_NAME),
-        key=lambda p: str(p).lower(),
-    )
+    for staging_name in STAGING_ORDER:
+        root = SCRIPT_DIR / staging_name
 
-    # If you want to be strict: only those where parent folder is actually named "_win"
-    lnks = [p for p in lnks if p.parent.name.lower() == "_win"]
+        print()
+        print("#################################################")
+        print(f"Processing staging root: {root}")
+        print("#################################################")
 
-    if not lnks:
-        print(f"[FATAL] No '{LNK_NAME}' shortcuts found under any _win folder beneath:")
-        print(f"  {root}")
-        pause_and_exit(1)
+        run_tier(root)
 
-    print(f"[INFO] Found {len(lnks)} shortcut(s). Running sequentially.\n")
-
-    for i, lnk in enumerate(lnks, start=1):
-        print("=================================================")
-        print(f"[{i}/{len(lnks)}] Running shortcut:")
-        print(f"  {lnk}")
-        print("Forced working directory:")
-        print(f"  {lnk.parent}")
-        print("=================================================")
-
-        rc = run_shortcut_and_wait(lnk)
-        if rc != 0:
-            print(f"\n[FATAL] Shortcut execution failed (exit code {rc}):")
-            print(f"  {lnk}")
-            pause_and_exit(rc)
-
-        print("")
-
-    print("[OK] All shortcuts finished successfully.")
-    pause_and_exit(0)
+    print()
+    print("[INFO] All staging roots processed.")
 
 
 if __name__ == "__main__":
