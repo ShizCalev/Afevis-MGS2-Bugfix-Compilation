@@ -99,6 +99,15 @@ jobs:
     - run: mkdir dist
     - run: mkdir dist/plugins
     - run: mkdir dist/logs
+    - run: mkdir dist/assets
+    
+    - run: mkdir dist_2x
+    - run: mkdir dist_2x/plugins
+    - run: mkdir dist_2x/logs
+    
+    - run: mkdir dist_4x
+    - run: mkdir dist_4x/plugins
+    - run: mkdir dist_4x/logs
 
 
     - name: Run MGS2 GCX import-gcx.py
@@ -128,6 +137,20 @@ jobs:
     - run: Copy-Item README.md "dist/logs/${{ github.event.repository.name }}.log"
     - run: Copy-Item LICENSE "dist/plugins/${{ github.event.repository.name }}_LICENSE"
     - run: Copy-Item "ASI Mod\${{ github.event.repository.name }}.ini" "dist/plugins/${{ github.event.repository.name }}.ini"
+    
+    - run: Copy-Item "dist/plugins" "dist_2x/"
+    - run: Copy-Item "dist/logs" "dist_2x/"
+    
+    - run: Copy-Item "dist/plugins" "dist_4x/"
+    - run: Copy-Item "dist/logs" "dist_4x/"
+   
+    #copy fix files
+    - run: Copy-Item "Model Fixes/assets" "dist/"
+    - run: Copy-Item "Model Fixes/eu" "dist/"
+
+
+    
+    
 
     # Package everything
     - name: Create release zip
