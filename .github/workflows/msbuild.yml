@@ -101,14 +101,17 @@ jobs:
     - run: mkdir dist/logs
     - run: mkdir dist/assets
     - run: mkdir dist/eu
+    - run: mkdir dist/textures
     
     - run: mkdir dist_2x
     - run: mkdir dist_2x/plugins
     - run: mkdir dist_2x/logs
+    - run: mkdir dist_2x/textures
     
     - run: mkdir dist_4x
     - run: mkdir dist_4x/plugins
     - run: mkdir dist_4x/logs
+    - run: mkdir dist_4x/textures
 
 
     - name: Run MGS2 GCX import-gcx.py
@@ -139,7 +142,7 @@ jobs:
     - run: Copy-Item LICENSE "dist/plugins/${{ github.event.repository.name }}_LICENSE"
     - run: Copy-Item "ASI Mod\${{ github.event.repository.name }}.ini" "dist/plugins/${{ github.event.repository.name }}.ini"
     
-    - name: Copy files with robocopy
+    - name: Structure release dist folders
       shell: pwsh
       run: |
         function Invoke-RoboCopy
@@ -176,14 +179,37 @@ jobs:
         Invoke-RoboCopy "Model Fixes\assets" "dist\assets"
         Invoke-RoboCopy "Model Fixes\eu"     "dist\eu"
         
-        Invoke-RoboCopy "Texture Fixes\Staging\textures"                   "dist"
-        #Invoke-RoboCopy "Texture Fixes\Staging - 2x Upscaled\textures"     "dist_2x"
-        #Invoke-RoboCopy "Texture Fixes\Staging - 4x Upscaled\textures"     "dist"_4x
+        Invoke-RoboCopy "Texture Fixes\Staging\textures"                   "dist\textures"
+        #Invoke-RoboCopy "Texture Fixes\Staging - 2x Upscaled\textures"     "dist_2x\textures"
+        #Invoke-RoboCopy "Texture Fixes\Staging - 4x Upscaled\textures"     "dist_4x\textures"
 
         # force a clean success exit for the whole step
         exit 0
 
-    
+    - name: Remove non-ctxr files from texture folders
+      shell: pwsh
+      run: |
+        $paths = @(
+          "dist/textures",
+          "dist_2x/textures",
+          "dist_4x/textures"
+        )
+
+        foreach ($p in $paths)
+        {
+            if (Test-Path $p)
+            {
+                Write-Host "Cleaning $p ..."
+                Get-ChildItem $p -Recurse -File |
+                    Where-Object { $_.Extension -ne ".ctxr" } |
+                    Remove-Item -Force
+            }
+            else
+            {
+                Write-Host "Skipping $p (does not exist)"
+            }
+        }
+
 
     # Package everything
     - name: Create Base release zip
