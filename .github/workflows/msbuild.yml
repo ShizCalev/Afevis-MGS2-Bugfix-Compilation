@@ -175,6 +175,10 @@ jobs:
         # copy fix files
         Invoke-RoboCopy "Model Fixes\assets" "dist\assets"
         Invoke-RoboCopy "Model Fixes\eu"     "dist\eu"
+        
+        Invoke-RoboCopy "Texture Fixes\Staging\textures"                   "dist"
+        #Invoke-RoboCopy "Texture Fixes\Staging - 2x Upscaled\textures"     "dist_2x"
+        #Invoke-RoboCopy "Texture Fixes\Staging - 4x Upscaled\textures"     "dist"_4x
 
         # force a clean success exit for the whole step
         exit 0
@@ -182,7 +186,7 @@ jobs:
     
 
     # Package everything
-    - name: Create release zip
+    - name: Create Base release zip
       working-directory: dist
       run: 7z a -tzip "../${{ github.event.repository.name }}-run-${{ github.run_number }}.zip" *
 
@@ -191,3 +195,26 @@ jobs:
       with:
         name: ${{ github.event.repository.name }}_Base_-run-${{ github.run_number }}
         path: dist/
+
+    # Package everything
+    - name: Create 2x Upscaled release zip
+      working-directory: dist_2x
+      run: 7z a -tzip "../${{ github.event.repository.name }}-run-${{ github.run_number }}.zip" *
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ github.event.repository.name }}_2x_Upscaled_-run-${{ github.run_number }}
+        path: dist_2x/
+
+    # Package everything
+    - name: Create 4x Upscaled release zip
+      working-directory: dist_4x
+      run: 7z a -tzip "../${{ github.event.repository.name }}-run-${{ github.run_number }}.zip" *
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ github.event.repository.name }}_4x_Upscaled_-run-${{ github.run_number }}
+        path: dist_4x/
+
