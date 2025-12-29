@@ -100,11 +100,9 @@ class ProgressTracker:
         line = f"[{self.label}] {self.done}/{self.total} ({pct:5.1f}%) elapsed {elapsed_str} eta {eta_str}"
 
         with PRINT_LOCK:
-            # Carriage return to overwrite the same line
             print("\r" + line, end="", flush=True)
 
     def finish(self) -> None:
-        # Force a final 100 % line with newline
         self.done = self.total
         elapsed = time.monotonic() - self.start
         elapsed_str = self._format_seconds(elapsed)
@@ -586,7 +584,6 @@ def delete_tmp_rgb_outputs_or_die(tmp_dir: Path) -> None:
 def make_temp_rgb_only_copy_or_die(src: Path, tmp_dir: Path) -> Path:
     tmp_dir.mkdir(parents=True, exist_ok=True)
 
-    # stems are enforced unique earlier, so this is safe even under threads
     tmp_path = tmp_dir / f"{src.stem.lower()}__rgb_tmp.png"
 
     with Image.open(src) as im:
@@ -602,9 +599,6 @@ def make_temp_rgb_only_copy_or_die(src: Path, tmp_dir: Path) -> Path:
 
 
 def hash_ctxr_files_with_progress(ctxr_files: list[Path], workers: int, label: str) -> dict[Path, str]:
-    """
-    Hash a list of CTXR files with a progress bar.
-    """
     ctxr_hash_by_path: dict[Path, str] = {}
     if not ctxr_files:
         return ctxr_hash_by_path
@@ -678,7 +672,6 @@ def run_nvtt_exports_or_die(
         log(f"[PARAM] Skipping {len(skipped_self_remade_nomips)} self-remade image(s) that require NO-MIPS (manual handling required):")
         for p in sorted(skipped_self_remade_nomips, key=lambda x: x.name.lower()):
             log(f"  [SKIP SELF-REMADE NOMIPS] {p}")
-
         log("")
 
     error_log = STAGING_FOLDER / ERROR_LOG_PATH
@@ -736,7 +729,6 @@ def run_nvtt_exports_or_die(
 
         opacity_expected = image_opacity_expected_by_name.get(stem_lower, False)
 
-        # If origin_folder includes "opaque", create a temporary RGB-only copy for nvtt
         nvtt_input_path = img_path
         if opacity_expected:
             try:
@@ -839,7 +831,6 @@ def run_nvtt_exports_or_die(
             cleanup_param_ctxr()
             return (img_path, False, f"Failed hashing produced CTXR: {e}", before_hash, "", used_nomips, origin_folder, opacity_expected)
 
-        # Copy CTXR to staging, verify hash, then delete param CTXR (cross-drive safe)
         staging_ctxr = STAGING_FOLDER / out_ctxr.name
         try:
             if staging_ctxr.exists():
@@ -968,7 +959,6 @@ def run_nvtt_exports_or_die(
     else:
         remove_error_log_if_exists(error_log)
 
-    # Final guarantee: sorted on disk (single atomic rewrite)
     write_conversion_csv_atomic(conversion_csv_path, conversion_header, conversion_rows)
     log("[CSV] Final alphabetical normalization complete")
 
@@ -1056,7 +1046,6 @@ def main() -> int:
         needed_cols = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped"]
         conversion_header = ensure_csv_header_has_columns(list(conversion_header), needed_cols)
 
-        # Ensure file header matches if columns were added (rewrite once if needed)
         with conversion_csv.open("r", encoding="utf8", newline="") as f:
             rdr = csv.reader(f)
             first = next(rdr, None)
@@ -1067,14 +1056,11 @@ def main() -> int:
             write_conversion_csv_atomic(conversion_csv, conversion_header, conversion_rows)
             log(f"[CSV] Rewrote {CONVERSION_CSV} to add missing columns")
 
+        # Initial CTXR listing (no hashes yet)
         ctxr_files = sorted(
             [p for p in STAGING_FOLDER.iterdir() if p.is_file() and p.suffix.lower() == ".ctxr"],
             key=lambda p: p.name.lower(),
         )
-
-        ctxr_hash_by_path: dict[Path, str] = {}
-        if ctxr_files:
-            ctxr_hash_by_path = hash_ctxr_files_with_progress(ctxr_files, workers, "Hash ctxr (initial)")
 
         # ==========================================================
         # EARLY PRUNE: if image exists and CSV metadata differs
@@ -1106,12 +1092,11 @@ def main() -> int:
                 name = ctxr.stem.lower()
                 if name not in early_mismatch_names:
                     continue
-                digest = ctxr_hash_by_path.get(ctxr, "")
                 try:
                     ctxr.unlink()
-                    log(f"[DEL META-MISMATCH] {digest}  {ctxr.name}")
+                    log(f"[DEL META-MISMATCH] {ctxr.name}")
                 except Exception as e:
-                    log(f"[FAIL META-MISMATCH] {digest}  {ctxr.name} (delete error: {e})")
+                    log(f"[FAIL META-MISMATCH] {ctxr.name} (delete error: {e})")
                     delete_failures += 1
 
         if early_mismatch_names:
@@ -1138,7 +1123,7 @@ def main() -> int:
         if delete_failures:
             return pause_and_exit(1)
 
-        # Refresh ctxr list after meta mismatch deletes
+        # Refresh CTXR list after meta-mismatch deletes
         ctxr_files = sorted(
             [p for p in STAGING_FOLDER.iterdir() if p.is_file() and p.suffix.lower() == ".ctxr"],
             key=lambda p: p.name.lower(),
@@ -1155,9 +1140,39 @@ def main() -> int:
             key=lambda p: p.name.lower(),
         )
 
-        ctxr_hash_by_path = {}
-        if ctxr_files:
-            ctxr_hash_by_path = hash_ctxr_files_with_progress(ctxr_files, workers, "Hash ctxr (after CSV prune)")
+        # ==========================================================
+        # If a non-orphan staged CTXR has no CSV entry, delete it.
+        # It will be treated as "missing" and regenerated/added later.
+        # ==========================================================
+        deleted_missing_csv = 0
+        delete_failures = 0
+
+        for ctxr in ctxr_files:
+            name = ctxr.stem.lower()
+            if name not in image_hash_by_name:
+                continue  # orphan handling happens later
+
+            if name in conversion_map:
+                continue
+
+            try:
+                ctxr.unlink()
+                deleted_missing_csv += 1
+            except Exception as e:
+                log(f"[FAIL MISSING CSV] {ctxr.name} (delete error: {e})")
+                delete_failures += 1
+
+        if deleted_missing_csv:
+            log(f"[INFO] Deleted {deleted_missing_csv} staged CTXR file(s) that were missing CSV entries")
+
+        if delete_failures:
+            return pause_and_exit(1)
+
+        # Refresh CTXR list after "missing CSV" deletes
+        ctxr_files = sorted(
+            [p for p in STAGING_FOLDER.iterdir() if p.is_file() and p.suffix.lower() == ".ctxr"],
+            key=lambda p: p.name.lower(),
+        )
 
         if not ctxr_files:
             log("[INFO] No .ctxr files found in staging folder.")
@@ -1182,47 +1197,11 @@ def main() -> int:
             return 0
 
         # ==========================================================
-        # If a non-orphan staged CTXR has no CSV entry, delete it.
-        # It will be treated as "missing" and regenerated/added later.
+        # FINAL: hash CTXRs ONCE for keep/orphan/mismatch classification
         # ==========================================================
-        deleted_missing_csv = 0
-        delete_failures = 0
+        ctxr_hash_by_path = hash_ctxr_files_with_progress(ctxr_files, workers, "Hash ctxr")
 
-        for ctxr in ctxr_files:
-            name = ctxr.stem.lower()
-            if name not in image_hash_by_name:
-                continue  # orphan handling happens elsewhere
-
-            if name in conversion_map:
-                continue
-
-            try:
-                ctxr.unlink()
-                deleted_missing_csv += 1
-            except Exception as e:
-                log(f"[FAIL MISSING CSV] {ctxr.name} (delete error: {e})")
-                delete_failures += 1
-
-        if deleted_missing_csv:
-            log(f"[INFO] Deleted {deleted_missing_csv} staged CTXR file(s) that were missing CSV entries")
-
-        if delete_failures:
-            return pause_and_exit(1)
-
-        # Refresh ctxr_files + ctxr hashes after deletions
-        ctxr_files = sorted(
-            [p for p in STAGING_FOLDER.iterdir() if p.is_file() and p.suffix.lower() == ".ctxr"],
-            key=lambda p: p.name.lower(),
-        )
-
-        ctxr_hash_by_path = {}
-        if ctxr_files:
-            ctxr_hash_by_path = hash_ctxr_files_with_progress(ctxr_files, workers, "Hash ctxr (final)")
-
-        # ==========================================================
         # Decide actions (orphans, mismatches, keeps)
-        # Mismatch includes before_hash, ctxr_hash, used_nomips, origin_folder, opacity_stripped
-        # ==========================================================
         orphans: list[Path] = []
         mismatches: list[Path] = []
         keeps: list[Path] = []
