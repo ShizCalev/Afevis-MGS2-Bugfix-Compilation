@@ -58,6 +58,23 @@ def pause_and_exit(code: int = 1) -> int:
 
 
 # ==========================================================
+# UPSCALED MODE DETECTION
+# ==========================================================
+def get_staging_upscaled() -> str:
+    """
+    Derive upscaled flag from the staging folder name.
+
+    Returns one of: "no", "2x", "4x".
+    """
+    name = STAGING_FOLDER.name.lower()
+    if "4x" in name:
+        return "4x"
+    if "2x" in name:
+        return "2x"
+    return "no"
+
+
+# ==========================================================
 # PROGRESS / ETA
 # ==========================================================
 class ProgressTracker:
@@ -345,12 +362,14 @@ def origin_relative_to_required_subpath_or_die(image_path: Path) -> str:
 
 # ==========================================================
 # LOAD / MAP CSV
-# mapping entry: (before_hash, ctxr_hash, used_nomips_bool, origin_folder_string, opacity_stripped_bool)
+# mapping entry:
+# (before_hash, ctxr_hash, used_nomips_bool, origin_folder_string, opacity_stripped_bool, upscaled_str)
+#
 # NOTE: CSV mipmaps column means "has mipmaps". Internally we track "used_nomips".
 # ==========================================================
 def load_conversion_csv_unique_or_die(
     csv_path: Path,
-) -> tuple[dict[str, tuple[str, str, bool, str, bool]], list[dict[str, str]], list[str]]:
+) -> tuple[dict[str, tuple[str, str, bool, str, bool, str]], list[dict[str, str]], list[str]]:
     if not csv_path.is_file():
         raise FileNotFoundError(f'Missing "{CONVERSION_CSV}" at {csv_path}')
 
@@ -359,6 +378,7 @@ def load_conversion_csv_unique_or_die(
         if rdr.fieldnames is None:
             raise RuntimeError(f"{CONVERSION_CSV} has no header row")
 
+        # Do NOT require "upscaled" here so old CSVs still load.
         required = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped"]
         header_lower = [h.strip().lower() for h in rdr.fieldnames]
         for col in required:
@@ -368,8 +388,10 @@ def load_conversion_csv_unique_or_die(
         header = rdr.fieldnames
 
         rows: list[dict[str, str]] = []
-        mapping: dict[str, tuple[str, str, bool, str, bool]] = {}
+        mapping: dict[str, tuple[str, str, bool, str, bool, str]] = {}
         duplicates: list[str] = []
+
+        default_upscaled = get_staging_upscaled()
 
         for row in rdr:
             filename = (row.get("filename") or row.get("Filename") or row.get("FILENAME") or "").strip()
@@ -380,9 +402,13 @@ def load_conversion_csv_unique_or_die(
             origin_folder = (row.get("origin_folder") or row.get("Origin_folder") or row.get("ORIGIN_FOLDER") or "").strip()
 
             opacity_raw = (row.get("opacity_stripped") or row.get("Opacity_stripped") or row.get("OPACITY_STRIPPED") or "").strip()
+            upscaled_raw = (row.get("upscaled") or row.get("Upscaled") or row.get("UPSCALED") or "").strip().lower()
 
             if not filename:
                 continue
+
+            if upscaled_raw not in ("no", "2x", "4x"):
+                upscaled_raw = default_upscaled
 
             name = filename.lower()
             if name in mapping:
@@ -391,7 +417,7 @@ def load_conversion_csv_unique_or_die(
                 has_mipmaps = bool_from_csv(mipmaps_raw)
                 used_nomips = not has_mipmaps
                 opacity_stripped = bool_from_csv(opacity_raw)
-                mapping[name] = (before_hash, ctxr_hash, used_nomips, origin_folder, opacity_stripped)
+                mapping[name] = (before_hash, ctxr_hash, used_nomips, origin_folder, opacity_stripped, upscaled_raw)
 
             rows.append(row)
 
@@ -623,7 +649,7 @@ def hash_ctxr_files_with_progress(ctxr_files: list[Path], workers: int, label: s
 
 def run_nvtt_exports_or_die(
     image_files: list[Path],
-    conversion_map: dict[str, tuple[str, str, bool, str, bool]],
+    conversion_map: dict[str, tuple[str, str, bool, str, bool, str]],
     image_hash_by_name: dict[str, str],
     image_origin_by_name: dict[str, str],
     image_used_nomips_by_name: dict[str, bool],
@@ -645,6 +671,8 @@ def run_nvtt_exports_or_die(
         raise RuntimeError(f"Param folder not found: {PARAM_FOLDER}")
     if not CTXR_TOOL_EXE.is_file():
         raise RuntimeError(f"CtxrTool.exe not found: {CTXR_TOOL_EXE}")
+
+    upscaled_expected = get_staging_upscaled()
 
     # ==========================================================
     # Build missing list, but SKIP "self remade" images that would
@@ -681,7 +709,7 @@ def run_nvtt_exports_or_die(
         remove_error_log_if_exists(error_log)
         return
 
-    needed_cols = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped"]
+    needed_cols = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped", "upscaled"]
     conversion_header = ensure_csv_header_has_columns(list(conversion_header), needed_cols)
 
     log(f"[PARAM] Exporting {len(missing)} missing image(s) via nvtt_export + CtxrTool\n")
@@ -898,14 +926,19 @@ def run_nvtt_exports_or_die(
         for r in pending_rows:
             name = (r.get("filename") or "").strip().lower()
             has_mipmaps = bool_from_csv(r.get("mipmaps", ""))
-            used_nomips = not has_mipmaps
+            used_nomips_local = not has_mipmaps
             opacity_stripped = bool_from_csv(r.get("opacity_stripped", ""))
+            upscaled_str = (r.get("upscaled") or "").strip().lower()
+            if upscaled_str not in ("no", "2x", "4x"):
+                upscaled_str = upscaled_expected
+
             conversion_map[name] = (
                 (r.get("before_hash") or "").lower(),
                 (r.get("ctxr_hash") or "").lower(),
-                used_nomips,
+                used_nomips_local,
                 (r.get("origin_folder") or ""),
                 opacity_stripped,
+                upscaled_str,
             )
 
         log(f"[CSV] Appended {len(pending_rows)} row(s)")
@@ -932,6 +965,7 @@ def run_nvtt_exports_or_die(
                         "mipmaps": bool_to_csv(has_mipmaps),
                         "origin_folder": origin_folder,
                         "opacity_stripped": bool_to_csv(opacity_expected),
+                        "upscaled": upscaled_expected,
                     }
                 )
             else:
@@ -970,7 +1004,7 @@ def prune_csv_entries_missing_staged_ctxr(
     conversion_csv_path: Path,
     conversion_header: list[str],
     conversion_rows: list[dict[str, str]],
-    conversion_map: dict[str, tuple[str, str, bool, str, bool]],
+    conversion_map: dict[str, tuple[str, str, bool, str, bool, str]],
 ) -> int:
     staged_ctxr_stems: set[str] = set()
     for p in STAGING_FOLDER.iterdir():
@@ -1041,11 +1075,13 @@ def main() -> int:
 
         conversion_map, conversion_rows, conversion_header = load_conversion_csv_unique_or_die(conversion_csv)
         if not conversion_header:
-            conversion_header = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped"]
+            conversion_header = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped", "upscaled"]
 
-        needed_cols = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped"]
+        needed_cols = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped", "upscaled"]
         conversion_header = ensure_csv_header_has_columns(list(conversion_header), needed_cols)
 
+        # If header is missing any needed column (including "upscaled"), rewrite CSV and
+        # stamp existing rows with the staging upscaled for missing values.
         with conversion_csv.open("r", encoding="utf8", newline="") as f:
             rdr = csv.reader(f)
             first = next(rdr, None)
@@ -1053,6 +1089,10 @@ def main() -> int:
             raise RuntimeError(f"{CONVERSION_CSV} is empty or unreadable")
         file_header_lower = [h.strip().lower() for h in first]
         if any(col.lower() not in file_header_lower for col in needed_cols):
+            upscaled_expected = get_staging_upscaled()
+            for row in conversion_rows:
+                if "upscaled" not in row or not (row.get("upscaled") or "").strip():
+                    row["upscaled"] = upscaled_expected
             write_conversion_csv_atomic(conversion_csv, conversion_header, conversion_rows)
             log(f"[CSV] Rewrote {CONVERSION_CSV} to add missing columns")
 
@@ -1062,14 +1102,23 @@ def main() -> int:
             key=lambda p: p.name.lower(),
         )
 
+        upscaled_expected_main = get_staging_upscaled()
+
         # ==========================================================
         # EARLY PRUNE: if image exists and CSV metadata differs
-        # (before_hash OR used_nomips OR origin_folder OR opacity_stripped)
+        # (before_hash OR used_nomips OR origin_folder OR opacity_stripped OR upscaled)
         # then remove from CSV and delete staged CTXR if present.
         # ==========================================================
         early_mismatch_names: set[str] = set()
 
-        for name, (csv_before, _csv_ctxr, csv_used_nomips, csv_origin, csv_opacity_stripped) in conversion_map.items():
+        for name, (
+            csv_before,
+            _csv_ctxr,
+            csv_used_nomips,
+            csv_origin,
+            csv_opacity_stripped,
+            csv_upscaled,
+        ) in conversion_map.items():
             img_before = image_hash_by_name.get(name)
             img_origin = image_origin_by_name.get(name)
             img_used_nomips = image_used_nomips_by_name.get(name)
@@ -1082,8 +1131,9 @@ def main() -> int:
             mip_ok = (csv_used_nomips == img_used_nomips)
             before_ok = (csv_before == (img_before or "").lower())
             opacity_ok = (csv_opacity_stripped == img_opacity_expected)
+            upscaled_ok = (csv_upscaled == upscaled_expected_main)
 
-            if not (origin_ok and mip_ok and before_ok and opacity_ok):
+            if not (origin_ok and mip_ok and before_ok and opacity_ok and upscaled_ok):
                 early_mismatch_names.add(name)
 
         delete_failures = 0
@@ -1216,7 +1266,14 @@ def main() -> int:
                 orphans.append(ctxr)
                 continue
 
-            expected_before, expected_ctxr, expected_used_nomips, expected_origin, expected_opacity_stripped = conversion_map[name]
+            (
+                expected_before,
+                expected_ctxr,
+                expected_used_nomips,
+                expected_origin,
+                expected_opacity_stripped,
+                expected_upscaled,
+            ) = conversion_map[name]
 
             current_origin = image_origin_by_name.get(name, "")
             current_used_nomips = image_used_nomips_by_name.get(name, False)
@@ -1227,8 +1284,9 @@ def main() -> int:
             mip_ok = (expected_used_nomips == current_used_nomips)
             origin_ok = (str(expected_origin).strip().lower() == str(current_origin).strip().lower())
             opacity_ok = (expected_opacity_stripped == current_opacity_expected)
+            upscaled_ok = (expected_upscaled == upscaled_expected_main)
 
-            if before_ok and ctxr_ok and mip_ok and origin_ok and opacity_ok:
+            if before_ok and ctxr_ok and mip_ok and origin_ok and opacity_ok and upscaled_ok:
                 keeps.append(ctxr)
             else:
                 mismatches.append(ctxr)
@@ -1261,7 +1319,14 @@ def main() -> int:
             current_used_nomips = image_used_nomips_by_name.get(name, False)
             current_opacity_expected = image_opacity_expected_by_name.get(name, False)
 
-            expected_before, expected_ctxr, expected_used_nomips, expected_origin, expected_opacity_stripped = conversion_map[name]
+            (
+                expected_before,
+                expected_ctxr,
+                expected_used_nomips,
+                expected_origin,
+                expected_opacity_stripped,
+                expected_upscaled,
+            ) = conversion_map[name]
 
             try:
                 ctxr.unlink()
@@ -1277,6 +1342,7 @@ def main() -> int:
                     f"  expected_opacity_stripped={bool_to_csv(expected_opacity_stripped)} "
                     f"actual_opacity_stripped={bool_to_csv(current_opacity_expected)}"
                 )
+                log(f"  expected_upscaled={expected_upscaled} actual_upscaled={upscaled_expected_main}")
                 deleted_mismatches += 1
             except Exception as e:
                 log(f"[FAIL MISMATCH] {ctxr_digest}  {ctxr.name} (delete error: {e})")
