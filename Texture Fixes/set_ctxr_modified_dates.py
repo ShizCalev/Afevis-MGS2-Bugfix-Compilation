@@ -4,9 +4,13 @@ import csv
 import os
 import subprocess
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Tuple
 import ctypes
 from ctypes import wintypes
+from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+from tqdm import tqdm
 
 
 # ==========================================================
@@ -27,6 +31,11 @@ STAGING_DIRS_REL = [
 CONVERSION_CSV_NAME = "conversion_hashes.csv"
 CTXR_EXT = ".ctxr"
 
+MC_DATES_CSV_REL = Path(r"Texture Fixes\mc textures\MC real file dates.csv")
+
+# How many worker threads per CSV
+MAX_WORKERS = max(4, (os.cpu_count() or 4) * 2)
+
 # Global cache for git paths (lowercase -> canonical path)
 GIT_PATH_CACHE: Dict[str, str] | None = None
 
@@ -38,13 +47,13 @@ kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
 
 CreateFileW = kernel32.CreateFileW
 CreateFileW.argtypes = [
-    wintypes.LPCWSTR,  # lpFileName
-    wintypes.DWORD,    # dwDesiredAccess
-    wintypes.DWORD,    # dwShareMode
-    wintypes.LPVOID,   # lpSecurityAttributes
-    wintypes.DWORD,    # dwCreationDisposition
-    wintypes.DWORD,    # dwFlagsAndAttributes
-    wintypes.HANDLE,   # hTemplateFile
+    wintypes.LPCWSTR,
+    wintypes.DWORD,
+    wintypes.DWORD,
+    wintypes.LPVOID,
+    wintypes.DWORD,
+    wintypes.DWORD,
+    wintypes.HANDLE,
 ]
 CreateFileW.restype = wintypes.HANDLE
 
@@ -63,8 +72,6 @@ CloseHandle.restype = wintypes.BOOL
 
 
 def unix_to_filetime(ts: int) -> wintypes.FILETIME:
-    # Windows FILETIME = 100ns intervals since 1601-01-01 UTC
-    # Unix timestamp = seconds since 1970-01-01 UTC
     WINDOWS_TICK = 10_000_000
     SEC_TO_UNIX_EPOCH = 11_644_473_600
     filetime = int((ts + SEC_TO_UNIX_EPOCH) * WINDOWS_TICK)
@@ -74,10 +81,10 @@ def unix_to_filetime(ts: int) -> wintypes.FILETIME:
 def set_windows_times(path: Path, ts_unix: int) -> None:
     handle = CreateFileW(
         str(path),
-        0x40000000,  # GENERIC_WRITE
-        0x00000001 | 0x00000002,  # FILE_SHARE_READ | FILE_SHARE_WRITE
+        0x40000000,
+        0x00000001 | 0x00000002,
         None,
-        3,  # OPEN_EXISTING
+        3,
         0,
         None,
     )
@@ -134,24 +141,63 @@ def load_origin_dates(csv_path: Path) -> Dict[str, int]:
             stem = row["stem"].strip()
             if not stem:
                 continue
-            try:
-                origin_date = int(row["origin_date"])
-            except (TypeError, ValueError):
-                raise SystemExit(
-                    f"Invalid origin_date for stem '{stem}' in {csv_path}: "
-                    f"{row['origin_date']!r}"
-                )
-            mapping[stem] = origin_date
+            mapping[stem] = int(row["origin_date"])
 
     print(f"Loaded {len(mapping)} origin date entries from {csv_path}")
     return mapping
 
 
-def find_conversion_csvs(root: Path) -> List[Path]:
-    if not root.is_dir():
-        print(f"Skipping missing staging dir: {root}")
-        return []
-    return list(root.rglob(CONVERSION_CSV_NAME))
+def parse_mc_time_to_unix(time_str: str, stem: str) -> int:
+    # Format: 2011-10-13 - 19:33:42 UTC
+    s = time_str.strip()
+    dt = datetime.strptime(s, "%Y-%m-%d - %H:%M:%S UTC")
+    dt = dt.replace(tzinfo=timezone.utc)
+
+    if dt.year < 2011:
+        print(
+            f"ERROR: MC modified_time_utc for '{stem}' is before 2011: {s} "
+            f"(year={dt.year})"
+        )
+        input("Press Enter to exit...")
+        raise SystemExit("MC real file date before 2011 detected, aborting.")
+
+    return int(dt.timestamp())
+
+
+def load_mc_dates(csv_path: Path) -> Dict[str, str]:
+    """
+    Load MC CSV as texture_name -> modified_time_utc (string).
+    The year check is done only when we actually apply an MC timestamp.
+    """
+    if not csv_path.is_file():
+        raise SystemExit(f"MC real file dates CSV missing: {csv_path}")
+
+    mapping: Dict[str, str] = {}
+    with csv_path.open("r", newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+
+        required = {"texture_name", "modified_time_utc", "sha1"}
+        missing = required - set(reader.fieldnames or [])
+        if missing:
+            raise SystemExit(
+                f"{csv_path} is missing columns: {', '.join(sorted(missing))}"
+            )
+
+        for row in reader:
+            stem = (row.get("texture_name") or "").strip()
+            if not stem:
+                continue
+
+            time_str = (row.get("modified_time_utc") or "").strip()
+            if not time_str:
+                raise SystemExit(
+                    f"Empty modified_time_utc for '{stem}' in {csv_path}"
+                )
+
+            mapping[stem] = time_str
+
+    print(f"Loaded {len(mapping)} MC modified_time_utc entries from {csv_path}")
+    return mapping
 
 
 def build_git_path_cache(repo_root: Path) -> Dict[str, str]:
@@ -172,20 +218,15 @@ def build_git_path_cache(repo_root: Path) -> Dict[str, str]:
 
     cache: Dict[str, str] = {}
     for line in result.stdout.splitlines():
-        p = line.strip()
-        if not p:
-            continue
-        cache[p.lower()] = p  # lowercase -> canonical git path
+        line = line.strip()
+        if line:
+            cache[line.lower()] = line
 
     GIT_PATH_CACHE = cache
     return cache
 
 
 def get_git_last_change_unix(repo_root: Path, path: Path) -> int | None:
-    """
-    Return the Unix timestamp of the last commit where the file's content changed
-    (added or modified), following renames, case-insensitive.
-    """
     cache = build_git_path_cache(repo_root)
 
     try:
@@ -201,7 +242,7 @@ def get_git_last_change_unix(repo_root: Path, path: Path) -> int | None:
         print(f"WARNING: case-insensitive git match not found for {rel_str}")
         return None
 
-    canonical_git_path = cache[key]
+    canonical = cache[key]
 
     result = subprocess.run(
         [
@@ -209,10 +250,10 @@ def get_git_last_change_unix(repo_root: Path, path: Path) -> int | None:
             "log",
             "-1",
             "--follow",
-            "--diff-filter=AM",  # Add or Modify only, ignore pure renames
+            "--diff-filter=AM",
             "--format=%ct",
             "--",
-            canonical_git_path,
+            canonical,
         ],
         cwd=repo_root,
         check=False,
@@ -222,27 +263,21 @@ def get_git_last_change_unix(repo_root: Path, path: Path) -> int | None:
 
     if result.returncode != 0:
         print(
-            f"WARNING: git log failed for {canonical_git_path} "
-            f"(code {result.returncode}): {result.stderr.strip()}"
+            f"WARNING: git log failed for {canonical}: {result.stderr.strip()}"
         )
         return None
 
     out = result.stdout.strip()
     if not out:
-        print(f"WARNING: no git content-change log for {canonical_git_path}")
+        print(f"WARNING: no git content-change log for {canonical}")
         return None
 
-    try:
-        return int(out)
-    except ValueError:
-        print(f"WARNING: invalid git timestamp for {canonical_git_path}: {out!r}")
-        return None
+    return int(out)
 
 
 def find_self_remade_source(
     texture_fixes_root: Path, origin_folder_raw: str, stem: str
 ) -> Path | None:
-    # origin_folder is stored relative to "Texture Fixes"
     norm = origin_folder_raw.replace("/", "\\").lstrip("\\")
     origin_dir = texture_fixes_root / norm
 
@@ -254,14 +289,13 @@ def find_self_remade_source(
 
     if not candidates:
         print(
-            f"WARNING: Self Remade source not found for stem '{stem}' "
-            f"in {origin_dir}"
+            f"WARNING: Self Remade source not found for '{stem}' in {origin_dir}"
         )
         return None
 
     if len(candidates) > 1:
         print(
-            f"WARNING: Multiple Self Remade sources for stem '{stem}' in {origin_dir}: "
+            f"WARNING: Multiple Self Remade sources for '{stem}' in {origin_dir}: "
             f"{[c.name for c in candidates]}"
         )
         return None
@@ -269,11 +303,83 @@ def find_self_remade_source(
     return candidates[0]
 
 
+def find_conversion_csvs(root: Path) -> List[Path]:
+    if not root.is_dir():
+        print(f"Skipping missing staging dir: {root}")
+        return []
+    return list(root.rglob(CONVERSION_CSV_NAME))
+
+
+# ==========================================================
+# PER-ROW TASK LOGIC (RUN IN THREADS)
+# ==========================================================
+def process_row_task(
+    repo_root: Path,
+    texture_fixes_root: Path,
+    row: dict,
+    origin_dates: Dict[str, int],
+    mc_dates: Dict[str, str],
+    ctxr_path: Path,
+) -> Tuple[bool, str]:
+    """
+    Run the real work for a single row.
+
+    Returns (updated, reason)
+    updated = True if timestamps were set
+    updated = False if skipped for any reason, 'reason' is a short label
+    """
+    origin_folder_raw = row["origin_folder"] or ""
+    origin_folder_norm = origin_folder_raw.replace("/", "\\").lstrip("\\")
+    origin_folder_lower = origin_folder_norm.lower()
+
+    stem = row["filename"].strip()
+    # ctxr_path existence already checked by caller
+
+    # PS2 textures
+    if "ps2 textures" in origin_folder_lower:
+        ts = origin_dates.get(stem)
+        if ts is None:
+            return False, "no_ps2_origin_date"
+
+        set_windows_times(ctxr_path, ts)
+        return True, "ps2"
+
+    # Self Remade
+    if origin_folder_lower.startswith("self remade\\"):
+        src = find_self_remade_source(texture_fixes_root, origin_folder_raw, stem)
+        if src is None:
+            return False, "no_self_remade_src"
+
+        ts = get_git_last_change_unix(repo_root, src)
+        if ts is None:
+            return False, "no_git_ts"
+
+        set_windows_times(ctxr_path, ts)
+        return True, "self_remade"
+
+    # MC textures
+    if origin_folder_lower.startswith("mc textures\\"):
+        time_str = mc_dates.get(stem)
+        if time_str is None:
+            return False, "no_mc_date"
+
+        ts = parse_mc_time_to_unix(time_str, stem)
+        set_windows_times(ctxr_path, ts)
+        return True, "mc"
+
+    # Everything else ignored
+    return False, "other_origin"
+
+
+# ==========================================================
+# PER-CSV PROCESSING (PARALLEL PER ROW)
+# ==========================================================
 def process_conversion_csv(
     repo_root: Path,
     texture_fixes_root: Path,
     conv_csv: Path,
     origin_dates: Dict[str, int],
+    mc_dates: Dict[str, str],
 ) -> tuple[int, int, int]:
     """
     Returns (total_rows, updated_files, skipped_rows)
@@ -282,6 +388,7 @@ def process_conversion_csv(
     updated = 0
     skipped = 0
 
+    # Load rows
     with conv_csv.open("r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
 
@@ -300,67 +407,72 @@ def process_conversion_csv(
                 f"{conv_csv} is missing columns: {', '.join(sorted(missing))}"
             )
 
-        for row in reader:
-            total += 1
+        rows: List[dict] = list(reader)
 
-            origin_folder_raw = row["origin_folder"] or ""
-            origin_folder_norm = origin_folder_raw.replace("/", "\\").lstrip("\\")
-            origin_folder_lower = origin_folder_norm.lower()
+    total = len(rows)
+    if total == 0:
+        return 0, 0, 0
 
-            stem = row["filename"].strip()
-            if not stem:
-                skipped += 1
-                continue
+    # Build tasks list
+    tasks: List[Tuple[dict, Path]] = []
 
-            ctxr_path = conv_csv.parent / f"{stem}{CTXR_EXT}"
-            if not ctxr_path.is_file():
-                print(f"Missing ctxr for {stem}: {ctxr_path}")
-                skipped += 1
-                continue
-
-            # Case 1: PS2 textures -> use origin_date from version CSV
-            if "ps2 textures" in origin_folder_lower:
-                origin_ts = origin_dates.get(stem)
-                if origin_ts is None:
-                    print(
-                        f"WARNING: No origin_date entry for stem '{stem}' "
-                        f"(needed by {conv_csv})"
-                    )
-                    skipped += 1
-                    continue
-
-                try:
-                    set_windows_times(ctxr_path, origin_ts)
-                    updated += 1
-                except Exception as e:
-                    print(f"FAILED timestamp set (ps2 textures): {ctxr_path}  ({e})")
-                    skipped += 1
-                continue
-
-            # Case 2: Self Remade\... -> use Git last content-change time of original file
-            if origin_folder_lower.startswith("self remade\\"):
-                src = find_self_remade_source(
-                    texture_fixes_root, origin_folder_raw, stem
-                )
-                if src is None:
-                    skipped += 1
-                    continue
-
-                ts = get_git_last_change_unix(repo_root, src)
-                if ts is None:
-                    skipped += 1
-                    continue
-
-                try:
-                    set_windows_times(ctxr_path, ts)
-                    updated += 1
-                except Exception as e:
-                    print(f"FAILED timestamp set (Self Remade): {ctxr_path}  ({e})")
-                    skipped += 1
-                continue
-
-            # Everything else: do nothing
+    for row in rows:
+        stem = (row.get("filename") or "").strip()
+        if not stem:
             skipped += 1
+            continue
+
+        ctxr_path = conv_csv.parent / f"{stem}{CTXR_EXT}"
+        if not ctxr_path.is_file():
+            print(f"Missing ctxr for {stem}: {ctxr_path}")
+            skipped += 1
+            continue
+
+        # Everything else (origin_folder filters etc.) handled inside the worker.
+        tasks.append((row, ctxr_path))
+
+    if not tasks:
+        return total, updated, skipped
+
+    # Run tasks in parallel
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {
+            executor.submit(
+                process_row_task,
+                repo_root,
+                texture_fixes_root,
+                row,
+                origin_dates,
+                mc_dates,
+                ctxr_path,
+            ): (row, ctxr_path)
+            for (row, ctxr_path) in tasks
+        }
+
+        for future in tqdm(
+            as_completed(futures),
+            total=len(futures),
+            desc=f"Processing {conv_csv.name}",
+            unit="file",
+        ):
+            try:
+                ok, _reason = future.result()
+            except SystemExit:
+                # Propagate hard abort from parse_mc_time_to_unix or any fatal path
+                raise
+            except Exception as e:
+                # Treat any other exception as a skip
+                # and keep going, but log it.
+                row, ctxr_path = futures[future]
+                stem = (row.get("filename") or "").strip()
+                print(f"ERROR processing '{stem}' at {ctxr_path}: {e!r}")
+                skipped += 1
+                continue
+
+            if ok:
+                updated += 1
+            else:
+                skipped += 1
 
     return total, updated, skipped
 
@@ -374,8 +486,11 @@ def main() -> None:
 
     texture_fixes_root = repo_root / TEXTURE_FIXES_ROOT_REL
 
-    origin_csv = repo_root / VERSION_CSV_REL
-    origin_dates = load_origin_dates(origin_csv)
+    origin_dates = load_origin_dates(repo_root / VERSION_CSV_REL)
+    mc_dates = load_mc_dates(repo_root / MC_DATES_CSV_REL)
+
+    # Build git cache up-front so threads only read it
+    build_git_path_cache(repo_root)
 
     staging_dirs = [repo_root / p for p in STAGING_DIRS_REL]
 
@@ -394,7 +509,7 @@ def main() -> None:
     for conv_csv in sorted(all_csvs):
         print(f"\nProcessing {conv_csv}")
         t, u, s = process_conversion_csv(
-            repo_root, texture_fixes_root, conv_csv, origin_dates
+            repo_root, texture_fixes_root, conv_csv, origin_dates, mc_dates
         )
         total += t
         updated += u
