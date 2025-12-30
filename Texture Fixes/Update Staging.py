@@ -22,6 +22,10 @@ STAGING_MAIN_NAME = "_staging_main.py"
 # Shared main script that lives next to THIS orchestrator
 STAGING_MAIN_PATH = SCRIPT_DIR / STAGING_MAIN_NAME
 
+# Script to run AFTER all staging tiers finish
+SET_CTXR_DATES_NAME = "set_ctxr_modified_dates.py"
+SET_CTXR_DATES_PATH = SCRIPT_DIR / SET_CTXR_DATES_NAME
+
 # How many jobs to run in parallel within each staging tier
 THREADS_PER_TIER = 4
 
@@ -108,6 +112,28 @@ def run_tier(root: Path) -> None:
     print(f"[INFO] Finished all jobs under {root}")
 
 
+def run_set_ctxr_dates() -> None:
+    if not SET_CTXR_DATES_PATH.is_file():
+        print(f"ERROR: Could not find {SET_CTXR_DATES_NAME} at: {SET_CTXR_DATES_PATH}")
+        sys.exit(1)
+
+    print()
+    print("#################################################")
+    print(f"Running final script: {SET_CTXR_DATES_PATH}")
+    print("#################################################")
+
+    result = subprocess.run(
+        [sys.executable, str(SET_CTXR_DATES_PATH)],
+        cwd=str(SCRIPT_DIR),
+    )
+
+    if result.returncode != 0:
+        print(f"ERROR: {SET_CTXR_DATES_NAME} failed with exit code {result.returncode}")
+        sys.exit(result.returncode)
+
+    print("[INFO] set_ctxr_modified_dates.py completed successfully.")
+
+
 # ==========================================================
 # MAIN
 # ==========================================================
@@ -128,6 +154,9 @@ def main() -> None:
 
     print()
     print("[INFO] All staging roots processed.")
+
+    # === FINAL STEP ===
+    run_set_ctxr_dates()
 
 
 if __name__ == "__main__":
