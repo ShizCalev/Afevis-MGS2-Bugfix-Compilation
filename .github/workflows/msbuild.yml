@@ -31,6 +31,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
+        fetch-depth: 0
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
@@ -142,6 +143,27 @@ jobs:
     - run: Copy-Item LICENSE "dist/plugins/${{ github.event.repository.name }}_LICENSE"
     - run: Copy-Item "ASI Mod\${{ github.event.repository.name }}.ini" "dist/plugins/${{ github.event.repository.name }}.ini"
     
+    
+    
+    - name: Install Python deps
+      run: |
+        py -m pip install tqdm
+
+    # normalize CTXR modified dates after logs & metadata
+    - name: Normalize CTXR modified dates
+      run: |
+        $RepoRootDir = "${{ github.workspace }}"
+        $scriptPath  = Join-Path $RepoRootDir "Texture Fixes\set_ctxr_modified_dates.py"
+
+        if (-not (Test-Path $scriptPath)) {
+          Write-Error "set_ctxr_modified_dates.py not found at $scriptPath"
+          exit 1
+        }
+
+        Write-Host "Running set_ctxr_modified_dates.py..."
+        py $scriptPath
+
+
     - name: Structure release dist folders
       shell: pwsh
       run: |
