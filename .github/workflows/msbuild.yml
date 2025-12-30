@@ -149,7 +149,7 @@ jobs:
       run: |
         py -m pip install tqdm
 
-    # normalize CTXR modified dates after logs & metadata
+    # normalize CTXR modified dates
     - name: Normalize CTXR modified dates
       run: |
         $RepoRootDir = "${{ github.workspace }}"
@@ -162,6 +162,21 @@ jobs:
 
         Write-Host "Running set_ctxr_modified_dates.py..."
         py $scriptPath
+
+    # normalize model fix modified dates
+    - name: Normalize Model Fix modified dates
+      run: |
+        $RepoRootDir = "${{ github.workspace }}"
+        $scriptPath  = Join-Path $RepoRootDir "Model Fixes\set_modified_dates.py"
+
+        if (-not (Test-Path $scriptPath)) {
+          Write-Error "set_modified_dates.py not found at $scriptPath"
+          exit 1
+        }
+
+        Write-Host "Running set_modified_dates.py..."
+        py $scriptPath
+
 
 
     - name: Structure release dist folders
