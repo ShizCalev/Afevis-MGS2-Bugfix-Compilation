@@ -138,11 +138,11 @@ https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/issues
 
 ### Restored Content:
 
-Restored Fatman's glock to its original version (the slide serrations & slide release were simplified in HDC → MC, presumably for copyright reasons.)
+- Restored Fatman's glock to its original version (the slide serrations & slide release were simplified in HDC → MC, presumably for copyright reasons.)
 
-Restored the secret Konami.jp reward screen for collecting all dogtags using the new Konami.com archival site, utilizing a tinyurl & QR code to make it easier to open.. (The original URL has been dead since 2007, and Konami removed the screen with the MC release.)
+- Restored the secret Konami.jp reward screen for collecting all dogtags using the new Konami.com archival site, utilizing a tinyurl & QR code to make it easier to open.. (The original URL has been dead since 2007, and Konami removed the screen with the MC release.)
 
-Restored numerous crosses changed from red to green. [2023 MC]
+- Restored numerous crosses changed from red to green. [2023 MC]
 
 Quality Improvements:
 
