@@ -67,13 +67,8 @@ def should_include_texture(path):
     rel = os.path.relpath(path, PS2_ROOT)
     parts = rel.lower().split(os.sep)
 
-    if "opaque" in parts and "bp_remade" in parts:
-        return True
-
     if "bp_remade" in parts:
-        idx = parts.index("bp_remade")
-        if idx < len(parts) - 2:
-            return True
+        return True
 
     return False
 
