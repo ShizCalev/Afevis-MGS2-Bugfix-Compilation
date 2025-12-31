@@ -11,8 +11,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 STAGING_ORDER = [
-    "Staging",
-    "Staging - 2x Upscaled",
+    #"Staging",
+    #"Staging - 2x Upscaled",
     "Staging - 4x Upscaled",
 ]
 
