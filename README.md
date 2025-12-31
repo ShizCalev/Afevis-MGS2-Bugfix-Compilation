@@ -33,6 +33,19 @@ Please report any issues found with the pack, or any issues that are not already
 https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/issues
 
 
+Recommended Mod Load Order (from first to last):
+
+1. MGSHDFix
+2. Knight_Killer's MGS2 Better Audio Mod
+3. THIS MOD
+4. MGS2 Demastered Texture Pack (if installed)
+5. All other mods
+
+<br>
+
+- As this pack already replaces nearly all of the game's textures, our upscaled packs do **FULLY REPLACE** LiqMix's AI Slop texture packs.
+
+------------
 
 <br>
 <br>
