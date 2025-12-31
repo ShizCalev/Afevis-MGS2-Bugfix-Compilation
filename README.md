@@ -8,12 +8,23 @@ A community-driven bugfix pack fixing invisible textures/models, missing audio, 
 
 This compilation should be considered a perpetual work-in-progress. (I love MGS2 and find new things to fix up CONSTANTLY.)
 
+
+<br>
+<br>
+<br>
+
 ## Community contributions to the pack are absolutely encouraged.
 
 *Files generated/upscaled through AI upscaling will NOT be accepted into the base pack.
 
+The repo IS set up to easily contribute corrections (via CSV files) for **ALL** translations of the game. If you know of any typos in the French, Spanish, Japanese, ect versions, PLEASE feel free to submit those corrections as well!
+
+<br>
+
 
 NOTE: OPTIONAL ADDON 2X & 4X AI UPSCALED RELEASES OF THIS PACK ARE PROVIDED. As this pack already replaces nearly all of the game's textures, our upscaled packs do FULLY REPLACE LiqMix's AI Slop texture packs.
+
+<br>
 
 ------------
 
@@ -21,12 +32,14 @@ NOTE: OPTIONAL ADDON 2X & 4X AI UPSCALED RELEASES OF THIS PACK ARE PROVIDED. As 
 Please report any issues found with the pack, or any issues that are not already corrected, to our GitHub here:
 https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/issues
 
--------------------
 
-Note: The repo IS set up to easily contribute corrections (via CSV files) for ALL translations of the game. If you know of any typos in the French, Spanish, Japanese, ect versions, PLEASE feel free to submit those corrections as well!
 
+<br>
+<br>
 
 ## List of fixes [brackets denote what version the bug was introduced, ie Sons of Liberty, Substance, HD Collection, Master Collection]. Contributors will be listed afterward version seperated by a “|”. If no contributor is listed, the fix was made by Afevis:
+
+### Bug Fixes:
 
 - Fixed compression artifacting/pixelization present with 11970 textures (an issue originally introduced in the 2002 Xbox port of Substance) by re-exporting all 15221 textures from each of the original PS2 versions of MGS2, manually identifying each texture, and fully rebuilding the game's file structure. (This process took hundreds of hours over of the course of a year and a half to complete.) [2002 Xbox]
 
@@ -35,9 +48,6 @@ Note: The repo IS set up to easily contribute corrections (via CSV files) for AL
 	- The vast majority of textures in the original PS2 version of MGS2 had dimensions that were not a power of 2, ie 2, 4, 8, 16, 32, 64, 128, 256, 512, ect. Early DirectX & OpenGL rendering did not support textures with non-^2 dimensions (referred to as arbitrary dimension textures, or [NPOT Textures](https://www.khronos.org/opengl/wiki/NPOT_Texture)) until OpenGL 2.0's release in 2004 which added the ARB_texture_non_power_of_two extension, well after both ports were created, and GPU's at the time ALSO had to be upgraded to support that new OpenGL feature level. As such, to even support the majority of console & PC hardware at the time - the team that handled the ports to the Xbox & PC ran all the textures through an automatic resizer, resizing all the textures' dimensions up to the next power of 2 (for example, a 130x70 texture would be sized up to 256x128), which introduced significant JPEG-type artifacting / haloing, blurred (and in some cases outright removed) fine details, and added randomly color lines along the edges of a LOT of the game's textures.
 	
 	- Bluepoint used these corrupted texture for the HD Remaster, and all versions of MGS2 released from the 2011 HD Collection onward all have this same issue with their textures.
-
-
-### Bug Fixes:
 
 - Stripped the unused alpha channel from 9505 opaque textures, a leftover from PS2 versions, which resulted in increased VRAM usage and z-fighting problems. [2011 HDC]
 
@@ -68,8 +78,6 @@ Note: The repo IS set up to easily contribute corrections (via CSV files) for AL
 - Corrected stretched VR mission completion camera effect (Again, it was simply stretched from 4:3 → 16:9.) [2011 HDC]
 
 - Corrected repeat tiling on the Previous Stories background static. (These were nearest-neighbor upscaled by Bluepoint, when they should've just been repeated.) [2011 HDC]
-
-- Fixed the black/off monitor overlay for the computer in Holds 3 not fully covering the screen / concealing the green turned on screen underneath it. [2001 SOL]
 
 - Corrected typos on several barrels. [2011 HDC]
 
@@ -103,6 +111,8 @@ Note: The repo IS set up to easily contribute corrections (via CSV files) for AL
 
 - Fixed a hole in the top of the HH-60 Helicopters used by the SEALS during the Plant intro. [2001 SoL] (Contributed by Jacky720 / Space Core)
 
+<br>
+
 ------------
 
 ### Continuity Fixes:
@@ -121,6 +131,7 @@ Note: The repo IS set up to easily contribute corrections (via CSV files) for AL
 
 - Fixed Emma's id swapping background colors / quality between gameplay and cutscenes. [2001 SOL]
 
+<br>
 
 ------------
 
@@ -153,8 +164,9 @@ Quality Improvements:
 
 - Resaved all 2500 remaining CTXR files using Kaiser window mips for consistent, higher quality mipmaps.
 
-------------
+<br>
 
+------------
 
 ### Remade Assets:
 
@@ -171,7 +183,10 @@ Quality Improvements:
 - Remade ocean reflection maps utilizing their source assets.
 
 
- ------------
+
+<br>
+<br>
+<br> 
 
 ## Tools used for this project:
 
