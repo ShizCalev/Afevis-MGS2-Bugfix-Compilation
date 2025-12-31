@@ -144,7 +144,12 @@ https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/issues
 
 - Restored numerous crosses changed from red to green. [2023 MC]
 
-Quality Improvements:
+
+<br>
+
+------------
+
+### Quality Improvements:
 
 - Replaced MOST* Low-Poly LOD models (shown when chacters are far away from the screen, and also used for reflections on floors & such) with their higher polygon versions.
 
