@@ -834,6 +834,43 @@ def resave_images_to_pot_or_die(image_paths: list[Path]) -> None:
     if failed:
         raise RuntimeError(f"Failed resizing/resaving {failed} image(s) to power-of-two dimensions")
 
+def remap_chainner_tgas_to_png(mapping: dict[Path, Path]) -> None:
+    """
+    After chaiNNer runs, it will have re-saved TGA inputs as PNGs in the same
+    folder, same stem.
+
+    This walks the upscaling mapping (orig -> upscaled_path) and, for any entry
+    still pointing at a .tga, switches it to the .png output and deletes the
+    obsolete .tga file.
+
+    The mapping is updated in-place.
+    """
+    switched = 0
+
+    for orig, ups in list(mapping.items()):
+        if ups.suffix.lower() != ".tga":
+            continue
+
+        png = ups.with_suffix(".png")
+        if not png.is_file():
+            # No PNG created, leave it as-is and let later logic treat it
+            # as a failed upscale if needed.
+            continue
+
+        # Delete the old TGA if it still exists
+        if ups.is_file():
+            try:
+                ups.unlink()
+                log(f"[UPSCALE] Deleted obsolete TGA after chaiNNer: {ups.name}")
+            except Exception as e:
+                log(f"[UPSCALE WARN] Failed to delete TGA {ups}: {e}")
+
+        mapping[orig] = png
+        switched += 1
+
+    if switched:
+        log(f"[UPSCALE] Switched {switched} upscaled TGA input(s) to PNG outputs")
+
 
 def run_nvtt_exports_or_die(
     image_files: list[Path],
@@ -922,9 +959,14 @@ def run_nvtt_exports_or_die(
             except Exception as e:
                 raise RuntimeError(f"Failed reading dimensions before upscaling for {ups}: {e}")
 
+        # Run chaiNNer on the _upscaling folder
         run_chaiNNer_or_die()
 
-        # Check dimensions after chaiNNer, again on _upscaling copies
+        # After chaiNNer: it may have re-saved .tga inputs as .png with the same stem.
+        # Update mapping to point at the PNG versions and delete the obsolete TGAs.
+        remap_chainner_tgas_to_png(mapping)
+
+        # Check dimensions after chaiNNer, now using the possibly-updated paths
         unchanged: list[Path] = []
         dims_after: dict[Path, tuple[int, int]] = {}
 
@@ -939,6 +981,7 @@ def run_nvtt_exports_or_die(
             after = dims_after[orig]
             if before is not None and after == before:
                 unchanged.append(orig)
+
 
         if unchanged:
             log("[UPSCALE WARN] The following image(s) did not change dimensions after chaiNNer (treating as failed upscales and skipping):")
@@ -1695,3 +1738,7 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+_______
+
+so chainner converts the tga's to png's, we have that in. later on we cleanup the tga's, but are forgetting to also clean up the png's at the same time
