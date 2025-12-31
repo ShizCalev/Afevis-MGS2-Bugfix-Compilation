@@ -218,7 +218,7 @@ jobs:
         
         Invoke-RoboCopy "Texture Fixes\Staging\textures"                   "dist\textures"
         #Invoke-RoboCopy "Texture Fixes\Staging - 2x Upscaled\textures"     "dist_2x\textures"
-        #Invoke-RoboCopy "Texture Fixes\Staging - 4x Upscaled\textures"     "dist_4x\textures"
+        Invoke-RoboCopy "Texture Fixes\Staging - 4x Upscaled\textures"     "dist_4x\textures"
 
         # force a clean success exit for the whole step
         exit 0

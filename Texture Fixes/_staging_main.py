@@ -931,8 +931,11 @@ def run_nvtt_exports_or_die(
     upscaled_expected = get_staging_upscaled_bool()
 
     # ==========================================================
-    # Build missing list, but SKIP "self remade" images that would
-    # use DPF_NOMIPS. Those must be handled manually.
+    # Build missing list.
+    # For NON-upscaled runs, SKIP "self remade" images that would
+    # use DPF_NOMIPS (manual handling required).
+    # For upscaled runs, DO NOT skip them; treat them like normal
+    # NO-MIPS images so they can go through the pipeline.
     # ==========================================================
     missing: list[Path] = []
     skipped_self_remade_nomips: list[Path] = []
@@ -946,7 +949,7 @@ def run_nvtt_exports_or_die(
         if used_nomips is None:
             used_nomips = should_use_nomips(name, no_mip_regexes, manual_ui_textures)
 
-        if path_contains_self_remade(img) and used_nomips:
+        if not upscaled_expected and path_contains_self_remade(img) and used_nomips:
             skipped_self_remade_nomips.append(img)
             continue
 
