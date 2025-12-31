@@ -38,11 +38,15 @@ https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/issues
 
 Recommended Mod Load Order (from first to last):
 
-1. MGSHDFix
-2. Knight_Killer's MGS2 Better Audio Mod
-3. THIS MOD
-4. MGS2 Demastered Texture Pack (if installed)
+1. [MGSHDFix](https://github.com/Lyall/MGSHDFix)
+2. [Knight_Killer](https://www.nexusmods.com/profile/KnightKiIIer)'s [MGS2 Better Audio Mod](https://www.nexusmods.com/metalgearsolid2mc/mods/3)
+3. MGS2 Community Bugfix Compilation - Base
+4. MGS2 Community Bugfix Compilation - AI Upscaled Texture Pack (if desired)
+5. MGS2 Demastered Texture Pack (if installed)
+6. [IroquoisPliskin1972](https://www.nexusmods.com/profile/IroquoisPliskin1972)'s [Solid Snake and Pliskin fixes and overhaul﻿](https://www.nexusmods.com/metalgearsolid2mc/mods/45)
+7. [GuyOnAChair](https://www.nexusmods.com/profile/GuyOnAChair)'s [MGS2MC Solid Snake Hair Fix﻿](https://www.nexusmods.com/metalgearsolid2mc/mods/10)
 5. All other mods
+
 
 <br>
 
@@ -125,7 +129,7 @@ Recommended Mod Load Order (from first to last):
 
 - Replaced a poorly upscaled power generator texture with its higher-quality PS2 version. [2011 HDC]
 
-- Fixed a hole in the top of the HH-60 Helicopters used by the SEALS during the Plant intro. [2001 SoL] (Contributed by Jacky720 / Space Core)
+- Fixed a hole in the top of the HH-60 Helicopters used by the SEALS during the Plant intro. [2001 SoL] Contributed by [Jacky720](https://github.com/Jacky720) / Space Core
 
 <br>
 
@@ -154,11 +158,22 @@ Recommended Mod Load Order (from first to last):
 
 ### Restored Content:
 
-- Restored Fatman's glock to its original version (the slide serrations & slide release were simplified in HDC → MC, presumably for copyright reasons.)
+- Restored Fatman's glock to its original version (the slide serrations & slide release were simplified in HDC → MC, presumably for copyright reasons.) [2023 MC]
 
-- Restored the secret Konami.jp reward screen for collecting all dogtags using the new Konami.com archival site, utilizing a tinyurl & QR code to make it easier to open.. (The original URL has been dead since 2007, and Konami removed the screen with the MC release.)
+- Restored the secret Konami.jp reward screen for collecting all dogtags using the new Konami.com archival site, utilizing a tinyurl & QR code to make it easier to open. (The original URL has been dead since 2007, and Konami removed the screen with the MC release.) [2011 HDC/2023 MC]
 
 - Restored numerous crosses changed from red to green. [2023 MC]
+
+- Restored missing audio track in Guard Rush boss intro cutscene. [2003 Substance] | Contributed by [Knight_Killer](https://www.nexusmods.com/profile/KnightKiIIer)
+
+- Restored censored blood particle effects during Guard Rush boss intro cutscene. [2002 EU-SoL] | Contributed by [Knight_Killer﻿](https://www.nexusmods.com/profile/KnightKiIIer)
+
+- Restored missing audio track during Vamp vs Seals cutscene. [2003 Substance] | Contributed by [Knight_Killer﻿](https://www.nexusmods.com/profile/KnightKiIIer)
+
+- Restored censored blood particle effects during Vamp vs Seals cutscene. [2002 EU-SoL] | Contributed by [Knight_Killer﻿](https://www.nexusmods.com/profile/KnightKiIIer)
+
+- Restored censored blood particle effects during Shell 2 Core B1 cutscene. [2002 EU-SoL] | Contributed by [Knight_Killer﻿](https://www.nexusmods.com/profile/KnightKiIIer)
+
 
 
 <br>
@@ -190,6 +205,12 @@ Recommended Mod Load Order (from first to last):
 ------------
 
 ### Remade Assets:
+
+* All remade assets are located in the following folder and can be deleted without issue for purist who only want the base PS2 reimport & mipmap/opacity fixes.
+
+\ovr_stm\ovr_eu\_win
+
+Feel free to inquire about texture file names if you need assistance pinpointing certain things!
 
 - A number of text assets (using the original source fonts) that were either their original PS2 resolutions, or had serious aliasing issues from being machine upscaled multiple times over the years:
 
