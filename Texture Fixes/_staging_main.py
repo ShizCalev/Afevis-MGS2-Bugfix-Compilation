@@ -38,6 +38,12 @@ CTXR_TOOL_SUCCESS_LINE = "Running CtxrTool v1.3: Visit https://github.com/Jayvee
 NO_MIP_REGEX_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\no_mip_regex.txt")
 MANUAL_UI_TEXTURES_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\manual_ui_textures.txt")
 
+NEVER_UPSCALE_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\never_upscale.txt")
+UPSCALE_STAGING_DIR = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\_upscaling")
+CHAINNER_EXE = Path(r"C:\Users\cmkoo\AppData\Local\chaiNNer\chaiNNer.exe")
+CHAINNER_PROJECT = Path(
+    r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\4x Upscaling.chn"
+)
 
 CSV_FLUSH_SECONDS = 5.0
 
@@ -58,20 +64,21 @@ def pause_and_exit(code: int = 1) -> int:
 
 
 # ==========================================================
-# UPSCALED MODE DETECTION
+# UPSCALED MODE DETECTION (BOOLEAN)
 # ==========================================================
-def get_staging_upscaled() -> str:
+def get_staging_upscaled_bool() -> bool:
     """
-    Derive upscaled flag from the staging folder name.
-
-    Returns one of: "no", "2x", "4x".
+    True if the staging folder path contains:
+      - "Staging - 2x Upscaled"
+      - "Staging - 4x Upscaled"
+    anywhere in its full path.
     """
-    name = STAGING_FOLDER.name.lower()
-    if "4x" in name:
-        return "4x"
-    if "2x" in name:
-        return "2x"
-    return "no"
+    path_lower = str(STAGING_FOLDER).lower()
+    if "staging - 2x upscaled" in path_lower:
+        return True
+    if "staging - 4x upscaled" in path_lower:
+        return True
+    return False
 
 
 # ==========================================================
@@ -202,7 +209,7 @@ def gather_image_files_non_recursive(folders: list[Path]) -> list[Path]:
 
 
 # ==========================================================
-# NO-MIP / UI FILTERS
+# NO-MIP / UI / UPSCALE FILTERS
 # ==========================================================
 def load_no_mip_regexes_or_die(path: Path) -> list[re.Pattern]:
     if not path.is_file():
@@ -232,6 +239,19 @@ def load_manual_ui_textures_or_die(path: Path) -> set[str]:
             continue
         out.add(line.lower())
 
+    return out
+
+
+def load_never_upscale_or_die(path: Path) -> set[str]:
+    if not path.is_file():
+        raise RuntimeError(f"never_upscale.txt not found: {path}")
+
+    out: set[str] = set()
+    for raw in path.read_text(encoding="utf8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        out.add(line.lower())
     return out
 
 
@@ -363,13 +383,13 @@ def origin_relative_to_required_subpath_or_die(image_path: Path) -> str:
 # ==========================================================
 # LOAD / MAP CSV
 # mapping entry:
-# (before_hash, ctxr_hash, used_nomips_bool, origin_folder_string, opacity_stripped_bool, upscaled_str)
+# (before_hash, ctxr_hash, used_nomips_bool, origin_folder_string, opacity_stripped_bool, upscaled_bool)
 #
 # NOTE: CSV mipmaps column means "has mipmaps". Internally we track "used_nomips".
 # ==========================================================
 def load_conversion_csv_unique_or_die(
     csv_path: Path,
-) -> tuple[dict[str, tuple[str, str, bool, str, bool, str]], list[dict[str, str]], list[str]]:
+) -> tuple[dict[str, tuple[str, str, bool, str, bool, bool]], list[dict[str, str]], list[str]]:
     if not csv_path.is_file():
         raise FileNotFoundError(f'Missing "{CONVERSION_CSV}" at {csv_path}')
 
@@ -388,10 +408,8 @@ def load_conversion_csv_unique_or_die(
         header = rdr.fieldnames
 
         rows: list[dict[str, str]] = []
-        mapping: dict[str, tuple[str, str, bool, str, bool, str]] = {}
+        mapping: dict[str, tuple[str, str, bool, str, bool, bool]] = {}
         duplicates: list[str] = []
-
-        default_upscaled = get_staging_upscaled()
 
         for row in rdr:
             filename = (row.get("filename") or row.get("Filename") or row.get("FILENAME") or "").strip()
@@ -407,17 +425,20 @@ def load_conversion_csv_unique_or_die(
             if not filename:
                 continue
 
-            if upscaled_raw not in ("no", "2x", "4x"):
-                upscaled_raw = default_upscaled
+            has_mipmaps = bool_from_csv(mipmaps_raw)
+            used_nomips = not has_mipmaps
+            opacity_stripped = bool_from_csv(opacity_raw)
+
+            if upscaled_raw:
+                upscaled = bool_from_csv(upscaled_raw)
+            else:
+                upscaled = get_staging_upscaled_bool()
 
             name = filename.lower()
             if name in mapping:
                 duplicates.append(filename)
             else:
-                has_mipmaps = bool_from_csv(mipmaps_raw)
-                used_nomips = not has_mipmaps
-                opacity_stripped = bool_from_csv(opacity_raw)
-                mapping[name] = (before_hash, ctxr_hash, used_nomips, origin_folder, opacity_stripped, upscaled_raw)
+                mapping[name] = (before_hash, ctxr_hash, used_nomips, origin_folder, opacity_stripped, upscaled)
 
             rows.append(row)
 
@@ -647,9 +668,176 @@ def hash_ctxr_files_with_progress(ctxr_files: list[Path], workers: int, label: s
     return ctxr_hash_by_path
 
 
+def delete_upscale_staging_dir_if_exists(path: Path) -> None:
+    """
+    Hard delete the upscaling staging directory (and its contents) if it exists.
+    """
+    if not path.exists():
+        return
+
+    if path.is_file():
+        raise RuntimeError(f"Upscaling staging path exists as a file, not a directory: {path}")
+
+    try:
+        shutil.rmtree(path)
+        log(f"[UPSCALE] Cleared existing upscaling folder: {path}")
+    except Exception as e:
+        raise RuntimeError(f"Failed deleting existing upscaling folder {path}: {e}")
+
+
+def copy_images_for_upscaling_or_die(images: list[Path]) -> dict[Path, Path]:
+    """
+    Copy each image into UPSCALE_STAGING_DIR.
+    Returns mapping original_path -> upscaling_copy_path.
+    """
+    mapping: dict[Path, Path] = {}
+
+    if not images:
+        return mapping
+
+    UPSCALE_STAGING_DIR.mkdir(parents=True, exist_ok=True)
+
+    copied = 0
+    failed = 0
+
+    for img in sorted(images, key=lambda p: p.name.lower()):
+        dest = UPSCALE_STAGING_DIR / img.name
+        try:
+            shutil.copy2(img, dest)
+            mapping[img] = dest
+            copied += 1
+        except Exception as e:
+            failed += 1
+            log(f"[UPSCALE FAIL] Could not copy {img} to {dest}: {e}")
+
+    log(f"[UPSCALE] Copied {copied} image(s) to {UPSCALE_STAGING_DIR}")
+    if failed:
+        raise RuntimeError(f"Failed copying {failed} image(s) to upscaling folder")
+
+    return mapping
+
+
+def _is_chainner_running() -> bool:
+    """
+    Check via 'tasklist' whether any chaiNNer.exe processes are running.
+    """
+    try:
+        out = subprocess.check_output(
+            ["tasklist", "/FI", "IMAGENAME eq chaiNNer.exe"],
+            stderr=subprocess.DEVNULL,
+            text=True,
+            encoding="utf8",
+            errors="replace",
+        )
+    except Exception:
+        return False
+
+    return "chaiNNer.exe" in out
+
+
+def run_chaiNNer_or_die() -> None:
+    if not CHAINNER_EXE.is_file():
+        raise RuntimeError(f"chaiNNer.exe not found: {CHAINNER_EXE}")
+
+    if not CHAINNER_PROJECT.is_file():
+        raise RuntimeError(f"chaiNNer project file not found: {CHAINNER_PROJECT}")
+
+    log(f"[UPSCALE] Launching chaiNNer with project:")
+    log(f"         {CHAINNER_PROJECT}")
+
+    try:
+        subprocess.Popen(
+            [str(CHAINNER_EXE), str(CHAINNER_PROJECT)],
+            cwd=str(CHAINNER_PROJECT.parent),
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+    except Exception as e:
+        raise RuntimeError(f"Failed to launch chaiNNer with project: {e}")
+
+    log("[UPSCALE] Waiting for chaiNNer.exe to appear...")
+    started = False
+    start_wait_deadline = time.time() + 30.0
+
+    while time.time() < start_wait_deadline:
+        if _is_chainner_running():
+            started = True
+            break
+        time.sleep(1.0)
+
+    if not started:
+        log("[UPSCALE WARN] chaiNNer.exe never appeared in tasklist; continuing WITHOUT waiting.")
+        return
+
+    log("[UPSCALE] chaiNNer detected. Waiting for it to close...")
+    while _is_chainner_running():
+        time.sleep(5.0)
+
+    log("[UPSCALE] chaiNNer closed, continuing.")
+
+
+# ==========================================================
+# UPSCALED RESAVE TO POWER-OF-TWO (NO HASH CHANGES)
+# ==========================================================
+def _next_power_of_two(n: int) -> int:
+    if n <= 0:
+        return 1
+    if (n & (n - 1)) == 0:
+        return n
+    p = 1
+    while p < n:
+        p <<= 1
+    return p
+
+
+def resave_images_to_pot_or_die(image_paths: list[Path]) -> None:
+    """
+    For each image:
+      - Open with PIL
+      - Resize to ceil power-of-two per dimension
+      - Resave in-place (PNG/TGA), PNG with optimize=False
+
+    This DOES NOT touch any hash maps. before_hash remains
+    the hash of the original staging image, by design.
+    """
+    if not image_paths:
+        return
+
+    processed = 0
+    failed = 0
+
+    for path in sorted(image_paths, key=lambda p: p.name.lower()):
+        try:
+            with Image.open(path) as im:
+                width, height = im.size
+                new_w = _next_power_of_two(width)
+                new_h = _next_power_of_two(height)
+
+                if new_w != width or new_h != height:
+                    im = im.resize((new_w, new_h), Image.LANCZOS)
+
+                suffix = path.suffix.lower()
+                if suffix == ".png":
+                    im.save(path, format="PNG", optimize=False)
+                elif suffix == ".tga":
+                    im.save(path, format="TGA")
+                else:
+                    im.save(path)
+
+            processed += 1
+            log(f"[UPSCALE POT] {path} -> {new_w}x{new_h}")
+        except Exception as e:
+            failed += 1
+            log(f"[UPSCALE POT FAIL] {path}: {e}")
+
+    log(f"[UPSCALE POT] Processed {processed} image(s) for power-of-two resizing")
+    if failed:
+        raise RuntimeError(f"Failed resizing/resaving {failed} image(s) to power-of-two dimensions")
+
+
 def run_nvtt_exports_or_die(
     image_files: list[Path],
-    conversion_map: dict[str, tuple[str, str, bool, str, bool, str]],
+    conversion_map: dict[str, tuple[str, str, bool, str, bool, bool]],
     image_hash_by_name: dict[str, str],
     image_origin_by_name: dict[str, str],
     image_used_nomips_by_name: dict[str, bool],
@@ -672,7 +860,7 @@ def run_nvtt_exports_or_die(
     if not CTXR_TOOL_EXE.is_file():
         raise RuntimeError(f"CtxrTool.exe not found: {CTXR_TOOL_EXE}")
 
-    upscaled_expected = get_staging_upscaled()
+    upscaled_expected = get_staging_upscaled_bool()
 
     # ==========================================================
     # Build missing list, but SKIP "self remade" images that would
@@ -708,6 +896,84 @@ def run_nvtt_exports_or_die(
         log("[PARAM] No images missing from conversion_hashes.csv. Nothing to export.")
         remove_error_log_if_exists(error_log)
         return
+
+    # ==========================================================
+    # For upscaled staging folders, copy all images that are
+    # valid for conversion to the _upscaling folder and wait
+    # for chaiNNer to complete. Then:
+    #   - Verify dimensions actually changed (upscale success)
+    #   - If any did not change, skip them from nvtt/ctxr
+    #   - Continue working ONLY with the upscaled copies
+    #   - Resave remaining to POT (hash mapping NOT touched)
+    # ==========================================================
+    if upscaled_expected:
+        log("[UPSCALE] Staging folder is an upscaled variant (2x/4x).")
+        log(f"[UPSCALE] Preparing {len(missing)} image(s) for external upscaling.")
+
+        # Copy originals into _upscaling and remember mapping
+        mapping = copy_images_for_upscaling_or_die(missing)
+
+        # Record dimensions before chaiNNer, on the COPIES in _upscaling
+        dims_before: dict[Path, tuple[int, int]] = {}
+        for orig, ups in mapping.items():
+            try:
+                with Image.open(ups) as im:
+                    dims_before[orig] = im.size
+            except Exception as e:
+                raise RuntimeError(f"Failed reading dimensions before upscaling for {ups}: {e}")
+
+        run_chaiNNer_or_die()
+
+        # Check dimensions after chaiNNer, again on _upscaling copies
+        unchanged: list[Path] = []
+        dims_after: dict[Path, tuple[int, int]] = {}
+
+        for orig, ups in mapping.items():
+            try:
+                with Image.open(ups) as im:
+                    dims_after[orig] = im.size
+            except Exception as e:
+                raise RuntimeError(f"Failed reading dimensions after upscaling for {ups}: {e}")
+
+            before = dims_before.get(orig)
+            after = dims_after[orig]
+            if before is not None and after == before:
+                unchanged.append(orig)
+
+        if unchanged:
+            log("[UPSCALE WARN] The following image(s) did not change dimensions after chaiNNer (treating as failed upscales and skipping):")
+            for p in sorted(unchanged, key=lambda x: x.name.lower()):
+                b = dims_before.get(p, ("?", "?"))
+                a = dims_after.get(p, ("?", "?"))
+                log(f"  {p}  ({b[0]}x{b[1]} -> {a[0]}x{a[1]})")
+
+            failed_set = set(unchanged)
+            missing = [img for img in missing if img not in failed_set]
+
+            log(f"[UPSCALE] {len(unchanged)} image(s) failed the upscaling dimension check and will be skipped from nvtt/ctxr.")
+
+            if not missing:
+                log("[UPSCALE] No images left after removing failed upscales; skipping nvtt_export stage.")
+                remove_error_log_if_exists(error_log)
+                return
+
+        # Swap missing to the upscaled versions in _upscaling
+        new_missing: list[Path] = []
+        for orig in missing:
+            ups = mapping.get(orig)
+            if ups is None:
+                log(f"[UPSCALE WARN] No upscaled file found for {orig} in mapping; skipping.")
+                continue
+            new_missing.append(ups)
+        missing = new_missing
+
+        if not missing:
+            log("[UPSCALE] No images left to process after mapping to upscaled copies; skipping nvtt_export stage.")
+            remove_error_log_if_exists(error_log)
+            return
+
+        log("[UPSCALE] Resaving upscaled images to power-of-two dimensions...")
+        resave_images_to_pot_or_die(missing)
 
     needed_cols = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped", "upscaled"]
     conversion_header = ensure_csv_header_has_columns(list(conversion_header), needed_cols)
@@ -747,6 +1013,7 @@ def run_nvtt_exports_or_die(
         used_nomips = should_use_nomips(stem_lower, no_mip_regexes, manual_ui_textures)
         dpf_to_use = DPF_NOMIPS if used_nomips else DPF_DEFAULT
 
+        # before_hash is ALWAYS from the original staging image hash
         before_hash = image_hash_by_name.get(stem_lower, "").lower()
         if not before_hash:
             return (img_path, False, "Missing before_hash for image (unexpected)", "", "", used_nomips, "", False)
@@ -928,9 +1195,7 @@ def run_nvtt_exports_or_die(
             has_mipmaps = bool_from_csv(r.get("mipmaps", ""))
             used_nomips_local = not has_mipmaps
             opacity_stripped = bool_from_csv(r.get("opacity_stripped", ""))
-            upscaled_str = (r.get("upscaled") or "").strip().lower()
-            if upscaled_str not in ("no", "2x", "4x"):
-                upscaled_str = upscaled_expected
+            upscaled_val = bool_from_csv(r.get("upscaled", ""))
 
             conversion_map[name] = (
                 (r.get("before_hash") or "").lower(),
@@ -938,7 +1203,7 @@ def run_nvtt_exports_or_die(
                 used_nomips_local,
                 (r.get("origin_folder") or ""),
                 opacity_stripped,
-                upscaled_str,
+                upscaled_val,
             )
 
         log(f"[CSV] Appended {len(pending_rows)} row(s)")
@@ -965,7 +1230,7 @@ def run_nvtt_exports_or_die(
                         "mipmaps": bool_to_csv(has_mipmaps),
                         "origin_folder": origin_folder,
                         "opacity_stripped": bool_to_csv(opacity_expected),
-                        "upscaled": upscaled_expected,
+                        "upscaled": bool_to_csv(upscaled_expected),
                     }
                 )
             else:
@@ -1004,7 +1269,7 @@ def prune_csv_entries_missing_staged_ctxr(
     conversion_csv_path: Path,
     conversion_header: list[str],
     conversion_rows: list[dict[str, str]],
-    conversion_map: dict[str, tuple[str, str, bool, str, bool, str]],
+    conversion_map: dict[str, tuple[str, str, bool, str, bool, bool]],
 ) -> int:
     staged_ctxr_stems: set[str] = set()
     for p in STAGING_FOLDER.iterdir():
@@ -1052,6 +1317,13 @@ def main() -> int:
     conversion_csv = STAGING_FOLDER / CONVERSION_CSV
 
     try:
+        # Always clear the upscaling staging folder at the very start
+        delete_upscale_staging_dir_if_exists(UPSCALE_STAGING_DIR)
+
+        log(f"[INFO] STAGING_FOLDER: {STAGING_FOLDER}")
+        is_upscaled_run = get_staging_upscaled_bool()
+        log(f"[INFO] This run is treated as {'UPSCALED (2x/4x)' if is_upscaled_run else 'NON-upscaled'}")
+
         folders = read_folder_list(folders_txt)
         if not folders:
             log("[ERROR] No folders listed")
@@ -1064,7 +1336,24 @@ def main() -> int:
         no_mip_regexes = load_no_mip_regexes_or_die(NO_MIP_REGEX_PATH)
         manual_ui_textures = load_manual_ui_textures_or_die(MANUAL_UI_TEXTURES_PATH)
 
+        never_upscale_stems: set[str] = set()
+        if is_upscaled_run:
+            never_upscale_stems = load_never_upscale_or_die(NEVER_UPSCALE_PATH)
+
         image_files = gather_image_files_non_recursive(folders)
+
+        if is_upscaled_run and never_upscale_stems:
+            filtered: list[Path] = []
+            skipped = 0
+            for img in image_files:
+                if img.stem.lower() in never_upscale_stems:
+                    skipped += 1
+                    continue
+                filtered.append(img)
+            image_files = filtered
+            if skipped:
+                log(f"[UPSCALE] Skipped {skipped} image(s) listed in never_upscale.txt for upscaled staging run")
+
         image_hash_by_name, image_origin_by_name, image_opacity_expected_by_name = hash_images_unique_or_die(image_files, workers)
 
         image_used_nomips_by_name: dict[str, bool] = {}
@@ -1089,10 +1378,10 @@ def main() -> int:
             raise RuntimeError(f"{CONVERSION_CSV} is empty or unreadable")
         file_header_lower = [h.strip().lower() for h in first]
         if any(col.lower() not in file_header_lower for col in needed_cols):
-            upscaled_expected = get_staging_upscaled()
+            upscaled_bool = is_upscaled_run
             for row in conversion_rows:
                 if "upscaled" not in row or not (row.get("upscaled") or "").strip():
-                    row["upscaled"] = upscaled_expected
+                    row["upscaled"] = bool_to_csv(upscaled_bool)
             write_conversion_csv_atomic(conversion_csv, conversion_header, conversion_rows)
             log(f"[CSV] Rewrote {CONVERSION_CSV} to add missing columns")
 
@@ -1102,7 +1391,7 @@ def main() -> int:
             key=lambda p: p.name.lower(),
         )
 
-        upscaled_expected_main = get_staging_upscaled()
+        upscaled_expected_main = is_upscaled_run
 
         # ==========================================================
         # EARLY PRUNE: if image exists and CSV metadata differs
@@ -1342,7 +1631,7 @@ def main() -> int:
                     f"  expected_opacity_stripped={bool_to_csv(expected_opacity_stripped)} "
                     f"actual_opacity_stripped={bool_to_csv(current_opacity_expected)}"
                 )
-                log(f"  expected_upscaled={expected_upscaled} actual_upscaled={upscaled_expected_main}")
+                log(f"  expected_upscaled={bool_to_csv(expected_upscaled)} actual_upscaled={bool_to_csv(upscaled_expected_main)}")
                 deleted_mismatches += 1
             except Exception as e:
                 log(f"[FAIL MISMATCH] {ctxr_digest}  {ctxr.name} (delete error: {e})")

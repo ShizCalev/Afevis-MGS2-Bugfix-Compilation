@@ -1,6 +1,10 @@
 *.gcx
 hash_differences.txt
 _dist/
+Texture Fixes/_upscaling
+/Texture\ Fixes/Staging/**/**/*.png
+/Texture\ Fixes/Staging - 2x Upscaled/**/**/*.png
+/Texture\ Fixes/Staging - 4x Upscaled/**/**/*.png
 
 *.lnk
 

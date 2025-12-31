@@ -1,0 +1,22 @@
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\no_mip_fixes
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\no_mip_fixes\ui
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\power of two
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\HAS ALPHA\power of two\no_mip_fixes
+
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\no_mip_fixes
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\OPAQUE\no_mip_fixes\ui
+
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\tri with alpha
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\tri with alpha\no_mip_fixes
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\tri with alpha\no_mip_fixes\ui
+
+
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\mc textures\HAS ALPHA\bp_remade\no_mip_fixes
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\mc textures\opaque\bp_remade
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\mc textures\opaque\bp_remade\no_mip_fixes
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\mc textures\tri with alpha\bp_remade\no_mip_fixes
+
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\mc textures\tri with alpha\bp_remade
+C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\mc textures\HAS ALPHA\bp_remade
