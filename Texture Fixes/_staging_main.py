@@ -40,8 +40,12 @@ MANUAL_UI_TEXTURES_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilati
 
 NEVER_UPSCALE_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\never_upscale.txt")
 UPSCALE_STAGING_DIR = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\_upscaling")
+
 CHAINNER_EXE = Path(r"C:\Users\cmkoo\AppData\Local\chaiNNer\chaiNNer.exe")
-CHAINNER_PROJECT = Path(
+CHAINNER_PROJECT_2X = Path(
+    r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\2x Upscaling.chn"
+)
+CHAINNER_PROJECT_4X = Path(
     r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\4x Upscaling.chn"
 )
 
@@ -79,6 +83,18 @@ def get_staging_upscaled_bool() -> bool:
     if "staging - 4x upscaled" in path_lower:
         return True
     return False
+
+
+def get_chainner_project_for_staging() -> Path:
+    """
+    Pick the chaiNNer project based on the staging folder path:
+      - If path contains "Staging - 2x Upscaled" use the 2x project.
+      - Otherwise default to the 4x project.
+    """
+    path_lower = str(STAGING_FOLDER).lower()
+    if "staging - 2x upscaled" in path_lower:
+        return CHAINNER_PROJECT_2X
+    return CHAINNER_PROJECT_4X
 
 
 # ==========================================================
@@ -769,16 +785,18 @@ def run_chaiNNer_or_die() -> None:
     if not CHAINNER_EXE.is_file():
         raise RuntimeError(f"chaiNNer.exe not found: {CHAINNER_EXE}")
 
-    if not CHAINNER_PROJECT.is_file():
-        raise RuntimeError(f"chaiNNer project file not found: {CHAINNER_PROJECT}")
+    project = get_chainner_project_for_staging()
+
+    if not project.is_file():
+        raise RuntimeError(f"chaiNNer project file not found: {project}")
 
     log(f"[UPSCALE] Launching chaiNNer with project:")
-    log(f"         {CHAINNER_PROJECT}")
+    log(f"         {project}")
 
     try:
         subprocess.Popen(
-            [str(CHAINNER_EXE), str(CHAINNER_PROJECT)],
-            cwd=str(CHAINNER_PROJECT.parent),
+            [str(CHAINNER_EXE), str(project)],
+            cwd=str(project.parent),
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         )
