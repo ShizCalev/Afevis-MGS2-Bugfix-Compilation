@@ -24,7 +24,7 @@ CONVERSION_CSV = "conversion_hashes.csv"
 
 TEXTURE_FIXES_ROOT = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes")
 
-# This script will ONLY process PNGs whose stem matches NO-MIP rules (DPF_NOMIPS equivalent)
+# This script will ONLY process images (PNG or TGA) whose stem matches NO-MIP rules (DPF_NOMIPS equivalent)
 NO_MIP_REGEX_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\no_mip_regex.txt")
 MANUAL_UI_TEXTURES_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures\manual_ui_textures.txt")
 
@@ -55,11 +55,12 @@ def sha1_file(path: Path, chunk_size: int = 8 * 1024 * 1024) -> str:
     return h.hexdigest()
 
 
-def png_has_any_transparency(png_path: Path) -> bool:
+def image_has_any_transparency(path: Path) -> bool:
     """
-    True if PNG contains any alpha < 255 anywhere (any transparency).
+    True if image contains any alpha < 255 anywhere (any transparency).
+    Supports PNG, TGA, and other formats PIL can open.
     """
-    with Image.open(png_path) as im:
+    with Image.open(path) as im:
         if im.mode == "P":
             if "transparency" in im.info:
                 im = im.convert("RGBA")
@@ -137,7 +138,7 @@ def load_existing_csv(csv_path: Path) -> dict[str, dict[str, str]]:
 
 
 def write_conversion_csv(csv_path: Path, rows_by_filename: dict[str, dict[str, str]]) -> None:
-    header = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped"]
+    header = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped","upscaled"]
     tmp_path = csv_path.with_suffix(csv_path.suffix + ".tmp")
 
     with tmp_path.open("w", encoding="utf-8", newline="\n") as f:
@@ -271,35 +272,39 @@ def main() -> int:
         log(f"ERROR: {e}")
         return pause_and_exit(1)
 
-    # Gather PNGs from CWD, then FILTER to only DPF_NOMIPS-qualifying stems
-    all_pngs = sorted(p for p in cwd.iterdir() if p.is_file() and p.suffix.lower() == ".png")
-    if not all_pngs:
-        log(f"ERROR: No PNGs found in CWD:\n{cwd}")
+    # Gather PNGs + TGAs from CWD, then FILTER to only DPF_NOMIPS-qualifying stems
+    all_images = sorted(
+        p
+        for p in cwd.iterdir()
+        if p.is_file() and p.suffix.lower() in {".png", ".tga"}
+    )
+    if not all_images:
+        log(f"ERROR: No PNG or TGA files found in CWD:\n{cwd}")
         return pause_and_exit(1)
 
-    pngs: list[Path] = []
+    tex_paths: list[Path] = []
     skipped: list[Path] = []
-    for p in all_pngs:
+    for p in all_images:
         stem_lower = p.stem.lower()
         if should_use_nomips(stem_lower, no_mip_regexes, manual_ui_textures):
-            pngs.append(p)
+            tex_paths.append(p)
         else:
             skipped.append(p)
 
     if skipped:
-        log(f"[INFO] Skipping {len(skipped)} PNG(s) that are NOT NO-MIPS (manual handling expected for these).")
+        log(f"[INFO] Skipping {len(skipped)} image(s) that are NOT NO-MIPS (manual handling expected for these).")
         for p in skipped[:50]:
             log(f"  [SKIP NOT NOMIPS] {p.name}")
         if len(skipped) > 50:
             log(f"  ...and {len(skipped) - 50} more")
         log("")
 
-    if not pngs:
-        log("ERROR: After NO-MIPS filtering, there are 0 PNGs to process in CWD.")
+    if not tex_paths:
+        log("ERROR: After NO-MIPS filtering, there are 0 images to process in CWD.")
         log("This script now only processes textures that would use DPF_NOMIPS.")
         return pause_and_exit(1)
 
-    stems = [p.stem for p in pngs]
+    stems = [p.stem for p in tex_paths]
     ctxr_names = [f"{s}.ctxr" for s in stems]
     line = f"{PREFIX}/<{'|'.join(ctxr_names)}>"
 
@@ -349,13 +354,13 @@ def main() -> int:
         return pause_and_exit(1)
 
     # Precompute metadata (ONLY for the NO-MIPS filtered set)
-    log("\nHashing PNGs + checking transparency...")
-    png_meta: dict[str, tuple[str, str]] = {}  # stem -> (before_hash, opacity_stripped)
-    for p in pngs:
+    log("\nHashing source images + checking transparency...")
+    tex_meta: dict[str, tuple[str, str]] = {}  # stem -> (before_hash, opacity_stripped)
+    for p in tex_paths:
         before_hash = sha1_file(p)
         # true if NO transparency
-        opacity_stripped = "true" if not png_has_any_transparency(p) else "false"
-        png_meta[p.stem] = (before_hash, opacity_stripped)
+        opacity_stripped = "true" if not image_has_any_transparency(p) else "false"
+        tex_meta[p.stem] = (before_hash, opacity_stripped)
 
     log("Hashing CTXRs...")
     ctxr_hashes: dict[str, str] = {}
@@ -376,7 +381,7 @@ def main() -> int:
         rows = load_existing_csv(csv_path)
 
         for s in stems:
-            before_hash, opacity_stripped = png_meta[s]
+            before_hash, opacity_stripped = tex_meta[s]
             row = rows.get(s, {})
 
             row["filename"] = s

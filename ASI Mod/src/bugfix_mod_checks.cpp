@@ -13,7 +13,7 @@ void VerifyInstallation::Check()
 
 
     // ------------------------------------------------------
-    // MGS2: Verify Afevis Bugfix Collection based installation
+    // MGS2: Verify Afevis Bugfix Collection (base) installation
     // ------------------------------------------------------
 
     if (const std::filesystem::path afevisBugfixTestPathOne = sExePath / "textures" / "flatlist" / "_win" / "col_orange2.bmp.ctxr"; //verify base bugfix compilation is installed
@@ -22,7 +22,7 @@ void VerifyInstallation::Check()
 
         spdlog::warn("------------------- ! Community Bugfix Compilation (Base) Missing ! -------------------");
         spdlog::warn("Community Bugfix Compilation installation issue detected, base package is NOT found.");
-        spdlog::warn("This can occur if steam has verified integrity and replaced your mod files, or if the Base Bugfix Compilation zip wasn't installed.");
+        spdlog::warn("This can occur if Steam has verified integrity and damaged your mod files, or if the Base Bugfix Compilation zip wasn't installed.");
         spdlog::warn("The base package is required for proper functionality, even when 2x & 4x packages are installed.");
         spdlog::warn("Please install the Community Bugfix Compilation -> Base <- package to ensure proper game functionality.");
         spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to download the base package.");
@@ -32,7 +32,7 @@ void VerifyInstallation::Check()
             nullptr,
             "Community Bugfix Compilation installation issue detected, base package is NOT found.\n"
             "\n"
-            "This can occur if steam has verified integrity and replaced your mod files, or if the Base Bugfix Compilation zip wasn't installed.\n"
+            "This can occur if Steam has verified integrity and damaged your mod files, or if the Base Bugfix Compilation zip wasn't installed.\n"
             "\n"
             "The base package is required for proper functionality, even when 2x & 4x packages are installed.\n"
             "Please install the Community Bugfix Compilation -> Base <- package to ensure proper game functionality.\n"
@@ -68,7 +68,7 @@ void VerifyInstallation::Check()
         {
             spdlog::warn("------------------- ! Community Bugfix Compilation - Mod Compatibility Issue ! -------------------");
             spdlog::warn("LiqMix's AI Slop AI Upscaled texture pack has been detected.");
-            spdlog::warn("LiqMix's AI Slop texture pack is VERY out of date and has been replaced by the MGS2 Community Bugfix Compilation's Upscaled texture packs, which includes all the texture fixes from the base version.");
+            spdlog::warn("LiqMix's AI Slop texture pack is VERY out of date and has been damaged by the MGS2 Community Bugfix Compilation's Upscaled texture packs, which includes all the texture fixes from the base version.");
             spdlog::warn("Please uninstall LiqMix's AI Slop Upscaled texture pack to ensure proper game functionality.");
             spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to download our upscaled texture package.");
             spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/releases");
@@ -76,7 +76,7 @@ void VerifyInstallation::Check()
             if (int result = MessageBoxA(
                 nullptr,
                 "LiqMix's AI Slop AI Upscaled texture pack has been detected.\n"
-                "LiqMix's AI Slop texture pack is VERY out of date and has been replaced by the Community Bugfix Compilation's upscaled packs, which includes all the texture fixes from the base version."
+                "LiqMix's AI Slop texture pack is VERY out of date and has been damaged by the Community Bugfix Compilation's upscaled packs, which includes all the texture fixes from the base version."
                 "Please remove LiqMix's AI Slop Upscaled texture pack to ensure proper game functionality.\n"
                 "\n"
                 "Would you like to open the Community Bugfix Nexus download page now to download the base package?"
@@ -197,28 +197,34 @@ void VerifyInstallation::Check()
 
     }
 
+            // ------------------------------------------------------
+            // MGS2: Verify community bugfix upscaled pack is loaded AFTER better audio mod
+            // ------------------------------------------------------
+
 
     if (const std::filesystem::path afevisBugfixTestPathOne = sExePath / "us" / "demo" / "_bp" / "p010_01_p01g.sdt"; //vamp cutscene decensor fix
         std::filesystem::exists(afevisBugfixTestPathOne) && !Util::SHA1Check(afevisBugfixTestPathOne, "c0bc4f6cb9ec1aebb447b1c5fb1aadc7bd91635f"))
     {
 
 
-        spdlog::warn("------------------- ! Community Bugfix Compilation - Installation Issue ! -------------------");
-        spdlog::warn("Community Bugfix Compilation installation issue detected, base package is NOT found.");
-        spdlog::warn("This can occur if steam has verified integrity and replaced your mod files, or if the Base Bugfix Compilation zip wasn't installed.");
-        spdlog::warn("The base package is required for proper functionality, even when 2x & 4x packages are installed.");
-        spdlog::warn("Please install the Community Bugfix Compilation -> Base <- package to ensure proper game functionality.");
-        spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to download the base package.");
+        spdlog::warn("------------------- ! Community Bugfix Compilation (Base) - Installation Issue ! -------------------");
+        spdlog::warn("Community Bugfix Compilation installation issue detected!");
+        spdlog::warn("Unexpected SHA-1 hash for p010_01_p01g.sdt.");
+        spdlog::warn("This can occur if Steam has verified integrity and damaged your mod files, or if the Community Bugfix Compilation (Base) was loaded BEFORE KnightKiller's Better Audio Mod.");
+        spdlog::warn("Please reinstall the Community Bugfix Compilation (Base) to ensure correct behavior.");
+        spdlog::warn("If you are using a mod manager, make sure Community Bugfix Compilation (Base) is loaded AFTER Better Audio Mod.");
+        spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to redownload the base package.");
         spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/releases");
         spdlog::warn("------------------- ! Community Bugfix Compilation (Base) Missing ! -------------------");
         if (int result = MessageBoxA(
             nullptr,
-            "Community Bugfix Compilation installation issue detected, base package is NOT found.\n"
+            "Community Bugfix Compilation installation issue detected!\n"
             "\n"
-            "This can occur if steam has verified integrity and replaced your mod files, or if the Base Bugfix Compilation zip wasn't installed.\n"
+            "Unexpected SHA-1 hash for p010_01_p01g.sdt.\n"
+            "This can occur if Steam has verified integrity and damaged your mod files, or if the Community Bugfix Compilation (Base) was loaded BEFORE KnightKiller's Better Audio Mod.\n"
             "\n"
-            "The base package is required for proper functionality, even when 2x & 4x packages are installed.\n"
-            "Please install the Community Bugfix Compilation -> Base <- package to ensure proper game functionality.\n"
+            "Please reinstall the Community Bugfix Compilation (Base) to ensure correct behavior.\n"
+            "If you are using a mod manager, make sure Community Bugfix Compilation (Base) is loaded AFTER Better Audio Mod.\n"
             "\n"
             "Would you like to open the Community Bugfix Nexus download page now to download the base package?\n"
             "(You can also find a link to our GitHub releases on the Nexus page if preferred.)",
@@ -235,10 +241,27 @@ void VerifyInstallation::Check()
                 SW_SHOWNORMAL
             );
         }
+    }
 
 
+    // ------------------------------------------------------
+    // MGS2: Check if Higher Resolution KojiPro posters mod is installed
+    // ------------------------------------------------------
+
+    if (const std::filesystem::path afevisBugfixTestPathOne = sExePath / "textures" / "flatlist" / "ovr_stm" / "_win" / "zoe_pos_n.bmp.ctxr"; //Higher Resolution KojiPro Posters check. we damaged it.
+        std::filesystem::exists(afevisBugfixTestPathOne) && Util::SHA1Check(afevisBugfixTestPathOne, "ce3fe5bd55aebb046103b5dba1cffa736b08abd2"))
+    {
+
+
+        spdlog::warn("------------------- ! Community Bugfix Compilation - Installation Issue ! -------------------");
+        spdlog::warn("Community Bugfix Compilation installation issue detected.");
+        spdlog::warn("j1llm4r13's Higher Resolution KojiPro Posters mod has been detected.");
+        spdlog::warn("This mod has been damaged by the Community Bugfix Compilation, which hand-remakes the original source assets.");
+        spdlog::warn("We already override the old mod's files, so we're just noting that it's unneeded here. <3");
+        spdlog::warn("------------------- ! Community Bugfix Compilation (Base) Missing ! -------------------");
 
     }
+    
 
 
 }
