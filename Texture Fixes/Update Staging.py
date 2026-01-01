@@ -80,7 +80,7 @@ def run_staging_main(job_dir: Path) -> None:
 
 def run_tier(root: Path) -> None:
     """
-    Run all jobs under a single staging root in parallel.
+    Run all jobs under a single staging root sequentially.
     Wait for all jobs in this tier to finish before returning.
     """
     jobs = find_jobs(root)
@@ -90,28 +90,19 @@ def run_tier(root: Path) -> None:
         return
 
     print(f"[INFO] Found {len(jobs)} job(s) under {root}")
+    print("[INFO] Running jobs sequentially")
 
-    workers = min(max(1, THREADS_PER_TIER), len(jobs))
-    print(f"[INFO] Running up to {workers} job(s) in parallel")
-
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        future_map = {
-            executor.submit(run_staging_main, job_dir): job_dir
-            for job_dir in jobs
-        }
-
-        for idx, future in enumerate(as_completed(future_map), start=1):
-            job_dir = future_map[future]
-            try:
-                future.result()
-                print(f"[INFO] Completed ({idx}/{len(jobs)}): {job_dir}")
-            except SystemExit as e:
-                print(f"[ERROR] Job failed in {job_dir}: {e}")
-                # Kill the whole run if any job fails
-                sys.exit(1)
-            except Exception as e:
-                print(f"[ERROR] Unexpected error in {job_dir}: {e}")
-                sys.exit(1)
+    total = len(jobs)
+    for idx, job_dir in enumerate(jobs, start=1):
+        try:
+            run_staging_main(job_dir)
+            print(f"[INFO] Completed ({idx}/{total}): {job_dir}")
+        except SystemExit as e:
+            print(f"[ERROR] Job failed in {job_dir}: {e}")
+            sys.exit(1)
+        except Exception as e:
+            print(f"[ERROR] Unexpected error in {job_dir}: {e}")
+            sys.exit(1)
 
     print(f"[INFO] Finished all jobs under {root}")
 
