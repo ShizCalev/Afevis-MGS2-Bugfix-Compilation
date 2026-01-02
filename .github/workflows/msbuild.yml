@@ -269,21 +269,7 @@ jobs:
       working-directory: dist_2x
       run: 7z a -tzip "../${{ github.event.repository.name }}-run-${{ github.run_number }}.zip" *
 
-    - name: Upload Artifact 2x
-      if: "!contains(github.event.head_commit.message, '[CI SKIP UPSCALING]')"
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ github.event.repository.name }}_2x_Upscaled_-run-${{ github.run_number }}
-        path: dist_2x/
-
     - name: Create 4x Upscaled release zip
       if: "!contains(github.event.head_commit.message, '[CI SKIP UPSCALING]')"
       working-directory: dist_4x
       run: 7z a -tzip "../${{ github.event.repository.name }}-run-${{ github.run_number }}.zip" *
-
-    - name: Upload Artifact 4x
-      if: "!contains(github.event.head_commit.message, '[CI SKIP UPSCALING]')"
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ github.event.repository.name }}_4x_Upscaled_-run-${{ github.run_number }}
-        path: dist_4x/
