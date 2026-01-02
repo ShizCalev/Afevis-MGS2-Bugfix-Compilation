@@ -145,11 +145,10 @@ void VerifyInstallation::Check()
             }
         }
 
-        /*
-        else if (Util::SHA1Check(col_orange2OvrStmTest, "ecf723350dac8790e01ee7470b3e45761e79a939")) //community fix 2x is installed
+        else if (Util::SHA1Check(col_orange2OvrStmTest, "8a264048ed801ff00ca5477e9c721b6f42a38bda")) //community fix 2x is installed
         {
             if (const std::filesystem::path SelfRemade_2x_ovr_eu_seculitycard_lv2_alp = sExePath / "textures" / "flatlist" / "ovr_stm" / "ovr_eu" / "_win" / "seculitycard_lv2_alp.bmp.ctxr";
-                std::filesystem::exists(SelfRemade_2x_ovr_eu_seculitycard_lv2_alp) && !Util::SHA1Check(SelfRemade_2x_ovr_eu_seculitycard_lv2_alp, "004e54e6d30a76394b2d801c60479fcf0c7bdb51")) //NEEDS 2X HASH
+                std::filesystem::exists(SelfRemade_2x_ovr_eu_seculitycard_lv2_alp) && !Util::SHA1Check(SelfRemade_2x_ovr_eu_seculitycard_lv2_alp, "89f56fb1822ba33148c42872fdfd6ead7278f912"))
             {
 
 
@@ -192,18 +191,18 @@ void VerifyInstallation::Check()
                 }
             }
         }
-        */
+        
 
 
     }
 
-            // ------------------------------------------------------
-            // MGS2: Verify community bugfix upscaled pack is loaded AFTER better audio mod
-            // ------------------------------------------------------
-
+    // ------------------------------------------------------
+    // MGS2: Verify community bugfix upscaled pack is loaded AFTER better audio mod
+    // ------------------------------------------------------
 
     if (const std::filesystem::path afevisBugfixTestPathOne = sExePath / "us" / "demo" / "_bp" / "p010_01_p01g.sdt"; //vamp cutscene decensor fix
-        std::filesystem::exists(afevisBugfixTestPathOne) && !Util::SHA1Check(afevisBugfixTestPathOne, "c0bc4f6cb9ec1aebb447b1c5fb1aadc7bd91635f"))
+        std::filesystem::exists(afevisBugfixTestPathOne) && (Util::SHA1Check(afevisBugfixTestPathOne, "3424163081275d9152b162d648b82616d3100ab1") //better audio sha1
+                                                             || Util::SHA1Check(afevisBugfixTestPathOne, "301dcbda56107c7d5617a98256369abbb2b94fee"))) //vanilla sha1
     {
 
 
