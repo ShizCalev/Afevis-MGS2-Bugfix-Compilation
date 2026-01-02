@@ -6,6 +6,7 @@ kcej_logo_alp_ovl.bmp
 00fcbfac
 00fcb7ac
 00696652
+title_logo_mono_alp_ovl.bmp
 
 liqmix water stuff
 drop01_alp2_mod1021.bmp

@@ -979,6 +979,8 @@ def run_nvtt_exports_or_die(
         used_nomips = image_used_nomips_by_name.get(name)
         if used_nomips is None:
             used_nomips = should_use_nomips(name, no_mip_regexes, manual_ui_textures)
+            if upscaled_expected and name in manual_ui_textures:
+                used_nomips = False
 
         if not upscaled_expected and path_contains_self_remade(img) and used_nomips:
             skipped_self_remade_nomips.append(img)
@@ -1131,6 +1133,9 @@ def run_nvtt_exports_or_die(
             tmp_rgb_path = None
 
         used_nomips = should_use_nomips(stem_lower, no_mip_regexes, manual_ui_textures)
+        if upscaled_expected and stem_lower in manual_ui_textures:
+            used_nomips = False
+
         dpf_to_use = DPF_NOMIPS if used_nomips else DPF_DEFAULT
 
         # before_hash is ALWAYS from the original staging image hash
@@ -1658,9 +1663,12 @@ def main() -> int:
         for img in image_files:
             stem_lower = img.stem.lower()
             if stem_lower not in image_used_nomips_by_name:
-                image_used_nomips_by_name[stem_lower] = should_use_nomips(
+                used_nomips = should_use_nomips(
                     stem_lower, no_mip_regexes, manual_ui_textures
                 )
+                if is_upscaled_run and stem_lower in manual_ui_textures:
+                    used_nomips = False
+                image_used_nomips_by_name[stem_lower] = used_nomips
 
         conversion_map, conversion_rows, conversion_header = load_conversion_csv_unique_or_die(conversion_csv)
         if not conversion_header:
@@ -1979,6 +1987,7 @@ def main() -> int:
                     f"  expected_mipmaps={bool_to_csv(not expected_used_nomips)} "
                     f"actual_mipmaps={bool_to_csv(not current_used_nomips)}"
                 )
+
                 log(f"  expected_origin={expected_origin} actual_origin={current_origin}")
                 log(
                     f"  expected_opacity_stripped={bool_to_csv(expected_opacity_stripped)} "
