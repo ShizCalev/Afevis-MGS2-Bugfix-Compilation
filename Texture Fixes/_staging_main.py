@@ -54,9 +54,22 @@ CSV_FLUSH_SECONDS = 5.0
 PRINT_LOCK = Lock()
 
 
+def _clear_progress_line() -> None:
+    # Clear the current terminal line so progress text does not overlap with logs
+    try:
+        width = shutil.get_terminal_size(fallback=(120, 24)).columns
+    except Exception:
+        width = 120
+
+    sys.stdout.write("\r" + (" " * width) + "\r")
+    sys.stdout.flush()
+
+
 def log(msg: str):
     with PRINT_LOCK:
+        _clear_progress_line()
         print(msg)
+        sys.stdout.flush()
 
 
 def pause_and_exit(code: int = 1) -> int:

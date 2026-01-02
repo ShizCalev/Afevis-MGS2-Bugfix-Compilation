@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import os
 import subprocess
 import sys
@@ -33,9 +34,271 @@ THREADS_PER_TIER = 4
 CONVERSION_CSV_NAME = "conversion_hashes.csv"
 CONVERSION_CSV_HEADER = "filename,before_hash,ctxr_hash,mipmaps,origin_folder,opacity_stripped,upscaled\n"
 
+NOT_IN_FOLDER_CSV_NAME = "not_in_folder.csv"
+UNPROCESSED_FOLDERS_CSV_NAME = "unprocessed_folders.csv"
+
+# Relative location of never_upscale.txt inside the git repo
+NEVER_UPSCALE_REL_PATH = Path("Texture Fixes") / "never_upscale.txt"
+
 
 # ==========================================================
-# HELPERS
+# GIT / CSV HELPERS
+# ==========================================================
+def get_git_root() -> Path:
+    """
+    Use git to find the repository root.
+    """
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--show-toplevel"],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+    except FileNotFoundError:
+        print("ERROR: git is not installed or not on PATH.")
+        sys.exit(1)
+
+    if result.returncode != 0:
+        print("ERROR: Not inside a git repository.")
+        stderr = result.stderr.strip()
+        if stderr:
+            print(stderr)
+        sys.exit(1)
+
+    root = Path(result.stdout.strip()).resolve()
+    if not root.is_dir():
+        print(f"ERROR: Git root reported by git does not exist: {root}")
+        sys.exit(1)
+
+    return root
+
+
+def load_dimensions_names(dimensions_csv: Path) -> dict[str, str]:
+    """
+    Load texture_name entries from mgs2_ps2_dimensions.csv.
+
+    Returns dict:
+        logical_name_lower (full filename including .bmp) -> original texture_name
+
+    CSV vs CSV comparisons are done on this full logical name, case insensitive.
+    """
+    if not dimensions_csv.is_file():
+        print(f"ERROR: Dimensions CSV not found at: {dimensions_csv}")
+        sys.exit(1)
+
+    names: dict[str, str] = {}
+    with dimensions_csv.open("r", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        if "texture_name" not in reader.fieldnames:
+            print(f"ERROR: 'texture_name' column not found in {dimensions_csv}")
+            sys.exit(1)
+
+        for row in reader:
+            name = (row.get("texture_name") or "").strip()
+            if not name:
+                continue
+
+            key = name.lower()
+            if key not in names:
+                names[key] = name
+
+    if not names:
+        print(f"WARNING: No texture_name entries found in {dimensions_csv}")
+
+    return names
+
+
+def build_ps2_texture_index(ps2_root: Path) -> dict[str, Path]:
+    """
+    Index all .tga and .png files under 'Texture Fixes/ps2 textures',
+    mapping lowercase Path(path).stem -> full path.
+
+    For filenames like 'w03b_ent01.bmp.tga', Path(...).stem.lower() is 'w03b_ent01.bmp',
+    which matches your logical name.
+    """
+    if not ps2_root.is_dir():
+        print(f"WARNING: PS2 textures root does not exist: {ps2_root}")
+        return {}
+
+    index: dict[str, Path] = {}
+
+    for ext in ("*.tga", "*.png"):
+        for path in ps2_root.rglob(ext):
+            if not path.is_file():
+                continue
+            key = path.stem.lower()
+            if key not in index:
+                index[key] = path
+
+    if not index:
+        print(f"WARNING: No .tga or .png files found under {ps2_root}")
+
+    return index
+
+
+def collect_converted_names(conversion_csv: Path) -> set[str]:
+    """
+    Read conversion_hashes.csv and collect lowercase full filenames
+    from the 'filename' column.
+
+    This keeps the extension as part of the comparison, case insensitive.
+    """
+    names: set[str] = set()
+
+    if not conversion_csv.is_file():
+        print(f"WARNING: conversion_hashes.csv not found at {conversion_csv}, treating as empty.")
+        return names
+
+    with conversion_csv.open("r", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        if "filename" not in (reader.fieldnames or []):
+            print(f"WARNING: 'filename' column missing in {conversion_csv}, treating as no entries.")
+            return names
+
+        for row in reader:
+            filename = (row.get("filename") or "").strip()
+            if not filename:
+                continue
+            names.add(filename.lower())
+
+    return names
+
+
+def load_never_upscale_stems(never_upscale_path: Path) -> set[str]:
+    """
+    Load logical names from never_upscale.txt.
+
+    Each nonempty, non-comment line is treated as a full logical name
+    (including .bmp) and stored as lowercase. No extensions are added
+    or modified. Comparison is exact on that normalized string.
+    """
+    stems: set[str] = set()
+
+    if not never_upscale_path.is_file():
+        print(f"[WARN] never_upscale.txt not found at {never_upscale_path}, no stems will be skipped.")
+        return stems
+
+    try:
+        with never_upscale_path.open("r", encoding="utf-8") as f:
+            for line in f:
+                raw = line.strip()
+                if not raw or raw.startswith("#"):
+                    continue
+                stems.add(raw.lower())
+    except OSError as e:
+        print(f"[ERROR] Failed to read never_upscale.txt at {never_upscale_path}: {e}")
+
+    if stems:
+        print(f"[INFO] Loaded {len(stems)} stem(s) from never_upscale.txt")
+
+    return stems
+
+
+def write_not_in_folder_csv(
+    job_dir: Path,
+    dim_names: dict[str, str],
+    ps2_texture_index: dict[str, Path],
+    never_upscale_stems: set[str],
+) -> None:
+    """
+    For a given job directory:
+      - Load conversion_hashes.csv
+      - Compute textures that exist in mgs2_ps2_dimensions.csv
+        but do not appear in conversion_hashes.csv (full logical name, including .bmp, case insensitive)
+      - Skip any logical names whose normalized value is in never_upscale_stems
+      - For each remaining texture, if there is a matching .tga/.png in ps2_texture_index
+        (matched via Path(path).stem.lower()), record it
+      - Write not_in_folder.csv beside conversion_hashes.csv with:
+            filename,full_path
+      - Also write unprocessed_folders.csv listing unique parent folders of those full_path entries.
+    """
+    conversion_csv = job_dir / CONVERSION_CSV_NAME
+    if not conversion_csv.is_file():
+        print(f"[WARN] {CONVERSION_CSV_NAME} missing in job dir, skipping not_in_folder.csv: {job_dir}")
+        return
+
+    converted_names = collect_converted_names(conversion_csv)
+    if not dim_names:
+        print(f"[INFO] No dimension names loaded, skipping not_in_folder for {job_dir}")
+        return
+
+    rows: list[tuple[str, str]] = []
+
+    # dim_names keys are logical_name_lower (including .bmp)
+    for logical_name_lower in sorted(dim_names.keys()):
+        # Already present in conversion_hashes.csv for this job
+        if logical_name_lower in converted_names:
+            continue
+
+        # Skip entries that should never be upscaled (for 2x/4x tiers)
+        if logical_name_lower in never_upscale_stems:
+            continue
+
+        original_name = dim_names[logical_name_lower]
+
+        # Map to TGA/PNG using the logical name as the "stem" (including .bmp)
+        stem_key = original_name.lower()
+        tex_path = ps2_texture_index.get(stem_key)
+        if not tex_path:
+            # No corresponding TGA/PNG in ps2 textures folder, skip
+            continue
+
+        rows.append((original_name, str(tex_path)))
+
+    output_csv = job_dir / NOT_IN_FOLDER_CSV_NAME
+    output_folders_csv = job_dir / UNPROCESSED_FOLDERS_CSV_NAME
+
+    if not rows:
+        # No missing textures for this job. Still create CSVs with headers so it is explicit.
+        try:
+            with output_csv.open("w", encoding="utf-8", newline="") as f:
+                writer = csv.writer(f)
+                writer.writerow(["filename", "full_path"])
+            print(f"[INFO] No missing textures for job, wrote empty {output_csv}")
+        except OSError as e:
+            print(f"[ERROR] Failed to write empty {output_csv}: {e}")
+
+        try:
+            with output_folders_csv.open("w", encoding="utf-8", newline="") as f:
+                writer = csv.writer(f)
+                writer.writerow(["folder"])
+            print(f"[INFO] No missing textures for job, wrote empty {output_folders_csv}")
+        except OSError as e:
+            print(f"[ERROR] Failed to write empty {output_folders_csv}: {e}")
+        return
+
+    # Write not_in_folder.csv
+    try:
+        with output_csv.open("w", encoding="utf-8", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["filename", "full_path"])
+            for filename, full_path in rows:
+                writer.writerow([filename, full_path])
+        print(f"[INFO] Wrote {len(rows)} missing entries to {output_csv}")
+    except OSError as e:
+        print(f"[ERROR] Failed to write {output_csv}: {e}")
+
+    # Derive unique folders from full_path column and write unprocessed_folders.csv
+    folder_set: set[str] = set()
+    for _, full_path in rows:
+        folder_set.add(str(Path(full_path).parent))
+
+    sorted_folders = sorted(folder_set)
+
+    try:
+        with output_folders_csv.open("w", encoding="utf-8", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(["folder"])
+            for folder in sorted_folders:
+                writer.writerow([folder])
+        print(f"[INFO] Wrote {len(sorted_folders)} folders to {output_folders_csv}")
+    except OSError as e:
+        print(f"[ERROR] Failed to write {output_folders_csv}: {e}")
+
+
+# ==========================================================
+# STAGING HELPERS
 # ==========================================================
 def find_jobs(root: Path) -> list[Path]:
     """
@@ -78,16 +341,17 @@ def run_staging_main(job_dir: Path) -> None:
         )
 
 
-def run_tier(root: Path) -> None:
+def run_tier(root: Path) -> list[Path]:
     """
     Run all jobs under a single staging root sequentially.
     Wait for all jobs in this tier to finish before returning.
+    Return the list of job directories processed.
     """
     jobs = find_jobs(root)
 
     if not jobs:
         print(f"[INFO] No '{FOLDERS_TXT_NAME}' found under {root}")
-        return
+        return []
 
     print(f"[INFO] Found {len(jobs)} job(s) under {root}")
     print("[INFO] Running jobs sequentially")
@@ -105,6 +369,7 @@ def run_tier(root: Path) -> None:
             sys.exit(1)
 
     print(f"[INFO] Finished all jobs under {root}")
+    return jobs
 
 
 def run_set_ctxr_dates() -> None:
@@ -251,6 +516,42 @@ def ensure_conversion_csv_for_all_jobs() -> None:
             except OSError as e:
                 print(f"[ERROR] Failed to create {csv_path}: {e}")
 
+def is_eligible_upscale_job(job_dir: Path) -> bool:
+    """
+    Only generate not_in_folder/unprocessed_folders for jobs whose path
+    clearly sits under either ovr_stm/_win or flatlist/_win.
+    Comparison is done case-insensitively on the normalized path string.
+    """
+    p = str(job_dir).replace("\\", "/").lower()
+
+    return (
+        "/ovr_stm/_win/" in p
+        or p.endswith("/ovr_stm/_win")
+        or "/flatlist/_win/" in p
+        or p.endswith("/flatlist/_win")
+    )
+
+
+def generate_not_in_folder_for_tier(
+    root: Path,
+    dim_names: dict[str, str],
+    ps2_texture_index: dict[str, Path],
+    never_upscale_stems: set[str],
+) -> None:
+    jobs = find_jobs(root)
+    if not jobs:
+        print(f"[INFO] No jobs under {root} for not_in_folder.csv generation.")
+        return
+
+    print(f"[INFO] Generating {NOT_IN_FOLDER_CSV_NAME} and {UNPROCESSED_FOLDERS_CSV_NAME} for {len(jobs)} job(s) under {root}")
+    for job_dir in jobs:
+        if not is_eligible_upscale_job(job_dir):
+            print(f"[INFO] Skipping not_in_folder generation for non-target job: {job_dir}")
+            continue
+
+        write_not_in_folder_csv(job_dir, dim_names, ps2_texture_index, never_upscale_stems)
+
+
 
 # ==========================================================
 # MAIN
@@ -266,6 +567,25 @@ def main() -> None:
         print(f"ERROR: _staging_main.py not found at: {STAGING_MAIN_PATH}")
         sys.exit(1)
 
+    # Set up git root and PS2 data
+    git_root = get_git_root()
+
+    dimensions_csv = (
+        git_root
+        / "external"
+        / "MGS2-PS2-Textures"
+        / "u - dumped from substance"
+        / "mgs2_ps2_dimensions.csv"
+    )
+    dim_names = load_dimensions_names(dimensions_csv)
+
+    ps2_textures_root = git_root / "Texture Fixes" / "ps2 textures"
+    ps2_texture_index = build_ps2_texture_index(ps2_textures_root)
+
+    # Load never_upscale.txt from repo
+    never_upscale_path = git_root / NEVER_UPSCALE_REL_PATH
+    never_upscale_stems = load_never_upscale_stems(never_upscale_path)
+
     for staging_name in STAGING_ORDER:
         root = SCRIPT_DIR / staging_name
 
@@ -274,7 +594,17 @@ def main() -> None:
         print(f"Processing staging root: {root}")
         print("#################################################")
 
+        # Run the actual staging pipeline for this tier
         run_tier(root)
+
+        # Decide whether to apply never_upscale filter for this tier
+        if staging_name in ("Staging - 2x Upscaled", "Staging - 4x Upscaled"):
+            tier_blocklist = never_upscale_stems
+        else:
+            tier_blocklist = set()
+
+        # After the tier has finished, generate not_in_folder.csv and unprocessed_folders.csv for each job
+        generate_not_in_folder_for_tier(root, dim_names, ps2_texture_index, tier_blocklist)
 
     print()
     print("[INFO] All staging roots processed.")
