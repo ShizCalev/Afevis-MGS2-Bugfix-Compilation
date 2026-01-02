@@ -265,11 +265,9 @@ jobs:
         path: dist/
 
     - name: Create 2x Upscaled release zip
-      if: "!contains(github.event.head_commit.message, '[CI SKIP UPSCALING]')"
       working-directory: dist_2x
       run: 7z a -tzip "../${{ github.event.repository.name }}-run-${{ github.run_number }}.zip" *
 
     - name: Create 4x Upscaled release zip
-      if: "!contains(github.event.head_commit.message, '[CI SKIP UPSCALING]')"
       working-directory: dist_4x
       run: 7z a -tzip "../${{ github.event.repository.name }}-run-${{ github.run_number }}.zip" *
