@@ -12,12 +12,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ==========================================================
 SCRIPT_DIR = Path(__file__).resolve().parent
 
-STAGING_ORDER = [
-    "Staging",
-    "Staging - 2x Upscaled",
-    "Staging - 4x Upscaled",
-]
-
 FOLDERS_TXT_NAME = "folders to process.txt"
 STAGING_MAIN_NAME = "_staging_main.py"
 
@@ -39,6 +33,29 @@ UNPROCESSED_FOLDERS_CSV_NAME = "unprocessed_folders.csv"
 
 # Relative location of never_upscale.txt inside the git repo
 NEVER_UPSCALE_REL_PATH = Path("Texture Fixes") / "never_upscale.txt"
+
+# ==========================================================
+# HARDCODED STAGING ROOTS
+# ==========================================================
+BUGFIX_ROOT = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes")
+DEMASTER_ROOT = Path(r"C:\Development\Git\MGS2-Demastered-Substance-Edition\Textures")
+UPSCALED_UI_ROOT = Path(r"C:\Development\Git\MGS2-Upscaled-UI-Textures\Textures")
+
+STAGING_ROOTS: list[Path] = [
+    # Bugfix Compilation
+    BUGFIX_ROOT / "Staging",
+    BUGFIX_ROOT / "Staging - 2x Upscaled",
+    BUGFIX_ROOT / "Staging - 4x Upscaled",
+
+    # Demastered pack
+    DEMASTER_ROOT / "Staging",
+    DEMASTER_ROOT / "Staging - 2x Upscaled",
+    DEMASTER_ROOT / "Staging - 4x Upscaled",
+
+    # Upscaled UI pack (2x / 4x only)
+    UPSCALED_UI_ROOT / "Staging - 2x Upscaled",
+    UPSCALED_UI_ROOT / "Staging - 4x Upscaled",
+]
 
 
 # ==========================================================
@@ -307,6 +324,7 @@ def write_not_in_folder_csv(
     except OSError as e:
         print(f"[ERROR] Failed to write {output_folders_csv}: {e}")
 
+
 # ==========================================================
 # STAGING HELPERS
 # ==========================================================
@@ -413,23 +431,16 @@ def run_set_ctxr_dates() -> None:
     print("[INFO] set_ctxr_modified_dates.py completed successfully.")
 
 
-def sync_2x_folders_txt_with_4x() -> None:
+def _sync_2x_4x_pair(root_2x: Path, root_4x: Path) -> None:
     """
-    Sync logic:
-      - Remove any 2x 'folders to process.txt' that do not exist in 4x
-      - Overwrite 2x with 4x if contents differ
-      - Create missing 2x files if they exist in 4x
-      - Remove now empty directories under 2x
+    Internal helper: sync 2x ↔ 4x folders_to_process for a single project root pair.
     """
-    root_2x = SCRIPT_DIR / "Staging - 2x Upscaled"
-    root_4x = SCRIPT_DIR / "Staging - 4x Upscaled"
-
     if not root_2x.is_dir():
-        print("[INFO] 2x staging root does not exist, skipping 2x sync.")
+        print(f"[INFO] 2x staging root does not exist, skipping 2x sync: {root_2x}")
         return
 
     if not root_4x.is_dir():
-        print("[WARN] 4x staging root does not exist, skipping 2x sync.")
+        print(f"[WARN] 4x staging root does not exist, skipping 2x sync: {root_4x}")
         return
 
     # Collect all relative FOLDERS_TXT paths under 4x
@@ -439,10 +450,12 @@ def sync_2x_folders_txt_with_4x() -> None:
             rel_paths_4x.add(txt_4x.relative_to(root_4x))
 
     if not rel_paths_4x:
-        print("[WARN] No 'folders to process.txt' found under 4x, skipping 2x sync.")
+        print(f"[WARN] No 'folders to process.txt' found under 4x: {root_4x}, skipping 2x sync.")
         return
 
     print("[INFO] Syncing 'folders to process.txt' between 2x and 4x tiers")
+    print(f"       2x root: {root_2x}")
+    print(f"       4x root: {root_4x}")
 
     # First handle existing 2x files
     seen_rel_2x: set[Path] = set()
@@ -508,13 +521,35 @@ def sync_2x_folders_txt_with_4x() -> None:
             print(f"[ERROR] Failed to remove empty directory {p}: {e}")
 
 
+def sync_2x_folders_txt_with_4x() -> None:
+    """
+    Sync logic for all projects:
+      - Bugfix Compilation: Texture Fixes 2x ↔ 4x
+      - Demastered pack:    Textures 2x ↔ 4x
+      - Upscaled UI pack:   Textures 2x ↔ 4x
+    """
+    _sync_2x_4x_pair(
+        BUGFIX_ROOT / "Staging - 2x Upscaled",
+        BUGFIX_ROOT / "Staging - 4x Upscaled",
+    )
+
+    _sync_2x_4x_pair(
+        DEMASTER_ROOT / "Staging - 2x Upscaled",
+        DEMASTER_ROOT / "Staging - 4x Upscaled",
+    )
+
+    _sync_2x_4x_pair(
+        UPSCALED_UI_ROOT / "Staging - 2x Upscaled",
+        UPSCALED_UI_ROOT / "Staging - 4x Upscaled",
+    )
+
+
 def ensure_conversion_csv_for_all_jobs() -> None:
     """
     For every 'folders to process.txt' under all staging roots,
     ensure a 'conversion_hashes.csv' exists beside it with the correct header.
     """
-    for staging_name in STAGING_ORDER:
-        root = SCRIPT_DIR / staging_name
+    for root in STAGING_ROOTS:
         if not root.is_dir():
             continue
 
@@ -534,6 +569,7 @@ def ensure_conversion_csv_for_all_jobs() -> None:
                 csv_path.write_text(CONVERSION_CSV_HEADER, encoding="utf-8", newline="")
             except OSError as e:
                 print(f"[ERROR] Failed to create {csv_path}: {e}")
+
 
 def is_eligible_upscale_job(job_dir: Path) -> bool:
     """
@@ -571,12 +607,11 @@ def generate_not_in_folder_for_tier(
         write_not_in_folder_csv(job_dir, dim_names, ps2_texture_index, never_upscale_stems)
 
 
-
 # ==========================================================
 # MAIN
 # ==========================================================
 def main() -> None:
-    # Very first step: sync 2x folders_to_process with 4x
+    # Very first step: sync 2x folders_to_process with 4x for all projects
     sync_2x_folders_txt_with_4x()
 
     # Second step: ensure every job has a conversion_hashes.csv with header
@@ -605,9 +640,7 @@ def main() -> None:
     never_upscale_path = git_root / NEVER_UPSCALE_REL_PATH
     never_upscale_stems = load_never_upscale_stems(never_upscale_path)
 
-    for staging_name in STAGING_ORDER:
-        root = SCRIPT_DIR / staging_name
-
+    for root in STAGING_ROOTS:
         print()
         print("#################################################")
         print(f"Processing staging root: {root}")
@@ -617,7 +650,8 @@ def main() -> None:
         run_tier(root)
 
         # Decide whether to apply never_upscale filter for this tier
-        if staging_name in ("Staging - 2x Upscaled", "Staging - 4x Upscaled"):
+        root_lower = str(root).lower()
+        if "2x upscaled" in root_lower or "4x upscaled" in root_lower:
             tier_blocklist = never_upscale_stems
         else:
             tier_blocklist = set()
