@@ -207,11 +207,15 @@ def write_not_in_folder_csv(
       - Compute textures that exist in mgs2_ps2_dimensions.csv
         but do not appear in conversion_hashes.csv (full logical name, including .bmp, case insensitive)
       - Skip any logical names whose normalized value is in never_upscale_stems
-      - For each remaining texture, if there is a matching .tga/.png in ps2_texture_index
-        (matched via Path(path).stem.lower()), record it
+      - For each remaining texture:
+          * If there is a matching .tga/.png in ps2_texture_index
+            (matched via Path(path).stem.lower()), record its full path
+          * If there is NO matching .tga/.png, still record the filename, with
+            an empty full_path
       - Write not_in_folder.csv beside conversion_hashes.csv with:
             filename,full_path
-      - Also write unprocessed_folders.csv listing unique parent folders of those full_path entries.
+      - Also write unprocessed_folders.csv listing unique parent folders of
+        entries that DO have a non-empty full_path.
     """
     conversion_csv = job_dir / CONVERSION_CSV_NAME
     if not conversion_csv.is_file():
@@ -240,11 +244,15 @@ def write_not_in_folder_csv(
         # Map to TGA/PNG using the logical name as the "stem" (including .bmp)
         stem_key = original_name.lower()
         tex_path = ps2_texture_index.get(stem_key)
-        if not tex_path:
-            # No corresponding TGA/PNG in ps2 textures folder, skip
-            continue
 
-        rows.append((original_name, str(tex_path)))
+        if tex_path is not None:
+            full_path_str = str(tex_path)
+        else:
+            # No corresponding TGA/PNG in ps2 textures folder, but we still
+            # want this filename to appear in not_in_folder.csv
+            full_path_str = ""
+
+        rows.append((original_name, full_path_str))
 
     output_csv = job_dir / NOT_IN_FOLDER_CSV_NAME
     output_folders_csv = job_dir / UNPROCESSED_FOLDERS_CSV_NAME
@@ -279,9 +287,12 @@ def write_not_in_folder_csv(
     except OSError as e:
         print(f"[ERROR] Failed to write {output_csv}: {e}")
 
-    # Derive unique folders from full_path column and write unprocessed_folders.csv
+    # Derive unique folders from full_path column and write unprocessed_folders.csv.
+    # Only entries with a non-empty full_path are considered here.
     folder_set: set[str] = set()
     for _, full_path in rows:
+        if not full_path:
+            continue
         folder_set.add(str(Path(full_path).parent))
 
     sorted_folders = sorted(folder_set)
@@ -295,7 +306,6 @@ def write_not_in_folder_csv(
         print(f"[INFO] Wrote {len(sorted_folders)} folders to {output_folders_csv}")
     except OSError as e:
         print(f"[ERROR] Failed to write {output_folders_csv}: {e}")
-
 
 # ==========================================================
 # STAGING HELPERS

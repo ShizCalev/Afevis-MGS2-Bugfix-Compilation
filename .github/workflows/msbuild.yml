@@ -102,16 +102,13 @@ jobs:
     - run: mkdir dist/logs
     - run: mkdir dist/assets
     - run: mkdir dist/eu
+    - run: mkdir dist/us
     - run: mkdir dist/textures
     
     - run: mkdir dist_2x
-    - run: mkdir dist_2x/plugins
-    - run: mkdir dist_2x/logs
     - run: mkdir dist_2x/textures
     
     - run: mkdir dist_4x
-    - run: mkdir dist_4x/plugins
-    - run: mkdir dist_4x/logs
     - run: mkdir dist_4x/textures
 
 
@@ -177,6 +174,20 @@ jobs:
         Write-Host "Running set_modified_dates.py..."
         py $scriptPath
 
+    # normalize sdt fix modified dates
+    - name: Normalize SDT Fix modified dates
+      run: |
+        $RepoRootDir = "${{ github.workspace }}"
+        $scriptPath  = Join-Path $RepoRootDir "SDT Fixes\set_modified_dates.py"
+
+        if (-not (Test-Path $scriptPath)) {
+          Write-Error "set_modified_dates.py not found at $scriptPath"
+          exit 1
+        }
+
+        Write-Host "Running set_modified_dates.py..."
+        py $scriptPath
+
 
 
     - name: Structure release dist folders
@@ -205,19 +216,13 @@ jobs:
             $global:LASTEXITCODE = 0
         }
 
-        # copy plugins/logs into dist_2x
-        Invoke-RoboCopy "dist\plugins"       "dist_2x\plugins"
-        Invoke-RoboCopy "dist\logs"          "dist_2x\logs"
-
-        # merge dist_2x into dist_4x
-        Invoke-RoboCopy "dist_2x"            "dist_4x"
-
         # copy fix files
         Invoke-RoboCopy "Model Fixes\assets" "dist\assets"
         Invoke-RoboCopy "Model Fixes\eu"     "dist\eu"
+        Invoke-RoboCopy "SDT Fixes\Staging\us"     "dist\us"
         
         Invoke-RoboCopy "Texture Fixes\Staging\textures"                   "dist\textures"
-        #Invoke-RoboCopy "Texture Fixes\Staging - 2x Upscaled\textures"     "dist_2x\textures"
+        Invoke-RoboCopy "Texture Fixes\Staging - 2x Upscaled\textures"     "dist_2x\textures"
         Invoke-RoboCopy "Texture Fixes\Staging - 4x Upscaled\textures"     "dist_4x\textures"
 
         # force a clean success exit for the whole step
