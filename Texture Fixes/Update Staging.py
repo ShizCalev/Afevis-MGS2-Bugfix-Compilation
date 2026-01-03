@@ -44,17 +44,21 @@ UPSCALED_UI_ROOT = Path(r"C:\Development\Git\MGS2-Upscaled-UI-Textures\Textures"
 STAGING_ROOTS: list[Path] = [
     # Bugfix Compilation
     BUGFIX_ROOT / "Staging",
-    #BUGFIX_ROOT / "Staging - 2x Upscaled",
-    #BUGFIX_ROOT / "Staging - 4x Upscaled",
+    BUGFIX_ROOT / "Staging - 2x Upscaled",
+    BUGFIX_ROOT / "Staging - 4x Upscaled",
 
     # Demastered pack
-    #DEMASTER_ROOT / "Staging",
-    #DEMASTER_ROOT / "Staging - 2x Upscaled",
-    #DEMASTER_ROOT / "Staging - 4x Upscaled",
+    DEMASTER_ROOT / "Staging",
+    DEMASTER_ROOT / "Staging - 2x Upscaled",
+    DEMASTER_ROOT / "Staging - 4x Upscaled",
+    
+    DEMASTER_ROOT / "Staging - UI",
+    DEMASTER_ROOT / "Staging - UI - 2x Upscaled",
+    DEMASTER_ROOT / "Staging - UI - 4x Upscaled",
 
     # Upscaled UI pack (2x / 4x only)
-    #UPSCALED_UI_ROOT / "Staging - 2x Upscaled",
-    #UPSCALED_UI_ROOT / "Staging - 4x Upscaled",
+    UPSCALED_UI_ROOT / "Staging - 2x Upscaled",
+    UPSCALED_UI_ROOT / "Staging - 4x Upscaled",
 ]
 
 # Self Remade Finalized folder and output CSV name
@@ -620,6 +624,9 @@ def write_self_remade_modified_dates() -> None:
       - BUGFIX_ROOT
       - DEMASTER_ROOT
       - UPSCALED_UI_ROOT
+
+    If multiple files share the same stem, only the earliest timestamp
+    across all of them is kept.
     """
     target_dir = SELF_REMADE_FINALIZED_DIR
 
@@ -647,7 +654,8 @@ def write_self_remade_modified_dates() -> None:
         print(f"  - {out_root / SELF_REMADE_MODIFIED_DATES_CSV_NAME}")
     print("#################################################")
 
-    rows: list[tuple[str, int]] = []
+    # stem -> earliest chosen_time
+    stem_to_time: dict[str, int] = {}
 
     skip_dir_name = "source files"
 
@@ -678,9 +686,13 @@ def write_self_remade_modified_dates() -> None:
                 continue
 
             stem = path.stem
-            rows.append((stem, chosen_time))
 
-    rows.sort(key=lambda r: r[0])
+            existing = stem_to_time.get(stem)
+            if existing is None or chosen_time < existing:
+                stem_to_time[stem] = chosen_time
+
+    # Convert to sorted list of (stem, time)
+    rows = sorted(stem_to_time.items(), key=lambda r: r[0])
 
     # Write the same CSV content to each parent folder
     for out_root in output_roots:
