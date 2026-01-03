@@ -158,7 +158,7 @@ jobs:
     # Package everything
     - name: Create Base release zip
       working-directory: dist
-      run: 7z a -tzip "../${{ github.event.repository.name }}-run-${{ github.run_number }}.zip" *
+      run: 7z a -tzip "../${{ github.event.repository.name }}}_Base_run-${{ github.run_number }}.zip" *
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
