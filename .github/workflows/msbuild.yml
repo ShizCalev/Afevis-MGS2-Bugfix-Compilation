@@ -140,118 +140,20 @@ jobs:
     - run: Copy-Item LICENSE "dist/plugins/${{ github.event.repository.name }}_LICENSE"
     - run: Copy-Item "ASI Mod\${{ github.event.repository.name }}.ini" "dist/plugins/${{ github.event.repository.name }}.ini"
     
-    
-    
-    - name: Install Python deps
-      run: |
-        py -m pip install tqdm
 
-    # normalize CTXR modified dates
-    - name: Normalize CTXR modified dates
+    # Build Dist Folders
+    - name: Build Dist Folders
       run: |
         $RepoRootDir = "${{ github.workspace }}"
-        $scriptPath  = Join-Path $RepoRootDir "Texture Fixes\set_ctxr_modified_dates.py"
+        $scriptPath  = Join-Path $RepoRootDir "Build_Dist_Folders.py"
 
         if (-not (Test-Path $scriptPath)) {
-          Write-Error "set_ctxr_modified_dates.py not found at $scriptPath"
+          Write-Error "Build_Dist_Folders.py not found at $scriptPath"
           exit 1
         }
 
-        Write-Host "Running set_ctxr_modified_dates.py..."
+        Write-Host "Running Build_Dist_Folders.py..."
         py $scriptPath
-
-    # normalize model fix modified dates
-    - name: Normalize Model Fix modified dates
-      run: |
-        $RepoRootDir = "${{ github.workspace }}"
-        $scriptPath  = Join-Path $RepoRootDir "Model Fixes\set_modified_dates.py"
-
-        if (-not (Test-Path $scriptPath)) {
-          Write-Error "set_modified_dates.py not found at $scriptPath"
-          exit 1
-        }
-
-        Write-Host "Running set_modified_dates.py..."
-        py $scriptPath
-
-    # normalize sdt fix modified dates
-    - name: Normalize SDT Fix modified dates
-      run: |
-        $RepoRootDir = "${{ github.workspace }}"
-        $scriptPath  = Join-Path $RepoRootDir "SDT Fixes\set_modified_dates.py"
-
-        if (-not (Test-Path $scriptPath)) {
-          Write-Error "set_modified_dates.py not found at $scriptPath"
-          exit 1
-        }
-
-        Write-Host "Running set_modified_dates.py..."
-        py $scriptPath
-
-
-
-    - name: Structure release dist folders
-      shell: pwsh
-      run: |
-        function Invoke-RoboCopy
-        {
-            param(
-                [Parameter(Mandatory = $true)][string] $Source,
-                [Parameter(Mandatory = $true)][string] $Destination,
-                [string] $Options = "/E"
-            )
-
-            robocopy $Source $Destination $Options
-
-            $code = $LASTEXITCODE
-
-            # Robocopy 0–7 = success / acceptable
-            if ($code -gt 7)
-            {
-                Write-Error "Robocopy failed (code $code) from '$Source' to '$Destination'"
-                exit $code
-            }
-
-            # Normalize success so it doesn't leak out of the script
-            $global:LASTEXITCODE = 0
-        }
-
-        # copy fix files
-        Invoke-RoboCopy "Model Fixes\assets" "dist\assets"
-        Invoke-RoboCopy "Model Fixes\eu"     "dist\eu"
-        Invoke-RoboCopy "SDT Fixes\Staging\us"     "dist\us"
-        
-        Invoke-RoboCopy "Texture Fixes\Staging\textures"                   "dist\textures"
-        Invoke-RoboCopy "Texture Fixes\Staging - 2x Upscaled\textures"     "dist_2x\textures"
-        Invoke-RoboCopy "Texture Fixes\Staging - 4x Upscaled\textures"     "dist_4x\textures"
-
-        # force a clean success exit for the whole step
-        exit 0
-
-    - name: Remove non-ctxr files from texture folders
-      shell: pwsh
-      run: |
-        $paths = @(
-          "dist/textures",
-          "dist_2x/textures",
-          "dist_4x/textures"
-        )
-
-        foreach ($p in $paths)
-        {
-            if (Test-Path $p)
-            {
-                Write-Host "Cleaning $p ..."
-                Get-ChildItem $p -Recurse -File |
-                    Where-Object { $_.Extension -ne ".ctxr" } |
-                    Remove-Item -Force
-            }
-            else
-            {
-                Write-Host "Skipping $p (does not exist)"
-            }
-        }
-
 
     # Package everything
     - name: Create Base release zip
