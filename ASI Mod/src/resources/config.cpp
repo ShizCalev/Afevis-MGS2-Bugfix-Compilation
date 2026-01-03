@@ -130,7 +130,7 @@ namespace ConfigHelper
 
 void Config::Read()
 {
-    std::filesystem::path sConfigFile = sFixName + ".settings";
+    std::filesystem::path sConfigFile = sFixName + ".ini";
 
     std::ifstream iniFile((sExePath / sFixPath / sConfigFile).string());
     if (!iniFile)

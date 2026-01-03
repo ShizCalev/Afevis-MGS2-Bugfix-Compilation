@@ -1,3 +1,5 @@
+// ReSharper disable CppUseAuto
+// ReSharper disable IdentifierTypo
 #include "stdafx.h"
 #include "bugfix_mod_checks.hpp"
 
@@ -5,6 +7,29 @@
 #include "logging.hpp"
 #include "version.h"
 
+
+//Community Bugfix hashes
+constexpr const char* CBFC_BASE_FLATLIST_WIN_COL_ORANGE2_CTXR_SHA1 = "11d03110d40b42adeafde2fa5f5cf65f27d6fc52";
+constexpr const char* CBFC_2x_OVRSTM_WIN_COL_ORANGE2_CTXR_SHA1 = "8a264048ed801ff00ca5477e9c721b6f42a38bda";
+constexpr const char* CBFC_4x_OVRSTM_WIN_COL_ORANGE2_CTXR_SHA1 = "ecf723350dac8790e01ee7470b3e45761e79a939";
+
+
+constexpr const char* CBFC_2x_BUGFIXED_seculitycard_lv2_alp_CTXR_SHA1 = "89f56fb1822ba33148c42872fdfd6ead7278f912";
+constexpr const char* CBFC_4x_BUGFIXED_seculitycard_lv2_alp_CTXR_SHA1 = "004e54e6d30a76394b2d801c60479fcf0c7bdb51";
+
+
+
+//Third party mod file hashes
+constexpr const char* LIQMIX_SLOP_4X_ORANGE2_CTXR_SHA1 = "4ecda248b079ee426262a23b64df6cb05a249088";
+constexpr const char* LIQMIX_SLOP_2X_ORANGE2_CTXR_SHA1 = "96ba1191c0da112d355bf510dcb3828f1183d1b5";
+
+constexpr const char* HIGHER_RES_KOJIPRO_ZOE_POSTER_CTXR_SHA1 = "ce3fe5bd55aebb046103b5dba1cffa736b08abd2";
+
+
+constexpr const char* BETTER_AUDIO_p010_01_p01g_VAMP_SEAL_SDT_SHA1 = "3424163081275d9152b162d648b82616d3100ab1";
+
+//Vanilla game hashes
+constexpr const char* VANILLA_p010_01_p01g_VAMP_SEAL_SDT_SHA1 = "301dcbda56107c7d5617a98256369abbb2b94fee";
 
 
 
@@ -17,7 +42,7 @@ void VerifyInstallation::Check()
     // ------------------------------------------------------
 
     if (const std::filesystem::path afevisBugfixTestPathOne = sExePath / "textures" / "flatlist" / "_win" / "col_orange2.bmp.ctxr"; //verify base bugfix compilation is installed
-        std::filesystem::exists(afevisBugfixTestPathOne) && !Util::SHA1Check(afevisBugfixTestPathOne, "11d03110d40b42adeafde2fa5f5cf65f27d6fc52"))
+        std::filesystem::exists(afevisBugfixTestPathOne) && !Util::SHA1Check(afevisBugfixTestPathOne, CBFC_BASE_FLATLIST_WIN_COL_ORANGE2_CTXR_SHA1))
     {
 
         spdlog::warn("------------------- ! Community Bugfix Compilation (Base) Missing ! -------------------");
@@ -64,11 +89,11 @@ void VerifyInstallation::Check()
             // ------------------------------------------------------
             // MGS2: Check if liqmix AI slop packs are installed
             // ------------------------------------------------------
-        if (Util::SHA1Check(col_orange2OvrStmTest, "96ba1191c0da112d355bf510dcb3828f1183d1b5") || Util::SHA1Check(col_orange2OvrStmTest, "4ecda248b079ee426262a23b64df6cb05a249088")) //liqmix 2x & 4x hashes
+        if (Util::SHA1Check(col_orange2OvrStmTest, LIQMIX_SLOP_4X_ORANGE2_CTXR_SHA1) || Util::SHA1Check(col_orange2OvrStmTest, LIQMIX_SLOP_2X_ORANGE2_CTXR_SHA1)) //liqmix 2x & 4x hashes
         {
             spdlog::warn("------------------- ! Community Bugfix Compilation - Mod Compatibility Issue ! -------------------");
             spdlog::warn("LiqMix's AI Slop AI Upscaled texture pack has been detected.");
-            spdlog::warn("LiqMix's AI Slop texture pack is VERY out of date and has been damaged by the MGS2 Community Bugfix Compilation's Upscaled texture packs, which includes all the texture fixes from the base version.");
+            spdlog::warn("LiqMix's AI Slop texture pack is VERY out of date and has been replaced by the MGS2 Community Bugfix Compilation's Upscaled texture packs, which includes all the texture fixes from the base version.");
             spdlog::warn("Please uninstall LiqMix's AI Slop Upscaled texture pack to ensure proper game functionality.");
             spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to download our upscaled texture package.");
             spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases");
@@ -76,7 +101,7 @@ void VerifyInstallation::Check()
             if (int result = MessageBoxA(
                 nullptr,
                 "LiqMix's AI Slop AI Upscaled texture pack has been detected.\n"
-                "LiqMix's AI Slop texture pack is VERY out of date and has been damaged by the Community Bugfix Compilation's upscaled packs, which includes all the texture fixes from the base version."
+                "LiqMix's AI Slop texture pack is VERY out of date and has been replaced by the Community Bugfix Compilation's upscaled packs, which includes all the texture fixes from the base version."
                 "Please remove LiqMix's AI Slop Upscaled texture pack to ensure proper game functionality.\n"
                 "\n"
                 "Would you like to open the Community Bugfix Nexus download page now to download the base package?"
@@ -98,10 +123,10 @@ void VerifyInstallation::Check()
             // ------------------------------------------------------
             // MGS2: Verify community bugfix upscaled pack is loaded AFTER the base pack
             // ------------------------------------------------------
-        else if (Util::SHA1Check(col_orange2OvrStmTest, "ecf723350dac8790e01ee7470b3e45761e79a939")) //community fix 4x is installed
+        else if (Util::SHA1Check(col_orange2OvrStmTest, CBFC_4x_OVRSTM_WIN_COL_ORANGE2_CTXR_SHA1)) //community fix 4x is installed
         {
             if (const std::filesystem::path SelfRemade_4x_ovr_eu_seculitycard_lv2_alp = sExePath / "textures" / "flatlist" / "ovr_stm" / "ovr_eu" / "_win" / "seculitycard_lv2_alp.bmp.ctxr"; 
-                std::filesystem::exists(SelfRemade_4x_ovr_eu_seculitycard_lv2_alp) && !Util::SHA1Check(SelfRemade_4x_ovr_eu_seculitycard_lv2_alp, "004e54e6d30a76394b2d801c60479fcf0c7bdb51"))
+                std::filesystem::exists(SelfRemade_4x_ovr_eu_seculitycard_lv2_alp) && !Util::SHA1Check(SelfRemade_4x_ovr_eu_seculitycard_lv2_alp, CBFC_4x_BUGFIXED_seculitycard_lv2_alp_CTXR_SHA1))
             {
 
 
@@ -145,10 +170,10 @@ void VerifyInstallation::Check()
             }
         }
 
-        else if (Util::SHA1Check(col_orange2OvrStmTest, "8a264048ed801ff00ca5477e9c721b6f42a38bda")) //community fix 2x is installed
+        else if (Util::SHA1Check(col_orange2OvrStmTest, CBFC_2x_OVRSTM_WIN_COL_ORANGE2_CTXR_SHA1)) //community fix 2x is installed
         {
             if (const std::filesystem::path SelfRemade_2x_ovr_eu_seculitycard_lv2_alp = sExePath / "textures" / "flatlist" / "ovr_stm" / "ovr_eu" / "_win" / "seculitycard_lv2_alp.bmp.ctxr";
-                std::filesystem::exists(SelfRemade_2x_ovr_eu_seculitycard_lv2_alp) && !Util::SHA1Check(SelfRemade_2x_ovr_eu_seculitycard_lv2_alp, "89f56fb1822ba33148c42872fdfd6ead7278f912"))
+                std::filesystem::exists(SelfRemade_2x_ovr_eu_seculitycard_lv2_alp) && !Util::SHA1Check(SelfRemade_2x_ovr_eu_seculitycard_lv2_alp, CBFC_2x_BUGFIXED_seculitycard_lv2_alp_CTXR_SHA1))
             {
 
 
@@ -201,8 +226,8 @@ void VerifyInstallation::Check()
     // ------------------------------------------------------
 
     if (const std::filesystem::path afevisBugfixTestPathOne = sExePath / "us" / "demo" / "_bp" / "p010_01_p01g.sdt"; //vamp cutscene decensor fix
-        std::filesystem::exists(afevisBugfixTestPathOne) && (Util::SHA1Check(afevisBugfixTestPathOne, "3424163081275d9152b162d648b82616d3100ab1") //better audio sha1
-                                                             || Util::SHA1Check(afevisBugfixTestPathOne, "301dcbda56107c7d5617a98256369abbb2b94fee"))) //vanilla sha1
+        std::filesystem::exists(afevisBugfixTestPathOne) && (Util::SHA1Check(afevisBugfixTestPathOne, BETTER_AUDIO_p010_01_p01g_VAMP_SEAL_SDT_SHA1)
+                                                             || Util::SHA1Check(afevisBugfixTestPathOne, VANILLA_p010_01_p01g_VAMP_SEAL_SDT_SHA1))) //vanilla sha1
     {
 
 
@@ -247,15 +272,15 @@ void VerifyInstallation::Check()
     // MGS2: Check if Higher Resolution KojiPro posters mod is installed
     // ------------------------------------------------------
 
-    if (const std::filesystem::path afevisBugfixTestPathOne = sExePath / "textures" / "flatlist" / "ovr_stm" / "_win" / "zoe_pos_n.bmp.ctxr"; //Higher Resolution KojiPro Posters check. we damaged it.
-        std::filesystem::exists(afevisBugfixTestPathOne) && Util::SHA1Check(afevisBugfixTestPathOne, "ce3fe5bd55aebb046103b5dba1cffa736b08abd2"))
+    if (const std::filesystem::path afevisBugfixTestPathOne = sExePath / "textures" / "flatlist" / "ovr_stm" / "_win" / "zoe_pos_n.bmp.ctxr"; //Higher Resolution KojiPro Posters check. we replaced it.
+        std::filesystem::exists(afevisBugfixTestPathOne) && Util::SHA1Check(afevisBugfixTestPathOne, HIGHER_RES_KOJIPRO_ZOE_POSTER_CTXR_SHA1))
     {
 
 
         spdlog::warn("------------------- ! Community Bugfix Compilation - Installation Issue ! -------------------");
         spdlog::warn("Community Bugfix Compilation installation issue detected.");
         spdlog::warn("j1llm4r13's Higher Resolution KojiPro Posters mod has been detected.");
-        spdlog::warn("This mod has been damaged by the Community Bugfix Compilation, which hand-remakes the original source assets.");
+        spdlog::warn("This mod has been replaced by the Community Bugfix Compilation, which hand-remakes the original source assets.");
         spdlog::warn("We already override the old mod's files, so we're just noting that it's unneeded here. <3");
         spdlog::warn("------------------- ! Community Bugfix Compilation (Base) Missing ! -------------------");
 
