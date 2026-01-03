@@ -1,4 +1,4 @@
-# Afevis's MGS2 Community Bugfix Compilation
+# MGS2 Community Bugfix Compilation
 
 A community-driven bugfix pack fixing invisible textures/models, missing audio, typos, consistency problems, and more; including re-importing the higher quality PS2 NPOT textures, upgrading many low-LOD models to their full-quality versions, and hand-remastering a number of low quality assets.
 
