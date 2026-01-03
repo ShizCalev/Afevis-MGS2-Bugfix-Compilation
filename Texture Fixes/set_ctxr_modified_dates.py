@@ -31,7 +31,7 @@ STAGING_DIRS_REL = [
 CONVERSION_CSV_NAME = "conversion_hashes.csv"
 CTXR_EXT = ".ctxr"
 
-MC_DATES_CSV_REL = Path(r"Texture Fixes\mc textures\MC real file dates.csv")
+MC_DATES_CSV_REL = Path(r"external\MGS2-PS2-Textures\u - dumped from substance\mgs2_mc_real_dates.csv")
 
 # How many worker threads per CSV
 MAX_WORKERS = max(4, (os.cpu_count() or 4) * 2)

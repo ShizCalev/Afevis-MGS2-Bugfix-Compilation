@@ -44,18 +44,22 @@ UPSCALED_UI_ROOT = Path(r"C:\Development\Git\MGS2-Upscaled-UI-Textures\Textures"
 STAGING_ROOTS: list[Path] = [
     # Bugfix Compilation
     BUGFIX_ROOT / "Staging",
-    BUGFIX_ROOT / "Staging - 2x Upscaled",
-    BUGFIX_ROOT / "Staging - 4x Upscaled",
+    #BUGFIX_ROOT / "Staging - 2x Upscaled",
+    #BUGFIX_ROOT / "Staging - 4x Upscaled",
 
     # Demastered pack
-    DEMASTER_ROOT / "Staging",
-    DEMASTER_ROOT / "Staging - 2x Upscaled",
-    DEMASTER_ROOT / "Staging - 4x Upscaled",
+    #DEMASTER_ROOT / "Staging",
+    #DEMASTER_ROOT / "Staging - 2x Upscaled",
+    #DEMASTER_ROOT / "Staging - 4x Upscaled",
 
     # Upscaled UI pack (2x / 4x only)
-    UPSCALED_UI_ROOT / "Staging - 2x Upscaled",
-    UPSCALED_UI_ROOT / "Staging - 4x Upscaled",
+    #UPSCALED_UI_ROOT / "Staging - 2x Upscaled",
+    #UPSCALED_UI_ROOT / "Staging - 4x Upscaled",
 ]
+
+# Self Remade Finalized folder and output CSV name
+SELF_REMADE_FINALIZED_DIR = BUGFIX_ROOT / "Self Remade" / "Finalized"
+SELF_REMADE_MODIFIED_DATES_CSV_NAME = "self_remade_modified_dates.csv"
 
 
 # ==========================================================
@@ -433,7 +437,7 @@ def run_set_ctxr_dates() -> None:
 
 def _sync_2x_4x_pair(root_2x: Path, root_4x: Path) -> None:
     """
-    Internal helper: sync 2x ↔ 4x folders_to_process for a single project root pair.
+    Internal helper: sync 2x <-> 4x folders_to_process for a single project root pair.
     """
     if not root_2x.is_dir():
         print(f"[INFO] 2x staging root does not exist, skipping 2x sync: {root_2x}")
@@ -524,9 +528,9 @@ def _sync_2x_4x_pair(root_2x: Path, root_4x: Path) -> None:
 def sync_2x_folders_txt_with_4x() -> None:
     """
     Sync logic for all projects:
-      - Bugfix Compilation: Texture Fixes 2x ↔ 4x
-      - Demastered pack:    Textures 2x ↔ 4x
-      - Upscaled UI pack:   Textures 2x ↔ 4x
+      - Bugfix Compilation: Texture Fixes 2x <-> 4x
+      - Demastered pack:    Textures 2x <-> 4x
+      - Upscaled UI pack:   Textures 2x <-> 4x
     """
     _sync_2x_4x_pair(
         BUGFIX_ROOT / "Staging - 2x Upscaled",
@@ -607,6 +611,93 @@ def generate_not_in_folder_for_tier(
         write_not_in_folder_csv(job_dir, dim_names, ps2_texture_index, never_upscale_stems)
 
 
+def write_self_remade_modified_dates() -> None:
+    """
+    Walk all .png and .tga files under Self Remade\\Finalized (except
+    the 'Source Files' subdirectory) and write stems + chosen timestamp
+    (earlier of ctime and mtime) to self_remade_modified_dates.csv in
+    the parent folder of each of:
+      - BUGFIX_ROOT
+      - DEMASTER_ROOT
+      - UPSCALED_UI_ROOT
+    """
+    target_dir = SELF_REMADE_FINALIZED_DIR
+
+    if not target_dir.is_dir():
+        print(f"[WARN] Self Remade Finalized directory does not exist: {target_dir}")
+        return
+
+    # Determine all output roots that actually exist on disk
+    output_roots: list[Path] = []
+    for project_root in (BUGFIX_ROOT, DEMASTER_ROOT, UPSCALED_UI_ROOT):
+        parent = project_root.parent
+        if parent.is_dir():
+            output_roots.append(parent)
+
+    if not output_roots:
+        print("[WARN] No valid parent directories found for writing self_remade_modified_dates.csv")
+        return
+
+    print()
+    print("#################################################")
+    print(f"Collecting modified dates for Self Remade Finalized under: {target_dir}")
+    print(f"Skipping: {target_dir / 'Source Files'}")
+    print("Will write self_remade_modified_dates.csv to:")
+    for out_root in output_roots:
+        print(f"  - {out_root / SELF_REMADE_MODIFIED_DATES_CSV_NAME}")
+    print("#################################################")
+
+    rows: list[tuple[str, int]] = []
+
+    skip_dir_name = "source files"
+
+    for root_dir, dirnames, filenames in os.walk(target_dir):
+        # Prevent recursion into Source Files (case-insensitive)
+        dirnames[:] = [d for d in dirnames if d.lower() != skip_dir_name]
+
+        base = Path(root_dir)
+        for fname in filenames:
+            path = base / fname
+            if not path.is_file():
+                continue
+
+            suffix = path.suffix.lower()
+            if suffix not in {".png", ".tga"}:
+                continue
+
+            try:
+                stat = path.stat()
+                mtime = int(stat.st_mtime)
+                ctime = int(stat.st_ctime)
+
+                # Prefer the earlier timestamp between ctime and mtime
+                chosen_time = ctime if ctime < mtime else mtime
+
+            except OSError as e:
+                print(f"[ERROR] Failed to stat {path}: {e}")
+                continue
+
+            stem = path.stem
+            rows.append((stem, chosen_time))
+
+    rows.sort(key=lambda r: r[0])
+
+    # Write the same CSV content to each parent folder
+    for out_root in output_roots:
+        csv_path = out_root / SELF_REMADE_MODIFIED_DATES_CSV_NAME
+
+        try:
+            with csv_path.open("w", encoding="utf-8", newline="") as f:
+                writer = csv.writer(f)
+                writer.writerow(["stem", "modified_unix_time"])
+                for stem, mtime in rows:
+                    writer.writerow([stem, mtime])
+
+            print(f"[INFO] Wrote {len(rows)} entries to {csv_path}")
+        except OSError as e:
+            print(f"[ERROR] Failed to write {csv_path}: {e}")
+
+
 # ==========================================================
 # MAIN
 # ==========================================================
@@ -662,8 +753,11 @@ def main() -> None:
     print()
     print("[INFO] All staging roots processed.")
 
-    # Final step
+    # Final step: update ctxr modified dates
     run_set_ctxr_dates()
+
+    # Extra final step: capture modified dates for Self Remade Finalized
+    write_self_remade_modified_dates()
 
 
 if __name__ == "__main__":
