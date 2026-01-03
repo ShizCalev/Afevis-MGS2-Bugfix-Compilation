@@ -26,7 +26,7 @@ void VerifyInstallation::Check()
         spdlog::warn("The base package is required for proper functionality, even when 2x & 4x packages are installed.");
         spdlog::warn("Please install the Community Bugfix Compilation -> Base <- package to ensure proper game functionality.");
         spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to download the base package.");
-        spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/releases");
+        spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases");
         spdlog::warn("------------------- ! Community Bugfix Compilation (Base) Missing ! -------------------");
         if (int result = MessageBoxA(
             nullptr,
@@ -71,7 +71,7 @@ void VerifyInstallation::Check()
             spdlog::warn("LiqMix's AI Slop texture pack is VERY out of date and has been damaged by the MGS2 Community Bugfix Compilation's Upscaled texture packs, which includes all the texture fixes from the base version.");
             spdlog::warn("Please uninstall LiqMix's AI Slop Upscaled texture pack to ensure proper game functionality.");
             spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to download our upscaled texture package.");
-            spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/releases");
+            spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases");
             spdlog::warn("------------------- ! Community Bugfix Compilation - Mod Compatibility Issue ! -------------------");
             if (int result = MessageBoxA(
                 nullptr,
@@ -113,7 +113,7 @@ void VerifyInstallation::Check()
                 spdlog::warn("Please reinstall the 4x Upscaled pack to ensure correct behavior.");
                 spdlog::warn("If you are using a mod manager, make sure the 4x Upscaled pack is loaded AFTER the base package.");
                 spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to redownload the 4x upscaled package.");
-                spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/releases");
+                spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases");
                 spdlog::warn("------------------- ! Community Bugfix Compilation (4x Upscaled Pack) Installation Issue ! -------------------");
 
 
@@ -160,7 +160,7 @@ void VerifyInstallation::Check()
                 spdlog::warn("Please reinstall the 2x Upscaled pack to ensure correct behavior.");
                 spdlog::warn("If you are using a mod manager, make sure the 2x Upscaled pack is loaded AFTER the base package.");
                 spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to redownload the 4x upscaled package.");
-                spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/releases");
+                spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases");
                 spdlog::warn("------------------- ! Community Bugfix Compilation (2x Upscaled Pack) Installation Issue ! -------------------");
 
 
@@ -213,7 +213,7 @@ void VerifyInstallation::Check()
         spdlog::warn("Please reinstall the Community Bugfix Compilation (Base) to ensure correct behavior.");
         spdlog::warn("If you are using a mod manager, make sure Community Bugfix Compilation (Base) is loaded AFTER Better Audio Mod.");
         spdlog::warn("Please visit our Nexus page at: https://www.nexusmods.com/metalgearsolid2mc/mods/52?tab=files to redownload the base package.");
-        spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/releases");
+        spdlog::warn("Or our GitHub releases page at: https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases");
         spdlog::warn("------------------- ! Community Bugfix Compilation (Base) Missing ! -------------------");
         if (int result = MessageBoxA(
             nullptr,

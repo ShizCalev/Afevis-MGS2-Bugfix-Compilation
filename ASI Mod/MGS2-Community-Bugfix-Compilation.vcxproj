@@ -28,7 +28,7 @@
     <ClInclude Include="src\resources\version_checking.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Afevis-MGS2-Bugfix-Compilation.ini" />
+    <None Include="MGS2-Community-Bugfix-Compilation.ini" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
@@ -41,7 +41,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{c6644269-b721-4f94-be7f-77bfb2343ba5}</ProjectGuid>
-    <RootNamespace>Afevis-MGS2-Bugfix-Compilation</RootNamespace>
+    <RootNamespace>MGS2-Community-Bugfix-Compilation</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

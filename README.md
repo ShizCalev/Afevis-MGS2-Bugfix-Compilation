@@ -36,7 +36,7 @@ NOTE: OPTIONAL ADDON 2X & 4X AI UPSCALED RELEASES OF THIS PACK ARE PROVIDED. As 
 
 
 Please report any issues found with the pack, or any issues that are not already corrected, to our GitHub here:
-https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation/issues
+https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/issues
 
 <br>
 

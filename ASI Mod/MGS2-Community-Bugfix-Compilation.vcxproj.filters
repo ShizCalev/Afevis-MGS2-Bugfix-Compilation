@@ -45,7 +45,7 @@
     <None Include="README.md">
       <Filter>Resources</Filter>
     </None>
-    <None Include="Afevis-MGS2-Bugfix-Compilation.ini">
+    <None Include="MGS2-Community-Bugfix-Compilation.ini">
       <Filter>Resources</Filter>
     </None>
   </ItemGroup>

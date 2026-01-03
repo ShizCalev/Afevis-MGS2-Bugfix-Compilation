@@ -103,7 +103,7 @@ void Logging::Initialize()
                 spdlog::info("New log subdirectory created.");
             }
             spdlog::info("Checking for duplicate intallations of {}.", sFixName);
-            Util::CheckForASIFiles(sFixName, true, true, nullptr); //Sets sFixPath. Exit thread & warn the user if multiple copies of Afevis-MGS2-Bugfix-Compilation are trying to initialize.
+            Util::CheckForASIFiles(sFixName, true, true, nullptr); //Sets sFixPath. Exit thread & warn the user if multiple copies of MGS2-Community-Bugfix-Compilation are trying to initialize.
             spdlog::info("{} v{} loaded.", sFixName, sFixVersion);
             spdlog::info("ASI plugin location: {}", (sExePath / sFixPath / (sFixName + ".asi")).string());
             spdlog::info("----------");

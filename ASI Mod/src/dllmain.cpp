@@ -46,7 +46,7 @@ static bool DetectGame()
         }
     }
 
-    spdlog::error("Failed to detect supported game, {} isn't supported by Afevis-MGS2-Bugfix-Compilation", sExeName.c_str());
+    spdlog::error("Failed to detect supported game, {} isn't supported by MGS2-Community-Bugfix-Compilation", sExeName.c_str());
     FreeLibraryAndExitThread(baseModule, 1);
 }
 

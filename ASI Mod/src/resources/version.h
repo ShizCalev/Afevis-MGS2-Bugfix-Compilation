@@ -2,9 +2,9 @@
 #pragma once
 
 // Core name & version
-#define FIX_NAME "Afevis-MGS2-Bugfix-Compilation"
-#define PRIMARY_REPO_URL "https://github.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation"
-#define FALLBACK_REPO_URL "https://gitlab.com/ShizCalev/Afevis-MGS2-Bugfix-Compilation"
+#define FIX_NAME "MGS2-Community-Bugfix-Compilation"
+#define PRIMARY_REPO_URL "https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation"
+#define FALLBACK_REPO_URL "https://gitlab.com/ShizCalev/MGS2-Community-Bugfix-Compilation"
 
 #define VERSION_MAJOR 2
 #define VERSION_MINOR 0
