@@ -1,6 +1,5 @@
 #pragma once
-
-#include "stdafx.h"
+//#include "RegStateHelpers.hpp"
 
 inline std::filesystem::path sFixPath;
 
@@ -19,8 +18,6 @@ namespace Memory
 
     static HMODULE GetThisDllHandle();
 
-    std::string GetModuleVersion(HMODULE module);
-
     std::uint8_t* PatternScanSilent(void* module, const char* signature);
 
     std::uint8_t* PatternScan(void* module, const char* signature, const char* prefix);
@@ -37,10 +34,19 @@ namespace Memory
 
 namespace Util
 {
-    int findStringInVector(std::string& str, const std::initializer_list<std::string>& search);
+#if !defined(RELEASE_BUILD)
+    //void DumpContext(const safetyhook::Context& ctx);
 
-    // Convert an UTF8 string to a wide Unicode String
-    std::wstring utf8_decode(const std::string& str);
+    void DumpBytes(uint64_t address);
+#endif
+
+    bool IsProcessRunning(const std::filesystem::path& fullPath);
+
+    int findStringInVector(const std::string& str, const std::initializer_list<std::string>& search);
+
+    std::wstring UTF8toWide(const std::string& str);
+
+    std::string WideToUTF8(const std::wstring& wstr);
 
     std::pair<int, int> GetPhysicalDesktopDimensions();
 
@@ -48,16 +54,28 @@ namespace Util
 
     bool CheckForASIFiles(std::string fileName, bool checkForDuplicates, bool setFixPath, const char* checkCreationDate);
 
-    bool stringToBool(const std::string& str);
+    std::string GetNameAtIndex(const std::initializer_list<std::string>& list, int index);
 
     std::string GetUppercaseNameAtIndex(const std::initializer_list<std::string>& list, int index);
 
-    bool IsSteamOS();
+    [[nodiscard]] bool IsSteamOS();
+
+    std::string StripQuotes(const std::string& value);
+
+    std::string GetParentProcessName(bool returnFullPath);
+
+    bool IsProcessParent(const std::string& exeName);
+
+
+    std::string GetFileProductName(const std::filesystem::path& path);
 
     bool SHA1Check(const std::filesystem::path& filePath, const std::string& expected);
+
+    bool IsFileReadOnly(const std::filesystem::path& path);
+
 }
 
-
+/*
 ///Input: SafetyHookMid, const char* Prefix, const char* successMessage (or NULL), const char* errorMessage (or NULL)
 #define LOG_HOOK(hook, prefix)\
 {\
@@ -72,7 +90,7 @@ namespace Util
     {\
         spdlog::error("{}: Hook failed.", prefix);\
     }\
-}\
+}
 
 #define CONCAT_IMPL(x, y) x##y
 #define CONCAT(x, y) CONCAT_IMPL(x, y)
@@ -90,6 +108,7 @@ namespace Util
  *     reghelpers::SetZF(ctx, false);
  * });
  */
+/*
 #define MAKE_HOOK_MID_IMPL(module, pattern, name, body, uniq)                       \
     if (uint8_t* CONCAT(_addr_, uniq) = Memory::PatternScan(module, pattern, name)) {\
         static SafetyHookMid CONCAT(hook_, uniq) {};                               \
@@ -112,7 +131,7 @@ namespace Util
   *     ctx.rax = 1;
   * });
   */
-
+/*
 #define MAKE_HOOK_INLINE_IMPL(module, pattern, name, body, uniq)                    \
     if (uint8_t* CONCAT(_addr_, uniq) = Memory::PatternScan(module, pattern, name)) {\
         static SafetyHookInline CONCAT(hook_, uniq) {};                            \
@@ -138,7 +157,7 @@ namespace Util
    *     return trampoline(ctx);
    * });
    */
-
+/*
 #define MAKE_HOOK_TRAMPOLINE_IMPL(module, pattern, name, retType, body, uniq)       \
     if (uint8_t* CONCAT(_addr_, uniq) = Memory::PatternScan(module, pattern, name)) {\
         static SafetyHookTrampoline<retType> CONCAT(hook_, uniq) {};               \
@@ -150,3 +169,16 @@ namespace Util
 #define MAKE_HOOK_TRAMPOLINE(module, pattern, name, retType, body)                 \
     MAKE_HOOK_TRAMPOLINE_IMPL(module, pattern, name, retType, body, UNIQUE_NAME(_unique))
 
+struct HookGuard
+{
+    bool& flag;
+    HookGuard(bool& f) : flag(f)
+    {
+        flag = true;
+    }
+    ~HookGuard()
+    {
+        flag = false;
+    }
+};
+*/

@@ -1,7 +1,6 @@
 #pragma once
 #include "helper.hpp"
 
-#include <map>
 
 inline std::string sExeName;
 inline std::filesystem::path sExePath;

@@ -1,8 +1,12 @@
+#include "stdafx.h"
+#include "helper.hpp"
 #include "common.hpp"
 
 #include "logging.hpp"
 
 #pragma comment(lib,"Version.lib")
+
+
 #pragma comment(lib, "bcrypt.lib")
 
 namespace Memory
@@ -22,39 +26,6 @@ namespace Memory
         size_t len = VirtualQueryEx(GetCurrentProcess(), (void*)GetThisDllHandle, &info, sizeof(info));
         assert(len == sizeof(info));
         return len ? (HMODULE)info.AllocationBase : NULL;
-    }
-
-    std::string GetModuleVersion(HMODULE module)
-    {
-        if (!module)
-            return "0.0.0";
-
-        char modulePath[MAX_PATH] = { 0 };
-        if (!GetModuleFileNameA(module, modulePath, MAX_PATH))
-            return "0.0.0";
-
-        DWORD handle = 0;
-        DWORD size = GetFileVersionInfoSizeA(modulePath, &handle);
-        if (size == 0)
-            return "0.0.0";
-
-        std::vector<BYTE> versionInfo(size);
-        if (!GetFileVersionInfoA(modulePath, handle, size, versionInfo.data()))
-            return "0.0.0";
-
-        VS_FIXEDFILEINFO* fileInfo = nullptr;
-        UINT fileInfoLen = 0;
-        if (!VerQueryValueA(versionInfo.data(), "\\", reinterpret_cast<LPVOID*>(&fileInfo), &fileInfoLen) || !fileInfo)
-            return "0.0.0";
-
-        // Extract version numbers
-        DWORD verMS = fileInfo->dwFileVersionMS;
-        DWORD verLS = fileInfo->dwFileVersionLS;
-        int major = HIWORD(verMS);
-        int minor = LOWORD(verMS);
-        int patch = HIWORD(verLS);
-
-        return std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(patch);
     }
 
     // CSGOSimple's pattern scan
@@ -113,7 +84,7 @@ namespace Memory
             if (g_Logging.bVerboseLogging)
             {
 
-                spdlog::info("{}: Pattern scan found. Address: {:s}+{:x}", prefix, sExeName.c_str(), (uintptr_t)foundPattern - (uintptr_t)baseModule);
+                spdlog::info("{}: Pattern scan found. Address: {:s}+{:X}", prefix, sExeName.c_str(), (uintptr_t)foundPattern - (uintptr_t)baseModule);
             }
         }
         else
@@ -243,22 +214,120 @@ namespace Memory
 
 namespace Util
 {
-
-    int findStringInVector(std::string& str, const std::initializer_list<std::string>& search)
+#if !defined(RELEASE_BUILD)
+    void DumpContext(const safetyhook::Context& ctx)
     {
-        std::transform(str.begin(), str.end(), str.begin(),
-            [](unsigned char c)
+        spdlog::info("\n"
+#if defined(_M_X64) || defined(__x86_64__)
+            // General-purpose 64-bit registers
+            "RAX = 0x{:X}\t| RBX = 0x{:X}\t| RCX = 0x{:X}\t| RDX = 0x{:X}\n"
+            "RSI = 0x{:X}\t| RDI = 0x{:X}\t| RBP = 0x{:X}\t| RSP = 0x{:X}\n"
+            "R8  = 0x{:X}\t| R9  = 0x{:X}\t| R10 = 0x{:X}\t| R11 = 0x{:X}\n"
+            "R12 = 0x{:X}\t| R13 = 0x{:X}\t| R14 = 0x{:X}\t| R15 = 0x{:X}\n"
+            "RIP = 0x{:X}\n"
+            // XMM floats
+            "XMM0 = {:g}\t| XMM1 = {:g}\t| XMM2 = {:g}\t| XMM3 = {:g}\n"
+            "XMM4 = {:g}\t| XMM5 = {:g}\t| XMM6 = {:g}\t| XMM7 = {:g}\n"
+            "XMM8 = {:g}\t| XMM9 = {:g}\t| XMM10 = {:g}\t| XMM11 = {:g}\n"
+            "XMM12 = {:g}\t| XMM13 = {:g}\t| XMM14 = {:g}\t| XMM15 = {:g}",
+            ctx.rax, ctx.rbx, ctx.rcx, ctx.rdx,
+            ctx.rsi, ctx.rdi, ctx.rbp, ctx.rsp,
+            ctx.r8, ctx.r9, ctx.r10, ctx.r11,
+            ctx.r12, ctx.r13, ctx.r14, ctx.r15,
+            ctx.rip,
+            ctx.xmm0.f32[0], ctx.xmm1.f32[0], ctx.xmm2.f32[0], ctx.xmm3.f32[0],
+            ctx.xmm4.f32[0], ctx.xmm5.f32[0], ctx.xmm6.f32[0], ctx.xmm7.f32[0],
+            ctx.xmm8.f32[0], ctx.xmm9.f32[0], ctx.xmm10.f32[0], ctx.xmm11.f32[0],
+            ctx.xmm12.f32[0], ctx.xmm13.f32[0], ctx.xmm14.f32[0], ctx.xmm15.f32[0]
+#else       
+            // General-purpose 32-bit registers
+             "EAX = 0x{:X}\t| EBX = 0x{:X}\t| ECX = 0x{:X}\t| EDX = 0x{:X}\n"
+             "ESI = 0x{:X}\t| EDI = 0x{:X}\t| EBP = 0x{:X}\t| ESP = 0x{:X}\n"
+             "EIP = 0x{:X}\n"
+             // XMM floats
+             "XMM0 = {:g}\t| XMM1 = {:g}\t| XMM2 = {:g}\t| XMM3 = {:g}\n"
+             "XMM4 = {:g}\t| XMM5 = {:g}\t| XMM6 = {:g}\t| XMM7 = {:g}\n",
+             ctx.eax, ctx.ebx, ctx.ecx, ctx.edx,
+             ctx.esi, ctx.edi, ctx.ebp, ctx.esp,
+             ctx.eip,
+             ctx.xmm0.f32[0], ctx.xmm1.f32[0], ctx.xmm2.f32[0], ctx.xmm3.f32[0],
+             ctx.xmm4.f32[0], ctx.xmm5.f32[0], ctx.xmm6.f32[0], ctx.xmm7.f32[0]
+#endif
+        );
+    }
+
+    void DumpBytes(uint64_t address)
+    {
+        BYTE* fn = reinterpret_cast<BYTE*>(address);
+        spdlog::info("First 6 bytes at DrawInstanced address:");
+        for (int i = 0; i < 6; ++i)
+        {
+            spdlog::info("  0x{:02X}", fn[i]);
+        }
+    }
+#endif
+
+
+    bool IsProcessRunning(const std::filesystem::path& fullPath)
+    {
+        HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+        if (snapshot == INVALID_HANDLE_VALUE)
+        {
+            return false;
+        }
+
+        PROCESSENTRY32W entry {};
+        entry.dwSize = sizeof(entry);
+
+        bool found = false;
+
+        if (Process32FirstW(snapshot, &entry))
+        {
+            do
             {
-                return std::tolower(c);
-            });
-        auto it = std::find(search.begin(), search.end(), str);
-        if (it != search.end())
-            return (int)std::distance(search.begin(), it);
+                HANDLE hProcess = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, entry.th32ProcessID);
+                if (hProcess)
+                {
+                    wchar_t buf[MAX_PATH];
+                    DWORD size = MAX_PATH;
+                    if (QueryFullProcessImageNameW(hProcess, 0, buf, &size))
+                    {
+                        if (_wcsicmp(buf, fullPath.c_str()) == 0)
+                        {
+                            found = true;
+                        }
+                    }
+                    CloseHandle(hProcess);
+                    if (found) break;
+                }
+            } while (Process32NextW(snapshot, &entry));
+        }
+
+        CloseHandle(snapshot);
+        return found;
+    }
+
+
+    int findStringInVector(const std::string& str, const std::initializer_list<std::string>& search)
+    {
+        std::string lowerStr = str;
+        std::transform(lowerStr.begin(), lowerStr.end(), lowerStr.begin(), ::tolower);
+
+        for (auto it = search.begin(); it != search.end(); ++it)
+        {
+            std::string lower = *it;
+            std::transform(lower.begin(), lower.end(), lower.begin(), ::tolower);
+
+            if (lowerStr == lower)
+                return static_cast<int>(std::distance(search.begin(), it));
+        }
         return 0;
     }
 
+
+
     // Convert an UTF8 string to a wide Unicode String
-    std::wstring utf8_decode(const std::string& str)
+    std::wstring UTF8toWide(const std::string& str)
     {
         if (str.empty()) return std::wstring();
         int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
@@ -266,6 +335,28 @@ namespace Util
         MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
         return wstrTo;
     }
+
+    std::string WideToUTF8(const std::wstring& wstr)
+    {
+        if (wstr.empty()) return {};
+
+        int sizeNeeded = WideCharToMultiByte(
+            CP_UTF8, 0,
+            wstr.data(), (int)wstr.size(),
+            nullptr, 0, nullptr, nullptr
+        );
+
+        std::string result(sizeNeeded, 0);
+        WideCharToMultiByte(
+            CP_UTF8, 0,
+            wstr.data(), (int)wstr.size(),
+            result.data(), sizeNeeded,
+            nullptr, nullptr
+        );
+
+        return result;
+    }
+
 
     std::pair<int, int> GetPhysicalDesktopDimensions()
     {
@@ -357,28 +448,16 @@ namespace Util
         return FALSE;
     }
 
-    bool stringToBool(const std::string& str)
+    std::string GetNameAtIndex(const std::initializer_list<std::string>& list, int index)
     {
-        std::string lowerStr = str;
-        std::transform(lowerStr.begin(), lowerStr.end(), lowerStr.begin(),
-            [](unsigned char c)
-            {
-                return std::tolower(c);
-            });
-        if (lowerStr == "true" || lowerStr == "1")
+        if (index >= 0 && index < static_cast<int>(list.size()))
         {
-            return true;
+            auto it = list.begin();
+            std::advance(it, index);
+            return *it;
         }
-        if (lowerStr == "false" || lowerStr == "0")
-        {
-            return false;
-        }
-        // Handle cases where the string is not a recognized boolean representation
-        // For example, throw an exception, return a default value, or log an error.
-        // For simplicity, this example returns false for unrecognized strings.
-        return false;
+        return "Unknown";
     }
-
 
     std::string GetUppercaseNameAtIndex(const std::initializer_list<std::string>& list, int index)
     {
@@ -395,21 +474,160 @@ namespace Util
 
     bool IsSteamOS()
     {
-        if (g_Logging.bCheckedSteamDeck)
+        static bool bCheckedSteamDeck = false;
+        static bool bIsSteamDeck = false;
+        if (bCheckedSteamDeck)
         {
-            return g_Logging.bIsSteamDeck;
+            return bIsSteamDeck;
         }
-
-        g_Logging.bCheckedSteamDeck = true;
-
+        bCheckedSteamDeck = true;
         // Check for Proton/Steam Deck environment variables
         if (std::getenv("STEAM_COMPAT_CLIENT_INSTALL_PATH") || std::getenv("STEAM_COMPAT_DATA_PATH") || std::getenv("XDG_SESSION_TYPE"))
         {
-            g_Logging.bIsSteamDeck = true;
-            return true;
+            bIsSteamDeck = true;
         }
-        return false;
+        return bIsSteamDeck;
     }
+
+    std::string StripQuotes(const std::string& value)
+    {
+        if (value.size() >= 2 && value.front() == '"' && value.back() == '"')
+        {
+            std::string s = value.substr(1, value.size() - 2);
+            // Handle escaped quotes
+            size_t pos = 0;
+            while ((pos = s.find("\\\"", pos)) != std::string::npos)
+            {
+                s.replace(pos, 2, "\"");
+                pos += 1;
+            }
+            return s;
+        }
+        return value;
+    }
+
+
+    std::string GetParentProcessName(const bool returnFullPath = false)
+    {
+        DWORD currentPid = GetCurrentProcessId();
+        DWORD parentPid = 0;
+
+        HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+        if (snapshot == INVALID_HANDLE_VALUE)
+        {
+            return {};
+        }
+
+        PROCESSENTRY32 pe;
+        pe.dwSize = sizeof(PROCESSENTRY32);
+
+        if (Process32First(snapshot, &pe))
+        {
+            do
+            {
+                if (pe.th32ProcessID == currentPid)
+                {
+                    parentPid = pe.th32ParentProcessID;
+                    break;
+                }
+            } while (Process32Next(snapshot, &pe));
+        }
+        CloseHandle(snapshot);
+
+        if (parentPid == 0)
+        {
+            return {};
+        }
+
+        HANDLE hParent = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, parentPid);
+        if (!hParent)
+        {
+            return {};
+        }
+
+        char exePath[MAX_PATH] = {};
+        DWORD size = sizeof(exePath);
+        if (!QueryFullProcessImageNameA(hParent, 0, exePath, &size))
+        {
+            CloseHandle(hParent);
+            return {};
+        }
+        CloseHandle(hParent);
+
+        std::string name = exePath;
+        if (returnFullPath)
+        {
+            return name;
+        }
+        size_t pos = name.find_last_of("\\/");
+        if (pos != std::string::npos)
+        {
+            name = name.substr(pos + 1);
+        }
+
+        // lowercase normalize
+        std::transform(name.begin(), name.end(), name.begin(), ::tolower);
+        return name;
+    }
+
+    bool IsProcessParent(const std::string& exeName)
+    {
+        std::string parent = GetParentProcessName(false);
+        if (parent.empty())
+        {
+            return false;
+        }
+
+        std::string target = exeName;
+        std::transform(target.begin(), target.end(), target.begin(), ::tolower);
+        return parent == target;
+    }
+
+
+    std::string GetFileProductName(const std::filesystem::path& path)
+    {
+        DWORD handle = 0;
+        DWORD size = GetFileVersionInfoSizeW(path.c_str(), &handle);
+        if (size == 0)
+        {
+            return {};
+        }
+
+        std::vector<char> buffer(size);
+        if (!GetFileVersionInfoW(path.c_str(), handle, size, buffer.data()))
+        {
+            return {};
+        }
+
+        struct LANGANDCODEPAGE
+        {
+            WORD wLanguage; WORD wCodePage;
+        };
+        LANGANDCODEPAGE* lpTranslate = nullptr;
+        UINT cbTranslate = 0;
+
+        if (!VerQueryValueW(buffer.data(), L"\\VarFileInfo\\Translation",
+                            reinterpret_cast<LPVOID*>(&lpTranslate), &cbTranslate))
+        {
+            return {};
+        }
+
+        // Just take the first translation entry
+        wchar_t subBlock[50];
+        swprintf_s(subBlock, L"\\StringFileInfo\\%04x%04x\\ProductName",
+                   lpTranslate[0].wLanguage, lpTranslate[0].wCodePage);
+
+        LPVOID lpBuffer = nullptr;
+        UINT dwBytes = 0;
+        if (VerQueryValueW(buffer.data(), subBlock, &lpBuffer, &dwBytes) && dwBytes > 0)
+        {
+            std::wstring ws(static_cast<wchar_t*>(lpBuffer), dwBytes);
+            return std::string(ws.begin(), ws.end());
+        }
+
+        return {};
+    }
+
 
     bool SHA1Check(const std::filesystem::path& filePath, const std::string& expected)
     {
@@ -502,4 +720,19 @@ namespace Util
                                 });
         return match;
     }
+
+
+    bool IsFileReadOnly(const std::filesystem::path& path)
+    {
+        DWORD attrs = GetFileAttributesW(path.wstring().c_str());
+        if (attrs == INVALID_FILE_ATTRIBUTES)
+        {
+            std::wcerr << L"[ERROR] Failed to get attributes for: " << path << std::endl;
+            spdlog::error("Failed to get attributes for file: {}", path.string());
+            return false;
+        }
+
+        return (attrs & FILE_ATTRIBUTE_READONLY) != 0;
+    }
+
 }
