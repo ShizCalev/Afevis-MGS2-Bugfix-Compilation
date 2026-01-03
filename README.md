@@ -1,9 +1,9 @@
 # MGS2 Community Bugfix Compilation
 
-<br>
-
-
 [![Releases](https://img.shields.io/github/v/release/ShizCalev/MGS2-Community-Bugfix-Compilation)](https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases) [![Downloads](https://img.shields.io/github/downloads/ShizCalev/MGS2-Community-Bugfix-Compilation/total)](https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases) ![Commits](https://img.shields.io/github/commit-activity/t/ShizCalev/MGS2-Community-Bugfix-Compilation) ![License](https://img.shields.io/github/license/ShizCalev/MGS2-Community-Bugfix-Compilation)
+
+
+<br>
 
 
 A community-driven bugfix pack fixing invisible textures/models, missing audio, typos, consistency problems, and more; including re-importing the higher quality PS2 NPOT textures, upgrading many low-LOD models to their full-quality versions, and hand-remastering a number of low quality assets.
