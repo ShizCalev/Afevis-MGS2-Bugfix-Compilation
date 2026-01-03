@@ -28,63 +28,19 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-
-    - name: Extract version from version.h
-      id: extract_version
-      shell: bash
-      run: |
-        VERSION_FILE="src/resources/version.h"
-        echo "Reading version from $VERSION_FILE"
-
-        VERSION_MAJOR=$(grep '#define VERSION_MAJOR' "$VERSION_FILE" | awk '{print $3}')
-        VERSION_MINOR=$(grep '#define VERSION_MINOR' "$VERSION_FILE" | awk '{print $3}')
-        VERSION_PATCH=$(grep '#define VERSION_PATCH' "$VERSION_FILE" | awk '{print $3}')
-
-        version="${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}"
-        echo "Parsed version: $version"
-
-        echo "version=$version" >> $GITHUB_OUTPUT
+        fetch-depth: 0
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
-      
-    - name: Get wxWidgets submodule hash
-      id: wxhash
-      run: |
-        cd external/wxWidgets
-        $hash = git rev-parse HEAD
-        "hash=$hash" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
-
-    - name: Cache wxWidgets
-      uses: actions/cache@v4
-      with:
-        path: external/wxWidgets/lib/vc_x64_lib
-        key: wxwidgets-${{ runner.os }}-${{ steps.wxhash.outputs.hash }}
-
-    # Zydis cache setup
-    - name: Get Zydis submodule hash
-      id: zydishash
-      run: |
-        cd external/zydis
-        $hash = git rev-parse HEAD
-        "hash=$hash" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
-
-    - name: Cache Zydis
-      uses: actions/cache@v4
-      with:
-        path: |
-          external/zydis/msvc/bin/ReleaseX64
-          external/zydis/msvc/bin/ReleaseX86
-        key: zydis-${{ runner.os }}-${{ steps.zydishash.outputs.hash }}
 
     # -------------------------
-    # GCX Zips (MGS2 + MGS3)
+    # GCX Zips (MGS2)
     # -------------------------
     - name: Compute GCX cache key
       id: gcxhash
       run: |
         # Bump this string when GCX zips change
-        $hash = "gcx-v6"
+        $hash = "gcx-v1"
         "hash=$hash" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
 
     - name: Cache GCX zip files
@@ -121,27 +77,19 @@ jobs:
       if: steps.gcx-zip-cache.outputs.cache-hit != 'true'
       run: |
         mkdir external -Force
-        mega-get "https://mega.nz/file/LogUGBzB#NcofiyjsbFF_khRe61KdgL6HWLNfiHiSFI9QEsuElS8" "external/mgs2-gcx.zip"
-        mega-get "https://mega.nz/file/XxpDzAYB#H49lYsNhUmH4bdALLYUr_Nl0LjqDMpa-FSQh6jUXdOc" "external/mgs3-gcx.zip"
+        mega-get "https://mega.nz/file/usYShZQb#q8ckz4h_SdJr14JD5RPesZpCJtP1b5l4rYB3jSigKZs" "external/mgs2-gcx.zip"
 
     # -------------------------
     - name: Extract GCX zips
       run: |
-        $destMgs2 = "GCX Fixes/mgs2"
-        $destMgs3 = "GCX Fixes/mgs3"
+        $destMgs2 = "GCX Fixes"
 
         New-Item -ItemType Directory -Force -Path $destMgs2 | Out-Null
-        New-Item -ItemType Directory -Force -Path $destMgs3 | Out-Null
 
         Expand-Archive external/mgs2-gcx.zip -DestinationPath $destMgs2 -Force
-        Expand-Archive external/mgs3-gcx.zip -DestinationPath $destMgs3 -Force
 
         Write-Host "Final GCX files in ${destMgs2}:"
         Get-ChildItem $destMgs2 -Recurse | ForEach-Object { Write-Host $_.FullName }
-
-        Write-Host "Final GCX files in ${destMgs3}:"
-        Get-ChildItem $destMgs3 -Recurse | ForEach-Object { Write-Host $_.FullName }
-
 
     # -------------------------
     # Prepare output structure
@@ -149,36 +97,31 @@ jobs:
     - run: mkdir dist
     - run: mkdir dist/plugins
     - run: mkdir dist/logs
+    - run: mkdir dist/assets
+    - run: mkdir dist/eu
+    - run: mkdir dist/us
+    - run: mkdir dist/textures
+    
+    - run: mkdir dist_2x
+    - run: mkdir dist_2x/textures
+    
+    - run: mkdir dist_4x
+    - run: mkdir dist_4x/textures
 
-    - name: Run MGS2 GCX import-gcx.ps1
+
+    - name: Run MGS2 GCX import-gcx.py
       run: |
         $RepoRootDir = "${{ github.workspace }}"
-        $importScript = Join-Path $RepoRootDir "GCX Fixes\mgs2\import-gcx.ps1"
+        $importScript = Join-Path $RepoRootDir "GCX Fixes\import-gcx.py"
 
         if (-not (Test-Path $importScript)) {
-          Write-Error "import-gcx.ps1 not found at $importScript"
+          Write-Error "import-gcx.py not found at $importScript"
           exit 1
         }
 
         Write-Host "Invoking $importScript..."
-        pwsh -File $importScript
+        py $importScript
 
-    - name: Run MGS3 GCX import-gcx.ps1 (en/fr, gr, it, sp)
-      run: |
-        $RepoRootDir = "${{ github.workspace }}"
-        $langs = @("fr","gr","it","sp")
-
-        foreach ($lang in $langs) {
-          $importScript = Join-Path $RepoRootDir "GCX Fixes\mgs3\$lang\import-gcx.ps1"
-
-          if (-not (Test-Path $importScript)) {
-            Write-Warning "import-gcx.ps1 not found for $lang at $importScript"
-            continue
-          }
-
-          Write-Host "Invoking $importScript for $lang..."
-          pwsh -File $importScript
-        }
 
     # -------------------------
     # Build
@@ -186,41 +129,50 @@ jobs:
     - name: Build
       run: msbuild "ASI Mod\${{ github.event.repository.name }}.sln" /m -t:rebuild -verbosity:minimal -property:Configuration=Release -property:Platform=x64  -property:PlatformToolset=v143
 
-    # Copy built binaries into plugins
+    # Copy built binaries directly into plugins/
     - run: Copy-Item "ASI Mod\x64\Release\${{ github.event.repository.name }}.asi" "dist/plugins/${{ github.event.repository.name }}.asi"
-
-    # Download Ultimate ASI Loader
-    - uses: robinraju/release-downloader@v1.8
-      with:
-        repository: "ThirteenAG/Ultimate-ASI-Loader"
-        latest: true
-        fileName: "Ultimate-ASI-Loader_x64.zip"
-
-    - name: Extract Loader
-      run: Expand-Archive Ultimate-ASI-Loader_x64.zip -DestinationPath dist
-
-    - name: Add Loader License
-      run: Invoke-WebRequest https://raw.githubusercontent.com/ThirteenAG/Ultimate-ASI-Loader/master/license -OutFile dist/UltimateASILoader_LICENSE.md
-
-    - name: Stage Loader DLLs
-      run: |
-        Copy-Item dist/dinput8.dll dist/wininet.dll
-        Move-Item dist/dinput8.dll dist/winhttp.dll
 
     # Logs & metadata
     - run: Copy-Item README.md "dist/logs/${{ github.event.repository.name }}.log"
     - run: Copy-Item LICENSE "dist/plugins/${{ github.event.repository.name }}_LICENSE"
     - run: Copy-Item "ASI Mod\${{ github.event.repository.name }}.ini" "dist/plugins/${{ github.event.repository.name }}.ini"
+    
+
+    # Build Dist Folders
+    - name: Build Dist Folders
+      run: |
+        $RepoRootDir = "${{ github.workspace }}"
+        $scriptPath  = Join-Path $RepoRootDir "Build_Dist_Folders.py"
+
+        if (-not (Test-Path $scriptPath)) {
+          Write-Error "Build_Dist_Folders.py not found at $scriptPath"
+          exit 1
+        }
+
+        Write-Host "Running Build_Dist_Folders.py..."
+        py $scriptPath
 
 
     # Package everything
-    - name: Create release zip
+    - name: Create Base release zip
       working-directory: dist
-      run: 7z a -tzip "../${{ github.event.repository.name }}_${{ steps.extract_version.outputs.version }}.zip" *
+      run: 7z a -tzip "../${{ github.event.repository.name }}}_${{ steps.extract_version.outputs.version }}_Base.zip" *
 
-    - uses: ncipollo/release-action@v1
+    - name: Create 2x Upscaled release zip
+      working-directory: dist_2x
+      run: 7z a -tzip "../${{ github.event.repository.name }}_${{ steps.extract_version.outputs.version }}_2x_Upscaled_Addon.zip" *
+
+    - name: Create 4x Upscaled release zip
+      working-directory: dist_4x
+      run: 7z a -tzip "../${{ github.event.repository.name }}_${{ steps.extract_version.outputs.version }}_4x_Upscaled_Addon.zip" *
+
+    - name: Generate Release Posting
+      uses: ncipollo/release-action@v1
       with:
-        artifacts: "${{ github.event.repository.name }}_${{ steps.extract_version.outputs.version }}.zip"
+        artifacts: >
+          ${{ github.event.repository.name }}_${{ steps.extract_version.outputs.version }}_Base.zip,
+          ${{ github.event.repository.name }}_${{ steps.extract_version.outputs.version }}_2x_Upscaled_Addon.zip,
+          ${{ github.event.repository.name }}_${{ steps.extract_version.outputs.version }}_4x_Upscaled_Addon.zip
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ steps.extract_version.outputs.version }}
         name: "${{ steps.extract_version.outputs.version }}"
