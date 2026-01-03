@@ -250,3 +250,8 @@ Feel free to inquire about texture file names if you need assistance pinpointing
 * Jayveer's CTXRTool (using self-made batch scripts for automated mipmap generation using Nvidia texture tool)
 * Visual Studio Code (bp_asset & manifest file management)
 * Notepad++ (bp_asset & manifest file management)
+
+
+--------
+
+Built using [MGS2-PS2-Textures](https://github.com/dotlessone/MGS2-PS2-Textures), made by Afevis.
