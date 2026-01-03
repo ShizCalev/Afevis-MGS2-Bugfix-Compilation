@@ -94,9 +94,9 @@ def get_staging_upscaled_bool() -> bool:
     anywhere in its full path.
     """
     path_lower = str(STAGING_FOLDER).lower()
-    if "staging - 2x upscaled" in path_lower:
+    if " - 2x upscaled" in path_lower:
         return True
-    if "staging - 4x upscaled" in path_lower:
+    if " - 4x upscaled" in path_lower:
         return True
     return False
 

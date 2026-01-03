@@ -51,7 +51,7 @@ STAGING_ROOTS: list[Path] = [
     DEMASTER_ROOT / "Staging",
     DEMASTER_ROOT / "Staging - 2x Upscaled",
     DEMASTER_ROOT / "Staging - 4x Upscaled",
-    
+
     DEMASTER_ROOT / "Staging - UI",
     DEMASTER_ROOT / "Staging - UI - 2x Upscaled",
     DEMASTER_ROOT / "Staging - UI - 4x Upscaled",
@@ -544,6 +544,11 @@ def sync_2x_folders_txt_with_4x() -> None:
     _sync_2x_4x_pair(
         DEMASTER_ROOT / "Staging - 2x Upscaled",
         DEMASTER_ROOT / "Staging - 4x Upscaled",
+    )
+
+    _sync_2x_4x_pair(
+        DEMASTER_ROOT / "Staging - UI - 2x Upscaled",
+        DEMASTER_ROOT / "Staging - UI - 4x Upscaled",
     )
 
     _sync_2x_4x_pair(
