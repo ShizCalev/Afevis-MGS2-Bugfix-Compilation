@@ -41,6 +41,9 @@ MANUAL_UI_TEXTURES_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilati
 NEVER_UPSCALE_PATH = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\never_upscale.txt")
 UPSCALE_STAGING_DIR = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\_upscaling")
 
+# Root for PS2 textures used as override source in Demastered runs
+PS2_TEXTURES_ROOT = Path(r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\ps2 textures")
+
 CHAINNER_EXE = Path(r"C:\Users\cmkoo\AppData\Local\chaiNNer\chaiNNer.exe")
 CHAINNER_PROJECT_2X = Path(
     r"C:\Development\Git\Afevis-MGS2-Bugfix-Compilation\Texture Fixes\2x Upscaling.chn"
@@ -96,6 +99,13 @@ def get_staging_upscaled_bool() -> bool:
     if "staging - 4x upscaled" in path_lower:
         return True
     return False
+
+
+def staging_folder_is_demastered() -> bool:
+    """
+    True if STAGING_FOLDER path contains "Demastered" (case insensitive).
+    """
+    return "demastered" in str(STAGING_FOLDER).lower()
 
 
 def get_chainner_project_for_staging() -> Path:
@@ -321,6 +331,97 @@ def image_is_fully_opaque_or_no_alpha(path: Path) -> bool:
             return mn == 255
     except Exception as e:
         raise RuntimeError(f"Failed checking alpha opacity for {path}: {e}")
+
+
+# ==========================================================
+# DEMASTERED PS2 SOURCE REMAP HELPERS
+# ==========================================================
+def build_ps2_textures_map_or_die(root: Path) -> dict[str, Path]:
+    """
+    Recursively scan PS2_TEXTURES_ROOT for .png and .tga files and build a map:
+      stem_lower -> unique file path
+
+    If duplicates are found for a stem (across any extension), it is treated as fatal.
+    """
+    if not root.is_dir():
+        raise RuntimeError(f"PS2 textures root does not exist or is not a directory: {root}")
+
+    mapping: dict[str, Path] = {}
+    duplicates: dict[str, list[Path]] = {}
+
+    for p in root.rglob("*"):
+        if not p.is_file():
+            continue
+        suf = p.suffix.lower()
+        if suf not in (".png", ".tga"):
+            continue
+
+        stem_lower = p.stem.lower()
+        prev = mapping.get(stem_lower)
+        if prev is None:
+            mapping[stem_lower] = p
+        else:
+            if stem_lower not in duplicates:
+                duplicates[stem_lower] = [prev]
+            duplicates[stem_lower].append(p)
+
+    if duplicates:
+        log("[FATAL] Duplicate stems detected in PS2 textures root while building map:")
+        for stem, paths in sorted(duplicates.items(), key=lambda x: x[0]):
+            log(f"  {stem}:")
+            for p in paths:
+                log(f"    {p}")
+        raise RuntimeError("PS2 textures map requires unique stems")
+
+    log(f"[INFO] PS2 textures map contains {len(mapping)} unique stems")
+    return mapping
+
+
+def remap_demastered_self_remade_to_ps2(image_files: list[Path]) -> list[Path]:
+    """
+    For Demastered staging runs:
+      If an image path:
+        - contains 'self remade' and
+        - does not contain 'demaster fixed'
+      then use the matching .png/.tga under PS2_TEXTURES_ROOT instead,
+      matched by stem (case insensitive).
+
+    The returned list is the same length as image_files but with overridden Paths
+    for the cases described above.
+
+    All subsequent logic (hashing, origin, opacity, nvtt input) uses the PS2 path.
+    """
+    if not image_files:
+        return image_files
+
+    ps2_map = build_ps2_textures_map_or_die(PS2_TEXTURES_ROOT)
+
+    remapped: list[Path] = []
+    missing_in_ps2: list[Path] = []
+
+    for img in image_files:
+        path_lower = str(img).lower()
+        if path_contains_self_remade(img) and "demaster fixed" not in path_lower:
+            stem_lower = img.stem.lower()
+            ps2_path = ps2_map.get(stem_lower)
+            if ps2_path is None:
+                missing_in_ps2.append(img)
+                remapped.append(img)
+            else:
+                log(f"[DEMASTERED] Using PS2 texture as source for self remade image:")
+                log(f"             staging: {img}")
+                log(f"             ps2 src: {ps2_path}")
+                remapped.append(ps2_path)
+        else:
+            remapped.append(img)
+
+    if missing_in_ps2:
+        log("[FATAL] One or more Demastered self remade images have no matching PS2 source by stem:")
+        for p in missing_in_ps2:
+            log(f"  {p}")
+        raise RuntimeError("Missing PS2 source for Demastered self remade images")
+
+    return remapped
 
 
 # ==========================================================
@@ -1621,7 +1722,10 @@ def main() -> int:
 
         log(f"[INFO] STAGING_FOLDER: {STAGING_FOLDER}")
         is_upscaled_run = get_staging_upscaled_bool()
+        is_demastered_run = staging_folder_is_demastered()
         log(f"[INFO] This run is treated as {'UPSCALED (2x/4x)' if is_upscaled_run else 'NON-upscaled'}")
+        if is_demastered_run:
+            log("[INFO] Detected Demastered staging run. Self remade images (except 'Demaster Fixed') will use PS2 sources.")
 
         folders = read_folder_list(folders_txt)
         if not folders:
@@ -1654,6 +1758,11 @@ def main() -> int:
                 log(
                     f"[UPSCALE] Skipped {skipped} image(s) listed in never_upscale.txt for upscaled staging run"
                 )
+
+        # Demastered override: for Demastered staging runs, redirect eligible Self Remade
+        # images to PS2_TEXTURES_ROOT sources before any hashing or metadata checks.
+        if is_demastered_run:
+            image_files = remap_demastered_self_remade_to_ps2(image_files)
 
         image_hash_by_name, image_origin_by_name, image_opacity_expected_by_name = hash_images_unique_or_die(
             image_files, workers
