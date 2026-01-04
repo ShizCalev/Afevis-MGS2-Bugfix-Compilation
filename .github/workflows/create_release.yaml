@@ -172,7 +172,7 @@ jobs:
     # Package everything
     - name: Create Base release zip
       working-directory: dist
-      run: 7z a -tzip "../${{ github.event.repository.name }}}_v${{ steps.extract_version.outputs.version }}_Base.zip" *
+      run: 7z a -tzip "../${{ github.event.repository.name }}_v${{ steps.extract_version.outputs.version }}_Base.zip" *
 
     - name: Create 2x Upscaled release zip
       working-directory: dist_2x
