@@ -138,7 +138,7 @@ def load_existing_csv(csv_path: Path) -> dict[str, dict[str, str]]:
 
 
 def write_conversion_csv(csv_path: Path, rows_by_filename: dict[str, dict[str, str]]) -> None:
-    header = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped","upscaled"]
+    header = ["filename", "before_hash", "ctxr_hash", "mipmaps", "origin_folder", "opacity_stripped", "upscaled"]
     tmp_path = csv_path.with_suffix(csv_path.suffix + ".tmp")
 
     with tmp_path.open("w", encoding="utf-8", newline="\n") as f:
@@ -335,24 +335,6 @@ def main() -> int:
     exit_code = proc.wait()
     log(f"CTXR3 exited with code: {exit_code}")
 
-    # Verify ctxr files exist (ONLY for the NO-MIPS filtered set, in CWD)
-    expected_ctxr_paths: list[Path] = []
-    missing_ctxr: list[str] = []
-
-    for s in stems:
-        p = cwd / f"{s}.ctxr"
-        expected_ctxr_paths.append(p)
-        if not p.is_file():
-            missing_ctxr.append(p.name)
-
-    if missing_ctxr:
-        log("ERROR: Missing expected .ctxr files (did CTXR3 generate them in this folder?):")
-        for name in missing_ctxr[:50]:
-            log(f"  {name}")
-        if len(missing_ctxr) > 50:
-            log(f"  ...and {len(missing_ctxr) - 50} more")
-        return pause_and_exit(1)
-
     # Precompute metadata (ONLY for the NO-MIPS filtered set)
     log("\nHashing source images + checking transparency...")
     tex_meta: dict[str, tuple[str, str]] = {}  # stem -> (before_hash, opacity_stripped)
@@ -362,25 +344,64 @@ def main() -> int:
         opacity_stripped = "true" if not image_has_any_transparency(p) else "false"
         tex_meta[p.stem] = (before_hash, opacity_stripped)
 
-    log("Hashing CTXRs...")
-    ctxr_hashes: dict[str, str] = {}
-    for s in stems:
-        ctxr_hashes[s] = sha1_file(cwd / f"{s}.ctxr")
+    # Discover whatever .ctxr files CTXR3 actually created in this folder
+    ctxr_files = sorted(
+        p for p in cwd.iterdir()
+        if p.is_file() and p.suffix.lower() == ".ctxr"
+    )
 
-    # Deploy and update CSVs
+    if not ctxr_files:
+        log("ERROR: No .ctxr files found in CWD after CTXR3 run. Nothing to deploy.")
+        return pause_and_exit(1)
+
+    # Only process ctxrs whose stems match NO-MIPS source images we know about
+    processed_ctxr_files: list[Path] = []
+    ignored_ctxr_files: list[Path] = []
+
+    for p in ctxr_files:
+        if p.stem in tex_meta:
+            processed_ctxr_files.append(p)
+        else:
+            ignored_ctxr_files.append(p)
+
+    if not processed_ctxr_files:
+        log("ERROR: Found .ctxr files, but none match NO-MIPS source images in this folder.")
+        if ignored_ctxr_files:
+            log("The following .ctxr files were ignored because their stems do not match any NO-MIPS image:")
+            for p in ignored_ctxr_files[:50]:
+                log(f"  {p.name}")
+            if len(ignored_ctxr_files) > 50:
+                log(f"  ...and {len(ignored_ctxr_files) - 50} more")
+        return pause_and_exit(1)
+
+    log(f"\nFound {len(processed_ctxr_files)} .ctxr file(s) to process.")
+    if ignored_ctxr_files:
+        log(f"Ignoring {len(ignored_ctxr_files)} .ctxr file(s) with unknown stems.")
+        for p in ignored_ctxr_files[:50]:
+            log(f"  [IGNORED] {p.name}")
+        if len(ignored_ctxr_files) > 50:
+            log(f"  ...and {len(ignored_ctxr_files) - 50} more")
+
+    # Hash the ctxrs we are actually going to process
+    log("\nHashing CTXRs...")
+    ctxr_hashes: dict[str, str] = {}
+    for p in processed_ctxr_files:
+        ctxr_hashes[p.stem] = sha1_file(p)
+
+    # Deploy and update CSVs for the processed ctxrs only
     log("\nDeploying...")
     for d in deploy_dirs:
         copied = 0
-        for s in stems:
-            src_ctxr = cwd / f"{s}.ctxr"
+        csv_path = d / CONVERSION_CSV
+        rows = load_existing_csv(csv_path)
+
+        for ctxr_file in processed_ctxr_files:
+            s = ctxr_file.stem
+            src_ctxr = ctxr_file
             dst_ctxr = d / src_ctxr.name
             shutil.copy2(src_ctxr, dst_ctxr)
             copied += 1
 
-        csv_path = d / CONVERSION_CSV
-        rows = load_existing_csv(csv_path)
-
-        for s in stems:
             before_hash, opacity_stripped = tex_meta[s]
             row = rows.get(s, {})
 
@@ -391,15 +412,19 @@ def main() -> int:
             row["origin_folder"] = origin_folder
             row["opacity_stripped"] = opacity_stripped
 
+            # Preserve any existing "upscaled" field if already present, otherwise leave blank
+            if "upscaled" not in row:
+                row["upscaled"] = row.get("upscaled", "")
+
             rows[s] = row
 
         write_conversion_csv(csv_path, rows)
 
-        log(f"  Deployed {copied} ctxr files -> {d}")
+        log(f"  Deployed {copied} ctxr file(s) -> {d}")
         log(f"  Updated -> {csv_path}")
 
-    # Cleanup ctxr files from CWD
-    delete_ctxrs(expected_ctxr_paths)
+    # Cleanup only the ctxr files we processed from CWD
+    delete_ctxrs(processed_ctxr_files)
 
     log("\nDone.")
     return 0
