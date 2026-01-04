@@ -213,6 +213,7 @@ Recommended Mod Load Order (from first to last):
 ### Remade Assets:
 
 * All remade assets are located in the following folder and can be deleted without issue for purist who only want the base PS2 reimport & mipmap/opacity fixes.
+* Future updates will include a configuration tool to enable/disable fixes
 
 \ovr_stm\ovr_eu\_win
 
@@ -229,6 +230,8 @@ Feel free to inquire about texture file names if you need assistance pinpointing
 - Remade the low resolution statue of liberty postcard found in some lockers.
 
 - Remade ocean reflection maps utilizing their source assets.
+
+- Remade the security camera monitor screen during the first Ames cutscene which was still its original PS2 resolution..
 
 
 
