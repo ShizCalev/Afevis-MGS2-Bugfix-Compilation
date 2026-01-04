@@ -11,6 +11,39 @@
 
 namespace Memory
 {
+    std::string GetModuleVersion(HMODULE module)
+    {
+        if (!module)
+            return "0.0.0";
+
+        char modulePath[MAX_PATH] = { 0 };
+        if (!GetModuleFileNameA(module, modulePath, MAX_PATH))
+            return "0.0.0";
+
+        DWORD handle = 0;
+        DWORD size = GetFileVersionInfoSizeA(modulePath, &handle);
+        if (size == 0)
+            return "0.0.0";
+
+        std::vector<BYTE> versionInfo(size);
+        if (!GetFileVersionInfoA(modulePath, handle, size, versionInfo.data()))
+            return "0.0.0";
+
+        VS_FIXEDFILEINFO* fileInfo = nullptr;
+        UINT fileInfoLen = 0;
+        if (!VerQueryValueA(versionInfo.data(), "\\", reinterpret_cast<LPVOID*>(&fileInfo), &fileInfoLen) || !fileInfo)
+            return "0.0.0";
+
+        // Extract version numbers
+        DWORD verMS = fileInfo->dwFileVersionMS;
+        DWORD verLS = fileInfo->dwFileVersionLS;
+        int major = HIWORD(verMS);
+        int minor = LOWORD(verMS);
+        int patch = HIWORD(verLS);
+
+        return std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(patch);
+    }
+
 
     void PatchBytes(uintptr_t address, const char* pattern, unsigned int numBytes)
     {
@@ -215,6 +248,7 @@ namespace Memory
 namespace Util
 {
 #if !defined(RELEASE_BUILD)
+    /*
     void DumpContext(const safetyhook::Context& ctx)
     {
         spdlog::info("\n"
@@ -255,7 +289,7 @@ namespace Util
 #endif
         );
     }
-
+    */
     void DumpBytes(uint64_t address)
     {
         BYTE* fn = reinterpret_cast<BYTE*>(address);
@@ -266,7 +300,7 @@ namespace Util
         }
     }
 #endif
-
+    /*
 
     bool IsProcessRunning(const std::filesystem::path& fullPath)
     {
@@ -306,7 +340,7 @@ namespace Util
         CloseHandle(snapshot);
         return found;
     }
-
+    */
 
     int findStringInVector(const std::string& str, const std::initializer_list<std::string>& search)
     {
@@ -506,7 +540,7 @@ namespace Util
         return value;
     }
 
-
+    /*
     std::string GetParentProcessName(const bool returnFullPath = false)
     {
         DWORD currentPid = GetCurrentProcessId();
@@ -581,7 +615,8 @@ namespace Util
         std::string target = exeName;
         std::transform(target.begin(), target.end(), target.begin(), ::tolower);
         return parent == target;
-    }
+    }    */
+
 
 
     std::string GetFileProductName(const std::filesystem::path& path)

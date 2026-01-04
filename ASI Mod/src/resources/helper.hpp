@@ -5,6 +5,10 @@ inline std::filesystem::path sFixPath;
 
 namespace Memory
 {
+
+    std::string GetModuleVersion(HMODULE module);
+
+
     template<typename T>
     void Write(uintptr_t writeAddress, T value)
     {
@@ -62,9 +66,9 @@ namespace Util
 
     std::string StripQuotes(const std::string& value);
 
-    std::string GetParentProcessName(bool returnFullPath);
+   // std::string GetParentProcessName(bool returnFullPath);
 
-    bool IsProcessParent(const std::string& exeName);
+    //bool IsProcessParent(const std::string& exeName);
 
 
     std::string GetFileProductName(const std::filesystem::path& path);
