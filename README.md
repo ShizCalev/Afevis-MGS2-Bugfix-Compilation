@@ -137,6 +137,8 @@ Recommended Mod Load Order (from first to last):
 
 - Fixed a hole in the top of the HH-60 Helicopters used by the SEALS during the Plant intro. [2001 SoL] Contributed by [Jacky720](https://github.com/Jacky720) / Space Core
 
+- Fixed rogue black pixel on Shell 1 Core doors. (door_b00.bmp) [2011 HDC]
+
 <br>
 
 ------------
@@ -231,7 +233,7 @@ Feel free to inquire about texture file names if you need assistance pinpointing
 
 - Remade ocean reflection maps utilizing their source assets.
 
-- Remade the security camera monitor screen during the first Ames cutscene which was still its original PS2 resolution..
+- Remade the security camera monitor screen during the first Ames cutscene, also fixing the consistency issue where Raiden was not wearing his disguise. (w24c1_rev_disp_01.bmp) [2001 SoL]
 
 
 
