@@ -186,7 +186,9 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: >
-          ${{ github.event.repository.name }}_v${{ steps.extract_version.outputs.version }}_*
+          ${{ github.event.repository.name }}_Base_v${{ steps.extract_version.outputs.version }}.zip,
+          ${{ github.event.repository.name }}_2x_Upscaled_Addon_v${{ steps.extract_version.outputs.version }}.zip,
+          ${{ github.event.repository.name }}_4x_Upscaled_Addon_v${{ steps.extract_version.outputs.version }}.zip*
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ steps.extract_version.outputs.version }}
         name: "${{ steps.extract_version.outputs.version }}"
