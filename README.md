@@ -5,11 +5,6 @@
 
 <br>
 
-Base: 1400 MiB
-2x: 5549 MiB
-4x: 22 GiB
-
-
 A community-driven bugfix pack fixing invisible textures/models, missing audio, typos, consistency problems, and more; including re-importing the higher quality PS2 NPOT textures, upgrading many low-LOD models to their full-quality versions, and hand-remastering a number of low quality assets.
 
 **Created, curated, and maintained by Afevis.**
