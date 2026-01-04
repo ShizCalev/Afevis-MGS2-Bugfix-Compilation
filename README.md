@@ -41,7 +41,6 @@ https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/issues
 <br>
 
 
-------------
 
 ## Installation Instructions
 
@@ -281,3 +280,11 @@ Feel free to inquire about texture file names if you need assistance pinpointing
 --------
 
 Built using [MGS2-PS2-Textures](https://github.com/dotlessone/MGS2-PS2-Textures), made by Afevis.
+
+<br> 
+
+--------
+
+### MGS Master Collection - Community Bug Tracker
+- A detailed tracker which catalogs all of the known Master Collection bugs (including issues fixed by MGSHDFix) can be located [here](https://docs.google.com/spreadsheets/d/1WhQSRpkC_A9wBDV0o-Pohh1dMhL1H6nbVzvdluIVWrw/edit?gid=0#gid=0).
+- To submit new entries to the tracker, either report a new issue on the MGSHDFix [Github](https://github.com/Lyall/MGSHDFix/issues/new/choose), or use [this form](https://docs.google.com/forms/d/e/1FAIpQLSef8Vx38tHpBsR-dXnawF6X0iad3XU7vmDX29pcmjbaZhQiew/viewform).
