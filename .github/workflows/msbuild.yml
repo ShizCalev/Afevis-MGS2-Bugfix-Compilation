@@ -160,16 +160,6 @@ jobs:
       working-directory: dist
       run: 7z a -tzip "../${{ github.event.repository.name }}}_Base_run-${{ github.run_number }}.zip" *
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ github.event.repository.name }}_Base_run-${{ github.run_number }}
-        path: dist/
-
     - name: Create 2x Upscaled release zip
       working-directory: dist_2x
-      run: 7z a -tzip "../${{ github.event.repository.name }}_2x_Upscaled_run-${{ github.run_number }}.zip" *
-
-    - name: Create 4x Upscaled release zip
-      working-directory: dist_4x
       run: 7z a -tzip "../${{ github.event.repository.name }}_2x_Upscaled_run-${{ github.run_number }}.zip" *

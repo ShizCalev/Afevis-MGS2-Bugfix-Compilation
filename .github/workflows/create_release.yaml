@@ -178,17 +178,12 @@ jobs:
       working-directory: dist_2x
       run: 7z a -tzip "../${{ github.event.repository.name }}_v${{ steps.extract_version.outputs.version }}_2x_Upscaled_Addon.zip" *
 
-    - name: Create 4x Upscaled release zip
-      working-directory: dist_4x
-      run: 7z a -tzip "../${{ github.event.repository.name }}_v${{ steps.extract_version.outputs.version }}_4x_Upscaled_Addon.zip" *
-
     - name: Generate Release Posting
       uses: ncipollo/release-action@v1
       with:
         artifacts: >
           ${{ github.event.repository.name }}_v${{ steps.extract_version.outputs.version }}_Base.zip,
-          ${{ github.event.repository.name }}_v${{ steps.extract_version.outputs.version }}_2x_Upscaled_Addon.zip,
-          ${{ github.event.repository.name }}_v${{ steps.extract_version.outputs.version }}_4x_Upscaled_Addon.zip
+          ${{ github.event.repository.name }}_v${{ steps.extract_version.outputs.version }}_2x_Upscaled_Addon.zip
         token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ steps.extract_version.outputs.version }}
         name: "${{ steps.extract_version.outputs.version }}"

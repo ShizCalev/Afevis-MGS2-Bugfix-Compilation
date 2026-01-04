@@ -5,6 +5,10 @@
 
 <br>
 
+Base: 1400 MiB
+2x: 5549 MiB
+4x: 22 GiB
+
 
 A community-driven bugfix pack fixing invisible textures/models, missing audio, typos, consistency problems, and more; including re-importing the higher quality PS2 NPOT textures, upgrading many low-LOD models to their full-quality versions, and hand-remastering a number of low quality assets.
 
@@ -29,6 +33,7 @@ The repo IS set up to easily contribute corrections (via CSV files) for **ALL** 
 
 
 NOTE: OPTIONAL ADDON 2X & 4X AI UPSCALED RELEASES OF THIS PACK ARE PROVIDED. As this pack already replaces nearly all of the game's textures, our upscaled packs do FULLY REPLACE LiqMix's AI Slop texture packs.
+### NOTE: The 4x Upscaled pack can only be found on our [NexusMods.com page](https://www.nexusmods.com/metalgearsolid2mc/mods/52) due to GitHub's file size restrictions. Nothing we can do about that - yell at Microsoft!
 
 <br>
 
@@ -40,6 +45,21 @@ https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/issues
 
 <br>
 
+
+------------
+
+## Installation Instructions
+
+1. Download the latest "Base" zip from: [here](https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation)
+1. Extract the contents of the zip into your game's folder.
+1. IF DOWNLOADING ONE OF THE AI UPSCALED TEXTURE ADDONS: Now extract it into your game's folder (so it overwrites the base version's files.)
+	(This is simplified if using a mod manager such as Vortex or ANTIBigBoss' MGS Mod Manager)
+
+
+
+<br>
+
+
 ------------
 
 Recommended Mod Load Order (from first to last):
@@ -47,7 +67,7 @@ Recommended Mod Load Order (from first to last):
 1. [MGSHDFix](https://github.com/Lyall/MGSHDFix) (REQUIRED)
 2. [Knight_Killer](https://www.nexusmods.com/profile/KnightKiIIer)'s [MGS2 Better Audio Mod](https://www.nexusmods.com/metalgearsolid2mc/mods/3)
 3. MGS2 Community Bugfix Compilation - Base
-4. MGS2 Community Bugfix Compilation - AI Upscaled Texture Pack (if desired)
+4. MGS2 Community Bugfix Compilation - AI Upscaled Texture Addon (if desired)
 5. MGS2 Demastered Texture Pack (if installed)
 6. [IroquoisPliskin1972](https://www.nexusmods.com/profile/IroquoisPliskin1972)'s [Solid Snake and Pliskin fixes and overhaul﻿](https://www.nexusmods.com/metalgearsolid2mc/mods/45)
 7. [GuyOnAChair](https://www.nexusmods.com/profile/GuyOnAChair)'s [MGS2MC Solid Snake Hair Fix﻿](https://www.nexusmods.com/metalgearsolid2mc/mods/10)
