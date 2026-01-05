@@ -160,7 +160,7 @@ Recommended Mod Load Order (from first to last):
 
 - Corrected typos on item-box text popups. (ibox_tx_all_alp.bmp) [2001 SoL]
 
-- Fixed various corruption issues on numerous typos NOT related to NPOT's. (w00a_blc_t1.bmp_7f11fc01c0e5875532e7dd318d7c9e68, w03c_rfc00a_mog.bmp_23f594b4ce6d874272c3a003c35f7740) [2001 SoL]
+- Fixed various corruption issues on numerous textures NOT related to NPOT's. (w00a_blc_t1.bmp_7f11fc01c0e5875532e7dd318d7c9e68, w03c_rfc00a_mog.bmp_23f594b4ce6d874272c3a003c35f7740) [2001 SoL]
 
 - Replaced a poorly upscaled power generator texture with its higher-quality PS2 version. [2011 HDC]
 
