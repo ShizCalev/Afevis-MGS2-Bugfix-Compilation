@@ -28,7 +28,6 @@ The repo IS set up to easily contribute corrections (via CSV files) for **ALL** 
 
 
 NOTE: OPTIONAL ADDON 2X & 4X AI UPSCALED RELEASES OF THIS PACK ARE PROVIDED. As this pack already replaces nearly all of the game's textures, our upscaled packs do FULLY REPLACE LiqMix's AI Slop texture packs.
-### NOTE: The 4x Upscaled pack can only be found on our [NexusMods.com page](https://www.nexusmods.com/metalgearsolid2mc/mods/52) due to GitHub's file size restrictions. Nothing we can do about that - yell at Microsoft!
 
 <br>
 
