@@ -41,14 +41,25 @@ https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/issues
 <br>
 
 
+## Installation
 
-## Installation Instructions
+- `MGS2-Community-Bugfix-Compilation.asi` (included in the base download) provides update notifications, as well as file verification to ensure that the mod hasn't been corrupted or partially damaged by Steam's file integrity verification, and to verify that mods are being loaded in the correct order.
+- It is HIGHLY recommended to use a mod manager, such as [Vortex Mod Manager](https://www.nexusmods.com/about/vortex) or the [MGS Mod Manager](https://www.nexusmods.com/metalgearsolid3mc/mods/174) to handle installation for ease of updating and managing file load order (which IS important.)
 
-1. Download the latest "Base" zip from: [here](https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation)
-1. Extract the contents of the zip into your game's folder.
-1. IF DOWNLOADING ONE OF THE AI UPSCALED TEXTURE ADDONS: Now extract it into your game's folder (so it overwrites the base version's files.)
-	(This is simplified if using a mod manager such as Vortex or ANTIBigBoss' MGS Mod Manager)
+### Base Installation Steps:
+1. Download the latest "Base" zip from: [here](https://github.com/ShizCalev/MGS2-Community-Bugfix-Compilation/releases)
+2. Extract the contents of the release zip into your game folder.
+   - (e.g., `steamapps\common\MGS2`.)
 
+
+### 2x / 4x Upscaled Texture Addons:
+
+1. After installing the "Base" version (from the steps above)
+2. Download the desired addon pack from the "Assets" section below.
+   - The 4x Upscaled Texture Addon is split into 3 seperate parts due to GitHub size limitations. 
+   - For a mod manager compatible single file zip version of the 4x Addon, visit out [NexusMods.com page.](https://www.nexusmods.com/metalgearsolid2mc/mods/52) 
+3. Extract the Addon zip into your game folder, overwriting any files when asked.
+  - 2x / 4x Addon packs **MUST** always be installed/loaded AFTER the base version.
 
 
 <br>
