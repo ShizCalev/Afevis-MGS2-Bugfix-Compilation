@@ -77,7 +77,7 @@ Recommended Mod Load Order (from first to last):
 2. [Knight_Killer](https://www.nexusmods.com/profile/KnightKiIIer)'s [MGS2 Better Audio Mod](https://www.nexusmods.com/metalgearsolid2mc/mods/3)
 3. MGS2 Community Bugfix Compilation - Base
 4. MGS2 Community Bugfix Compilation - AI Upscaled Texture Addon (if desired)
-5. MGS2 Demastered Texture Pack (if installed)
+5. [MGS2 Demastered Texture Pack](https://github.com/ShizCalev/MGS2-Demastered-Substance-Edition/) (if installed)
 6. [IroquoisPliskin1972](https://www.nexusmods.com/profile/IroquoisPliskin1972)'s [Solid Snake and Pliskin fixes and overhaul﻿](https://www.nexusmods.com/metalgearsolid2mc/mods/45)
 7. [GuyOnAChair](https://www.nexusmods.com/profile/GuyOnAChair)'s [MGS2MC Solid Snake Hair Fix﻿](https://www.nexusmods.com/metalgearsolid2mc/mods/10)
 5. All other mods
