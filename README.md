@@ -168,6 +168,8 @@ Recommended Mod Load Order (from first to last):
 
 - Fixed rogue black pixel on Shell 1 Core doors. (door_b00.bmp) [2011 HDC]
 
+- Fixed the EU PS1 MGS1 Special Missions CD being shown instead of the US MGS1 VR Missions disc. [2011 HDC]
+
 <br>
 
 ------------
