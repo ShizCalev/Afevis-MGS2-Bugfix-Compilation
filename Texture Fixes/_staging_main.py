@@ -115,7 +115,7 @@ def get_chainner_project_for_staging() -> Path:
       - Otherwise default to the 4x project.
     """
     path_lower = str(STAGING_FOLDER).lower()
-    if "staging - 2x upscaled" in path_lower:
+    if " - 2x upscaled" in path_lower:
         return CHAINNER_PROJECT_2X
     return CHAINNER_PROJECT_4X
 
