@@ -5,9 +5,12 @@ Texture Fixes\Staging - 4x Upscaled\textures,dist_4x\textures,true
 
 GCX Fixes\Spacecore - marine fix,dist\assets\gcx,false
 
-SDT Fixes\Music and Decensor Restoration\Guard rush - before,dist\us\demo\_bp,false
-SDT Fixes\Music and Decensor Restoration\Peter Shell 2 core,dist\us\demo\_bp,false
-SDT Fixes\Music and Decensor Restoration\Vamp vs Seals,dist\us\demo\_bp,false
+SDT Fixes\Music and Decensor Restoration\Guard rush - before\us,dist\us\demo\_bp,false
+SDT Fixes\Music and Decensor Restoration\Guard rush - before\jp,dist\jp\demo\_bp,false
+SDT Fixes\Music and Decensor Restoration\Peter Shell 2 core\us,dist\us\demo\_bp,false
+SDT Fixes\Music and Decensor Restoration\Peter Shell 2 core\jp,dist\jp\demo\_bp,false
+SDT Fixes\Music and Decensor Restoration\Vamp vs Seals\us,dist\us\demo\_bp,false
+SDT Fixes\Music and Decensor Restoration\Vamp vs Seals\jp,dist\jp\demo\_bp,false
 
 Model Fixes\HH60 Fix\kms,dist\assets\kms\us,false
 Model Fixes\Shell 2 markers,dist\assets\kms\us,false
